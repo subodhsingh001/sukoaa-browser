@@ -1,0 +1,25 @@
+✔ searches, addresses and encoded query (1.694678ms)
+✔ rejects local and executable schemes and credential URLs (0.425224ms)
+✔ host boundary is not URL substring (0.174985ms)
+✔ real bundled lists block advertising requests (4.163549ms)
+✔ real bundled lists leave ordinary page resources usable (0.993205ms)
+✔ filter exception takes precedence (0.704988ms)
+✔ strict domain matching on Android extraction (39.946997ms)
+✔ session snapshots exclude private tabs and preserve active normal tab (1.080487ms)
+✔ restored session rejects executable, local and credential addresses (0.236819ms)
+✔ YouTube policy has a hostname boundary and maintained scriptlets (74.128657ms)
+✔ fullscreen permission, native layout, element inspection, shortcuts and responsive tab lifecycle (1054.048008ms)
+✔ public release gate rejects incomplete candidate and unsupported approval claims (1.532442ms)
+✔ secure origin canonicalization and supported permission boundaries (5.500434ms)
+✔ normal persistent grants, blocks, combined requests, reset and permission checks (1.486312ms)
+✔ session and private grants never write saved site history (0.595582ms)
+✔ insecure, embedded, background and unsupported requests deny without a prompt (0.336329ms)
+✔ navigation, tab close, settings changes and duplicate requests invalidate pending approval (0.746751ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1255.963849

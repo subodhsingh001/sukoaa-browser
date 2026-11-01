@@ -1,0 +1,11 @@
+PUBLIC RELEASE BLOCKED
+- brandingCleared is not verified
+- publicContactConfigured is not verified
+- correspondingSourcesComplete is not verified
+- windowsPublisherSignatureVerified is not verified
+- physicalWindowsTested is not verified
+- physicalLinuxTested is not verified
+- physicalAndroidTested is not verified
+- publicUpdateChannelVerified is not verified
+- source/runtime audit has unresolved findings
+- release owner has not authorized publication

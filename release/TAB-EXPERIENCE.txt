@@ -1,0 +1,45 @@
+SUKOAA 0.7.3 — TAB EXPERIENCE
+Prepared 1 November 2026.
+
+DESKTOP
+New tabs (startup, +, Ctrl+T and Ctrl+Shift+N) focus the address bar. Ctrl+L
+focuses and selects the current address. Typing survives asynchronous tab-state
+updates. Navigation returns keyboard focus to the website.
+Page titles and same-origin raster favicons are displayed. Icons load through
+the tab's own session, without cookies on the icon request. Private icon fetches
+use no-store and icons are held in memory only. No third-party favicon service
+is used. Cross-origin, SVG, malformed, oversize or unavailable icons use a
+fallback badge. Old icons are cleared on navigation and stale results ignored.
+Hover shows title and full URL; blank-tab tooltips include their tab number.
+Tab DOM nodes are retained across updates to preserve focus/hover. The active
+tab is scrolled into view. Private tabs keep an explicit Private label.
+Right-click a tab to Duplicate, Mute/Unmute, Reopen or Close. Audible/muted tabs
+show an audio control. Middle-click closes a tab. Ctrl+Tab / Ctrl+Shift+Tab
+switch tabs. Ctrl+1..8 select a tab; Ctrl+9 selects the last tab. Ctrl+Shift+T
+reopens up to 15 closed regular web pages during the running session. Private
+tabs and blank pages are excluded. Clearing history/session also clears this
+list; no closed-tab list is persisted. Open tabs includes a Reopen button.
+
+ANDROID
+New regular and private tabs request address focus and the soft keyboard.
+Regular WebView tabs now receive title/icon updates. The tab list shows the
+site icon where supplied, otherwise a host initial; title and URL details are
+available by long press. Gecko private/add-on tabs retain title/URL information
+and use an initial fallback. Desktop-only extras: mute/duplicate/reopen actions
+and keyboard tab shortcuts. Package com.subo.aegis.next; versionCode 12.
+
+VALIDATION
+22 automated Node tests passed. Native Electron tests exercised actual typing
+without a click, page titles/icons in normal/private sessions, hover attributes,
+stable DOM, mute, Ctrl+Shift+T, Ctrl+Tab and closed-history clearing. Clipboard
+write/read restrictions and camera/microphone/location permissions regressions
+passed with simulated devices/location. Desktop shell layout was inspected.
+Windows app.asar files match the edited source. Native tests ran in Linux;
+no physical Windows/Android device or live YouTube account is certified.
+
+Existing GPL/source, brand/privacy contact, Windows publisher signing, physical
+device and engine-update release requirements remain open. Windows remains
+unsigned. No fastest-browser or universal-ad-blocking claim is made.
+
+ANDROID BUILD VERIFICATION
+Android assembleRelease + lintRelease succeeded: 0 errors, 11 reported issues. Original signing certificate retained; versionCode 12; versionName 0.7.3; launcher label Sukoaa.

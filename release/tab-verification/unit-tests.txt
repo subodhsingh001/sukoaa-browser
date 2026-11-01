@@ -1,0 +1,30 @@
+✔ focused secure top-level website may copy without a saved grant (0.810796ms)
+✔ background, unfocused, closed, insecure and embedded clipboard writes are rejected (0.402518ms)
+✔ searches, addresses and encoded query (1.382019ms)
+✔ rejects local and executable schemes and credential URLs (0.283398ms)
+✔ host boundary is not URL substring (0.118809ms)
+✔ real bundled lists block advertising requests (2.885401ms)
+✔ real bundled lists leave ordinary page resources usable (0.720389ms)
+✔ filter exception takes precedence (0.535309ms)
+✔ strict domain matching on Android extraction (13.509469ms)
+✔ session snapshots exclude private tabs and preserve active normal tab (1.183188ms)
+✔ restored session rejects executable, local and credential addresses (0.273734ms)
+✔ YouTube policy has a hostname boundary and maintained scriptlets (84.429335ms)
+✔ fullscreen permission, native layout, element inspection, shortcuts and responsive tab lifecycle (818.239189ms)
+✔ public release gate rejects incomplete candidate and unsupported approval claims (1.106302ms)
+✔ secure origin canonicalization and supported permission boundaries (1.522412ms)
+✔ normal persistent grants, blocks, combined requests, reset and permission checks (0.834381ms)
+✔ session and private grants never write saved site history (0.305211ms)
+✔ insecure, embedded, background and unsupported requests deny without a prompt (0.213592ms)
+✔ navigation, tab close, settings changes and duplicate requests invalidate pending approval (0.455328ms)
+✔ tab labels distinguish blank/private pages and fall back to host (1.641812ms)
+✔ icons stay on the page origin and reject redirects to local or credential URLs (0.314545ms)
+✔ recently closed tabs are bounded, session-only, exclude private pages and clear (4.478068ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1019.232786

@@ -1,0 +1,78 @@
+SUKOAA 0.8.0 — REPAIR AND COMPARISON
+Prepared 1 November 2026. No public deployment or release clearance.
+
+WHERE TO FIND IT
+Windows: Menu > Fix this page / Comparison Lab.
+Android regular browser: Browser tools > Fix this page / Compare this page.
+Android private/add-on view: Menu > Fix this page (cache/permission help).
+
+FIX THIS PAGE — DESKTOP
+Shows observed page errors, blocked request type counts, Lite state and recent
+permission/popup decisions. Clues do not prove the cause of a broken site.
+Choose a problem category for plain-language guidance. Copy help returns focus
+to the website; no automatic clipboard reading or permission grants are added.
+A user-triggered five-minute test pauses filtering and Lite filtering only for
+this tab and secure origin. It reloads the tab and may load ads/trackers. Undo
+restores protection and reloads. Expiry restores filtering and reloads; changing
+origins cancels the trial. Saved protection exceptions are not altered. The
+UI disables a trial where a saved protection exception already exists.
+Popup retry opens only a recently observed HTTP(S) link for the current origin,
+with no credentials in the URL. It does not grant unrestricted automatic popups.
+Diagnostic state is bounded, memory-only and discarded on navigation/close.
+
+COMPARISON LAB — DESKTOP
+Three live WebContentsView columns: current session at 1280 CSS px, clean
+session at 1280px and separate clean session at 390px. Clean sessions use
+independent nonpersistent partitions, no saved history/session or extensions.
+They are removed and storage/cache cleared on exit. The current session and
+its data are retained. Regular reopen history excludes these private tabs.
+Tab selection/page mouse input chooses the active column. Background loads
+cannot logically switch the selected column. Returning to ordinary tabs exits
+Lab and restores normal layout. Browser fullscreen requests are denied in Lab.
+Details are collected on user request in an isolated JS world: origin,
+viewport width, resource-entry count, navigation load-event duration, blocked
+requests, local/session storage key counts, visible-cookie count and site
+permission choices. Cookie/storage values are never included. HttpOnly
+cookies are not counted. These timings are not a cross-browser benchmark.
+The mobile column is a width preview, not real phone hardware emulation.
+Three live pages use additional memory and perform additional site requests.
+
+ANDROID
+Regular-browser repair shows page-error, blocked-count and Lite clues. A
+five-minute tab/origin-specific filter trial has Undo and automatic restoration.
+Lite mode remains a separate setting on Android. A fresh private Gecko view
+provides guided comparison; Android Back returns to the original regular view.
+The guide explains that clean and regular views use different rendering
+engines. Three-column comparison is desktop-only. Private/add-on repair offers
+cache-bypass reload, permission settings and copy/popup guidance; it does not
+turn off private tracking protection. Site permissions/certificates stay gated.
+
+PERFORMANCE / RELIABILITY
+Hidden settings lists no longer rebuild on every browser-state update; only
+the selected visible settings page populates its large lists. Unchanged
+serialized preferences skip duplicate disk writes. A regression assertion
+checks identical session selections cause zero additional preference writes.
+Navigation revisions prevent duplicate history entries from overlapping load
+callbacks. Page titles are refreshed after load/reload.
+
+SYNTHETIC UI BENCHMARK
+Same Electron 45 engine and Linux container; 500 history entries, 60 bookmarks,
+20 permission sites; hidden settings; three rounds of 60 state updates.
+Baseline 0.7.3 median: 139.2 ms per 60 updates.
+Updated median: 3.2 ms per 60 updates.
+This measures synchronous interface-update work, excludes painting and page/
+network loading, and is not evidence of being faster than Chrome/Brave/Edge.
+Reproduce with Electron and tests/renderer-benchmark.cjs; the old renderer is
+included under tests/bench-baseline. Raw samples are in repair-verification/.
+
+VALIDATION / LIMITS
+25 Node tests passed. Native Electron repair/Lab, tab/focus/icon, clipboard,
+site-permission (simulated hardware/location), history/private storage and
+minimum-width layout checks passed. Lab checked real 1280/1280/390 widths,
+normal-versus-fresh storage isolation and cleanup. Desktop settings UI reviewed.
+Android assembleRelease + lintRelease passed, 0 errors, 9 reported issues; APK
+package/version/label and original preview signing certificate verified.
+No physical Windows/Android, live YouTube/chat account or competing-browser
+page-load certification is claimed. Windows remains unsigned. Existing
+source/license, trademark/contact, signing, device and security-update release
+requirements remain open. No universal ad blocking or fastest-browser claim.

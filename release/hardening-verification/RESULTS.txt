@@ -1,0 +1,44 @@
+SUKOAA 0.9.0 — LOCAL VALIDATION, 2026-11-01
+
+30 Node policy/unit tests passed, including signed metadata tampering/expiry/
+rollback, bounded downloads, artifact digest/size and mocked Windows publisher
+rejection, disabled update-channel network silence, cache invalidation and
+bounded filter-list fetches. The Windows Authenticode operation itself has not
+been tested on Windows.
+
+Native Electron fixture checks passed: new-tab focus/title/favicon/hover/mute
+and closed tabs; real website Copy button in normal/private tabs with clipboard
+reading denied; camera/mic with simulated devices and simulated geolocation;
+individual history deletion and private history/storage cleanup; temporary
+repair, observed popup retry and comparison isolation; keyboard/menu zoom.
+The clipboard fixture now waits for renderer focus and a completed animation
+frame before dispatching its real click. Earlier focus-timing failures were
+resolved without relaxing clipboard policy.
+
+Final packaged ASAR loaded from a container-only native harness: shipped cache,
+updated-filter worker compilation inside ASAR, saved cache after restart,
+preload/shell/home, home local storage and disabled update UI passed. This
+harness overrides the unavailable OS sandbox only in tests. Direct production
+launch in this root container cannot certify the production sandbox. A trial
+with file-protocol privileges disabled prevented local interface loading; that
+setting was restored in source and final binaries before packaging.
+
+Five JVM checks passed: Android navigation policy, filters, popup decisions,
+appearance/contrast and private history lifecycle. Android assembleRelease,
+lintRelease and bundleRelease succeeded. Lint: 0 errors, 9 warnings; compile-SDK
+compatibility, old target and SDK metadata/deprecation warnings remain recorded.
+Signed APK retains the original preview certificate, package ID and upgrade
+identity. AAB is signed with that same preview identity for internal testing.
+Static APK/DEX/native alignment checks do not replace a device test.
+
+Median same-process filter initialization: parse 296.00 ms versus validated
+cache 45.64 ms, seven runs with warm filesystem cache. Raw measurements in
+filter-startup.json. Worker compilation also has startup overhead; shipped
+compiled data avoids that on unchanged first launches. These measurements do
+not establish page-loading or JavaScript speed relative to other browsers.
+
+Windows installer is cross-built, unsigned, and not physically installed here.
+Final installer runtime/archive hashes and Electron fuse bytes are checked
+separately. Android has not run on a phone/emulator here. No physical Linux
+sandbox/device, macOS, external security audit, legal clearance, public update
+service, public store listing or public deployment is claimed.

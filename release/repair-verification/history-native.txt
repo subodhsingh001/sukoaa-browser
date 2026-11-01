@@ -1,0 +1,1 @@
+PASS: persisted legacy IDs, exact duplicate visit deletion through UI, private search absent from disk history/session, filtered background tab close, cookie cleanup, fresh private storage, late callbacks, two-row minimum-width geometry

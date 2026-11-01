@@ -1,0 +1,69 @@
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/build.gradle:3: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+ defaultConfig { applicationId providers.gradleProperty('aegisApplicationId').getOrElse('com.subo.aegis.next'); minSdk 29; targetSdk 36; versionCode 14; versionName '0.9.0' }
+                                                                                                                           ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdk specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdk is
+   less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdk to the highest available value. Then
+   test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/MainActivity.java:376: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
+    s.setJavaScriptEnabled(true);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetJavaScriptEnabled":
+   Your code should not invoke setJavaScriptEnabled if you are not sure that
+   your app really requires JavaScript support.
+
+   https://goo.gle/SetJavaScriptEnabled
+   https://developer.android.com/training/articles/security-tips
+
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/AdvancedBrowserActivity.java:299: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            if (!safe && t == current) status.setText("Only HTTPS pages are supported.");
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/AdvancedBrowserActivity.java:355: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            if (t == current) status.setText("Loading…");
+                                             ~~~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/AdvancedBrowserActivity.java:799: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    status.setText("Reading add-on package…");
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/BrowserListDialog.java:36: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+      empty.setText("No entries");
+                    ~~~~~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/BrowserListDialog.java:60: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+      open.setText(row.title() + "\n" + row.detail());
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/MainActivity.java:169: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    brand.setText("Sukoaa");
+                  ~~~~~~~~
+/workspace/scratch/8647c7489557/hardening-work/SukoaaBrowser/android/app/src/main/java/com/subo/aegis/MainActivity.java:247: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    status.setText("Loading local filters…");
+                   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 9 warnings

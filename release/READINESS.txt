@@ -1,0 +1,52 @@
+SUKOAA BROWSER 0.7.1-beta.1 — SITE PERMISSIONS
+Prepared 23 October 2026. Internal preview; public-release clearance is pending.
+
+WHERE TO FIND IT
+Desktop: Menu > Site permissions.
+Android: Browser tools > Site permissions · camera, microphone, location.
+Open an HTTPS website, then choose Ask, Allow or Block for each permission.
+Supported requests also show a prompt automatically. Reset all returns to Ask.
+
+Normal approvals may be saved or limited to the browser session. Private
+approvals remain in memory and disappear when the private tab closes.
+Changing settings reloads affected tabs to stop existing capture/watchers.
+On Android, normal permission changes also notify the other browser view to
+reload normal tabs; private permission changes remain local to the private tab.
+Android asks for system permissions after site approval and links to Android
+app settings. OS permissions are app-wide and remain separate from private
+site decisions. Normal audio playback does not require microphone permission.
+Cross-origin embedded requests and screen sharing remain unsupported.
+Desktop location availability depends on the configured engine/OS provider;
+allowing a site does not by itself supply a location service.
+
+DOWNLOAD / UPDATE
+Windows Setup adds Desktop/Start menu shortcuts. Close Sukoaa before updating.
+The portable Windows ZIP and Linux AppImage/deb are updated as well.
+Android package: com.subo.aegis.next; version code 10; 0.7.1-beta.1.
+The existing preview certificate is preserved for an in-place Android update.
+Source contains the desktop and Android implementations and build scripts.
+Windows remains unsigned; SmartScreen may still warn.
+
+VALIDATION
+17 automated unit checks passed. Native Electron checks passed for real
+permission callbacks using simulated camera/microphone devices and location
+coordinates: prompt, saved decisions, settings UI, revocation reload, private
+isolation and cleanup. History/privacy regression passed on rerun after an
+initial UI timing timeout. Windows installer payload matches current source.
+Android assembleRelease + lintRelease succeeded: 0 errors, 12 warnings.
+APK signature, original certificate, package/version, permission declarations
+and inclusion of BrowserPermissions in DEX were verified. Java/manifest/build
+configuration were compared with the isolated build sources.
+No real camera/microphone, real GPS or physical device certification claimed.
+Gradle's official archive SHA256 and every unpacked distribution file matched.
+
+BETA READINESS
+Original code/art GPL-3.0-or-later; third-party terms retained. Runtime npm
+inventory remains 13 packages with 13 exact-version source snapshots. Android's
+resolved runtime inventory now records 53 artifacts; its component license and
+preferred-source review remains incomplete. Other blockers: scriptlet/engine
+source obligations, trademark clearance, public publisher/privacy contact and
+source URL, trusted Windows signing, physical-device tests and verified public
+security/update channel. No public deployment or legal clearance performed.
+The cross-browser performance comparison remains unfinished; this release
+makes no claim that Sukoaa is fastest or blocks every advertisement.

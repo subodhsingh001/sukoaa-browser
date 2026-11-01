@@ -1,0 +1,19 @@
+{
+  "version": "0.9.0",
+  "publicReleaseAllowed": false,
+  "workingName": "Sukoaa Browser",
+  "licenseDecision": "GPL-3.0-or-later for original application; retained third-party terms",
+  "checks": {
+    "brandingCleared": false,
+    "publicContactConfigured": false,
+    "correspondingSourcesComplete": false,
+    "windowsPublisherSignatureVerified": false,
+    "physicalWindowsTested": false,
+    "physicalLinuxTested": false,
+    "physicalAndroidTested": false,
+    "publicUpdateChannelVerified": false
+  },
+  "evidence": {},
+  "note": "These flags require actual evidence. A working build, self-signed key or web search cannot substitute for legal/trademark clearance or physical tests.",
+  "previousWorkingName": "Aegis Browser"
+}

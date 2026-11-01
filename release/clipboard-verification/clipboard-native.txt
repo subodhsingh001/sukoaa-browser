@@ -1,0 +1,1 @@
+PASS: real Copy button updates system clipboard in normal and private tabs; clipboard reading remains denied; no persistent clipboard grant

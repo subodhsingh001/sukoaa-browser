@@ -1,0 +1,38 @@
+✔ focused secure top-level website may copy without a saved grant (1.197186ms)
+✔ background, unfocused, closed, insecure and embedded clipboard writes are rejected (0.384751ms)
+✔ searches, addresses and encoded query (1.32143ms)
+✔ rejects local and executable schemes and credential URLs (0.291412ms)
+✔ host boundary is not URL substring (0.115081ms)
+✔ real bundled lists block advertising requests (3.164625ms)
+✔ real bundled lists leave ordinary page resources usable (0.800107ms)
+✔ filter exception takes precedence (0.833026ms)
+✔ strict domain matching on Android extraction (17.225519ms)
+✔ session snapshots exclude private tabs and preserve active normal tab (1.190927ms)
+✔ restored session rejects executable, local and credential addresses (0.272123ms)
+✔ YouTube policy has a hostname boundary and maintained scriptlets (60.8614ms)
+✔ fullscreen permission, native layout, element inspection, shortcuts and responsive tab lifecycle (140.247205ms)
+✔ filter cache survives restart and rebuilds after corruption or input changes (456.150457ms)
+✔ filter downloads bound streamed bytes and reject unapproved hosts/redirects (37.928579ms)
+✔ filter trials are scoped to one tab/origin and expire without saved settings (1.685981ms)
+✔ diagnostic counts and bounded observations are discarded on navigation/close (1.275662ms)
+✔ popup retry requires an observed current-site HTTP(S) link and expires (0.351522ms)
+✔ public release gate rejects incomplete candidate and unsupported approval claims (1.640123ms)
+✔ secure origin canonicalization and supported permission boundaries (1.614696ms)
+✔ normal persistent grants, blocks, combined requests, reset and permission checks (1.096527ms)
+✔ session and private grants never write saved site history (0.530276ms)
+✔ insecure, embedded, background and unsupported requests deny without a prompt (0.288638ms)
+✔ navigation, tab close, settings changes and duplicate requests invalidate pending approval (0.591918ms)
+✔ tab labels distinguish blank/private pages and fall back to host (0.968337ms)
+✔ icons stay on the page origin and reject redirects to local or credential URLs (0.241769ms)
+✔ recently closed tabs are bounded, session-only, exclude private pages and clear (1.19984ms)
+✔ signed metadata rejects tampering, expiry, rollback, bad keys, hosts and platform (6.650126ms)
+✔ downloads require signed size/digest and Windows publisher, never save failed bytes (18.506254ms)
+✔ disabled channel performs no network requests; oversized metadata is rejected (1.031541ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 746.043096

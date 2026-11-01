@@ -1,0 +1,33 @@
+✔ focused secure top-level website may copy without a saved grant (1.073623ms)
+✔ background, unfocused, closed, insecure and embedded clipboard writes are rejected (0.280895ms)
+✔ searches, addresses and encoded query (1.305103ms)
+✔ rejects local and executable schemes and credential URLs (0.326423ms)
+✔ host boundary is not URL substring (0.122625ms)
+✔ real bundled lists block advertising requests (2.966544ms)
+✔ real bundled lists leave ordinary page resources usable (0.735482ms)
+✔ filter exception takes precedence (0.610223ms)
+✔ strict domain matching on Android extraction (15.825574ms)
+✔ session snapshots exclude private tabs and preserve active normal tab (1.124921ms)
+✔ restored session rejects executable, local and credential addresses (0.228526ms)
+✔ YouTube policy has a hostname boundary and maintained scriptlets (54.57935ms)
+✔ fullscreen permission, native layout, element inspection, shortcuts and responsive tab lifecycle (771.543073ms)
+✔ filter trials are scoped to one tab/origin and expire without saved settings (1.909096ms)
+✔ diagnostic counts and bounded observations are discarded on navigation/close (1.221136ms)
+✔ popup retry requires an observed current-site HTTP(S) link and expires (0.403911ms)
+✔ public release gate rejects incomplete candidate and unsupported approval claims (1.524715ms)
+✔ secure origin canonicalization and supported permission boundaries (1.635732ms)
+✔ normal persistent grants, blocks, combined requests, reset and permission checks (0.834451ms)
+✔ session and private grants never write saved site history (0.345412ms)
+✔ insecure, embedded, background and unsupported requests deny without a prompt (0.342838ms)
+✔ navigation, tab close, settings changes and duplicate requests invalidate pending approval (0.483571ms)
+✔ tab labels distinguish blank/private pages and fall back to host (1.657466ms)
+✔ icons stay on the page origin and reject redirects to local or credential URLs (0.76696ms)
+✔ recently closed tabs are bounded, session-only, exclude private pages and clear (1.152272ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 976.825661

@@ -1,0 +1,18 @@
+[7:1101/092903.142994:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[7:1101/092903.143516:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[7:1101/092903.328784:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[7:1101/092903.328806:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[7:1101/092903.328975:ERROR:net/base/address_tracker_linux.cc:224] Could not create NETLINK socket: Operation not permitted (1)
+[7:1101/092903.330388:ERROR:device/udev_linux/udev_watcher.cc:51] Failed to initialize a udev monitor.
+[7:1101/092903.333565:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 38: No such file or directory (2)
+[7:1101/092903.400890:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[7:1101/092903.401014:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[7:1101/092903.405872:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[7:1101/092903.469551:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 91: No such file or directory (2)
+[7:1101/092903.473115:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[7:1101/092903.479289:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[7:1101/092903.520730:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 108: No such file or directory (2)
+[7:1101/092903.538021:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 116: No such file or directory (2)
+[7:1101/092903.572861:ERROR:mojo/public/cpp/bindings/lib/interface_endpoint_client.cc:652] Message 0 rejected by interface blink.mojom.WidgetHost
+[7:1101/092903.669168:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 132: No such file or directory (2)
+PASS: real Copy button updates system clipboard in normal and private tabs; clipboard reading remains denied; no persistent clipboard grant
