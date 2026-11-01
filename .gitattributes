@@ -1,0 +1,7 @@
+# Consistent text line endings across platforms.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Preserve the exact bytes of the reviewed scriptlet resource.
+/shared/ublock/resources.json -text
