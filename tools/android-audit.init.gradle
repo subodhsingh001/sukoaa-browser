@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Run after Android dependencies resolve: gradle -I tools/android-audit.init.gradle :app:exportRuntimeAudit
+allprojects { project ->
+  afterEvaluate {
+    if (project.path == ':app') tasks.register('exportRuntimeAudit') {
+      doLast {
+        def configuration = configurations.findByName('releaseRuntimeClasspath')
+        def rows = configuration.resolvedConfiguration.resolvedArtifacts.collect { artifact ->
+          [group: artifact.moduleVersion.id.group, name: artifact.name,
+           version: artifact.moduleVersion.id.version, type: artifact.type,
+           file: artifact.file.name,
+           sha256: java.security.MessageDigest.getInstance('SHA-256').digest(artifact.file.bytes).encodeHex().toString()]
+        }.sort { a,b -> (a.group+':'+a.name) <=> (b.group+':'+b.name) }
+        def output = new File(rootProject.projectDir, '../compliance/android-runtime.json')
+        output.parentFile.mkdirs(); output.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([status:'resolved-artifacts-only; license/source review still required',artifacts:rows]))
+      }
+    }
+  }
+}
