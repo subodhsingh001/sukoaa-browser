@@ -17,7 +17,7 @@
   "license": "GPL-3.0-or-later",
   "type": "commonjs",
   "dependencies": {
-    "@ghostery/adblocker": "2.20.1",
+    "@ghostery/adblocker": "2.20.3",
     "tldts": "7.4.19"
   },
   "devDependencies": {
