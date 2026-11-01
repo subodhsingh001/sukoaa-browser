@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:"
+    />
+    <title>Sukoaa Browser</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body>
+    <header>
+      <div class="tabs-row">
+        <div class="brand">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 2 21 6v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8"
+            /></svg
+          ><span>SUKOAA</span>
+        </div>
+        <div id="tabs" role="tablist" aria-label="Browser tabs"></div>
+        <button id="new" aria-label="New tab (Ctrl+T)" title="New tab (Ctrl+T)">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5v14M5 12h14" />
+          </svg></button
+        ><button
+          id="private"
+          aria-label="New private tab (Ctrl+Shift+N)"
+          title="New private tab (Ctrl+Shift+N)"
+        >
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M9 3h6l2 7H7l2-7ZM4 10h16M3 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM15 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM9 17h6"
+            />
+          </svg>
+        <span>Private</span></button>
+        <button id="tabMenu" title="Search and manage tabs" aria-label="Search and manage tabs">⌄</button>
+      </div>
+      <div class="window-controls" aria-label="Window controls">
+        <button id="windowMinimize" aria-label="Minimize window" title="Minimize"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg></button>
+        <button id="windowMaximize" aria-label="Maximize or restore window" title="Maximize or restore"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12"/></svg></button>
+        <button id="windowClose" aria-label="Close window" title="Close"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+      </div>
+      <div class="toolbar">
+        <button id="back" aria-label="Back" title="Back">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg></button
+        ><button id="forward" aria-label="Forward" title="Forward">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg></button
+        ><button id="reload" aria-label="Reload" title="Reload">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 11a8 8 0 1 0-2.3 6.5M20 4v7h-7" />
+          </svg></button
+        ><button id="home" aria-label="New tab page" title="New tab page">
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m3 10 9-7 9 7M5 9v11h5v-6h4v6h5V9" />
+          </svg>
+        </button>
+        <form id="addressForm">
+          <span id="security" title="Connection"
+            ><svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0ZM3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"
+              /></svg></span
+          ><input
+            id="address"
+            aria-label="Search or website address"
+            placeholder="Search or enter a website"
+            autocomplete="off"
+            spellcheck="false"
+          /><button
+            id="bookmark"
+            aria-label="Bookmark this page"
+            title="Bookmark this page"
+            type="button"
+          >
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 3h12v18l-6-4-6 4V3Z" />
+            </svg>
+          </button>
+        </form>
+        <button
+          id="shield"
+          class="shield"
+          title="Protection controls"
+          aria-label="Protection controls"
+        >
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 3 20 6v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Zm-4 9 3 3 5-6"
+            /></svg
+          ><span id="count">0</span></button
+        ><button id="developer" aria-label="Inspect page (F12)" title="Inspect page (F12)"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></button>
+        <button id="mobilePreview" aria-label="Mobile viewport preview" title="Mobile viewport preview"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg></button>
+        <button
+          id="menu"
+          aria-label="Browser settings"
+          title="Browser settings"
+        >
+          <svg
+            class="icon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <span id="status" class="visually-hidden" role="status">Local filtering · Ready to explore</span>
+      <div id="loading" class="loading-line" hidden></div>
+    </header>
+    <div id="labBar" class="lab-bar" hidden>
+      <div><button data-lab-index="0" title="Current session at 1280px">Current · 1280px</button></div>
+      <div><button data-lab-index="1" title="Fresh temporary session at 1280px">Clean · 1280px</button></div>
+      <div><button data-lab-index="2" title="Fresh temporary session at 390px">Mobile · 390px</button><button id="labDetails">Details</button><button id="labExit" aria-label="Close comparison">×</button></div>
+    </div>
+    <div id="deviceBar" hidden>
+      <strong>Device preview</strong>
+      <select id="devicePreset" aria-label="Preview device">
+        <option value="phone">Phone · 390 × 844</option>
+        <option value="compact">Compact · 360 × 800</option>
+        <option value="tablet">Tablet · 768 × 1024</option>
+      </select>
+      <span>Responsive viewport · use DevTools for network and touch emulation</span>
+      <button id="exitDevice">Exit preview</button>
+    </div>
+    <main id="panel" hidden>
+      <aside>
+        <div class="workspace-label">YOUR SPACE</div>
+        <h1>Make it yours.</h1>
+        <p>A quieter way to browse.</p>
+        <nav aria-label="Settings sections"><button data-view="permissions">Site permissions</button>
+          <button data-view="protection" class="selected">
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 3 20 6v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Zm-4 9 3 3 5-6"
+              /></svg
+            >Protection</button
+          ><button data-view="library">
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 3h4v18H4V3ZM12 3h4v18h-4V3ZM20 4l3 16" /></svg
+            >Your library</button
+          ><button data-view="downloads">
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+            >Downloads</button
+          ><button data-view="appearance">
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9ZM12 3v18" /></svg
+            >Appearance
+          </button>
+        <button data-view="tabs">Open tabs</button>
+        <button data-view="legal">Privacy &amp; licenses</button>
+        <button data-view="tools">Tools &amp; extensions</button>
+        <button data-view="repair">Fix this page</button>
+        <button data-view="lab">Comparison Lab</button>
+        <button data-view="updates">About &amp; updates</button>
+        </nav>
+        <div class="aside-note">
+          Sukoaa
+        </div>
+      </aside>
+      <div class="workspace">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow">BROWSER SETTINGS</span>
+            <h2 id="panelTitle">Protection</h2>
+          </div>
+          <button id="dismiss">
+            Back to browsing
+            <svg
+              class="icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 6 12 12M6 18 18 6" />
+            </svg>
+          </button>
+        </div>
+        <section data-page="updates" hidden>
+          <h3>Sukoaa</h3><p id="runtimeVersion"></p>
+          <p id="filterStartup" class="muted"></p>
+          <h3>Application updates</h3><p id="updateStatus" role="status"></p>
+          <button id="checkApplicationUpdate">Check for updates</button>
+          <button id="downloadApplicationUpdate" hidden>Save verified update</button>
+          <p id="updateNotes"></p>
+          <p class="muted">Downloads must match signed release metadata. Windows downloads also require the configured publisher signature. Installers never run automatically. Ad-filter updates are separate from application security updates.</p>
+        </section>
+        <div class="page-zoom" role="group" aria-label="Page zoom">
+          <span>Page zoom</span>
+          <button id="zoomOut" aria-label="Zoom out (Ctrl+-)" title="Zoom out (Ctrl+-)">−</button>
+          <button id="zoomReset" aria-label="Reset zoom (Ctrl+0)" title="Reset to 100% (Ctrl+0)">100%</button>
+          <button id="zoomIn" aria-label="Zoom in (Ctrl++)" title="Zoom in (Ctrl++)">+</button>
+          <button id="zoomFit" title="Shrink a wide page to the current window">Fit width</button>
+        </div>
+        <div data-page="protection">
+          <div class="protection-hero">
+            <div class="hero-icon">
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 3 20 6v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Zm-4 9 3 3 5-6"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="eyebrow">THIS WEBSITE</span>
+              <h3 id="site">New tab</h3>
+              <p id="protectionStatus">Your filters run on this device.</p>
+            </div>
+            <div class="counter">
+              <strong id="pageBlocked">0</strong><span>requests blocked</span>
+            </div>
+          </div>
+          <div class="settings-grid">
+            <section>
+              <div class="section-heading">
+                <h3>Site protection</h3>
+                <span class="badge" id="shieldBadge">Active</span>
+              </div>
+              <p>
+                If a page does not work as expected, pause filtering for that
+                website.
+              </p>
+              <button id="toggleShield" class="primary">
+                Fix this page: pause protection
+              </button>
+              <div class="setting-row">
+                <div>
+                  <strong>Strict filtering</strong>
+                  <p>
+                    Also block beacon requests. Some features may stop working.
+                  </p>
+                </div>
+                <label class="switch"
+                  ><input
+                    type="checkbox"
+                    id="strict"
+                    aria-label="Strict filtering" /><span></span
+                ></label>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <strong>Less YouTube clutter</strong>
+                  <p>Hide Shorts links and recommendations.</p>
+                </div>
+                <label class="switch"
+                  ><input
+                    type="checkbox"
+                    id="focus"
+                    aria-label="Hide YouTube distractions" /><span></span
+                ></label>
+              </div>
+            </section>
+            <section>
+              <div class="setting-row">
+                <div>
+                  <strong>YouTube assistance</strong>
+                  <p>
+                    Use video-site scriptlets and press visible Skip buttons.
+                    Some video ads may still appear.
+                  </p>
+                </div>
+                <label class="switch"
+                  ><input
+                    id="youtubeProtection"
+                    type="checkbox"
+                    aria-label="YouTube assistance" /><span></span
+                ></label>
+              </div>
+              <div class="section-heading">
+                <h3>Filter lists</h3>
+                <svg
+                  class="icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 11a8 8 0 1 0-2.3 6.5M20 4v7h-7" />
+                </svg>
+              </div>
+              <p>
+                EasyList and EasyPrivacy help identify advertising and tracking
+                requests.
+              </p>
+              <button id="update">
+                Update filter lists
+                <svg
+                  class="icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 11a8 8 0 1 0-2.3 6.5M20 4v7h-7" />
+                </svg>
+              </button>
+              <p id="filterDate" class="muted"></p>
+              <hr />
+              <div class="section-heading">
+                <h3>Privacy controls</h3>
+                <svg
+                  class="icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 10h12v11H6V10ZM8 10V7a4 4 0 0 1 8 0v3M12 14v3" />
+                </svg>
+              </div>
+              <p>
+                Private tabs use temporary sessions. Websites and your network
+                can still see your activity.
+              </p>
+              <p class="muted">
+                Camera, microphone and location ask before access. Manage them under Site permissions. Notifications remain disabled.
+              </p>
+              <button id="clear" class="danger">Clear browsing data</button>
+              <p class="muted">
+                Choose history, cached files, cookies/site data or saved tabs.
+                Bookmarks and downloaded files are kept.
+              </p>
+            </section>
+          </div>
+        </div>
+        <div data-page="repair" hidden>
+          <h2>Fix this page</h2><p id="repairSite"></p>
+          <label>What is going wrong? <select id="repairIssue"><option value="load">Page or sign-in</option><option value="video">Video or images</option><option value="popup">Link or popup</option><option value="copy">Copy button</option><option value="permission">Camera, microphone or location</option></select></label>
+          <p id="repairGuidance" class="repair-guidance"></p>
+          <div id="repairSummary" class="repair-summary"></div>
+          <div class="button-row repair-actions"><button id="repairFocus">Return to the website</button><button id="repairPermissions">Site permissions</button><button id="repairOpenPopup">Open blocked link</button></div>
+          <section><h3>Temporary filter test</h3><p>Reload this tab with filtering and Lite mode paused for five minutes. Ads and trackers may load. Filtering is restored when time runs out or you change sites. Undo reloads this tab with protection restored. Save unfinished forms first.</p><div class="button-row"><button id="repairPause">Test without filters · 5 min</button><button id="repairUndo">Undo temporary fix</button></div><p id="repairTemporary"></p></section>
+          <section><h3>Recent clues</h3><p>These are observations, not a guaranteed diagnosis. Counts and decisions stay in this tab's memory.</p><div id="repairEvents"></div></section>
+        </div>
+        <div data-page="lab" hidden>
+          <h2>Developer Comparison Lab</h2>
+          <p>Compare this page in your current session, a clean session and a 390px mobile-width preview. Current keeps its login; the two fresh sessions start separately and their local browsing data is deleted when you close the comparison.</p>
+          <div class="button-row"><button id="labStart">Start side-by-side comparison</button><button id="labMeasure">Refresh comparison details</button><button id="labClose">Close comparison</button></div>
+          <p>Three live pages use additional memory. The mobile column previews layout; it does not reproduce real phone hardware. Timing includes site and network delays and is not a browser speed ranking.</p>
+          <div id="labReport" class="lab-report"></div>
+          <p>Storage numbers are key counts only. Cookie counts exclude HttpOnly cookies. No cookie or storage values are collected.</p>
+        </div>
+        <div data-page="permissions" hidden>
+          <h2>Site permissions</h2><p id="permissionScope"></p>
+          <p>Camera, microphone and location ask before access. Only secure sites and localhost are supported. Embedded frames are blocked. Changing a permission reloads tabs to stop active capture. Your operating system may also require access.</p>
+          <div id="permissionSites"></div><button id="permissionReset">Reset all to Ask</button>
+        </div><div data-page="legal" hidden>
+          <p>Public launch is pending source, name, signing and device-test review.</p>
+          <div class="button-row"><button data-legal="privacy">Privacy</button><button data-legal="notices">Third-party notices</button><button data-legal="license">GPL license</button><button data-legal="sources">Source access</button></div>
+          <pre id="legalText" class="legal-text">Select a document. These documents are available offline.</pre>
+        </div>
+        <div data-page="tabs" hidden>
+          <div class="library-toolbar">
+            <p>Switch tabs or close them individually. Private tabs are never restored.</p>
+            <input id="tabSearch" type="search" placeholder="Find an open tab…" aria-label="Search open tabs" autocomplete="off" />
+          </div>
+          <section>
+            <div class="section-heading"><h3>Open tabs</h3><span class="badge" id="tabCount">0</span></div>
+            <div class="button-row"><button id="overviewNew">New tab</button><button id="overviewPrivate">New private tab</button></div>
+            <p>Hover a tab for its title and address. Right-click for Duplicate, Mute and Reopen. Ctrl+Tab switches tabs; Ctrl+Shift+T reopens a closed regular tab.</p>
+            <button id="reopenTab">Reopen closed tab</button>
+            <div id="tabOverview"></div>
+          </section>
+        </div>
+        <div data-page="library" hidden>
+          <div class="library-toolbar">
+            <p>Your saved pages and recent visits, on this device.</p>
+            <input
+              id="librarySearch"
+              type="search"
+              placeholder="Find a page…"
+              aria-label="Search bookmarks and history"
+            />
+          </div>
+          <div class="settings-grid">
+            <section>
+              <div class="section-heading">
+                <h3>
+                  <svg
+                    class="icon"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h12v18l-6-4-6 4V3Z" />
+                  </svg>
+                  Bookmarks
+                </h3>
+                <span class="badge" id="bookmarkCount">0</span>
+              </div>
+              <div id="bookmarks"></div>
+            </section>
+            <section>
+              <div class="section-heading">
+                <h3>
+                  <svg
+                    class="icon"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 11a9 9 0 1 1 2.6 7M3 4v7h7M12 7v5l3 2" />
+                  </svg>
+                  Recent visits
+                </h3>
+              </div>
+              <div id="history"></div>
+            </section>
+          </div>
+        </div>
+        <div data-page="downloads" hidden>
+          <section>
+            <div class="section-heading">
+              <h3>
+                <svg
+                  class="icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+                </svg>
+                Downloads this session
+              </h3>
+            </div>
+            <p>Download only files you trust.</p>
+            <div id="downloads"></div>
+          </section>
+        </div>
+        <div data-page="tools" hidden>
+          <div class="settings-grid">
+            <section><h3>Private &amp; clean testing</h3>
+              <p>Private tabs use separate cookies/site storage, no disk profile, disabled HTTP cache and no extensions. They are excluded from history and session restore.</p>
+              <button id="newPrivateTool" class="primary">New private tab · Ctrl+Shift+N</button>
+              <button id="cleanTest">Clean test this page</button>
+              <button id="hardReload">Reload without cached files · Ctrl+Shift+R</button>
+              <p>A hard reload bypasses HTTP cached files; service workers/site storage can still serve their own data. Clean test starts an isolated session. Neither hides your activity from websites or your network.</p>
+            </section>
+            <section><h3>Page performance</h3>
+              <button id="liteMode">Enable Lite mode for this tab</button>
+              <p>Blocks downloaded images and media on this tab, then reloads. Useful for text-heavy browsing on slow connections; images and videos will be missing. Embedded data images can remain.</p>
+              <p id="performanceReadout">Open a page to view load timing.</p>
+              <p>No comparative benchmark has established that Sukoaa is faster than Chrome, Brave, Edge or Firefox.</p>
+            </section>
+          </div>
+          <section><h3>Extensions</h3>
+            <p>Load compatible unpacked extensions from a folder containing manifest.json. Chrome Web Store install and CRX files are unsupported. Chrome API support is partial; toolbar actions are offered only when a popup/options page is declared. Keep the folder in place.</p>
+            <button id="extensionInstall">Add unpacked extension</button>
+            <p>Extensions run only in normal tabs. Review requested access before adding. Reload existing pages after adding/removing content scripts.</p>
+            <div id="extensions"></div>
+          </section>
+        </div>
+        <div data-page="appearance" hidden>
+          <section>
+            <div class="section-heading">
+              <h3>Set the mood</h3>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9ZM12 3v18" />
+              </svg>
+            </div>
+            <p>Choose a theme for the browser and new-tab page.</p>
+            <div class="theme-picker" role="group" aria-label="Theme">
+              <button data-theme="dark">
+                <span class="theme-swatch dark"></span>Midnight</button
+              ><button data-theme="light">
+                <span class="theme-swatch light"></span>Daylight</button
+              ><button data-theme="system">
+                <span class="theme-swatch system"></span>Use system
+              </button>
+            </div>
+            <div class="setting-row">
+              <div>
+                <strong>On startup</strong>
+                <p>Private tabs are never saved.</p>
+              </div>
+              <select id="startup" aria-label="On startup">
+                <option value="restore">Continue where I left off</option>
+                <option value="new">Open a new tab</option>
+              </select>
+            </div>
+            <div class="setting-row">
+              <div>
+                <strong>Address-bar search</strong>
+                <p>Choose where your searches go.</p>
+              </div>
+              <select id="search" aria-label="Search engine">
+                <option value="google">Google</option>
+                <option value="duckduckgo">DuckDuckGo</option>
+                <option value="bing">Bing</option>
+              </select>
+            </div>
+            <p class="muted">
+              The new-tab page also has its own search-engine selector.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <dialog id="clearDialog">
+      <form id="clearForm">
+        <h2>Clear browsing data</h2>
+        <p>All time. Choose what to remove on this device.</p>
+        <label class="clear-option"
+          ><input id="clearHistory" type="checkbox" checked /><span
+            ><strong>Browsing history</strong
+            ><small>Remove the list of visited pages.</small></span
+          ></label
+        ><label class="clear-option"
+          ><input id="clearCache" type="checkbox" checked /><span
+            ><strong>Cached images and files</strong
+            ><small>Pages may load more slowly the next time.</small></span
+          ></label
+        ><label class="clear-option"
+          ><input id="clearCookies" type="checkbox" /><span
+            ><strong>Cookies and site data</strong
+            ><small
+              >Signs you out; resets new-tab shortcuts. Open pages
+              reload.</small
+            ></span
+          ></label
+        ><label class="clear-option"
+          ><input id="clearSession" type="checkbox" /><span
+            ><strong>Forget saved tabs</strong
+            ><small
+              >Switch startup to a new tab. Your current tabs stay open.</small
+            ></span
+          ></label
+        >
+        <p class="muted">
+          History clearing does not close open tabs. Use “Forget saved tabs” to
+          prevent restoring them.
+        </p>
+        <div class="dialog-actions">
+          <button id="cancelClear" type="button">Cancel</button
+          ><button id="confirmClear" class="primary" type="submit">
+            Clear selected data
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div id="toast" hidden role="status"></div>
+    <script src="ui.js"></script>
+  </body>
+</html>

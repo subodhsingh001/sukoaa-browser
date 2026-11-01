@@ -1,0 +1,9 @@
+# Release license decision
+
+Original Sukoaa application code is licensed under GPL-3.0-or-later, copyright 2026 Subo, with no warranty. This choice is authorized by the owner's request to choose the release license and prepare an open-source beta. SPDX-License-Identifier: GPL-3.0-or-later.
+
+The application includes and executes GPL-covered uBlock-derived resources. For release engineering we conservatively treat the original application and that integration as a GPLv3-or-later combined application. We do not rely on a proprietary/separate-work exception for scriptlet injection. This removes the original-code UNLICENSED/GPL mismatch; it is not a court ruling on derivative-work boundaries.
+
+Third-party authors retain their copyrights and licenses. Electron/Chromium, Mozilla/GeckoView, Ghostery, npm packages, Gradle, AndroidX, Kotlin, filter lists and other components are not blanket relicensed by this decision. Preserve their notices. MPL-covered sources remain available under MPL; applicable secondary-license compatibility must be checked against the actual source. EasyList-derived domain data uses its CC-BY-SA-3.0-or-later option. Artwork authored for this project is also offered under GPL-3.0-or-later; no trademark rights are granted. This grant also covers project-authored portions in the previous validated-source snapshot supplied in the preparation kit; third-party terms remain unchanged. Build wrappers retain their upstream licenses.
+
+Public distribution requires the corresponding source and build/install scripts required by each component's license, not only this project's handwritten source. Missing preferred-form sources, unverified exact revisions and runtime component obligations are release blockers. See compliance/source-inventory.json and release/readiness.json. Public release also remains blocked on branding, publisher contact, verified signing and physical-device evidence. Changing metadata is not legal certification.
