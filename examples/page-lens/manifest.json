@@ -1,0 +1,7 @@
+{
+  "manifest_version": 3,
+  "name": "Aegis Page Lens",
+  "version": "1.0.0",
+  "description": "Optional page word count, reading estimate and viewport size. No network requests.",
+  "content_scripts": [{"matches": ["http://*/*", "https://*/*"], "js": ["lens.js"], "run_at": "document_idle"}]
+}
