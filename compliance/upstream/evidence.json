@@ -1,0 +1,17 @@
+{
+  "releaseVersion": "0.9.0",
+  "items": [
+    {
+      "file": "compliance/upstream/ghostery-assets-update.js",
+      "source": "https://raw.githubusercontent.com/ghostery/adblocker/7f5784d0a1dc177171ee3d6d39a7e4ac7a7eecec/packages/adblocker/assets/update.js",
+      "sha256": "679b2f51ded422907842b24753bcf1c98936ea0b94929d1caaca261cbf453f9d"
+    },
+    {
+      "file": "compliance/upstream/ublock-resources-metadata.json",
+      "source": "https://cdn.ghostery.com/adblocker/resources/ublock-resources-json/metadata.json",
+      "sha256": "6bbd7d8e169f88838990b02002c1405c08f7cddca46c6c7b182456bee5447dd8"
+    }
+  ],
+  "preferredSourceMappingComplete": false,
+  "note": "CDN metadata is retrieval-time evidence, not proof of which preferred upstream source produced the pinned scriptlets."
+}

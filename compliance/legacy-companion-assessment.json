@@ -1,0 +1,8 @@
+{
+  "file": "SukoaaBrowser-Source-Audit-Bundle.zip",
+  "observedBytes": 12597592,
+  "zipEndDirectoryPresent": false,
+  "validation": "Python zipfile.BadZipFile; local compressed source entry fails validation",
+  "replacement": "Four exact-revision npm source archives in compliance/sources/",
+  "completeCorrespondingSource": false
+}
