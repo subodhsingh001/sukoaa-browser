@@ -1,0 +1,2 @@
+PASS: immediate new-tab typing; real page title/favicon in normal and private tabs; full hover title/URL; stable tab DOM; mute toggle; Ctrl+Shift+T restores only regular tabs; Ctrl+Tab; clearing history clears recently closed tabs
+Additional assertion passed: opening an existing URL gives website focus and displays the correct address.

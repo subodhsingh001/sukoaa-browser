@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/ghostery/adblocker",
+  "commit": "7f5784d0a1dc177171ee3d6d39a7e4ac7a7eecec",
+  "files": {
+    "filters.txt": {
+      "sha256": "f64eb22a4421a0813adcb04afd8739cdc0ad9de9842dc0178feb05d917becf14",
+      "mirrorMatch": true
+    },
+    "quick-fixes.txt": {
+      "sha256": "61d766e66cf971d417e105f0b0ad869f80ef28ed407028f9555332bdd3fc0822",
+      "mirrorMatch": true
+    },
+    "unbreak.txt": {
+      "sha256": "d06b9a46309f8d2555b69f9c2e789e61299ecec0f947c5cf13ce5e5febb5a22e",
+      "mirrorMatch": true
+    },
+    "resources.json": {
+      "sha256": "5ce0ce483f0e5514308ccb0240960a9dd7bfeab417debeef96960dce2c95f690",
+      "mirrorMatch": true
+    }
+  },
+  "preferredScriptletSourceStatus": "unresolved upstream preferred-form mapping; release blocked"
+}

@@ -1,0 +1,1 @@
+Android assembleRelease + lintRelease succeeded: 0 errors, 11 reported issues. Original signing certificate retained; versionCode 12; versionName 0.7.3; launcher label Sukoaa.

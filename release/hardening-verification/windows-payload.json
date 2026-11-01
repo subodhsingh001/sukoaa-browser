@@ -1,0 +1,20 @@
+{
+  "installerPayloadMatches": true,
+  "files": [
+    "Sukoaa Browser.exe",
+    "resources/app.asar"
+  ],
+  "fuseWire": {
+    "0": 48,
+    "1": 49,
+    "2": 48,
+    "3": 48,
+    "4": 49,
+    "5": 49,
+    "6": 48,
+    "7": 49,
+    "8": 49,
+    "version": "1"
+  },
+  "physicalWindows": false
+}

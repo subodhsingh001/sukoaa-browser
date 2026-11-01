@@ -1,0 +1,27 @@
+{
+  "environment": {
+    "OS": "Linux",
+    "machine": "x86_64",
+    "type": "Linux container; headless Electron, no physical devices"
+  },
+  "physicalWindows": "NOT TESTED \u2014 no Windows device/VM connected",
+  "physicalLinux": "NOT TESTED \u2014 no graphical desktop/hardware matrix",
+  "physicalAndroid": "NOT TESTED \u2014 no connected phone/emulator",
+  "nativeHeadless": [
+    "history-tabs-smoke.cjs",
+    "zoom-smoke.cjs",
+    "legal-update-smoke.cjs"
+  ],
+  "requiredPhysicalScenarios": [
+    "install and upgrade preserving profile",
+    "normal/private history, cookies and late close callbacks",
+    "MSN direct and popup navigation",
+    "YouTube fullscreen and playback without blocking guarantees",
+    "zoom, DPI, resizing and multi-monitor",
+    "uploads/downloads and OS picker",
+    "permission and certificate rejection",
+    "extension install/remove/private exclusion",
+    "crash recovery and application close cleanup",
+    "uninstall/data deletion"
+  ]
+}

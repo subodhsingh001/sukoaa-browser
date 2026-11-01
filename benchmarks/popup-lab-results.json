@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-22T06:02:43.307Z",
+  "engine": "45.0.0",
+  "blockedRequest": {
+    "promptShown": true,
+    "newTabs": 0
+  },
+  "approvedRequest": {
+    "promptShown": true,
+    "newTabs": 1,
+    "destinationLoaded": true
+  },
+  "limits": "Desktop only. Dialog decisions are simulated at the native API boundary, not clicked on a physical desktop. Android transport/dialog behavior needs a phone/emulator."
+}

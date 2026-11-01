@@ -1,0 +1,26 @@
+[516:1101/092905.811194:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[516:1101/092905.811295:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[516:1101/092905.930101:ERROR:net/base/address_tracker_linux.cc:224] Could not create NETLINK socket: Operation not permitted (1)
+[516:1101/092905.930280:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[516:1101/092905.930301:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[516:1101/092905.931821:ERROR:device/udev_linux/udev_watcher.cc:51] Failed to initialize a udev monitor.
+[516:1101/092905.931984:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 547: No such file or directory (2)
+[516:1101/092905.968625:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[516:1101/092905.968730:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[516:1101/092905.973811:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[516:1101/092906.026810:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 599: No such file or directory (2)
+[516:1101/092906.032512:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[516:1101/092906.038322:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[516:1101/092906.084892:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 617: No such file or directory (2)
+[516:1101/092906.102583:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 626: No such file or directory (2)
+[516:1101/092906.567297:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 642: No such file or directory (2)
+[516:1101/092906.886507:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 655: No such file or directory (2)
+[547:1101/092906.940719:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.940810:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.940905:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.940954:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.941015:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.941118:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.941163:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[547:1101/092906.941428:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+PASS: real page/address keyboard zoom/reset, isolated same-origin tabs, menu zoom/readout/reset, repeatable fit width, private zoom without history, large/small native viewport resize and 25–500% limits

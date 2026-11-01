@@ -1,0 +1,239 @@
+{
+  "scope": "Static 64-bit ELF alignment only; no 16 KB device runtime test",
+  "libraries": [
+    {
+      "file": "lib/arm64-v8a/libclearkey.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libcrashhelper.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libcrashtools.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libfreebl3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libgkcodecs.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/liblgpllibs.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libmozavcodec.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libmozavutil.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libmozglue.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libnss3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libplugin-container.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libsoftokn3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/arm64-v8a/libxul.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libclearkey.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libcrashhelper.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libcrashtools.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libfreebl3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libgkcodecs.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/liblgpllibs.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libmozavcodec.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libmozavutil.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libmozglue.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libnss3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libplugin-container.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libsoftokn3.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    },
+    {
+      "file": "lib/x86_64/libxul.so",
+      "loadSegmentAlignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "aligned16KB": true
+    }
+  ]
+}

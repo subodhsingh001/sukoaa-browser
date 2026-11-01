@@ -1,0 +1,1 @@
+PASS: observed blocking; tab-only temporary repair and Undo; popup retry; live 1280/1280/390 comparison; isolated storage; private cleanup; current-session preservation; on-demand history rendering

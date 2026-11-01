@@ -1,0 +1,42 @@
+name: Candidate checks (no public publishing)
+on:
+  workflow_dispatch:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: npm ci
+        working-directory: desktop
+      - run: npm test
+        working-directory: desktop
+      - run: npx electron --no-sandbox --ozone-platform=headless ../tests/history-tabs-smoke.cjs
+        working-directory: desktop
+      - run: npx electron --no-sandbox --ozone-platform=headless ../tests/zoom-smoke.cjs
+        working-directory: desktop
+      - run: node tools/audit-release.cjs
+      - name: Confirm public release is blocked
+        run: |
+          if node tools/release-gate.cjs; then
+            echo 'Gate passed; use the owner-controlled signing workflow for release.'
+          else
+            echo 'Candidate only: release gate is blocked. This workflow never publishes.'
+          fi
+
+      - run: npx electron --no-sandbox --ozone-platform=headless ../tests/site-permissions-smoke.cjs
+        working-directory: desktop
+
+      - run: npm audit --omit=dev --audit-level=high
+        working-directory: desktop
+      - run: node tools/check-engines.cjs
+      - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-experience-smoke.cjs
+      - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/clipboard-smoke.cjs
+      - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/repair-lab-smoke.cjs

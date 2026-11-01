@@ -1,0 +1,9 @@
+desktop/node_modules/
+build/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+**/*.jks
+**/*.keystore
+**/private-signing/

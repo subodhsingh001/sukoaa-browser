@@ -1,0 +1,1 @@
+Android assembleRelease + lintRelease succeeded. Lint: 0 errors, 11 reported issues. Original APK signing certificate verified. Package com.subo.aegis.next; versionCode 11; versionName 0.7.2; launcher label Sukoaa.

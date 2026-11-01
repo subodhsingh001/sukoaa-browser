@@ -1,0 +1,29 @@
+Sukoaa Browser — Windows installer
+
+This unsigned internal beta installs Sukoaa for your Windows user account.
+Run SukoaaBrowser-0.7.1-beta.1-Windows-x64-Setup.exe and follow Setup.
+Desktop and Start menu shortcuts are created. Launch from either afterward.
+Uninstall through Windows Settings > Apps > Installed apps > Sukoaa Browser.
+Your browser profile is retained when uninstalling. Use browser privacy controls
+to clear history/site data before uninstalling if you want to remove them.
+
+Existing portable users: close every running browser window before installing.
+The application ID and profile identifiers are unchanged; the installer uses
+the same Windows account's normal profile. Manually relocated profiles are not
+automatically imported. You can keep the old portable folder until you verify
+your bookmarks/history/settings in the installed app.
+
+This candidate has no verified Windows publisher signature, so SmartScreen
+may still warn. An installer does not remove that warning. Public release
+remains blocked as recorded in release/READINESS.txt.
+
+Build from desktop/: npm ci; npm run dist:windows
+Internal unsigned build: npm run dist:windows:internal. On Linux this uses
+electron-builder 26.15.3 bundled NSIS reader to extract the intermediate
+uninstaller without executing Windows code. This narrowly scoped adapter
+must be reviewed when changing electron-builder versions. The project afterPack
+hook applies the app icon and metadata before any real signing. A public
+release requires the signing and readiness procedure in BUILD-SIGN-RELEASE.md.
+
+Validation here: cross-built on Linux; physical Windows installation, shortcuts,
+launch, profile continuity and uninstall still require a Windows device check.

@@ -1,0 +1,26 @@
+{
+  "scope": "Synthetic hidden-panel UI updates only; same Electron engine; 500 history entries, 60 bookmarks, 20 permission sites; 3 rounds of 60 updates; no page/network timing.",
+  "results": [
+    {
+      "name": "baseline",
+      "samples": [
+        137,
+        139.20000000018626,
+        143.6999999997206
+      ],
+      "medianMs": 139.20000000018626,
+      "hiddenHistoryRows": 60
+    },
+    {
+      "name": "updated",
+      "samples": [
+        2.599999999627471,
+        3.2000000001862645,
+        3.5
+      ],
+      "medianMs": 3.2000000001862645,
+      "hiddenHistoryRows": 0
+    }
+  ],
+  "speedup": 43.499999997526174
+}

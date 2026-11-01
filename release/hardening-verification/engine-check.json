@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-01T09:28:44.067Z",
+  "electron": {
+    "installed": "45.2.1",
+    "upstream": "45.2.1"
+  },
+  "geckoview": {
+    "installed": "159.0.20261022150525",
+    "upstream": "159.0.20261022150525"
+  }
+}

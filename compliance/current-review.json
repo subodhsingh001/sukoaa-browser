@@ -1,0 +1,898 @@
+{
+  "format": "sukoaa-compliance-check-v1",
+  "releaseVersion": "0.9.0",
+  "applicationLicense": "GPL-3.0-or-later",
+  "scope": "source-package integrity and inventory consistency; no runtime or legal certification",
+  "runtimeDependencyLocations": 13,
+  "sourceArchiveCount": 4,
+  "sourceArchives": [
+    {
+      "file": "compliance/sources/ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "status": "verified",
+      "sha256": "57c73e650f360c0849fc108d9a650a8aaa75ee34a0645c5debd6f46a08f68ec9",
+      "bytes": 14555448
+    },
+    {
+      "file": "compliance/sources/ghostery-url-parser-d866962e2d65f03fc461425801b603d905cb4bbc.tar.gz",
+      "status": "verified",
+      "sha256": "cd6734ecad22ab6e226325c7e2321bd6bf5b70d65c09ee47def50c9e4e80cfc1",
+      "bytes": 135560
+    },
+    {
+      "file": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "status": "verified",
+      "sha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "bytes": 310368
+    },
+    {
+      "file": "compliance/sources/remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "status": "verified",
+      "sha256": "013a126c3baf73e488cacf767c34a32568c8e8ac35452163953fd23a9fc2e30d",
+      "bytes": 381343
+    }
+  ],
+  "packages": [
+    {
+      "name": "@ghostery/adblocker",
+      "version": "2.20.1",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@ghostery/adblocker-content",
+      "version": "2.20.1",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@ghostery/adblocker-extended-selectors",
+      "version": "2.20.1",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@ghostery/url-parser",
+      "version": "1.3.1",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/ghostery-url-parser-d866962e2d65f03fc461425801b603d905cb4bbc.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/guess-url-type",
+      "version": "2.1.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/small",
+      "version": "2.1.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/smaz",
+      "version": "2.2.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/smaz-compress",
+      "version": "2.2.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/smaz-decompress",
+      "version": "2.2.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "@remusao/trie",
+      "version": "2.1.0",
+      "declaredLicense": "MPL-2.0",
+      "archive": "compliance/sources/remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "tldts",
+      "version": "7.4.19",
+      "declaredLicense": "MIT",
+      "archive": "compliance/sources/remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "tldts-core",
+      "version": "7.4.19",
+      "declaredLicense": "MIT",
+      "archive": "compliance/sources/remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    },
+    {
+      "name": "tldts-experimental",
+      "version": "7.4.19",
+      "declaredLicense": "MIT",
+      "archive": "compliance/sources/remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceBytes": "verified",
+      "lockVersionAndIntegrity": "matched",
+      "legalReview": "not concluded"
+    }
+  ],
+  "filterFiles": [
+    {
+      "file": "shared/ublock/filters.txt",
+      "status": "verified",
+      "sha256": "f64eb22a4421a0813adcb04afd8739cdc0ad9de9842dc0178feb05d917becf14",
+      "bytes": 471974
+    },
+    {
+      "file": "shared/ublock/quick-fixes.txt",
+      "status": "verified",
+      "sha256": "61d766e66cf971d417e105f0b0ad869f80ef28ed407028f9555332bdd3fc0822",
+      "bytes": 87718
+    },
+    {
+      "file": "shared/ublock/unbreak.txt",
+      "status": "verified",
+      "sha256": "d06b9a46309f8d2555b69f9c2e789e61299ecec0f947c5cf13ce5e5febb5a22e",
+      "bytes": 280767
+    },
+    {
+      "file": "shared/ublock/resources.json",
+      "status": "verified",
+      "sha256": "5ce0ce483f0e5514308ccb0240960a9dd7bfeab417debeef96960dce2c95f690",
+      "bytes": 183850
+    }
+  ],
+  "notices": [
+    {
+      "file": "LICENSE",
+      "present": true
+    },
+    {
+      "file": "LICENSE-SCOPE.md",
+      "present": true
+    },
+    {
+      "file": "SOURCE-ACCESS.txt",
+      "present": true
+    },
+    {
+      "file": "THIRD-PARTY-NOTICES.md",
+      "present": true
+    },
+    {
+      "file": "shared/ublock/LICENSE-GPL-3.0.txt",
+      "present": true
+    },
+    {
+      "file": "shared/LICENSE-CC-BY-SA.txt",
+      "present": true
+    },
+    {
+      "file": "android/app/src/main/assets/LICENSE-MPL-2.0.txt",
+      "present": true
+    }
+  ],
+  "androidMetadata": [
+    {
+      "coordinate": "androidx.activity:activity:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "27a4be7462629c312da0b831a0978d2076fc34074145fb61dd4e86d7c8469b82",
+      "bytes": 2512,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.annotation:annotation-experimental:1.6.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "cde7468673a6ada9355dba55556b89a94a10b43a00b41e68af11864bfca39c07",
+      "bytes": 2031,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.annotation:annotation-jvm:1.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "3f7aba30028eed40866ecd93e6e1e2618ff7215e2fea97837d7569a92c682865",
+      "bytes": 2103,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.arch.core:core-common:2.2.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "1e17d4af8d6425be2a69f8af4d654a87e0456259a9eef1542869bcb023547e28",
+      "bytes": 1704,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.arch.core:core-runtime:2.2.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "0f953706598140d9d8735cdd5aeb1fa35933f4e2f31c0bf3eb81a053a4c8c1a5",
+      "bytes": 1920,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.collection:collection-jvm:1.6.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "87a94bb3e8b6a1472f3b0ddc177a9f121ef71aa01e1e30491d1a065b57d70712",
+      "bytes": 2605,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.concurrent:concurrent-futures:1.2.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "6be9a98d6cd75a787eeae2a1a0a3440ebe1ab4639740df9ec028094ab59b622f",
+      "bytes": 2265,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.core:core:1.19.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "71341cd4c4d8d3b50c890852bacd373d9ce319b5f9c05aa2bd7a5b5610f33d6b",
+      "bytes": 4775,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.core:core-viewtree:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "d4f2ed1176fa8c5612b80f74c952a8799142a9ed36022a1a238fde5b140580d9",
+      "bytes": 2107,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.customview:customview:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "ce9e47b87184f5bd5e139e9becd5b26476d42d78c31bf2fdedc37acb41b9ad49",
+      "bytes": 1795,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.exifinterface:exifinterface:1.3.6",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "59cfe5bd98506c27617b778143eb09a6b986a5417a0b1b0fd8b875eaa8db4bab",
+      "bytes": 1763,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.fragment:fragment:1.1.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "ef78eb27ac02ddf3545d5f8a3857c73a2837a01853f8d5fcf77251011db52544",
+      "bytes": 3100,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.interpolator:interpolator:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "0ddc07cc39699f48ecd9ec894b5830c0f09e22e82959294edf37217224c88b7b",
+      "bytes": 1608,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-common-jvm:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "421918e01dd8508b0c376207a9e98159ef77fed11eb1d9098294344ed67750c7",
+      "bytes": 6157,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-livedata:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "ec47faea1d2f68625ac49ad260f5f5233d9b40da922253b57aa153d49b5f5ca8",
+      "bytes": 6650,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-livedata-core:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "bedbe8c2230f207c7b27c15a67fa85aff7df681b145a45fd4fd9d6ccedafb2d4",
+      "bytes": 6209,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "cf5d8651182e43675968e4bff5b018a7b5d9ad75d777ded594ffc7c2d8c0948a",
+      "bytes": 5701,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-process:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "63f3303cb0f0ece424fedaba55cd3984e44422e7dd5071debca4a4423216c420",
+      "bytes": 6026,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-runtime:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c804e72f7795e17b44ab7e4be95ceb7fc22c19a07818e29f8a314ef43cf87769",
+      "bytes": 6585,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-runtime-android:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "1dfd1f739d71957166a0511a6fb2cbfc8da766c1840d5664063898ed6dac8aa6",
+      "bytes": 7337,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "e22ea0fca36eed3f649120fdadcf1d96f7f9a47d58472059d234b0cc62c9f570",
+      "bytes": 6601,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel-android:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c6d78741c43ccf10d5da5f0e040dedfffda20b9748caa038dc58be25d35c90a3",
+      "bytes": 6591,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.loader:loader:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c978d550808b47434aa49a63164110a50b55b0bcc6160a93a2e37d5110df8c5e",
+      "bytes": 2207,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-common:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "146d4b5763b1393f6ce63075fe6e4a6b20a25bd88642081337d5e1d0856d18ce",
+      "bytes": 9848,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-container:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "1ef9ab1218b7c78ed5cf79455c8dc082e5c1277495ee36a3bcd5fb5e00164447",
+      "bytes": 1725,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-database:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "1b7e2419d3f839764d3646a1d8552092c1e7e58b8e75371502cee9055841a3c9",
+      "bytes": 1723,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-datasource:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "947de388b37b2c3209bee98f3af6b5ba900485c1f8ca5cb25869dd11b6fedca9",
+      "bytes": 2145,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-decoder:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "a0e4e32378b098da0399303e787d6b05ab3e928a38364ed54cbf6873516eb81f",
+      "bytes": 1721,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-exoplayer:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "f540fd426f3ed2cf58792fad094052876817d764f88b2a072e530105dfe9d797",
+      "bytes": 2974,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-exoplayer-hls:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "b6f009ec8863fe6f6cbd70d80f331bb7737f13c1fa610fd4b385f9971c7d8b2b",
+      "bytes": 1926,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-extractor:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c8d99e648dbcb0197c6d85bd2dd10014fc8d2dd1ea2ea3e1fd51507bdfc0f500",
+      "bytes": 2139,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.profileinstaller:profileinstaller:1.4.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "d5fe39981a3b4b7c39585130da0bfc93835054c834a438d3e63e065e5f78be55",
+      "bytes": 2477,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.savedstate:savedstate:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "844d7d22fcea798c78bf5559229daf88ec9cad8136f5eea0a29aa76b3f8fde7c",
+      "bytes": 2072,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.startup:startup-runtime:1.1.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "f4114b5c6859bb1bc3caf281cb6d6f25998fa7f7292c64ceaea74a93210e746b",
+      "bytes": 1949,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.tracing:tracing:1.2.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "f34bec4eb58871d31002901377108aaa1ebfe77fa6d882b8b86200b158e26ea1",
+      "bytes": 1968,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.versionedparcelable:versionedparcelable:1.1.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "5f51e65873ca612de3838fa90d2ee95b8d040efd31b9c390a19bf94d615cdb2f",
+      "bytes": 1643,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.viewpager:viewpager:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "1f72f836339d03c6eb013f65075e76ca87075a577578eb4f95f74a3a5d253128",
+      "bytes": 1997,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.android.gms:play-services-base:18.7.2",
+      "declaredLicenses": [
+        {
+          "name": "Android Software Development Kit License",
+          "url": "https://developer.android.com/studio/terms.html"
+        }
+      ],
+      "status": "verified",
+      "sha256": "8323bac504c425b6a79b80ccfa72a36a77577e754e401afcd66a464258fbaf1b",
+      "bytes": 1767,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.android.gms:play-services-basement:18.9.0",
+      "declaredLicenses": [
+        {
+          "name": "Android Software Development Kit License",
+          "url": "https://developer.android.com/studio/terms.html"
+        }
+      ],
+      "status": "verified",
+      "sha256": "601ef047167c6c280b8b190942d9e94a0463e891acd9c6ccf532eb298a5efe5b",
+      "bytes": 1336,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.android.gms:play-services-fido:21.3.1",
+      "declaredLicenses": [
+        {
+          "name": "Android Software Development Kit License",
+          "url": "https://developer.android.com/studio/terms.html"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c48c10d67d19a28ab6304cd950c83268d46f7b69783b96862b7e3d58a15c1d9f",
+      "bytes": 1819,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.android.gms:play-services-tasks:18.3.2",
+      "declaredLicenses": [
+        {
+          "name": "Android Software Development Kit License",
+          "url": "https://developer.android.com/studio/terms.html"
+        }
+      ],
+      "status": "verified",
+      "sha256": "28e529669ca916b71184a7da582d7619ea6116a6b2873d2b1a23c2f3d9de1cda",
+      "bytes": 952,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.guava:failureaccess:1.0.2",
+      "declaredLicenses": [],
+      "status": "verified",
+      "sha256": "19ebc6f4bdb4edbb3d07b6ee994f846b54ef295582a9b5634719ffa9f31d03b2",
+      "bytes": 3339,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.guava:guava:33.3.1-android",
+      "declaredLicenses": [],
+      "status": "verified",
+      "sha256": "c728db6f2705ca3ea6a3cf2cf1260dbeff3a4524249a1b1b900edcfe9d72142f",
+      "bytes": 9321,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "declaredLicenses": [],
+      "status": "verified",
+      "sha256": "18d4b1db26153d4e55079ce1f76bb1fe05cdb862ef9954a88cbcc4ff38b8679b",
+      "bytes": 2278,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib:2.4.20",
+      "declaredLicenses": [
+        {
+          "name": "Apache-2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "bd69b382dba8e2b7ae3846375eb2f1389017eb908987277051ae4e3acec8c938",
+      "bytes": 2301,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c11074f0c898a98b863c614471d438d3df92a1ec3382a6e37f935d7d71954b5a",
+      "bytes": 1387,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "be86020cd5b93b8a68ca43185a049b9b0baa345fd1be1fdaa014fdaef92d6e7c",
+      "bytes": 2220,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "19c4889941b3aa098bd57cc64f02f9adacc654d571a12a956de4b5bb148c6499",
+      "bytes": 2195,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains:annotations:23.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c9490f655132328df2cfbcfdf743f53fc3916d6c1d10437175a6ca6e3a67771c",
+      "bytes": 1354,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jspecify:jspecify:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "cdab929a3b95211f43d2090c5e2d0dfe8465960e378bc32b35841dab324433a6",
+      "bytes": 1511,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.mozilla.geckoview:geckoview:159.0.20261022150525",
+      "declaredLicenses": [
+        {
+          "name": "The Mozilla Public License, v. 2.0",
+          "url": "http://mozilla.org/MPL/2.0/"
+        }
+      ],
+      "status": "verified",
+      "sha256": "760b60b556283f897c7258b04bf314f9c02cc5de26845d569c6d7a42d99d8c76",
+      "bytes": 3917,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.yaml:snakeyaml:2.2",
+      "declaredLicenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "e982eadc788c69cf2e4de50a9f632b182c31dba50612830d348fc4b4ba8dd7d6",
+      "bytes": 21256,
+      "legalReview": "not concluded"
+    }
+  ],
+  "sdkTermsReview": [
+    "com.google.android.gms:play-services-base:18.7.2",
+    "com.google.android.gms:play-services-basement:18.9.0",
+    "com.google.android.gms:play-services-fido:21.3.1",
+    "com.google.android.gms:play-services-tasks:18.3.2"
+  ],
+  "integrityErrors": [],
+  "requiredReview": [
+    {
+      "id": "scriptlet-preferred-source",
+      "reason": "The pinned minified scriptlet mirror is verified, but its preferred-source revision and exact conversion/build mapping still require completion."
+    },
+    {
+      "id": "engine-source-and-notices",
+      "reason": "Electron/Chromium and GeckoView have bundled component obligations; runtime inventories alone do not supply complete corresponding source or release-specific binary notices."
+    },
+    {
+      "id": "android-source-and-terms",
+      "reason": "POM license declarations are metadata, not source delivery or a compatibility conclusion. Review Android SDK-licensed Google Play services and all resolved components."
+    },
+    {
+      "id": "publisher-and-brand",
+      "reason": "Confirm name/logo clearance, real publisher/support/privacy contacts and a public versioned source URL."
+    }
+  ],
+  "publicReleaseAllowed": false
+}

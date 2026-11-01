@@ -1,0 +1,1 @@
+PASS: actual fake-device camera/microphone prompt, persistent decisions, UI controls, revocation reload, isolated private grants and cleanup, geolocation with simulated coordinates

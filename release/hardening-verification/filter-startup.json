@@ -1,0 +1,37 @@
+{
+  "scope": "Same-process filter initialization only; seven runs; warm file-system cache; no website/Chrome comparison",
+  "node": "v24.22.1",
+  "filterBytes": 4564584,
+  "samples": [
+    {
+      "parseMs": 764.915233,
+      "cachedMs": 90.13455099999999
+    },
+    {
+      "parseMs": 419.90252999999984,
+      "cachedMs": 51.60861399999999
+    },
+    {
+      "parseMs": 321.092455,
+      "cachedMs": 72.50950699999999
+    },
+    {
+      "parseMs": 282.9786230000002,
+      "cachedMs": 32.41531399999985
+    },
+    {
+      "parseMs": 253.31133200000022,
+      "cachedMs": 42.798425999999836
+    },
+    {
+      "parseMs": 263.3858919999998,
+      "cachedMs": 45.641569999999774
+    },
+    {
+      "parseMs": 296.0026990000001,
+      "cachedMs": 41.683138999999755
+    }
+  ],
+  "medianParseMs": 296.0026990000001,
+  "medianCachedMs": 45.641569999999774
+}

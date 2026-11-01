@@ -1,0 +1,20 @@
+[6:1101/092539.571173:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092539.571298:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092539.915138:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092539.915215:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092539.915236:ERROR:net/base/address_tracker_linux.cc:224] Could not create NETLINK socket: Operation not permitted (1)
+[6:1101/092539.916161:ERROR:device/udev_linux/udev_watcher.cc:51] Failed to initialize a udev monitor.
+[6:1101/092539.917324:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 36: No such file or directory (2)
+[6:1101/092539.956060:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[6:1101/092539.956158:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092539.960532:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[6:1101/092540.014044:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 84: No such file or directory (2)
+[6:1101/092540.019698:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092540.024952:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092540.068315:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 107: No such file or directory (2)
+[6:1101/092540.333471:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 122: No such file or directory (2)
+[6:1101/092540.600862:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 133: No such file or directory (2)
+[6:1101/092540.979564:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 157: No such file or directory (2)
+[6:1101/092540.986451:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 165: No such file or directory (2)
+[6:1101/092541.063092:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 180: No such file or directory (2)
+PASS: immediate new-tab typing; real page title/favicon in normal and private tabs; full hover title/URL; stable tab DOM; mute toggle; Ctrl+Shift+T restores only regular tabs; Ctrl+Tab; clearing history clears recently closed tabs

@@ -1,0 +1,367 @@
+{
+  "format": "sukoaa-release-audit-v1",
+  "version": "0.9.0",
+  "licenseDecision": "GPL-3.0-or-later",
+  "publicReleaseAllowed": false,
+  "dependencies": [
+    {
+      "name": "@ghostery/adblocker",
+      "version": "2.20.1",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@ghostery/adblocker",
+      "integrity": "sha512-1ghCrMnWRf/CWQ5PMw7ZxL4W0U390gmko8kPXhwm7zi+4GDOR49JlHVvmCke90E2hCpBIoNdS5jtNlIKalp2Ww==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "9a5743e68333a1959b266bee6905ee8ef1250f799c01a5f1bd98211e00cddd3a"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceSha256": "57c73e650f360c0849fc108d9a650a8aaa75ee34a0645c5debd6f46a08f68ec9",
+      "gitHead": "c18718adc33e82a086d996d0b0f75deb3d01745a",
+      "repository": "https://github.com/ghostery/adblocker"
+    },
+    {
+      "name": "@ghostery/adblocker-content",
+      "version": "2.20.1",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@ghostery/adblocker-content",
+      "integrity": "sha512-1vBDzEzoi4ZE9xjL3akAn0PiIA2KIeQ1K0JCpRIjPPWy8GoqN1saV2Md2jRSZPuXv9iENMKRPn1TetEE0MbUXw==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "9a5743e68333a1959b266bee6905ee8ef1250f799c01a5f1bd98211e00cddd3a"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceSha256": "57c73e650f360c0849fc108d9a650a8aaa75ee34a0645c5debd6f46a08f68ec9",
+      "gitHead": "c18718adc33e82a086d996d0b0f75deb3d01745a",
+      "repository": "https://github.com/ghostery/adblocker"
+    },
+    {
+      "name": "@ghostery/adblocker-extended-selectors",
+      "version": "2.20.1",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@ghostery/adblocker-extended-selectors",
+      "integrity": "sha512-PCnELdIoylSQ8hsRXQUkiSnch6WwHTNYxu8iAthmbOD+44WoXnmjR+Zfgdut3Lh3xUZmvv1uojslNIhYrJX9rA==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "9a5743e68333a1959b266bee6905ee8ef1250f799c01a5f1bd98211e00cddd3a"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "sourceSha256": "57c73e650f360c0849fc108d9a650a8aaa75ee34a0645c5debd6f46a08f68ec9",
+      "gitHead": "c18718adc33e82a086d996d0b0f75deb3d01745a",
+      "repository": "https://github.com/ghostery/adblocker"
+    },
+    {
+      "name": "@ghostery/url-parser",
+      "version": "1.3.1",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@ghostery/url-parser",
+      "integrity": "sha512-QKqGi+7aDQ4RcyHyCwgEk6B9vWnsBP4Q7htaN0zPJV3ATqTKEQDtSTb9c/AN586oJUDs24YXKcwFYwNweY/YjQ==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "6e3496aca922d1041d0795f9f654a322b2fad023bb90eeed0ea59d6ad7176d23"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "ghostery-url-parser-d866962e2d65f03fc461425801b603d905cb4bbc.tar.gz",
+      "sourceSha256": "cd6734ecad22ab6e226325c7e2321bd6bf5b70d65c09ee47def50c9e4e80cfc1",
+      "gitHead": "d866962e2d65f03fc461425801b603d905cb4bbc",
+      "repository": "https://github.com/ghostery/url-parser"
+    },
+    {
+      "name": "@remusao/guess-url-type",
+      "version": "2.1.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/guess-url-type",
+      "integrity": "sha512-zI3dlTUxpjvx2GCxp9nLOSK5yEIqDCpxlAVGwb2Y49RKkS72oeNaxxo+VWS5+XQ5+Mf8Zfp9ZXIlk+G5eoEN8A==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "@remusao/small",
+      "version": "2.1.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/small",
+      "integrity": "sha512-Y1kyjZp7JU7dXdyOdxHVNfoTr1XLZJTyQP36/esZUU/WRWq9XY0PV2HsE3CsIHuaTf4pvgWv2pvzvnZ//UHIJQ==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "@remusao/smaz",
+      "version": "2.2.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/smaz",
+      "integrity": "sha512-eSd3Qs0ELP/e7tU1SI5RWXcCn9KjDgvBY+KtWbL4i2QvvHhJOfdIt4v0AA3S5BbLWAr5dCEC7C4LUfogDm6q/Q==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "@remusao/smaz-compress",
+      "version": "2.2.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/smaz-compress",
+      "integrity": "sha512-TXpTPgILRUYOt2rEe0+9PC12xULPvBqeMpmipzB9A7oM4fa9Ztvy9lLYzPTd7tiQEeoNa1pmxihpKfJtsxnM/w==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "@remusao/smaz-decompress",
+      "version": "2.2.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/smaz-decompress",
+      "integrity": "sha512-ERAPwxPaA0/yg4hkNU7T2S+lnp9jj1sApcQMtOyROvOQyo+Zuh6Hn/oRcXr8mmjlYzyRaC7E6r3mT1nrdHR6pg==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "@remusao/trie",
+      "version": "2.1.0",
+      "license": "MPL-2.0",
+      "installedPath": "node_modules/@remusao/trie",
+      "integrity": "sha512-Er3Q8q0/2OcCJPQYJOPLmCuqO0wu7cav3SPtpjlxSbjFi1x+A1pZkkLD6c9q2rGEkGW/tkrRzfrhNMt8VQjzXg==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "sourceSha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "gitHead": "27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "repository": "https://github.com/remusao/mono"
+    },
+    {
+      "name": "tldts",
+      "version": "7.4.19",
+      "license": "MIT",
+      "installedPath": "node_modules/tldts",
+      "integrity": "sha512-48dH6aSpQnpbzDUc4vIQZ1VjB8tkK+e8c1yx05/SZK+rkssgjEOlxDd/yU8/a4vGYQ9vRgJr9dwMq9TJ0b3X2Q==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceSha256": "013a126c3baf73e488cacf767c34a32568c8e8ac35452163953fd23a9fc2e30d",
+      "gitHead": "4ecabd1690a72c8e30dbaeb24502f7355908830b",
+      "repository": "https://github.com/remusao/tldts"
+    },
+    {
+      "name": "tldts-core",
+      "version": "7.4.19",
+      "license": "MIT",
+      "installedPath": "node_modules/tldts-core",
+      "integrity": "sha512-goNXV6Ho9TIOfpJZanTd6CKG5DyYgYAL+k+22T0SLh8l6+KHIfBUPFuePuSZv05UttIaaLmI9tb7TmGIdK5AkQ==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceSha256": "013a126c3baf73e488cacf767c34a32568c8e8ac35452163953fd23a9fc2e30d",
+      "gitHead": "4ecabd1690a72c8e30dbaeb24502f7355908830b",
+      "repository": "https://github.com/remusao/tldts"
+    },
+    {
+      "name": "tldts-experimental",
+      "version": "7.4.19",
+      "license": "MIT",
+      "installedPath": "node_modules/tldts-experimental",
+      "integrity": "sha512-GaXrBbI3uP7tpIi+HGuD+pQXILEAQqk+z+uqc4xRt/d0hm6mP/eG6QkdruZjCWVEh8ZVCJVtWJoBLZLAji0Z1Q==",
+      "noticeFiles": [
+        "LICENSE"
+      ],
+      "noticeHashes": [
+        {
+          "file": "LICENSE",
+          "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+        }
+      ],
+      "sourceStatus": "exact-version-gitHead-source-captured",
+      "sourceArchive": "remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "sourceSha256": "013a126c3baf73e488cacf767c34a32568c8e8ac35452163953fd23a9fc2e30d",
+      "gitHead": "4ecabd1690a72c8e30dbaeb24502f7355908830b",
+      "repository": "https://github.com/remusao/tldts"
+    }
+  ],
+  "inputs": [
+    {
+      "file": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "file": "LICENSE-SCOPE.md",
+      "sha256": "344495fff6c318d3d0e81f198419433ba5c5d08fc439697f59a9c59577c7deba"
+    },
+    {
+      "file": "PRIVACY.txt",
+      "sha256": "e919d793676f130a763788062302e269b7a214bc5cf7da5a62613be0df541cf0"
+    },
+    {
+      "file": "SOURCE-ACCESS.txt",
+      "sha256": "b801648396d552aedc6406971ae771a6b75a426621b48d07d3e72baad4b9fdf5"
+    },
+    {
+      "file": "desktop/assets/aegis.svg",
+      "sha256": "302a9e55abb0454e5c92c5e4c915fa7141d85d8df5ed69f7d1b152b83d461a8c"
+    },
+    {
+      "file": "shared/easylist.txt",
+      "sha256": "50e4196704899b6ddd2846971c44f6dd8d67dcbd8478f104dc3a3666b2284d27"
+    },
+    {
+      "file": "shared/easyprivacy.txt",
+      "sha256": "1090513d33b9b0efbde1a31c9a8a9cc9563501d9294a7c3cad58ed936e849005"
+    },
+    {
+      "file": "shared/domains.txt",
+      "sha256": "6e84fd684989cf6dda22260b22f27f4b3d913cbc1efb060007cb3bf202a11827"
+    },
+    {
+      "file": "shared/ublock/filters.txt",
+      "sha256": "f64eb22a4421a0813adcb04afd8739cdc0ad9de9842dc0178feb05d917becf14"
+    },
+    {
+      "file": "shared/ublock/quick-fixes.txt",
+      "sha256": "61d766e66cf971d417e105f0b0ad869f80ef28ed407028f9555332bdd3fc0822"
+    },
+    {
+      "file": "shared/ublock/unbreak.txt",
+      "sha256": "d06b9a46309f8d2555b69f9c2e789e61299ecec0f947c5cf13ce5e5febb5a22e"
+    },
+    {
+      "file": "shared/ublock/resources.json",
+      "sha256": "5ce0ce483f0e5514308ccb0240960a9dd7bfeab417debeef96960dce2c95f690"
+    },
+    {
+      "file": "shared/filter-provenance.json",
+      "sha256": "456f099c6026047ce5f6eb8087f20ad46eb1a51a7b56a5c03ed4dec4270fec5a"
+    }
+  ],
+  "runtimes": [
+    {
+      "name": "Electron",
+      "version": "45.2.1",
+      "license": "MIT plus bundled third-party licenses",
+      "source": "https://github.com/electron/electron/tree/v45.2.1",
+      "sourceStatus": "exact-tag-locator; full Chromium/FFmpeg corresponding-source obligations remain under review"
+    },
+    {
+      "name": "GeckoView",
+      "version": "159.0.20261022150525",
+      "license": "MPL-2.0 plus bundled third-party licenses",
+      "source": "https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d",
+      "sourceStatus": "exact upstream revision locator; resolved runtime graph exported; per-component license/source review pending"
+    },
+    {
+      "name": "Android System WebView",
+      "version": "device supplied",
+      "license": "device/runtime dependent",
+      "sourceStatus": "not redistributed in APK"
+    }
+  ],
+  "unresolved": [
+    "uBlock scriptlet preferred-form upstream revision/build mapping",
+    "Electron/Chromium bundled copyleft source and component obligations",
+    "Android runtime component license/source coverage (resolved graph exported)",
+    "trademark/name clearance",
+    "public publisher/contact and source URL",
+    "trusted Windows publisher signing",
+    "physical Windows/Linux/Android evidence",
+    "public security-update channel"
+  ]
+}

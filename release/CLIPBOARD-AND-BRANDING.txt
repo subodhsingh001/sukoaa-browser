@@ -1,0 +1,34 @@
+SUKOAA 0.7.2 — CLIPBOARD AND BRANDING UPDATE
+Prepared 29 October 2026.
+
+Windows / desktop: fixed rejected clipboard-sanitized-write requests used by
+website Copy buttons. Only the focused active top-level secure origin (HTTPS
+or localhost) can write. Clipboard reading remains denied. Grants are not
+persisted. The policy applies equally to private and normal sessions.
+
+Visible branding: Sukoaa. Removed version/beta/preview badges from the browser
+chrome and new-tab page. Android launcher label is Sukoaa. Removed the new-tab
+wordmark duplicate and Filtering on this device footer. Android's status row
+is hidden during ordinary browsing; protection-paused and loading/error states
+remain available. Version metadata remains for app upgrades.
+
+Compatibility: Android applicationId remains com.subo.aegis.next and versionCode
+is 11. Existing preview signing identity is retained for upgrades. Desktop
+appId/product install identity and profile partitions are unchanged.
+
+Validation: 19 Node tests passed. Native Electron 45 test clicked a real Copy
+button and verified system clipboard contents in normal and private tabs;
+clipboard reading was denied and no persisted clipboard grant was created.
+Native camera/microphone, location, permission settings, revocation and private
+isolation smoke regression passed with simulated devices/location. Windows
+packaged code/home/settings matched the edited source. These checks ran in a
+Linux container, not on a physical Windows device or live ChatGPT account.
+
+Removing visible beta labels does not establish production readiness.
+Existing licensing/source, brand, privacy contact, publisher signing, physical
+device and security-update release requirements remain open. Windows is
+unsigned. No fastest-browser or universal-ad-blocking claim is made.
+
+ANDROID VALIDATION
+Android assembleRelease + lintRelease succeeded. Lint: 0 errors, 11 reported issues. Original APK signing certificate verified. Package com.subo.aegis.next; versionCode 11; versionName 0.7.2; launcher label Sukoaa.
+No physical Android device test was performed.

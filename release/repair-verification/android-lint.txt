@@ -1,0 +1,1 @@
+Android assembleRelease + lintRelease passed: 0 errors, 9 reported issues. Original APK certificate verified; com.subo.aegis.next; code 13; version 0.8.0; label Sukoaa.

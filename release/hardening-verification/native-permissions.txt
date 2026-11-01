@@ -1,0 +1,19 @@
+[6:1101/092603.568219:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092603.568495:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092603.695453:ERROR:net/base/address_tracker_linux.cc:224] Could not create NETLINK socket: Operation not permitted (1)
+[6:1101/092603.695348:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092603.695514:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Failed to open socket: Operation not permitted
+[6:1101/092603.696160:ERROR:device/udev_linux/udev_watcher.cc:51] Failed to initialize a udev monitor.
+[6:1101/092603.696933:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 36: No such file or directory (2)
+[6:1101/092603.736968:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[6:1101/092603.737063:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092603.740519:ERROR:dbus/object_proxy.cc:589] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[6:1101/092603.787534:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 92: No such file or directory (2)
+[6:1101/092603.793851:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092603.799376:ERROR:dbus/bus.cc:406] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[6:1101/092603.845097:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 109: No such file or directory (2)
+socket(): Operation not permitted
+socket(): Operation not permitted
+[6:1101/092604.033693:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 149: No such file or directory (2)
+[6:1101/092604.096717:ERROR:content/browser/zygote_host/zygote_host_impl_linux.cc:312] Failed to adjust OOM score of renderer with pid 170: No such file or directory (2)
+PASS: actual fake-device camera/microphone prompt, persistent decisions, UI controls, revocation reload, isolated private grants and cleanup, geolocation with simulated coordinates

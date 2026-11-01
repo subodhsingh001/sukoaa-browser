@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "archive": "ghostery-adblocker-c18718adc33e82a086d996d0b0f75deb3d01745a.tar.gz",
+      "url": "https://codeload.github.com/ghostery/adblocker/tar.gz/c18718adc33e82a086d996d0b0f75deb3d01745a",
+      "status": "verified",
+      "sha256": "57c73e650f360c0849fc108d9a650a8aaa75ee34a0645c5debd6f46a08f68ec9",
+      "bytes": 14555448
+    },
+    {
+      "archive": "ghostery-url-parser-d866962e2d65f03fc461425801b603d905cb4bbc.tar.gz",
+      "url": "https://codeload.github.com/ghostery/url-parser/tar.gz/d866962e2d65f03fc461425801b603d905cb4bbc",
+      "status": "verified",
+      "sha256": "cd6734ecad22ab6e226325c7e2321bd6bf5b70d65c09ee47def50c9e4e80cfc1",
+      "bytes": 135560
+    },
+    {
+      "archive": "remusao-mono-27c72bf6f12f8e500b19509eef5eb14445e6e2d5.tar.gz",
+      "url": "https://codeload.github.com/remusao/mono/tar.gz/27c72bf6f12f8e500b19509eef5eb14445e6e2d5",
+      "status": "verified",
+      "sha256": "f27b86211ecb77df7b32a6d2a0cb8b2337747fd7444eac7bcfff96958b0d6931",
+      "bytes": 310368
+    },
+    {
+      "archive": "remusao-tldts-4ecabd1690a72c8e30dbaeb24502f7355908830b.tar.gz",
+      "url": "https://codeload.github.com/remusao/tldts/tar.gz/4ecabd1690a72c8e30dbaeb24502f7355908830b",
+      "status": "verified",
+      "sha256": "013a126c3baf73e488cacf767c34a32568c8e8ac35452163953fd23a9fc2e30d",
+      "bytes": 381343
+    }
+  ]
+}

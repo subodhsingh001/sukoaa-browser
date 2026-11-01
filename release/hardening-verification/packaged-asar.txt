@@ -1,0 +1,3 @@
+PASS packaged ASAR in container harness: bundled filter initialization, native shell/preload/home, settings and disabled verified-update UI; 61 ms
+PASS packaged ASAR in container harness: worker filter initialization, native shell/preload/home, settings and disabled verified-update UI; 97 ms
+PASS packaged ASAR in container harness: profile filter initialization, native shell/preload/home, settings and disabled verified-update UI; 14 ms

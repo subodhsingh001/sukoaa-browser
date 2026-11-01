@@ -1,0 +1,10 @@
+SOURCE AND LICENSE ACCESS
+
+Original application: GPL-3.0-or-later. The source ZIP accompanies the candidate packages. LICENSE contains GPLv3; LICENSE-SCOPE.md describes scope and retained third-party licensing.
+
+The corresponding-source companion contains captured third-party source archives and exact-version/source-location inventories. A link to a repository's moving main branch alone is not treated as complete corresponding source. Runtime/engine components and any unresolved preferred-form sources are explicitly tracked. The release gate blocks publication while required source remains unresolved.
+
+There is no configured public source-download URL yet. A public distributor must provide a stable, working source channel alongside the binary distribution, retain versioned source/build instructions and honor all required redistribution rights. Contact the distributor of your copy for its corresponding source. Do not publish signing keys, passwords, device profiles or certificate private keys.
+
+AUDIT ADDENDUM — 1 November 2026
+The previous Source-Audit-Bundle ZIP cannot be opened: its ZIP end directory is absent and a compressed source entry fails validation. Do not rely on it as a usable source distribution. Four replacement upstream archives, matching the existing SHA256 records for all thirteen runtime npm packages, are now retained under compliance/sources/. Run node tools/check-compliance.cjs --write to verify actual bytes. This is a partial source collection, not complete corresponding source for every engine/Android component. The release checks remain open.
