@@ -39,7 +39,7 @@ test('first player fetch, text and clone are cleaned without replacing Response 
  const other=await f.run('fetch("/unrelated-api")');assert('adPlacements' in await other.json());
  assert.equal(f.requests.length,2);
 });
-test('media requires a trusted gesture, pauses on background, and does not auto-resume',async()=>{
+test('media waits for user activation, keeps playing across tabs and never resumes a user pause',async()=>{
  const handlers=new Map();let plays=0,pauses=0;
  class Media {play(){plays++;return Promise.resolve();}pause(){pauses++;}}
  const document={hidden:false,addEventListener:(type,fn)=>handlers.set(type,fn),querySelectorAll:()=>[new Media()]};
@@ -48,9 +48,10 @@ test('media requires a trusted gesture, pauses on background, and does not auto-
  await assert.rejects(vm.runInContext('media.play()',context),{name:'NotAllowedError'});
  handlers.get('pointerdown')({isTrusted:false});
  await assert.rejects(vm.runInContext('media.play()',context),{name:'NotAllowedError'});
- handlers.get('pointerdown')({isTrusted:true});await vm.runInContext('media.play()',context);assert.equal(plays,1);
- document.hidden=true;handlers.get('visibilitychange')();assert.equal(pauses,1);
- document.hidden=false;await assert.rejects(vm.runInContext('media.play()',context),{name:'NotAllowedError'});
- handlers.get('keydown')({isTrusted:true});await vm.runInContext('media.play()',context);assert.equal(plays,2);
+ document.hidden=true;await assert.rejects(vm.runInContext('media.play()',context),{name:'NotAllowedError'});
+ document.hidden=false;handlers.get('pointerdown')({isTrusted:true});await vm.runInContext('media.play()',context);assert.equal(plays,1);
+ document.hidden=true;handlers.get('visibilitychange')?.();assert.equal(pauses,0,'Hiding a tab does not pause started media');
+ await vm.runInContext('media.play()',context);assert.equal(plays,2,'An activated player may continue in the background');
+ vm.runInContext('media.pause()',context);document.hidden=false;handlers.get('visibilitychange')?.();assert.equal(plays,2,'Showing a tab never calls play');
  handlers.get('sukoaa-pause-media')();await assert.rejects(vm.runInContext('media.play()',context),{name:'NotAllowedError'});
 });

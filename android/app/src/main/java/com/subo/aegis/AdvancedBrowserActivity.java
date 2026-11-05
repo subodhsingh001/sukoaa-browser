@@ -206,18 +206,17 @@ public class AdvancedBrowserActivity extends Activity {
     t.addressPending=initial==null;
     t.historyScope = new VisitHistory.Scope(priv);
     GeckoSessionSettings.Builder settings =
-        new GeckoSessionSettings.Builder().usePrivateMode(priv).useTrackingProtection(true).suspendMediaWhenInactive(true);
+        new GeckoSessionSettings.Builder().usePrivateMode(priv).useTrackingProtection(true).suspendMediaWhenInactive(false);
     if (priv) {
       t.contextId = parentContext != null ? parentContext : "aegis-private-" + UUID.randomUUID();
       settings.contextId(t.contextId);
     }
     t.session = new GeckoSession(settings.build());
     t.session.setMediaSessionDelegate(new MediaSession.Delegate() {
-      @Override public void onActivated(GeckoSession session,MediaSession media) {t.media=media;if(t!=current || !foreground){media.muteAudio(true);media.pause();}}
+      @Override public void onActivated(GeckoSession session,MediaSession media) {t.media=media;if(!foreground){media.muteAudio(true);media.pause();}}
       @Override public void onPlay(GeckoSession session,MediaSession media) {
         t.media=media;
-        if(t!=current || !foreground){media.muteAudio(true);media.pause();}
-        else for(Tab other:tabs)if(other!=t)pauseMedia(other);
+        if(!foreground){media.muteAudio(true);media.pause();}
       }
     });
     t.session.setPermissionDelegate(
@@ -445,7 +444,7 @@ public class AdvancedBrowserActivity extends Activity {
       return;
     if(current!=t)permissions.cancel();
     setFullScreen(false);
-    if (current != null) {pauseMedia(current);current.session.setActive(false);}
+    if (current != null) current.session.setActive(false);
     if (view.getSession() != null) view.releaseSession();
     current = t;
     view.setSession(t.session);
@@ -534,6 +533,18 @@ public class AdvancedBrowserActivity extends Activity {
     if (selected) select(tabs.get(Math.min(index, tabs.size() - 1)));
   }
 
+  void tabActions(Tab tab) {
+    if(!tabs.contains(tab))return;
+    new AlertDialog.Builder(this).setTitle(tab.title)
+      .setItems(new String[]{"New tab","New private tab","Duplicate tab","Close tab"},(dialog,index)->{
+        if(!tabs.contains(tab))return;
+        if(index==0)newTab(false,null);
+        if(index==1)newTab(true,null);
+        if(index==2)newTab(tab.privateMode,tab.url.isEmpty()||"about:blank".equals(tab.url)?null:tab.url);
+        if(index==3)closeTab(tab);
+      }).setNegativeButton("Cancel",null).show();
+  }
+
   void tabList() {
     List<BrowserListDialog.Row> rows = new ArrayList<>();
     for (Tab tab : new ArrayList<>(tabs))
@@ -542,7 +553,7 @@ public class AdvancedBrowserActivity extends Activity {
               (tab == current ? "● " : "") + tab.title,
               (tab.privateMode ? "Private · " : "Regular · ") + tab.url,
               () -> select(tab),
-              () -> closeTab(tab)));
+              () -> closeTab(tab),null,() -> tabActions(tab)));
     BrowserListDialog.show(
         this,
         "Tabs · " + tabs.size(),

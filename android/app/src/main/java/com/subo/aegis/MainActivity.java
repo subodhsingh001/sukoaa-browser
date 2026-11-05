@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
   static class Tab {
     BrowserPermissions.Scope permissionScope;
     WebView web;
-    boolean addressPending;
+    boolean addressPending, mediaActivated;
     ScriptHandler youtubeScript;
     final VisitHistory.Scope historyScope = new VisitHistory.Scope(false);
     volatile String url = "";
@@ -375,7 +375,7 @@ public class MainActivity extends Activity {
   }
 
   void pauseTab(Tab t) {
-    muteTab(t,true);
+    t.mediaActivated=false;muteTab(t,true);
     t.web.evaluateJavascript("document.dispatchEvent(new Event('sukoaa-pause-media'));document.querySelectorAll('video,audio').forEach(m=>m.pause())",null);
     t.web.onPause();
   }
@@ -384,7 +384,6 @@ public class MainActivity extends Activity {
     if (t == null || !tabs.contains(t) || isFinishing() || isDestroyed()) return;
     if(current!=t)permissions.cancel();
     hideVideo();
-    if (current != null && current != t) pauseTab(current);
     current = t;
     t.web.onResume();
     frame.removeAllViews();
@@ -414,10 +413,10 @@ public class MainActivity extends Activity {
       refreshPagePolicy(t);
     }
     w.setOnTouchListener((v,event)->{
-      if(event.getActionMasked()==MotionEvent.ACTION_DOWN){t.addressPending=false;if(t==current)muteTab(t,false);}
+      if(event.getActionMasked()==MotionEvent.ACTION_DOWN){t.addressPending=false;if(t==current){t.mediaActivated=true;muteTab(t,false);}}
       return false;
     });
-    w.setOnKeyListener((v,key,event)->{if(event.getAction()==KeyEvent.ACTION_DOWN && t==current){t.addressPending=false;muteTab(t,false);}return false;});
+    w.setOnKeyListener((v,key,event)->{if(event.getAction()==KeyEvent.ACTION_DOWN && t==current){t.addressPending=false;t.mediaActivated=true;muteTab(t,false);}return false;});
     muteTab(t,true);
     WebSettings s = w.getSettings();
     s.setJavaScriptEnabled(true);
@@ -471,7 +470,7 @@ public class MainActivity extends Activity {
           @Override
           public void onPageStarted(WebView view, String url, android.graphics.Bitmap icon) {
             if(!url.startsWith("https://aegis.invalid/"))t.addressPending=false;
-            if(!t.addressPending)muteTab(t,true);
+            t.mediaActivated=false;muteTab(t,true);
             permissions.cancel();
             if(t.permissionScope!=null)t.permissionScope.revision++;
             if (t == current) hideVideo();
@@ -494,7 +493,6 @@ public class MainActivity extends Activity {
             if(title!=null&&!title.trim().isEmpty())t.title=title;
             inject(t);
             history.record(t.historyScope, url, t.title);
-            if(t!=current)pauseTab(t);
             if (t == current) {update();if(t.addressPending)restoreNewTabFocus(t);}
           }
 
@@ -966,7 +964,7 @@ public class MainActivity extends Activity {
                             + "Safe Browsing is enabled; certificate failures are blocked. Camera,"
                             + " microphone and location ask per site. Notifications remain denied. No VPN,"
                             + " remote proxy or browsing telemetry is used.\n\n"
-                            + "Videos require a tap and pause when you switch tabs. Keep Android System WebView updated.\n"
+                            + "Videos require a tap to start; started videos can keep playing across tabs. Keep Android System WebView updated.\n"
                             + "Early filtering available: " + WebViewFeature.isFeatureSupported(WebViewFeature.DOCUMENT_START_SCRIPT)
                             + " · Background audio muting available: " + WebViewFeature.isFeatureSupported(WebViewFeature.MUTE_AUDIO) + "\n\nThis preview has not had an"
                             + " independent security audit.")
@@ -1326,6 +1324,18 @@ public class MainActivity extends Activity {
     else update();
   }
 
+  void tabActions(Tab tab) {
+    if(!tabs.contains(tab))return;
+    new AlertDialog.Builder(this).setTitle(tab.title)
+      .setItems(new String[]{"New tab","New private tab","Duplicate tab","Close tab"},(dialog,index)->{
+        if(!tabs.contains(tab))return;
+        if(index==0)newTab(null);
+        if(index==1){Intent intent=new Intent(this,AdvancedBrowserActivity.class);intent.putExtra("private",true);startActivity(intent);}
+        if(index==2)newTab(tab.url.isEmpty()?null:tab.url);
+        if(index==3)closeTab(tab);
+      }).setNegativeButton("Cancel",null).show();
+  }
+
   void tabList() {
     List<BrowserListDialog.Row> rows = new ArrayList<>();
     for (Tab tab : new ArrayList<>(tabs))
@@ -1334,7 +1344,7 @@ public class MainActivity extends Activity {
               (tab == current ? "● " : "") + tab.title,
               "Regular · " + (tab.url.isEmpty()?"New tab":tab.url),
               () -> switchTab(tab),
-              () -> closeTab(tab),tab.icon));
+              () -> closeTab(tab),tab.icon,() -> tabActions(tab)));
     BrowserListDialog.show(
         this,
         "Tabs · " + tabs.size(),

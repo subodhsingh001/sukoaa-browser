@@ -20,6 +20,6 @@ if(policy){
  const extension=path.join(assets,'sukoaa-policy');fs.mkdirSync(extension,{recursive:true});
  fs.writeFileSync(path.join(extension,'youtube-start.js'),generated+`(${youtubeStart.toString()})();\n`);
  fs.writeFileSync(path.join(extension,'media-start.js'),generated+`(${mediaStart.toString()})();\n`);
- fs.writeFileSync(path.join(extension,'manifest.json'),JSON.stringify({manifest_version:3,name:'Sukoaa page policy',version:'1.0.0',browser_specific_settings:{gecko:{id:'page-policy@sukoaa.local'}},content_scripts:[{matches:['https://*.youtube.com/*'],js:['youtube-start.js'],run_at:'document_start',world:'MAIN'},{matches:['https://*/*'],js:['media-start.js'],run_at:'document_start',world:'MAIN',all_frames:true}]},null,2)+'\n');
+ fs.writeFileSync(path.join(extension,'manifest.json'),JSON.stringify({manifest_version:3,name:'Sukoaa page policy',version:'1.1.0',browser_specific_settings:{gecko:{id:'page-policy@sukoaa.local'}},content_scripts:[{matches:['https://*.youtube.com/*'],js:['youtube-start.js'],run_at:'document_start',world:'MAIN'},{matches:['https://*/*'],js:['media-start.js'],run_at:'document_start',world:'MAIN',all_frames:true}]},null,2)+'\n');
 }
 if(require.main===module)sync();module.exports={sync};

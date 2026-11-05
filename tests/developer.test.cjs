@@ -26,6 +26,7 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  class Window extends EventEmitter {
   constructor(){super();win=this;this.webContents=new Contents();this.views=[];this.contentView={addChildView:v=>this.views.push(v),removeChildView:v=>this.views=this.views.filter(x=>x!==v)};}
   loadFile(){return Promise.resolve();}getContentSize(){return [1360,900];}isDestroyed(){return false;}setMenu(){}isFullScreen(){return !!this.full;}
+  isMaximized(){return !!this.max;}maximize(){this.max=true;}unmaximize(){this.max=false;}minimize(){this.minimized=true;}
   setFullScreen(value){if(this.full===value)return;this.full=value;this.emit(value?'enter-full-screen':'leave-full-screen');}
  }
  const sessions=new Map();const session={fromPartition(name){if(!sessions.has(name)){const s=new EventEmitter();Object.assign(s,{setPermissionRequestHandler:fn=>s.request=fn,setPermissionCheckHandler:fn=>s.check=fn,webRequest:{onHeadersReceived(){},onBeforeRequest(fn){s.beforeRequest=fn;}},clearCache:()=>Promise.resolve(),clearStorageData:()=>Promise.resolve()});sessions.set(name,s);}return sessions.get(name);}};
@@ -96,6 +97,11 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  let moved=await command('state');assert.equal(moved.tabs.at(-1).id,moving);assert.equal(moved.active,beforeMove.active);
  for(const index of [-1,100,0.5,'1']){const order=moved.tabs.map(t=>t.id);await command('moveTab',{id:moving,index});assert.deepEqual((await command('state')).tabs.map(t=>t.id),order);}
  await command('tabMenu',moving);assert.equal(menu.find(item=>item.label==='Move tab right').enabled,false);
+ for(const label of ['New tab','New private tab','Duplicate tab','Close tab','Minimize window','Maximize window'])assert(menu.some(item=>item.label===label),label);
+ menu.find(item=>item.label==='Minimize window').click();assert(win.minimized);
+ menu.find(item=>item.label==='Maximize window').click();assert(win.isMaximized());
+ await command('tabMenu',moving);menu.find(item=>item.label==='Restore window').click();assert(!win.isMaximized());
+
  menu.find(item=>item.label==='Move tab left').click();moved=await command('state');assert.equal(moved.tabs.at(-2).id,moving);
  await assert.rejects(handle({sender:page,senderFrame:page.mainFrame},'moveTab',{id:moving,index:0}),/Untrusted sender/);
  fs.rmSync(profile,{recursive:true,force:true});

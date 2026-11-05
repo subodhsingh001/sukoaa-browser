@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-release-audit-v1",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "licenseDecision": "GPL-3.0-or-later",
   "publicReleaseAllowed": false,
   "dependencies": [

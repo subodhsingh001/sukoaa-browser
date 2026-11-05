@@ -247,3 +247,7 @@ See [the fixes and test limits](release/FOCUS-MEDIA-0.9.2.md) and [the one-branc
 ## 0.9.3 engine maintenance update
 
 Electron 45.2.3 and GeckoView 159.0.20261102144711 resolve the engine-version check reported after 0.9.2. See [the update details](release/ENGINE-UPDATE-0.9.3.md) and [instructions for updating your existing pull request](release/PUSH-0.9.3-TO-GITHUB.txt). The engine gate remains enabled, and the public-release requirements remain open.
+
+## 0.9.4 playback and tab actions
+
+Started media now continues when switching tabs; newly opened and restored pages still wait for Play. Hold/right-click a desktop tab or use the Android tab-list three-dot menu for tab actions. See [behavior and validation](release/PLAYBACK-TAB-ACTIONS-0.9.4.md) and [GitHub upload instructions](release/PUSH-0.9.4-TO-GITHUB.txt).

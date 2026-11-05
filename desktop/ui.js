@@ -206,6 +206,24 @@ function finishTabDrag() {
   stopTabAutoScroll();draggedTabId=null;
   for(const node of $('tabs').children)node.classList.remove('tab-dragging');
 }
+// Holding a tab opens its actions; moving the pointer still starts normal reordering.
+function attachTabActions(wrap,open,id) {
+  let timer=null,start=null,held=false;
+  const cancel=()=>{clearTimeout(timer);timer=null;start=null;};
+  open.addEventListener('pointerdown',e=>{
+    cancel();held=false;
+    if(e.button!==0 || !e.isPrimary)return;
+    start={x:e.clientX,y:e.clientY};
+    timer=setTimeout(()=>{timer=null;start=null;held=true;command('tabMenu',id);},600);
+  });
+  open.addEventListener('pointermove',e=>{if(start&&Math.hypot(e.clientX-start.x,e.clientY-start.y)>8)cancel();});
+  for(const type of ['pointerup','pointercancel','pointerleave','dragstart'])open.addEventListener(type,cancel);
+  open.addEventListener('click',e=>{if(held){held=false;e.preventDefault();e.stopImmediatePropagation();}},true);
+  open.addEventListener('keydown',e=>{
+    if(e.key==='ContextMenu'||(e.shiftKey&&e.key==='F10')){e.preventDefault();cancel();command('tabMenu',id);}
+  });
+  wrap.oncontextmenu=e=>{e.preventDefault();cancel();if(!held)command('tabMenu',id);};
+}
 function attachTabDragging(wrap,open,id) {
   wrap.draggable=true;
   wrap.ondragstart=e=>{
@@ -242,8 +260,8 @@ function renderTabs(s) {
       const close=document.createElement('button');close.className='close';close.append(makeIcon('close'));close.title='Close tab';close.onclick=()=>command('close',tab.id);
       wrap.append(open,audio,close);
       attachTabDragging(wrap,open,tab.id);
-      open.setAttribute('aria-description','Drag to reorder. Right-click for Move tab left or Move tab right.');
-      wrap.oncontextmenu=e=>{e.preventDefault();command('tabMenu',tab.id);};
+      attachTabActions(wrap,open,tab.id);
+      open.setAttribute('aria-description','Drag to reorder. Hold, right-click or press Shift+F10 for tab actions.');
       wrap.onauxclick=e=>{if(e.button===1){e.preventDefault();command('close',tab.id);}};
     }
     wrap.classList.toggle('active',tab.id===s.active);wrap.classList.toggle('tab-loading',!!tab.loading);
