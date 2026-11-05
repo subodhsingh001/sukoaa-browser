@@ -17,6 +17,9 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.json.*;
+import androidx.webkit.WebViewCompat;
+import androidx.webkit.WebViewFeature;
+import androidx.webkit.ScriptHandler;
 
 public class MainActivity extends Activity {
   BrowserPermissions permissions;
@@ -54,6 +57,8 @@ public class MainActivity extends Activity {
   static class Tab {
     BrowserPermissions.Scope permissionScope;
     WebView web;
+    boolean addressPending;
+    ScriptHandler youtubeScript;
     final VisitHistory.Scope historyScope = new VisitHistory.Scope(false);
     volatile String url = "";
     String title = "New tab";
@@ -132,7 +137,7 @@ public class MainActivity extends Activity {
     prefs = getSharedPreferences("aegis", MODE_PRIVATE);
     history = new VisitHistory(new HistoryRepository(prefs));
     permissions = new BrowserPermissions(this);
-    permissions.reloadNormal=()->{for(Tab tab:new ArrayList<>(tabs))tab.web.reload();};
+    permissions.reloadNormal=()->{for(Tab tab:new ArrayList<>(tabs))reloadTab(tab);};
     exceptions = new HashSet<>(prefs.getStringSet("exceptions", Collections.emptySet()));
     focus = prefs.getBoolean("focus", false);
     root = new LinearLayout(this);
@@ -272,7 +277,7 @@ public class MainActivity extends Activity {
             R.drawable.ic_reload,
             "Reload page",
             () -> {
-              if (current != null) current.web.reload();
+              if (current != null) reloadTab(current);
             });
     navigation.addView(backButton, new LinearLayout.LayoutParams(0, dp(48), 1));
     navigation.addView(forwardButton, new LinearLayout.LayoutParams(0, dp(48), 1));
@@ -345,11 +350,41 @@ public class MainActivity extends Activity {
     return exceptions.contains(host(t.url)) || (t.repairUntil>System.currentTimeMillis()&&t.repairSite.equals(BrowserPermissions.origin(t.url)));
   }
 
+  String assetScript(String name) {
+    try(InputStream input=getAssets().open(name)) {
+      ByteArrayOutputStream out=new ByteArrayOutputStream();
+      byte[] buffer=new byte[8192];int count;
+      while((count=input.read(buffer))!=-1)out.write(buffer,0,count);
+      return out.toString(java.nio.charset.StandardCharsets.UTF_8.name());
+    } catch(IOException error) {throw new IllegalStateException("Missing bundled page policy",error);}
+  }
+
+  void refreshPagePolicy(Tab t) {
+    if(!WebViewFeature.isFeatureSupported(WebViewFeature.DOCUMENT_START_SCRIPT))return;
+    if(t.youtubeScript!=null)t.youtubeScript.remove();
+    String excluded=new JSONArray(new ArrayList<>(exceptions)).toString();
+    String repair=JSONObject.quote(t.repairSite);
+    String script="if(!"+excluded+".includes(location.hostname) && !(location.origin==="+repair+" && Date.now()<"+t.repairUntil+")){"+assetScript("youtube-start.js")+"}";
+    t.youtubeScript=WebViewCompat.addDocumentStartJavaScript(t.web,script,new HashSet<>(Arrays.asList("https://youtube.com","https://*.youtube.com")));
+  }
+
+  void reloadTab(Tab t) {refreshPagePolicy(t);t.web.reload();}
+
+  void muteTab(Tab t,boolean mute) {
+    if(WebViewFeature.isFeatureSupported(WebViewFeature.MUTE_AUDIO))WebViewCompat.setAudioMuted(t.web,mute);
+  }
+
+  void pauseTab(Tab t) {
+    muteTab(t,true);
+    t.web.evaluateJavascript("document.dispatchEvent(new Event('sukoaa-pause-media'));document.querySelectorAll('video,audio').forEach(m=>m.pause())",null);
+    t.web.onPause();
+  }
+
   void switchTab(Tab t) {
     if (t == null || !tabs.contains(t) || isFinishing() || isDestroyed()) return;
     if(current!=t)permissions.cancel();
     hideVideo();
-    if (current != null && current != t) current.web.onPause();
+    if (current != null && current != t) pauseTab(current);
     current = t;
     t.web.onResume();
     frame.removeAllViews();
@@ -357,6 +392,7 @@ public class MainActivity extends Activity {
     frame.addView(t.web, new FrameLayout.LayoutParams(-1, -1));
     address.clearFocus();
     update();
+    if(t.addressPending)restoreNewTabFocus(t);
   }
 
   Tab newTab(String initialUrl) {
@@ -372,6 +408,17 @@ public class MainActivity extends Activity {
     t.web = new WebView(this);
     WebView w = t.web;
     w.setBackgroundColor(BG);
+    w.setOnFocusChangeListener((v,focused)->{if(focused && current==t && t.addressPending)w.post(()->{if(current==t && t.addressPending)restoreNewTabFocus(t);});});
+    if(WebViewFeature.isFeatureSupported(WebViewFeature.DOCUMENT_START_SCRIPT)) {
+      WebViewCompat.addDocumentStartJavaScript(w, assetScript("media-start.js"), Collections.singleton("*"));
+      refreshPagePolicy(t);
+    }
+    w.setOnTouchListener((v,event)->{
+      if(event.getActionMasked()==MotionEvent.ACTION_DOWN){t.addressPending=false;if(t==current)muteTab(t,false);}
+      return false;
+    });
+    w.setOnKeyListener((v,key,event)->{if(event.getAction()==KeyEvent.ACTION_DOWN && t==current){t.addressPending=false;muteTab(t,false);}return false;});
+    muteTab(t,true);
     WebSettings s = w.getSettings();
     s.setJavaScriptEnabled(true);
     s.setDomStorageEnabled(true);
@@ -392,6 +439,7 @@ public class MainActivity extends Activity {
           @Override
           public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             String u = request.getUrl().toString();
+            if(request.isForMainFrame()){t.addressPending=false;refreshPagePolicy(t);}
             if (popup && "about:blank".equals(u)) return false;
             if (!"https".equalsIgnoreCase(request.getUrl().getScheme())
                 || !BrowserPolicy.allowed(u, false)) {
@@ -422,6 +470,8 @@ public class MainActivity extends Activity {
 
           @Override
           public void onPageStarted(WebView view, String url, android.graphics.Bitmap icon) {
+            if(!url.startsWith("https://aegis.invalid/"))t.addressPending=false;
+            if(!t.addressPending)muteTab(t,true);
             permissions.cancel();
             if(t.permissionScope!=null)t.permissionScope.revision++;
             if (t == current) hideVideo();
@@ -444,7 +494,8 @@ public class MainActivity extends Activity {
             if(title!=null&&!title.trim().isEmpty())t.title=title;
             inject(t);
             history.record(t.historyScope, url, t.title);
-            if (t == current) update();
+            if(t!=current)pauseTab(t);
+            if (t == current) {update();if(t.addressPending)restoreNewTabFocus(t);}
           }
 
           @Override
@@ -688,7 +739,14 @@ public class MainActivity extends Activity {
   }
 
   void focusNewTab(Tab tab) {
-    address.setText("");address.requestFocus();
+    tab.addressPending=true;
+    address.setText("");restoreNewTabFocus(tab);
+  }
+
+  void restoreNewTabFocus(Tab tab) {
+    if(current!=tab)return;
+    // Reclaim focus after WebView load without replacing an already typed draft.
+    address.requestFocus();
     address.postDelayed(()->{if(current==tab&&address.hasFocus()&&!isFinishing())
       ((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).showSoftInput(address,InputMethodManager.SHOW_IMPLICIT);},100);
   }
@@ -826,6 +884,7 @@ public class MainActivity extends Activity {
       String line;
       while ((line = reader.readLine()) != null) html.append(line).append('\n');
       t.url = "";
+      t.addressPending=true;
       t.web.loadDataWithBaseURL(
           "https://aegis.invalid/",
           html.toString().replace("</style>", BrowserAppearance.homeCss(palette) + "</style>"),
@@ -860,6 +919,8 @@ public class MainActivity extends Activity {
                     ? "https://duckduckgo.com/?q="
                     : "https://www.google.com/search?q=")
                 + java.net.URLEncoder.encode(s, "UTF-8");
+      current.addressPending=false;
+      refreshPagePolicy(current);
       current.web.loadUrl(url);
       address.clearFocus();
       ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
@@ -888,23 +949,26 @@ public class MainActivity extends Activity {
                 if (!next.remove(h)) next.add(h);
                 exceptions = next;
                 prefs.edit().putStringSet("exceptions", next).apply();
-                current.web.reload();
+                reloadTab(current);
               } else if (i == 1) {
                 focus = !focus;
                 prefs.edit().putBoolean("focus", focus).apply();
-                current.web.reload();
+                reloadTab(current);
               } else if (i == 2)
                 new AlertDialog.Builder(this)
                     .setTitle("Protection")
                     .setMessage(
                         "Local domain filtering + cosmetic hiding. Android uses a conservative"
                             + " domain subset of EasyList and EasyPrivacy. It does not include the"
-                            + " desktop engine's full filter syntax or scriptlets. YouTube video"
+                            + " desktop engine's full filter syntax or scriptlets. An early YouTube"
+                            + " player-data filter runs when this WebView supports document-start scripts. YouTube video"
                             + " ads are not guaranteed to be blocked.\n\n"
                             + "Safe Browsing is enabled; certificate failures are blocked. Camera,"
                             + " microphone and location ask per site. Notifications remain denied. No VPN,"
                             + " remote proxy or browsing telemetry is used.\n\n"
-                            + "Keep Android System WebView updated. This preview has not had an"
+                            + "Videos require a tap and pause when you switch tabs. Keep Android System WebView updated.\n"
+                            + "Early filtering available: " + WebViewFeature.isFeatureSupported(WebViewFeature.DOCUMENT_START_SCRIPT)
+                            + " · Background audio muting available: " + WebViewFeature.isFeatureSupported(WebViewFeature.MUTE_AUDIO) + "\n\nThis preview has not had an"
                             + " independent security audit.")
                     .setPositiveButton("OK", null)
                     .show();
@@ -928,12 +992,12 @@ public class MainActivity extends Activity {
     new AlertDialog.Builder(this).setTitle("Fix this page").setMessage(message)
       .setPositiveButton(temporary?"Undo filter test":"Test filters · 5 min",(d,w)->{
         if(current!=tab||!tabs.contains(tab))return;
-        if(temporary){tab.repairUntil=0;tab.repairSite="";if(tab.repairExpiry!=null)root.removeCallbacks(tab.repairExpiry);tab.web.reload();}
+        if(temporary){tab.repairUntil=0;tab.repairSite="";if(tab.repairExpiry!=null)root.removeCallbacks(tab.repairExpiry);reloadTab(tab);}
         else {String site=BrowserPermissions.origin(tab.url);if(site.isEmpty()){toast("Open an HTTPS website first");return;}
           if(tab.repairExpiry!=null)root.removeCallbacks(tab.repairExpiry);
           tab.repairSite=site;tab.repairUntil=System.currentTimeMillis()+300000;
-          tab.repairExpiry=()->{if(tabs.contains(tab)&&tab.repairUntil>0){tab.repairUntil=0;tab.repairSite="";tab.web.reload();}};
-          root.postDelayed(tab.repairExpiry,300000);tab.web.reload();}
+          tab.repairExpiry=()->{if(tabs.contains(tab)&&tab.repairUntil>0){tab.repairUntil=0;tab.repairSite="";reloadTab(tab);}};
+          root.postDelayed(tab.repairExpiry,300000);reloadTab(tab);}
       })
       .setNeutralButton("More help",(d,w)->new AlertDialog.Builder(this).setTitle("Page help")
         .setItems(new String[]{"Camera / microphone / location settings","Clean private comparison","Copy or popup help"},(x,i)->{
@@ -997,7 +1061,7 @@ public class MainActivity extends Activity {
                 case 22:
                   repairPage();break;
                 case 21:
-                  permissions.settings(permissionScope(current),()->{for(Tab tab:tabs)tab.web.reload();});
+                  permissions.settings(permissionScope(current),()->{for(Tab tab:tabs)reloadTab(tab);});
                   break;
                 case 20:
                   BrowserLegal.show(this);
@@ -1020,7 +1084,7 @@ public class MainActivity extends Activity {
                       .web
                       .getSettings()
                       .setCacheMode(noCache ? WebSettings.LOAD_NO_CACHE : WebSettings.LOAD_DEFAULT);
-                  current.web.reload();
+                  reloadTab(current);
                   toast(
                       noCache
                           ? "HTTP cache bypass on; site-managed storage remains"
@@ -1029,7 +1093,7 @@ public class MainActivity extends Activity {
                 case 17:
                   boolean images = current.web.getSettings().getLoadsImagesAutomatically();
                   current.web.getSettings().setLoadsImagesAutomatically(!images);
-                  current.web.reload();
+                  reloadTab(current);
                   toast(images ? "Lite mode: downloaded images disabled" : "Lite mode off");
                   break;
                 case 13:
@@ -1042,7 +1106,7 @@ public class MainActivity extends Activity {
                   newTab(null);
                   break;
                 case 1:
-                  current.web.reload();
+                  reloadTab(current);
                   break;
                 case 2:
                   if (current.web.canGoForward()) current.web.goForward();
@@ -1088,7 +1152,7 @@ public class MainActivity extends Activity {
                               : null);
                   current.web.getSettings().setUseWideViewPort(desktop);
                   current.web.getSettings().setLoadWithOverviewMode(desktop);
-                  current.web.reload();
+                  reloadTab(current);
                   break;
                 case 9:
                   prefs.edit().putBoolean("duck", !prefs.getBoolean("duck", false)).apply();
@@ -1317,7 +1381,7 @@ public class MainActivity extends Activity {
     hideVideo();
     super.onPause();
     CookieManager.getInstance().flush();
-    for (Tab t : tabs) t.web.onPause();
+    for (Tab t : tabs) pauseTab(t);
   }
 
   @Override
@@ -1326,7 +1390,7 @@ public class MainActivity extends Activity {
     if (root != null
         && !appearanceKey.equals(BrowserAppearance.key(BrowserAppearance.palette(this))))
       applyAppearance();
-    for (Tab t : tabs) t.web.onResume();
+    for (Tab t : tabs) {if(t==current)t.web.onResume();else pauseTab(t);}
   }
 
   @Override

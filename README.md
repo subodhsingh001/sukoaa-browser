@@ -1,4 +1,10 @@
-# Sukoaa Browser — 0.9.0
+# Sukoaa Browser — 0.9.1
+
+Desktop update: drag tabs left or right to reorder them. The tab strip scrolls while dragging near either edge. Right-click a tab for Move tab left/right, or move the active tab with Ctrl+Shift+PageUp/PageDown. Moves preserve existing pages and sessions. Regular tab order is restored when session restore is enabled; private tabs remain excluded. Android remains 0.9.0 because its implementation is unchanged. See [release/TAB-REORDERING.md](release/TAB-REORDERING.md).
+
+The Windows installer is unsigned. The internal build explicitly disables publishing; release readiness remains blocked. No public signing approval or Chrome-equivalent security claim is implied.
+
+## Previous desktop update — 0.9.0
 
 Current update: Electron 45.2.1, GeckoView 159.0.20261022150525 (Android code 14), compiled filter startup cache, worker-thread filter updates, bounded filter downloads, production Electron fuse hardening and a disabled-by-default verified application-update channel. Settings → About & updates shows runtime and filter initialization details. See [release/HARDENING-AND-LAUNCH.md](release/HARDENING-AND-LAUNCH.md) for build commands, native/device limits, signing setup and the public-launch process. Public publishing remains blocked; Windows setup is unsigned and Android uses the existing preview signing identity. Speed relative to other browsers remains unverified.
 
@@ -233,3 +239,7 @@ The NSIS Setup.exe installs for the current Windows account, adds Desktop and St
 ## Site permissions — 0.7.1 beta
 
 Menu → Site permissions controls camera, microphone and location per secure origin, with session/saved decisions and private-tab isolation. Android also requests OS permissions. See release/SITE-PERMISSIONS.txt.
+
+## 0.9.2 focus and playback update
+
+See [the fixes and test limits](release/FOCUS-MEDIA-0.9.2.md) and [the one-branch GitHub upload guide](release/PUSH-0.9.2-TO-GITHUB.txt). Includes the previously supplied tab-reordering change. YouTube first-load fixtures are verified; universal live ad blocking and physical-device behavior remain unverified.

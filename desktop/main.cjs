@@ -58,7 +58,7 @@ let data = {
 
 const {SitePermissions} = require('./site-permissions.cjs');
 const {canWriteClipboard} = require('./clipboard-permissions.cjs');
-const {pageLabel,ClosedTabs}=require('./tab-tools.cjs');
+const {pageLabel,ClosedTabs,reorderTabs}=require('./tab-tools.cjs');
 const {tabIcon}=require('./tab-icons.cjs');
 const closedTabs=new ClosedTabs();
 const {PageRepair}=require('./page-repair.cjs');
@@ -164,7 +164,7 @@ function snapshot() {
       title: pageLabel(t.title,t.url,t.private),
       favicon: t.favicon || '',
       audible: t.view.webContents.isCurrentlyAudible(),
-      muted: t.view.webContents.isAudioMuted(),
+      muted: !!t.userMuted,
       url: /^https?:/.test(t.url) ? t.url : "",
       private: t.private,
       blocked: t.blocked,
@@ -332,15 +332,38 @@ function pageMenu(t, params) {
     ]});
   return Menu.buildFromTemplate(items);
 }
-function focusAddress() {
+function focusAddress(preserve = false) {
   const t=current();if(!t)return;
   win.webContents.focus();
-  win.webContents.send('focus-address',{id:t.id,value:/^https?:/.test(t.url)?t.url:''});
+  win.webContents.send('focus-address',{id:t.id,value:/^https?:/.test(t.url)?t.url:'',preserve});
 }
+// The host mute remains effective for WebAudio and cross-origin frames.
+function mediaState(t, enabled, forcePause = false) {
+  if (!t || t.closed || t.view.webContents.isDestroyed()) return;
+  const shouldPause=forcePause || t.mediaActivated || t.view.webContents.isCurrentlyAudible();
+  t.mediaActivated = enabled && current() === t;
+  if(t.mediaActivated)for(const other of tabs)if(other!==t)mediaState(other,false);
+  t.view.webContents.setAudioMuted(!t.mediaActivated || !!t.userMuted);
+  if (!enabled && shouldPause) {
+    const script="document.dispatchEvent(new Event('sukoaa-pause-media'));document.querySelectorAll('video,audio').forEach(m=>m.pause())";
+    for (const frame of t.view.webContents.mainFrame.framesInSubtree) frame.executeJavaScript(script).catch(()=>{});
+  }
+}
+ipcMain.on('page-start-policy', event => {
+  const t=tabs.find(tab=>tab.view.webContents===event.sender);
+  const frame=event.senderFrame;
+  if (!t || frame!==event.sender.mainFrame) {event.returnValue=null;return;}
+  const url=frame.url || t.url;
+  event.returnValue={youtube:!!data.youtubeProtection && isYouTube(url) && !data.exceptions.includes(host(url)) && !repairs.active(t)};
+});
+ipcMain.on('page-media-activate', event => {
+  const t=current();
+  if(t && !panelOpen && event.sender===t.view.webContents && event.senderFrame===event.sender.mainFrame){t.addressPending=false;mediaState(t,true);}
+});
 function select(id) {
   if(lab&&!lab.ids.includes(id)){stopLab(id);return;}
   const old = current();
-  if (old) { leaveFullscreen(old); win.contentView.removeChildView(old.view); }
+  if (old) { if(old.id!==id)mediaState(old,false); leaveFullscreen(old); win.contentView.removeChildView(old.view); }
   active = id;
   const t = current();
   if (t) {
@@ -357,11 +380,19 @@ function reopenTab() {
   const t=create(saved.url);tabs.splice(tabs.indexOf(t),1);
   tabs.splice(Math.min(saved.index,tabs.length),0,t);rememberSession();emit();
 }
+function moveTab(id,index) {
+  if(!reorderTabs(tabs,id,index))return;
+  rememberSession();
+  emit();
+}
 function tabMenu(id) {
   const t=tabs.find(tab=>tab.id===id);if(!t)return;
+  const index=tabs.indexOf(t);
   return Menu.buildFromTemplate([
     {label:'Duplicate tab',enabled:tabs.length<40,click:()=>create(/^https?:/.test(t.url)?t.url:null,t.private)},
-    {label:t.view.webContents.isAudioMuted()?'Unmute tab':'Mute tab',click:()=>{const wc=t.view.webContents;wc.setAudioMuted(!wc.isAudioMuted());emit();}},
+    {label:t.userMuted?'Unmute tab':'Mute tab',click:()=>{t.userMuted=!t.userMuted;mediaState(t,t.mediaActivated);emit();}},
+    {label:'Move tab left',enabled:index>0,click:()=>moveTab(id,tabs.indexOf(t)-1)},
+    {label:'Move tab right',enabled:index<tabs.length-1,click:()=>moveTab(id,tabs.indexOf(t)+1)},
     {type:'separator'},
     {label:'Reopen closed tab',accelerator:'CmdOrCtrl+Shift+T',enabled:closedTabs.items.length>0,click:reopenTab},
     {label:'Close tab',click:()=>close(id)}
@@ -602,6 +633,8 @@ function create(url, priv = false) {
   const view = new WebContentsView({
     webPreferences: {
       session: s,
+      preload: path.join(__dirname, "page-preload.cjs"),
+      autoplayPolicy: "document-user-activation-required",
       nodeIntegration: false,
       contextIsolation: true,
       sandbox: true,
@@ -614,6 +647,9 @@ function create(url, priv = false) {
     id: crypto.randomUUID(),
     view,
     private: priv,
+    addressPending: !url,
+    mediaActivated: false,
+    userMuted: false,
     title: priv ? "Private tab" : "New tab",
     url: url || "",
     blocked: 0,
@@ -632,6 +668,7 @@ function create(url, priv = false) {
   };
   tabs.push(t);
   const wc = view.webContents;
+  wc.setAudioMuted(true);
   wc.setZoomMode("isolated");
   wc.on("zoom-changed", (_event, direction) => {
     if (current() === t) pageZoom(direction === "in" ? "in" : "out").catch(() => {});
@@ -682,8 +719,9 @@ function create(url, priv = false) {
   });
   wc.on('page-favicon-updated',(_e,urls)=>tabIcon(t,urls,emit));
   wc.on('audio-state-changed',emit);
-  wc.on('before-mouse-event',(_event,mouse)=>{if(mouse.type==='mouseDown'&&lab?.ids.includes(t.id)){active=t.id;emit();}});
-  wc.on('focus',()=>{if(lab?.ids.includes(t.id)&&active!==t.id&&!panelOpen)setImmediate(()=>{if(lab&&active!==t.id&&!panelOpen&&!win.webContents.isFocused())current()?.view.webContents.focus();});});
+  wc.on('media-started-playing',()=>{if(current()!==t || !t.mediaActivated)mediaState(t,false,true);});
+  wc.on('before-mouse-event',(_event,mouse)=>{if(mouse.type==='mouseDown'){t.addressPending=false;if(current()===t)mediaState(t,true);}if(mouse.type==='mouseDown'&&lab?.ids.includes(t.id)){active=t.id;emit();}});
+  wc.on('focus',()=>{if(t.addressPending && current()===t && !panelOpen)setImmediate(()=>{if(t.addressPending && current()===t && !panelOpen)focusAddress(true);});if(lab?.ids.includes(t.id)&&active!==t.id&&!panelOpen)setImmediate(()=>{if(lab&&active!==t.id&&!panelOpen&&!win.webContents.isFocused())current()?.view.webContents.focus();});});
   wc.on("did-start-loading", () => {
     t.loadStarted = Date.now();
     t.loading = true;
@@ -699,6 +737,7 @@ function create(url, priv = false) {
     t.emulationKey = null;
     if (active === t.id || lab?.ids.includes(t.id)) layout();
     cosmetics(t);
+    if(t.addressPending && current()===t)focusAddress(true);
   });
   wc.on("did-start-navigation", (_e, url, _inPlace, main) => {
     if (main) {
@@ -708,6 +747,8 @@ function create(url, priv = false) {
       t.url = url;
       if (!_inPlace) {
         t.navigationRevision++;
+        if(/^https?:/.test(url))t.addressPending=false;
+        mediaState(t,false);
         repairs.navigated(t,url);
         if(!repairs.active(t))clearTimeout(t.repairTimer);
         t.favicon='';t.iconRevision=(t.iconRevision || 0)+1;
@@ -742,6 +783,7 @@ function create(url, priv = false) {
     }
     rememberSession();
     emit();
+    if(t.addressPending && current()===t)focusAddress(true);
   });
   wc.on('did-start-navigation',(_event,_url,inPlace,main)=>{if(main && !inPlace)t.permissionRevision=(t.permissionRevision || 0)+1;});
   wc.on("did-fail-load", (_e, code, description, _url, main) => {
@@ -913,9 +955,10 @@ app.whenReady().then(async () => {
       else if (name === "new") create(null, arg === true);
       else if (name === 'reopen') reopenTab();
       else if (name === 'tabMenu') tabMenu(String(arg))?.popup({window:win});
+      else if (name === 'moveTab') moveTab(arg?.id,arg?.index);
       else if (name === 'muteTab') {
         const tab=tabs.find(tab=>tab.id===String(arg));
-        if(tab){const wc=tab.view.webContents;wc.setAudioMuted(!wc.isAudioMuted());}
+        if(tab){tab.userMuted=!tab.userMuted;mediaState(tab,tab.mediaActivated);}
       }
       else if (name === "cleanTest") create(/^https?:/.test(t.url) ? t.url : null, true);
       else if (name === "zoom") await pageZoom(arg);
@@ -938,6 +981,7 @@ app.whenReady().then(async () => {
         const url = navigate(arg, data.search);
         if (url) {
           t.suppressHistory = false;
+          t.addressPending=false;
           t.view.webContents.loadURL(url).catch(() => {});
           t.view.webContents.focus();
         }
@@ -958,6 +1002,7 @@ app.whenReady().then(async () => {
         t.view.webContents.reload();
       } else if (name === "home") {
         t.url = "";
+        t.addressPending=true;
         t.view.webContents.loadFile(path.join(__dirname, "home.html"));
         focusAddress();
       } else if (name === "bookmark" && /^https?:/.test(t.url)) {
@@ -975,6 +1020,7 @@ app.whenReady().then(async () => {
         panelOpen = arg === true;
         t.view.setVisible(!panelOpen);
         layout();
+        if(!panelOpen && (!t.url || t.url.startsWith("file:")))focusAddress(true);
       } else if (name === "shield") {
         const h = host(t.url);
         if (h) {
@@ -1103,6 +1149,7 @@ app.on("web-contents-created", (_e, wc) => {
   wc.on("before-input-event", (e, input) => {
     if (!win || (wc !== win.webContents && !tabs.some(t => t.view.webContents === wc))) return;
     if (input.type !== "keyDown") return;
+    if(wc===current()?.view.webContents && !input.control && !input.meta && !input.alt){current().addressPending=false;mediaState(current(),true);}
     const key = input.key.toLowerCase();
     if ((input.control || input.meta) && !input.alt) {
       const action = ["+", "=", "add"].includes(key) || ["Equal", "NumpadAdd"].includes(input.code) ? "in"
@@ -1111,6 +1158,9 @@ app.on("web-contents-created", (_e, wc) => {
       if (action) { e.preventDefault(); pageZoom(action).catch(() => {}); return; }
     }
     if ((input.control || input.meta) && input.shift && key === "n") {e.preventDefault(); create(null,true);return;}
+    if ((input.control || input.meta) && input.shift && !input.alt && ['pageup','pagedown'].includes(key)) {
+      e.preventDefault();moveTab(active,tabs.findIndex(t=>t.id===active)+(key==='pageup'?-1:1));return;
+    }
     if ((input.control || input.meta) && input.shift && key === "r") {e.preventDefault();current()?.view.webContents.reloadIgnoringCache();return;}
     if (key === "f12" || ((input.control || input.meta) && input.shift && ["i", "j"].includes(key))) {
       e.preventDefault(); tools(); return;

@@ -1,0 +1,12 @@
+desktop/node_modules/
+/build/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+.DS_Store
+shared/compiled/

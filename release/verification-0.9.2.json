@@ -1,0 +1,68 @@
+{
+  "version": "0.9.2",
+  "date": "2026-11-05",
+  "baseCommit": "e8c0c7c63c7093c316ee6745c1609aa82fdcb253",
+  "includesPreviousTabReordering": true,
+  "nodeTests": {
+    "passed": 37,
+    "failed": 0,
+    "command": "npm --prefix desktop test"
+  },
+  "desktopNativeFixtures": {
+    "status": "passed in Electron/Xvfb container with test-only sandbox exception",
+    "tests": [
+      "actual New tab/Private button clicks, immediate draft preservation and native keyboard focus",
+      "late native home-focus recovery; deliberate trusted page click cancels recovery",
+      "initial inline YouTube player response filtered; video details preserved",
+      "initial autoplay denied; trusted Play accepted; background media paused and host audio muted",
+      "return does not resume media; user mute retained; disabling YouTube protection bypasses early hook",
+      "existing history/private/tab-experience/tab-reordering fixtures"
+    ],
+    "liveYouTubeAdCoverage": "not verified",
+    "physicalWindows": "not tested",
+    "physicalLinux": "not tested"
+  },
+  "android": {
+    "applicationId": "com.subo.aegis.next",
+    "versionCode": 15,
+    "versionName": "0.9.2",
+    "build": "assembleRelease and lintRelease passed",
+    "lintErrors": 0,
+    "lintWarnings": 15,
+    "signerSha256": "c11b03429beb42a759df1306afbae979cd87b23fb6af05c244bbb7c52edb48f2",
+    "sameSignerAsPreviousAPK": true,
+    "signatureVerified": true,
+    "alignmentCheck": "zipalign -c -P 16 -v 4 passed",
+    "bundledPolicyAssetsMatchSource": true,
+    "physicalDevice": "not tested",
+    "buildWarnings": [
+      "AGP 9.1.1 is tested through compileSdk 37.0; project uses 37.2",
+      "Deprecated APIs/Gradle features; lint warnings retained"
+    ]
+  },
+  "windows": {
+    "publisherCertificate": "not configured; unsigned candidate",
+    "physicalDevice": "not tested",
+    "packagedImplementationMatchesSource": true,
+    "fuses": "RunAsNode/NodeOptions/CLI inspect disabled; ASAR-only/integrity enabled; cookie encryption enabled; file protocol privileges retained for local UI",
+    "installerPayloadMatchesStagedASAR": true,
+    "unsignedPEVerified": true
+  },
+  "compliance": {
+    "inventoryIntegrity": "passed; 4 source archives, 13 npm runtime records, 53 Android POM records",
+    "legalAndCorrespondingSourceClearance": "not concluded; release gates remain blocked"
+  },
+  "engineUpdateCheck": {
+    "electron": {
+      "bundled": "45.2.1",
+      "upstreamObserved": "45.2.3"
+    },
+    "geckoview": {
+      "bundled": "159.0.20261022150525",
+      "upstreamObserved": "159.0.20261102144711"
+    },
+    "status": "updates available; review, upgrade and retest before public distribution",
+    "checkedOn": "2026-11-05"
+  },
+  "publicReleaseAllowed": false
+}

@@ -24,6 +24,8 @@ Electron 45.2.1 is MIT. Preserve the runtime's LICENSE and LICENSES.chromium.htm
 
 Regular pages use the device's Android System WebView; Sukoaa does not redistribute that engine. Private/add-on pages redistribute unmodified GeckoView 159.0.20261022150525 under MPL-2.0 and bundled third-party terms. Mozilla revision: 5add844c26613d7e4d84c799d6e23cf987b1240d at https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d . Maven/source artifacts: https://maven.mozilla.org/maven2/org/mozilla/geckoview/geckoview/159.0.20261022150525/ . MPL text is in Android assets. Exact Android transitive/runtime source review remains pending the build graph. AndroidX/Kotlin and Gradle wrappers retain their own notices; no blanket relicensing is intended.
 
+AndroidX WebKit 1.18.0 is distributed under Apache-2.0. The resolved Android artifact inventory and POM license declarations are in compliance/android-runtime.json and compliance/android-license-metadata.json. AndroidX source artifacts/notices are retained where available; the all-component corresponding-source review remains open. The bundled media and YouTube page policy is original Sukoaa code under GPL-3.0-or-later.
+
 ## Build tools and trademarks
 
 resedit and pe-library retain MIT terms. electron-builder and other build tools are inventoried separately; they are not all shipped in the runtime. Build wrappers retain Apache notices. Google, Chrome, Brave, Mozilla, Android, YouTube and other marks belong to their respective owners; compatibility references do not imply endorsement. The S shield is project-authored; it has not been cleared as a trademark or registered.

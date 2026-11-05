@@ -1,0 +1,10 @@
+{
+  "coordinate": "androidx.webkit:webkit:1.18.0",
+  "sourceArchive": "compliance/sources/androidx-webkit-1.18.0-sources.jar",
+  "upstream": "https://dl.google.com/dl/android/maven2/androidx/webkit/webkit/1.18.0/webkit-1.18.0-sources.jar",
+  "sha256": "a40727d856919e4af057708a4f7871c996d9e643171a6d68472dcafbccecd294",
+  "bytes": 300339,
+  "license": "Apache-2.0",
+  "notice": "android/app/src/main/assets/LICENSE-AndroidX-WebKit.txt",
+  "scope": "This one archive does not establish complete transitive Android corresponding source or legal clearance."
+}

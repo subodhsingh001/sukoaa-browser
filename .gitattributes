@@ -5,3 +5,6 @@
 
 # Preserve the exact bytes of the reviewed scriptlet resource.
 /shared/ublock/resources.json -text
+
+# Preserve exact bytes for the retained dependency POM hash inventory.
+/compliance/android-poms/*.pom -text

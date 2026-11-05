@@ -306,6 +306,14 @@
             "sha256": "147af4e14a1984010d8f155e5e19d781f03c1d70dfed02a8e0d18428b8fc8682"
         },
         {
+            "group": "androidx.webkit",
+            "name": "webkit",
+            "version": "1.18.0",
+            "type": "aar",
+            "file": "webkit-1.18.0.aar",
+            "sha256": "f15a0bd7d51f4bb8dffdd3a2cf5829f9a7de9ad4ba2682fa85d619032050581f"
+        },
+        {
             "group": "com.google.android.gms",
             "name": "play-services-base",
             "version": "18.7.2",

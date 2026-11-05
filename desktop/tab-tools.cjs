@@ -21,4 +21,12 @@ class ClosedTabs {
   take() { return this.items.pop(); }
   clear() { this.items.length=0; }
 }
-module.exports={pageLabel,faviconURL,ClosedTabs};
+// Move an existing tab to its final index without recreating its session/view.
+function reorderTabs(tabs,id,index) {
+  if(typeof id!=='string'||!Number.isInteger(index)||index<0||index>=tabs.length)return false;
+  const from=tabs.findIndex(tab=>tab.id===id);
+  if(from<0||from===index)return false;
+  tabs.splice(index,0,tabs.splice(from,1)[0]);
+  return true;
+}
+module.exports={pageLabel,faviconURL,ClosedTabs,reorderTabs};

@@ -11,7 +11,7 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  const app=new EventEmitter();app.enableSandbox=()=>{};app.getPath=()=>profile;app.whenReady=()=>Promise.resolve();app.quit=()=>{};
  const all=[];let next=1, menu;
  class Contents extends EventEmitter {
-  constructor(session){super();this.id=next++;this.session=session;this.mainFrame={};this.url='';this.navigationHistory={canGoBack:()=>false,canGoForward:()=>false};this.open=false;this.ready=false;all.push(this);}
+  constructor(session){super();this.id=next++;this.session=session;this.mainFrame={framesInSubtree:[]};this.url='';this.navigationHistory={canGoBack:()=>false,canGoForward:()=>false};this.open=false;this.ready=false;all.push(this);}
   setZoomMode(mode){this.zoomMode=mode;} setZoomFactor(value){this.zoom=value;} getZoomFactor(){return this.zoom || 1;}
   isCurrentlyAudible(){return false;} isAudioMuted(){return !!this.muted;} setAudioMuted(value){this.muted=value;}
   getType(){return "window";} setWindowOpenHandler(){} getURL(){return this.url;} getTitle(){return "Fixture";} isDestroyed(){return false;} close(){this.closed=true;} focus(){} send(){}
@@ -29,8 +29,8 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
   setFullScreen(value){if(this.full===value)return;this.full=value;this.emit(value?'enter-full-screen':'leave-full-screen');}
  }
  const sessions=new Map();const session={fromPartition(name){if(!sessions.has(name)){const s=new EventEmitter();Object.assign(s,{setPermissionRequestHandler:fn=>s.request=fn,setPermissionCheckHandler:fn=>s.check=fn,webRequest:{onHeadersReceived(){},onBeforeRequest(fn){s.beforeRequest=fn;}},clearCache:()=>Promise.resolve(),clearStorageData:()=>Promise.resolve()});sessions.set(name,s);}return sessions.get(name);}};
- let handle;
- const electron={app,webContents:{fromId:id=>all.find(w=>w.id===id)},BrowserWindow:Window,WebContentsView:View,session,nativeTheme:{},dialog:{},clipboard:{},ipcMain:{handle:(_name,fn)=>handle=fn},Menu:{buildFromTemplate(items){menu=items;return {popup(){}};}}};
+ let handle;const pageIPC=new Map();
+ const electron={app,webContents:{fromId:id=>all.find(w=>w.id===id)},BrowserWindow:Window,WebContentsView:View,session,nativeTheme:{},dialog:{},clipboard:{},ipcMain:{on:(name,fn)=>pageIPC.set(name,fn),handle:(_name,fn)=>handle=fn},Menu:{buildFromTemplate(items){menu=items;return {popup(){}};}}};
  const filename=path.resolve(__dirname,'../desktop/main.cjs');
  const loaded=new Module(filename,module);loaded.filename=filename;loaded.paths=Module._nodeModulePaths(path.dirname(filename));
  const original=loaded.require.bind(loaded);loaded.require=name=>name==='electron'?electron:original(name);
@@ -52,6 +52,16 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  assert.equal(page.emulation.viewSize.width, 390, 'Pending preview applies at DOM ready');
  await command('device','desktop');
  page.url='https://www.youtube.com/watch?v=fixture';
+ page.mainFrame.url=page.url;
+ const policy={sender:page,senderFrame:page.mainFrame};pageIPC.get('page-start-policy')(policy);
+ assert.equal(policy.returnValue.youtube,true,'Recognized YouTube main frame receives only the local policy');
+ const untrusted={sender:win.webContents,senderFrame:win.webContents.mainFrame};pageIPC.get('page-start-policy')(untrusted);assert.equal(untrusted.returnValue,null);
+ const embedded={sender:page,senderFrame:{url:page.url}};pageIPC.get('page-start-policy')(embedded);assert.equal(embedded.returnValue,null,'Embedded frames cannot ask for main-frame policy');
+ assert.equal(page.isAudioMuted(),true);
+ pageIPC.get('page-media-activate')(embedded);assert.equal(page.isAudioMuted(),true,'Embedded IPC cannot activate host audio');
+ pageIPC.get('page-media-activate')(policy);assert.equal(page.isAudioMuted(),false);
+ await command('muteTab',id);assert.equal(page.isAudioMuted(),true);pageIPC.get('page-media-activate')(policy);assert.equal(page.isAudioMuted(),true,'A page gesture cannot override user mute');await command('muteTab',id);
+
  assert.equal(view.bounds.y,86);
  assert.equal(page.session.check(page,'fullscreen'),true);
  assert.equal(page.session.check(page,'automatic-fullscreen'),false);
@@ -81,5 +91,12 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  page.emit('enter-html-full-screen');await command('new');assert.equal(win.full,false);assert.equal(win.views[0].bounds.y,86);
  assert.equal(view.options.webPreferences.nodeIntegration,false);assert.equal(view.options.webPreferences.sandbox,true);assert.equal(view.options.webPreferences.contextIsolation,true);
  await assert.rejects(handle({sender:page,senderFrame:page.mainFrame},'devtools'),/Untrusted sender/);
+ const beforeMove=await command('state'),moving=beforeMove.tabs[0].id;
+ await command('moveTab',{id:moving,index:beforeMove.tabs.length-1});
+ let moved=await command('state');assert.equal(moved.tabs.at(-1).id,moving);assert.equal(moved.active,beforeMove.active);
+ for(const index of [-1,100,0.5,'1']){const order=moved.tabs.map(t=>t.id);await command('moveTab',{id:moving,index});assert.deepEqual((await command('state')).tabs.map(t=>t.id),order);}
+ await command('tabMenu',moving);assert.equal(menu.find(item=>item.label==='Move tab right').enabled,false);
+ menu.find(item=>item.label==='Move tab left').click();moved=await command('state');assert.equal(moved.tabs.at(-2).id,moving);
+ await assert.rejects(handle({sender:page,senderFrame:page.mainFrame},'moveTab',{id:moving,index:0}),/Untrusted sender/);
  fs.rmSync(profile,{recursive:true,force:true});
 });

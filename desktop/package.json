@@ -1,6 +1,6 @@
 {
   "name": "aegis-browser",
-  "version": "0.9.0",
+  "version": "0.9.2",
   "description": "Sukoaa browser beta candidate; public release gated",
   "main": "main.cjs",
   "scripts": {
@@ -10,7 +10,8 @@
     "dist": "electron-builder",
     "dist:linux": "node build-linux.cjs",
     "dist:windows": "electron-builder --win nsis --x64",
-    "dist:windows:internal": "node build-windows-internal.cjs"
+    "dist:windows:internal": "node build-windows-internal.cjs",
+    "prestart": "node ../tools/sync-page-scripts.cjs"
   },
   "keywords": [],
   "author": "Subo",
