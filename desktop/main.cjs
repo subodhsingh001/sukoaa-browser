@@ -340,11 +340,9 @@ function focusAddress(preserve = false) {
 // The host mute remains effective for WebAudio and cross-origin frames.
 function mediaState(t, enabled, forcePause = false) {
   if (!t || t.closed || t.view.webContents.isDestroyed()) return;
-  const shouldPause=forcePause || t.mediaActivated || t.view.webContents.isCurrentlyAudible();
-  t.mediaActivated = enabled && current() === t;
-  if(t.mediaActivated)for(const other of tabs)if(other!==t)mediaState(other,false);
+  t.mediaActivated = enabled;
   t.view.webContents.setAudioMuted(!t.mediaActivated || !!t.userMuted);
-  if (!enabled && shouldPause) {
+  if (!enabled && forcePause) {
     const script="document.dispatchEvent(new Event('sukoaa-pause-media'));document.querySelectorAll('video,audio').forEach(m=>m.pause())";
     for (const frame of t.view.webContents.mainFrame.framesInSubtree) frame.executeJavaScript(script).catch(()=>{});
   }
@@ -363,7 +361,7 @@ ipcMain.on('page-media-activate', event => {
 function select(id) {
   if(lab&&!lab.ids.includes(id)){stopLab(id);return;}
   const old = current();
-  if (old) { if(old.id!==id)mediaState(old,false); leaveFullscreen(old); win.contentView.removeChildView(old.view); }
+  if (old) { leaveFullscreen(old); win.contentView.removeChildView(old.view); }
   active = id;
   const t = current();
   if (t) {
@@ -389,13 +387,19 @@ function tabMenu(id) {
   const t=tabs.find(tab=>tab.id===id);if(!t)return;
   const index=tabs.indexOf(t);
   return Menu.buildFromTemplate([
+    {label:'New tab',accelerator:'CmdOrCtrl+T',enabled:tabs.length<40,click:()=>create(null,false)},
+    {label:'New private tab',accelerator:'CmdOrCtrl+Shift+N',enabled:tabs.length<40,click:()=>create(null,true)},
+    {type:'separator'},
     {label:'Duplicate tab',enabled:tabs.length<40,click:()=>create(/^https?:/.test(t.url)?t.url:null,t.private)},
     {label:t.userMuted?'Unmute tab':'Mute tab',click:()=>{t.userMuted=!t.userMuted;mediaState(t,t.mediaActivated);emit();}},
     {label:'Move tab left',enabled:index>0,click:()=>moveTab(id,tabs.indexOf(t)-1)},
     {label:'Move tab right',enabled:index<tabs.length-1,click:()=>moveTab(id,tabs.indexOf(t)+1)},
     {type:'separator'},
     {label:'Reopen closed tab',accelerator:'CmdOrCtrl+Shift+T',enabled:closedTabs.items.length>0,click:reopenTab},
-    {label:'Close tab',click:()=>close(id)}
+    {label:'Close tab',click:()=>close(id)},
+    {type:'separator'},
+    {label:'Minimize window',click:()=>win.minimize()},
+    {label:win.isMaximized()?'Restore window':'Maximize window',click:()=>{if(win.isMaximized())win.unmaximize();else win.maximize();}}
   ]);
 }
 function layoutLab(w,h) {
@@ -719,7 +723,7 @@ function create(url, priv = false) {
   });
   wc.on('page-favicon-updated',(_e,urls)=>tabIcon(t,urls,emit));
   wc.on('audio-state-changed',emit);
-  wc.on('media-started-playing',()=>{if(current()!==t || !t.mediaActivated)mediaState(t,false,true);});
+  wc.on('media-started-playing',()=>{if(!t.mediaActivated)mediaState(t,false,true);});
   wc.on('before-mouse-event',(_event,mouse)=>{if(mouse.type==='mouseDown'){t.addressPending=false;if(current()===t)mediaState(t,true);}if(mouse.type==='mouseDown'&&lab?.ids.includes(t.id)){active=t.id;emit();}});
   wc.on('focus',()=>{if(t.addressPending && current()===t && !panelOpen)setImmediate(()=>{if(t.addressPending && current()===t && !panelOpen)focusAddress(true);});if(lab?.ids.includes(t.id)&&active!==t.id&&!panelOpen)setImmediate(()=>{if(lab&&active!==t.id&&!panelOpen&&!win.webContents.isFocused())current()?.view.webContents.focus();});});
   wc.on("did-start-loading", () => {

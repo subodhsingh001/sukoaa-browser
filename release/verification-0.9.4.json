@@ -1,0 +1,63 @@
+{
+  "version": "0.9.4",
+  "date": "2026-11-05",
+  "basedOn": "Complete 0.9.3 source snapshot previously supplied",
+  "behavior": [
+    "new/restored documents require user activation",
+    "started media continues across tab selection",
+    "selecting a tab never calls play",
+    "manual pause remains paused",
+    "desktop hold/right-click/Shift+F10 tab actions",
+    "Android long-press/three-dot tab actions"
+  ],
+  "nodeTests": {
+    "passed": 37,
+    "failed": 0
+  },
+  "nativeElectronFixtures": {
+    "focusMediaTabActions": "passed",
+    "threeVideoPagesAcrossRealRestart": "passed",
+    "tabReordering": "passed",
+    "tabExperience": "passed",
+    "packagedASARHarness": "passed",
+    "environment": "Electron 45.2.3 in Linux/Xvfb; test-only root/container sandbox exception; no physical Windows run"
+  },
+  "android": {
+    "build": "assembleRelease and lintRelease passed",
+    "versionCode": 17,
+    "versionName": "0.9.4",
+    "applicationId": "com.subo.aegis.next",
+    "lintErrors": 0,
+    "lintWarnings": 15,
+    "apkSignatureVerified": true,
+    "signerSha256": "c11b03429beb42a759df1306afbae979cd87b23fb6af05c244bbb7c52edb48f2",
+    "sameSigningIdentityAsPreviousAPK": true,
+    "zipalign16KiBPassed": true,
+    "policyAssetsMatchSource": true,
+    "builtInPolicyVersion": "1.1.0",
+    "physicalDevice": "not tested"
+  },
+  "windows": {
+    "installerPayloadMatchesStagedASAR": true,
+    "packagedCodeMatchesSource": true,
+    "unsignedPEVerified": true,
+    "fuses": "ASAR-only/integrity and cookie encryption enabled; RunAsNode/NodeOptions/CLI inspect disabled",
+    "physicalDevice": "not tested"
+  },
+  "engineCheck": {
+    "checkedAt": "2026-11-05T14:15:13.582Z",
+    "electron": {
+      "installed": "45.2.3",
+      "upstream": "45.2.3"
+    },
+    "geckoview": {
+      "installed": "159.0.20261102144711",
+      "upstream": "159.0.20261102144711"
+    }
+  },
+  "complianceIntegrity": "passed; existing release blockers retained",
+  "liveYouTubePlaybackAndAdCoverage": "not verified; sites can apply their own media rules",
+  "androidActivityBackgroundAudio": "leaving a browsing activity still invokes lifecycle pause; not a foreground-service/lock-screen audio guarantee",
+  "tabTearOffToNewWindow": "not implemented; user selected hold/right-click menu scope",
+  "publicReleaseAllowed": false
+}

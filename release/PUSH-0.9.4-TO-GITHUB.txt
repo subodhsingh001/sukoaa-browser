@@ -1,0 +1,29 @@
+SUKOAA 0.9.4 — SOURCE AND RELEASE FILES
+
+Use SukoaaBrowser-Source.zip for the complete matching desktop, Android, shared, tests, tools, compliance and workflow source. It includes the 0.9.3 engine patches and this playback/tab-actions update.
+
+GitHub Desktop:
+1. Clone https://github.com/subodhsingh001/sukoaa-browser.git into a clean folder. Fetch/Pull main.
+2. Create a branch named fix/background-playback-tab-actions.
+3. Unzip SukoaaBrowser-Source.zip. Copy the CONTENTS of its SukoaaBrowser-Source folder into that cloned repository. Include .github, .gitattributes and .gitignore; do not create an extra nested source folder. Review differences before replacing unrelated work.
+4. Review Changes. Do not commit private signing keys, passwords, node_modules, build folders, local.properties, APK or EXE files.
+5. Commit with: Keep started media playing across tabs and add tab action menus.
+6. Publish/Push the branch, open a pull request into main and review the checks. Do not force push a protected branch.
+7. After device testing, attach APK, Setup.exe, source ZIP and checksums as GitHub Release assets. Changing repository source does not replace earlier download assets. Remaining public-release blockers still apply.
+
+Optional patch:
+SukoaaBrowser-0.9.4-Changes.zip contains a patch against the exact complete 0.9.3 source snapshot previously supplied. It is NOT a patch against an assumed GitHub main revision. Use it only on that unchanged snapshot. Run git apply --check before applying; if it fails, stop and review instead of forcing it.
+
+Desktop build:
+  cd desktop
+  npm ci
+  npm test
+  npm start
+  npm run dist:windows:internal
+
+Android build:
+Install JDK 17 and the Android SDK/platform/build-tools pinned in android/app/build.gradle; configure your local.properties, then run from android:
+  ./gradlew :app:assembleRelease :app:lintRelease
+Use your ORIGINAL private Android key to sign updates. The signing key is intentionally excluded from the source ZIP. The supplied APK keeps com.subo.aegis.next and the original signer, versionName 0.9.4 / versionCode 17.
+
+Use the APK's tab list three-dot menu or long-press a row. On desktop hold/right-click a tab for actions; Minimize/Maximize are in the menu. This update does not implement tab tear-off into a second browser window.

@@ -49,5 +49,8 @@ jobs:
           xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-reorder-smoke.cjs
           SUKOAA_REORDER_RESTORE=1 xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-reorder-smoke.cjs
 
-      - name: New-tab focus, media ownership, first-load YouTube policy
+      - name: New-tab focus, playback activation, first-load YouTube policy
         run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/focus-media-smoke.cjs
+
+      - name: Restored video tabs wait for Play after a real restart
+        run: xvfb-run -a node tests/restore-playback-smoke.cjs

@@ -8,8 +8,9 @@ import java.util.List;
 
 /** Scrollable list with separate, accessible open and remove targets. */
 final class BrowserListDialog {
-  record Row(String title, String detail, Runnable open, Runnable remove, android.graphics.Bitmap icon) {
-    Row(String title,String detail,Runnable open,Runnable remove){this(title,detail,open,remove,null);}
+  record Row(String title, String detail, Runnable open, Runnable remove, android.graphics.Bitmap icon, Runnable actions) {
+    Row(String title,String detail,Runnable open,Runnable remove){this(title,detail,open,remove,null,null);}
+    Row(String title,String detail,Runnable open,Runnable remove,android.graphics.Bitmap icon){this(title,detail,open,remove,icon,null);}
   }
 
   static void show(
@@ -67,7 +68,13 @@ final class BrowserListDialog {
             dialog.dismiss();
             row.open().run();
           });
+      if(row.actions()!=null)open.setOnLongClickListener(v->{dialog.dismiss();row.actions().run();return true;});
       line.addView(open, new LinearLayout.LayoutParams(0, -2, 1));
+      if(row.actions()!=null) {
+        Button more=new Button(activity);more.setText("⋮");more.setContentDescription("Tab actions for "+row.title());
+        more.setOnClickListener(v->{dialog.dismiss();row.actions().run();});
+        line.addView(more,new LinearLayout.LayoutParams((int)(48*activity.getResources().getDisplayMetrics().density),-2));
+      }
       Button remove = new Button(activity);
       remove.setText("×");
       remove.setContentDescription(removeLabel + " " + row.title());

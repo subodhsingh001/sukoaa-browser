@@ -41,6 +41,24 @@ app.whenReady().then(async()=>{
    home.focus();await wait(100);assert(home.isFocused(),'Page click cancels address focus ownership');
   }
   console.log('PASS actual New tab and Private button clicks keep native address focus and typed draft after home finishes');
+  await js("window.tabActionCalls=[];window.realCommand=command;command=async(name,arg)=>{if(name==='tabMenu'){tabActionCalls.push(arg);return;}return realCommand(name,arg);};true");
+  const tabSelector='.tab.active [role=tab]';
+  const tabPoint=await js(`(()=>{const r=document.querySelector('${tabSelector}').getBoundingClientRect();return {x:r.x+25,y:r.y+r.height/2}})()`);
+  await shell.debugger.sendCommand('Input.dispatchMouseEvent',{type:'mousePressed',...tabPoint,button:'left',clickCount:1});await wait(700);
+  await shell.debugger.sendCommand('Input.dispatchMouseEvent',{type:'mouseReleased',...tabPoint,button:'left',clickCount:1});
+  assert.equal(await js('tabActionCalls.length'),1,'Holding a tab opens its actions once');
+  await js("document.querySelector('.tab.active [role=tab]').focus()");
+  await shell.debugger.sendCommand('Input.dispatchKeyEvent',{type:'keyDown',key:'F10',code:'F10',modifiers:8,windowsVirtualKeyCode:121});
+  await shell.debugger.sendCommand('Input.dispatchKeyEvent',{type:'keyUp',key:'F10',code:'F10',modifiers:8,windowsVirtualKeyCode:121});
+  await until(()=>js('tabActionCalls.length===2'),'keyboard tab menu');
+  await js("document.querySelector('.tab.active').dispatchEvent(new MouseEvent('contextmenu',{bubbles:true,cancelable:true}))");
+  assert.equal(await js('tabActionCalls.length'),3,'Right-click opens tab actions');
+  await shell.debugger.sendCommand('Input.dispatchMouseEvent',{type:'mousePressed',...tabPoint,button:'left',clickCount:1});
+  await shell.debugger.sendCommand('Input.dispatchMouseEvent',{type:'mouseReleased',...tabPoint,button:'left',clickCount:1});await wait(700);
+  assert.equal(await js('tabActionCalls.length'),3,'A short click must not trigger the hold menu');
+  await js('command=window.realCommand;true');
+  console.log('PASS tab long-press, right-click, Shift+F10 and short-click cancellation');
+
   server=https.createServer({key:fs.readFileSync(key),cert:fs.readFileSync(cert)},(req,res)=>{
    if(req.url==='/tone.wav'){res.setHeader('Content-Type','audio/wav');res.end(wav);return;}
    res.setHeader('Content-Type','text/html');
@@ -61,16 +79,17 @@ app.whenReady().then(async()=>{
   await until(()=>page.executeJavaScript('window.played===true'),'trusted Play click');assert.equal(page.isAudioMuted(),false);
   await command('new');await command('navigate',origin+'/second');
   let second;await until(()=>{second=webContents.getAllWebContents().find(w=>w.getURL()===origin+'/second');return second&&!second.isLoading();},'second fixture');
-  await until(()=>page.executeJavaScript('document.querySelector("audio").paused'),'old media paused');assert(page.isAudioMuted());
+  await wait(300);assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),false,'Started first tab continues while the second tab opens');assert.equal(page.isAudioMuted(),false);
   assert.equal(await second.executeJavaScript('document.querySelector("audio").paused'),true);
   const secondId=(await command('state')).active;
   second.sendInputEvent({type:'mouseDown',x:25,y:18,button:'left',clickCount:1});second.sendInputEvent({type:'mouseUp',x:25,y:18,button:'left',clickCount:1});
-  await until(()=>second.executeJavaScript('window.played===true'),'second Play click');assert.equal(second.isAudioMuted(),false);assert(page.isAudioMuted());
-  await command('select',firstId);await until(()=>second.executeJavaScript('document.querySelector("audio").paused'),'second paused');assert(second.isAudioMuted());
-  assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),true);
-  assert.equal(await page.executeJavaScript('document.querySelector("audio").play().then(()=>"played",e=>e.name)'),'NotAllowedError');
+  await until(()=>second.executeJavaScript('window.played===true'),'second Play click');assert.equal(second.isAudioMuted(),false);assert.equal(page.isAudioMuted(),false,'Starting another tab does not revoke the first user activation');
+  await command('select',firstId);await wait(300);assert.equal(await second.executeJavaScript('document.querySelector("audio").paused'),false);assert.equal(second.isAudioMuted(),false);
+  await page.executeJavaScript('document.querySelector("audio").pause()');await command('select',secondId);await command('select',firstId);await wait(100);
+  assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),true,'Manual pause persists across switching');
+
   await command('select',secondId);await command('muteTab',secondId);assert.equal((await command('state')).tabs.find(t=>t.id===secondId).muted,true);
-  console.log('PASS first inline YouTube player data filtered; content preserved; site has no privileged API; no initial autoplay; trusted playback works; background media paused/muted; returning does not restart; user mute retained');
+  console.log('PASS first inline YouTube player data filtered; content preserved; site has no privileged API; no initial autoplay; trusted playback works; started media continues in background; manual pause remains paused; user mute retained');
   // Disabling YouTube protection must bypass the early hook after reload.
   await command('settings',{youtubeProtection:false});await until(()=>!second.isLoading(),'disabled reload');
   assert.equal(await second.executeJavaScript('earlyInstalled'),false);assert.equal(await second.executeJavaScript('firstAdCount'),1);
