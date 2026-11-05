@@ -171,7 +171,7 @@ function renderTabList(s) {
 function tabBadge(tab) {
   const badge=document.createElement('span');badge.className='tab-monogram';
   if(tab.favicon?.startsWith('data:image/png;base64,')) {
-    const image=document.createElement('img');image.src=tab.favicon;image.alt='';
+    const image=document.createElement('img');image.src=tab.favicon;image.alt='';image.draggable=false;
     image.onerror=()=>badge.replaceChildren(makeIcon(tab.private?'private':'globe'));
     badge.append(image);
   } else if(tab.private || !tab.url)badge.append(makeIcon(tab.private?'private':'brand'));
@@ -179,22 +179,74 @@ function tabBadge(tab) {
   return badge;
 }
 let lastActiveTab, addressTabId;
+let draggedTabId=null,tabDragX=0,tabDragFrame=0;
+function clearTabDropMarker() {
+  for(const node of $('tabs').children)node.classList.remove('drop-before','drop-after');
+}
+function tabDropPosition(x) {
+  const others=[...$('tabs').children].filter(node=>node.dataset.tabId!==draggedTabId);
+  const index=others.findIndex(node=>{const r=node.getBoundingClientRect();return x<r.left+r.width/2;});
+  return {others,index:index<0?others.length:index};
+}
+function markTabDrop() {
+  clearTabDropMarker();
+  const {others,index}=tabDropPosition(tabDragX);
+  const target=others[index] || others[others.length-1];
+  target?.classList.add(index===others.length?'drop-after':'drop-before');
+}
+function scrollDraggedTabs() {
+  const box=$('tabs'),r=box.getBoundingClientRect(),edge=Math.min(40,r.width/4);
+  const speed=tabDragX<r.left+edge?-12:tabDragX>r.right-edge?12:0;
+  if(speed)box.scrollLeft+=speed;
+  markTabDrop();
+  tabDragFrame=requestAnimationFrame(scrollDraggedTabs);
+}
+function stopTabAutoScroll() {cancelAnimationFrame(tabDragFrame);tabDragFrame=0;clearTabDropMarker();}
+function finishTabDrag() {
+  stopTabAutoScroll();draggedTabId=null;
+  for(const node of $('tabs').children)node.classList.remove('tab-dragging');
+}
+function attachTabDragging(wrap,open,id) {
+  wrap.draggable=true;
+  wrap.ondragstart=e=>{
+    const button=e.target.closest('button');
+    if((button&&button!==open)||!e.dataTransfer){e.preventDefault();return;}
+    draggedTabId=id;tabDragX=e.clientX;e.dataTransfer.effectAllowed='move';
+    e.dataTransfer.setData('application/x-sukoaa-tab',id);wrap.classList.add('tab-dragging');
+  };
+  wrap.ondragend=finishTabDrag;
+}
+$('tabs').addEventListener('dragover',e=>{
+  if(!draggedTabId)return;
+  e.preventDefault();e.dataTransfer.dropEffect='move';tabDragX=e.clientX;
+  markTabDrop();if(!tabDragFrame)tabDragFrame=requestAnimationFrame(scrollDraggedTabs);
+});
+$('tabs').addEventListener('dragleave',e=>{if(!e.relatedTarget||!$('tabs').contains(e.relatedTarget))stopTabAutoScroll();});
+$('tabs').addEventListener('drop',e=>{
+  if(!draggedTabId)return;
+  e.preventDefault();const id=draggedTabId,{index}=tabDropPosition(e.clientX);
+  finishTabDrag();command('moveTab',{id,index});
+});
+document.addEventListener('drop',()=>{if(draggedTabId)finishTabDrag();});
 function renderTabs(s) {
   const box=$('tabs'),known=new Map([...box.children].map(node=>[node.dataset.tabId,node]));
+  if(draggedTabId&&!s.tabs.some(tab=>tab.id===draggedTabId))finishTabDrag();
   s.tabs.forEach((tab,index)=>{
     let wrap=known.get(tab.id);known.delete(tab.id);
     if(!wrap) {
-      wrap=document.createElement('div');wrap.dataset.tabId=tab.id;
+      wrap=document.createElement('div');wrap.dataset.tabId=tab.id;wrap.className='tab';
       const open=document.createElement('button');open.setAttribute('role','tab');
       const title=document.createElement('span');title.className='tab-title';open.append(document.createElement('span'),title);
       open.onclick=()=>command('select',tab.id);
       const audio=document.createElement('button');audio.className='tab-audio';audio.onclick=()=>command('muteTab',tab.id);
       const close=document.createElement('button');close.className='close';close.append(makeIcon('close'));close.title='Close tab';close.onclick=()=>command('close',tab.id);
       wrap.append(open,audio,close);
+      attachTabDragging(wrap,open,tab.id);
+      open.setAttribute('aria-description','Drag to reorder. Right-click for Move tab left or Move tab right.');
       wrap.oncontextmenu=e=>{e.preventDefault();command('tabMenu',tab.id);};
       wrap.onauxclick=e=>{if(e.button===1){e.preventDefault();command('close',tab.id);}};
     }
-    wrap.className='tab'+(tab.id===s.active?' active':'')+(tab.loading?' tab-loading':'');
+    wrap.classList.toggle('active',tab.id===s.active);wrap.classList.toggle('tab-loading',!!tab.loading);
     const [open,audio,close]=wrap.children;
     open.setAttribute('aria-selected',String(tab.id===s.active));
     open.title=tab.url?`${tab.title}\n${tab.url}${tab.private?'\nPrivate tab':''}`:`${tab.title} · Tab ${index+1}\nStart typing in the address bar`;
@@ -448,9 +500,10 @@ document.addEventListener("keydown", (e) => {
 window.aegis.onState(render);
 window.aegis.onClosePanel(() => {opened=false;$("panel").hidden=true;});
 window.aegis.onFocus((request) => {
-  if(request){addressTabId=request.id;$("address").value=request.value || "";}
-  $("address").focus();
-  $("address").select();
+  const preserve=request?.preserve && addressTabId===request.id;
+  if(request){addressTabId=request.id;if(!preserve)$("address").value=request.value || "";}
+  $("address").focus({preventScroll:true});
+  if(!preserve)$("address").select();
 });
 command("state");
 

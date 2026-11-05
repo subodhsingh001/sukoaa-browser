@@ -4,10 +4,15 @@ import json,urllib.request,urllib.error,hashlib,concurrent.futures,xml.etree.Ele
 from pathlib import Path
 r=Path(__file__).resolve().parents[1];out=r/'compliance/android-poms';out.mkdir(exist_ok=True)
 rows=json.loads((r/'compliance/android-runtime.json').read_text())['artifacts'];unique={x['group']+':'+x['name']+':'+x['version']:x for x in rows}
+existing_report=r/'compliance/android-license-metadata.json'
+existing={x['coordinate']:x for x in json.loads(existing_report.read_text()).get('results',[])} if existing_report.exists() else {}
 def capture(pair):
  key,x=pair;group=x['group'];base='https://dl.google.com/dl/android/maven2/' if group.startswith(('androidx.','com.google.android.gms')) else 'https://maven.mozilla.org/maven2/' if group=='org.mozilla.geckoview' else 'https://repo.maven.apache.org/maven2/'
  url=base+group.replace('.','/')+'/'+x['name']+'/'+x['version']+'/'+x['name']+'-'+x['version']+'.pom';file=out/(group+'-'+x['name']+'-'+x['version']+'.pom')
  try:
+  previous=existing.get(key)
+  if previous and previous.get('status')=='metadata-captured' and previous.get('url')==url and file.exists() and hashlib.sha256(file.read_bytes()).hexdigest()==previous.get('sha256'):
+   return previous
   with urllib.request.urlopen(url,timeout=18) as response: data=response.read(1000001)
   if len(data)>1000000:raise ValueError('POM size limit')
   node=ET.fromstring(data);ns={'m':'http://maven.apache.org/POM/4.0.0'}
@@ -16,7 +21,7 @@ def capture(pair):
   return {'coordinate':key,'url':url,'pom':str(file.relative_to(r)),'sha256':hashlib.sha256(data).hexdigest(),'declaredLicenses':licenses,'status':'metadata-captured','review':'required; metadata is not source or legal clearance'}
  except Exception as e:return {'coordinate':key,'url':url,'status':'unresolved','error':str(e)}
 with concurrent.futures.ThreadPoolExecutor(max_workers=6) as p:results=list(p.map(capture,unique.items()))
-report={'format':'sukoaa-android-pom-inventory-v1','releaseVersion':'0.9.0','runtimeArtifactCount':len(rows),'uniqueCoordinates':len(results),'results':results,'completeSourceBundle':False}
+report={'format':'sukoaa-android-pom-inventory-v1','releaseVersion':json.loads((r/'desktop/package.json').read_text())['version'],'runtimeArtifactCount':len(rows),'uniqueCoordinates':len(results),'results':results,'completeSourceBundle':False}
 (r/'compliance/android-license-metadata.json').write_text(json.dumps(report,indent=2)+'\n')
 print({'captured':sum(x['status']=='metadata-captured' for x in results),'unresolved':sum(x['status']=='unresolved' for x in results),'withoutDirectLicense':sum(x['status']=='metadata-captured' and not x['declaredLicenses']for x in results)})
 for x in results:

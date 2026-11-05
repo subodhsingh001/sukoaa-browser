@@ -40,3 +40,14 @@ jobs:
       - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-experience-smoke.cjs
       - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/clipboard-smoke.cjs
       - run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/repair-lab-smoke.cjs
+
+      - name: Native tab reordering and restart
+        env:
+          SUKOAA_REORDER_PROFILE: ${{ runner.temp }}/sukoaa-tab-reorder
+        run: |
+          mkdir -p "$SUKOAA_REORDER_PROFILE"
+          xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-reorder-smoke.cjs
+          SUKOAA_REORDER_RESTORE=1 xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/tab-reorder-smoke.cjs
+
+      - name: New-tab focus, media ownership, first-load YouTube policy
+        run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/focus-media-smoke.cjs

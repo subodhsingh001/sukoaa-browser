@@ -1,0 +1,27 @@
+UPLOAD SUKOAA 0.9.2 AS ONE UPDATE
+
+The complete source ZIP includes desktop, Android, shared code, tests, tools, compliance, release documents and .github workflows. The APK and Windows Setup are downloads for release assets, not source files to commit.
+
+Recommended: GitHub Desktop
+1. Install/open GitHub Desktop and sign in to your own GitHub account.
+2. File > Clone repository > URL:
+   https://github.com/subodhsingh001/sukoaa-browser.git
+3. Fetch origin. Select main and Pull origin before editing. Create a new branch named fix/focus-media-first-load.
+4. Unzip SukoaaBrowser-Source.zip. Open its SukoaaBrowser-Source folder. Copy ALL the contents of that folder into the cloned repository folder, replacing matching files. Do not copy the outer SukoaaBrowser-Source folder as a nested folder. Include .github, .gitattributes and .gitignore.
+5. Review GitHub Desktop's Changes. Never commit signing keys, passwords, local.properties, node_modules, build folders, APKs or EXEs. They are excluded from the supplied source archive.
+6. Use summary: Fix new-tab focus, background playback and first-load YouTube filtering.
+7. Commit to the new branch, then Publish branch / Push origin.
+8. Open a pull request into main and let Candidate checks finish. Review the changes before merging. Respect the main-branch rules; do not force push.
+9. After testing on your devices, attach the APK, Windows installer, source ZIP and checksums under a draft GitHub Release for v0.9.2. Adding source alone does not replace earlier release assets. Keep it a draft until the remaining release requirements are satisfied.
+
+Alternative: Git patch (only for the exact base revision)
+The separate Changes ZIP contains a patch against main commit e8c0c7c63c7093c316ee6745c1609aa82fdcb253. In a CLEAN clone at that revision, create a new branch, then run:
+  git apply --check --index /path/to/SukoaaBrowser-0.9.2.patch
+  git apply --index /path/to/SukoaaBrowser-0.9.2.patch
+If the check fails, stop: your files or base differ. Use the full-source/GitHub Desktop method with review, or resolve the differences. Do not overwrite unrelated work or use force push.
+
+Build from source
+Desktop: cd desktop; npm ci; npm test; npm start
+Windows internal candidate: npm run dist:windows:internal
+Android: install JDK 17 and the Android SDK/platform specified in android/app/build.gradle; create your own local.properties; cd android; ./gradlew :app:assembleRelease :app:lintRelease
+Use your ORIGINAL private Android signing key to sign an update. The key is intentionally not in the source archive. Never upload a signing backup to a public repository. The supplied APK is already signed with the original project test/release-preview identity; this is not a Windows publisher certificate or a store approval.

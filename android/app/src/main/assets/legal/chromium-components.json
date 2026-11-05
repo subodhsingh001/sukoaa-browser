@@ -1,2995 +1,2997 @@
 {
-  "runtime": "Electron 45.2.1",
+  "runtime": "Electron 45.2.3",
   "creditsSha256": "214152f78cc0b611f63ff8faefcc6670c4605ffbff05f092bb671e6df80ce741",
   "componentCount": 498,
+  "licenseTextHashMethod": "SHA-256 of decoded preformatted license text, as captured by HTMLParser",
   "components": [
     {
       "name": "2-dim General Purpose FFT (Fast Fourier/Cosine/Sine Transform) Package",
       "sourceLocator": "http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html",
-      "licenseTextSha256": "5e3d82bc60ce449be3045ddd4ded0f4a308523ca7a67018f085d6f5bb98b592b",
+      "licenseTextSha256": "64a68ebd98d10064bfd8f6c8dc4fa094747bd33af191f694183ce163cba5c9b5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "@bufbuild/protobuf",
       "sourceLocator": "https://www.npmjs.com/package/@bufbuild/protobuf",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "@puppeteer/replay",
       "sourceLocator": "https://github.com/puppeteer/replay",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Abseil",
       "sourceLocator": "https://github.com/abseil/abseil-cpp",
-      "licenseTextSha256": "89b1d88950a14b16cbdb59c8c2007b2bcf2fcce766d0ccbdd30d7dad336e61c6",
+      "licenseTextSha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "abseil",
       "sourceLocator": "https://github.com/abseil/abseil-cpp/",
-      "licenseTextSha256": "89b1d88950a14b16cbdb59c8c2007b2bcf2fcce766d0ccbdd30d7dad336e61c6",
+      "licenseTextSha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Acorn, a tiny, fast JavaScript parser written in JavaScript.",
       "sourceLocator": "https://github.com/acornjs/acorn",
-      "licenseTextSha256": "72da16c861d418640251f9d1babbef1d24afaad4ca302c24cf88f766ff34eb27",
+      "licenseTextSha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "adler2",
       "sourceLocator": "https://crates.io/crates/adler2",
-      "licenseTextSha256": "01d1556645e28f2059bd41b621e4b8c765669505c53fa7877b1db2ee7b4e4321",
+      "licenseTextSha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "aho-corasick",
       "sourceLocator": "https://crates.io/crates/aho-corasick",
-      "licenseTextSha256": "eefd7dfe2c606b7ec58630411a3f5528bfe531ee1842b638062801a31b9e7898",
+      "licenseTextSha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Alliance for Open Media Video Codec",
       "sourceLocator": "https://aomedia.googlesource.com/aom/",
-      "licenseTextSha256": "d73648dffcf2d381fb08c58fc64e6d55032d37a42fb13eddeb0c1988e16ea964",
+      "licenseTextSha256": "e49fa60fef14fe04997131cc1af28391f053f3747f46108ea1d0a397408e649e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Almost Native Graphics Layer Engine",
       "sourceLocator": "https://chromium.googlesource.com/angle/angle/",
-      "licenseTextSha256": "c968138a945baf4c519e1386ec8ea7b305cc4b7bde4b09f1b49a6bdc6dfe7a5e",
+      "licenseTextSha256": "bf4da21bd20bcfb5b60b7ecc67fa864a79be049e21d6178076887f178dd6c71a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Android Explicit Synchronization",
       "sourceLocator": "http://source.android.com",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Android NDK",
       "sourceLocator": "http://developer.android.com/ndk/index.html",
-      "licenseTextSha256": "ad9f8b98afc107a1d36aeaf7d1da5d2fdce8a048bd21088b265e090f30f188c7",
+      "licenseTextSha256": "31b13387e6bde5c7e7006b63ea762020ce583be32e4d62417584c03ac3d3f19a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Android Open Source Project - App Compat Library",
       "sourceLocator": "https://android.googlesource.com/platform/frameworks/support",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Android SDK",
       "sourceLocator": "http://developer.android.com/sdk/index.html",
-      "licenseTextSha256": "757ff64a15507cfca78f94b4129f5dbf7b7da385a05b7a04f3462f317473a4d9",
+      "licenseTextSha256": "85a84a92acffa105f51233e05d5fdc28eab76d1a8d180c924d9d3b2ea0389b55",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "android_system_properties",
       "sourceLocator": "https://crates.io/crates/android_system_properties",
-      "licenseTextSha256": "d1de1b91faa959d973d10e8b4f4c9214a0f4c1ba5b68427cb01f7fbaa1e7c83a",
+      "licenseTextSha256": "216486f29671a4262efe32af6d84a75bef398127f8c5f369b5c8305983887a06",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Anonymous Tokens",
       "sourceLocator": "https://github.com/google/anonymous-tokens",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Anti-Grain Geometry",
       "sourceLocator": "https://sourceforge.net/projects/agg/",
-      "licenseTextSha256": "f1f7c6257d95778050916ab0016017daae7952bee1ada7220af6758272558c25",
+      "licenseTextSha256": "0e16f9c2285583269242e94c6f502de0c9910dfcbbc7b386e236cdf29ecd4333",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "antlr4rust",
       "sourceLocator": "https://crates.io/crates/antlr4rust",
-      "licenseTextSha256": "bc2e9004356d910be0c48fee7d99e4e5440f9e83743ea0092993a162638574ba",
+      "licenseTextSha256": "3e1f197b6b221b918470078665608303aeebb27c1f54cd8241873b35f3affa62",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "anyhow",
       "sourceLocator": "https://crates.io/crates/anyhow",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ARCore SDK",
       "sourceLocator": "https://github.com/google-ar/arcore-android-sdk",
-      "licenseTextSha256": "f5cbcef1065a19631d5b50684050652ba42e94b882b52e1a26d632a75a104c7b",
+      "licenseTextSha256": "584e795ba5833279c327245594d6dc216fc664144fa3626a0bdf136bc00af76c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ARCore SDK client library for Chrome",
       "sourceLocator": "https://developers.google.com/ar/develop/java/enable-arcore#dependencies",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ARM_NEON_2_x86_SSE",
       "sourceLocator": "https://github.com/intel/ARM_NEON_2_x86_SSE",
-      "licenseTextSha256": "0eb30a847574e12b361fac9e70bf55f7cb6633ed19f256ad8cff9c1754eaccce",
+      "licenseTextSha256": "7022f51b439a5915e933ecc270c83e24ca0cb2cceeb08b0132dcd4dbb03ed2dc",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "array-init",
       "sourceLocator": "https://crates.io/crates/array-init",
-      "licenseTextSha256": "92b5c22cce506e83991bf062f4c05f3e9f60d24540c81e3c1f580e0bbe0a4170",
+      "licenseTextSha256": "c8d9a0d15dd76ca3bf277b6bf6da56799e266eac60bdc321a97ebc6d76d5153c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "autocfg",
       "sourceLocator": "https://crates.io/crates/autocfg",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "AXE-CORE Accessibility Audit",
       "sourceLocator": "https://github.com/dequelabs/axe-core/",
-      "licenseTextSha256": "4db5747aafdd80af170dceaea0135c85dfcdc2a7a30075ca560043e0148c6193",
+      "licenseTextSha256": "af175b9d96ee93c21a036152e1b905b0b95304d4ae8c2c921c7609100ba8df7e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "base64",
       "sourceLocator": "https://crates.io/crates/base64",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "better_any",
       "sourceLocator": "https://crates.io/crates/better_any",
-      "licenseTextSha256": "87c3f6f60af383c4ad22a6df30add9ad852c99db05f45895001b3f403432f651",
+      "licenseTextSha256": "e1729c45718e1d0bf960e6f93405a4b8549b56d011ee486f92ffd011a3147445",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bit-set",
       "sourceLocator": "https://crates.io/crates/bit-set",
-      "licenseTextSha256": "8d323332f33e7748d3356794ea499f1fc4659526ac49986b7140a662930a3cea",
+      "licenseTextSha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bit-vec",
       "sourceLocator": "https://crates.io/crates/bit-vec",
-      "licenseTextSha256": "8d323332f33e7748d3356794ea499f1fc4659526ac49986b7140a662930a3cea",
+      "licenseTextSha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bitflags",
       "sourceLocator": "https://crates.io/crates/bitflags",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Blackmagic DeckLink SDK - Mac",
       "sourceLocator": "http://software.blackmagicdesign.com/DeckLink/v10.7/Blackmagic_DeckLink_SDK_10.7.zip",
-      "licenseTextSha256": "c1e8585f9cccfe109b8f0f73eeecebc922a296cb1273ac9ad58731b364f61e5c",
+      "licenseTextSha256": "43452b94e6aa0c2d076ad25b87f580c11571689d52f3aa1a1f7bdcab31a0bd15",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "blink HTMLTokenizer",
       "sourceLocator": "Internal",
-      "licenseTextSha256": "2f249d635bf2dc076d7938107c1df7ac90e2ca498031efae8e0baad0a549ad81",
+      "licenseTextSha256": "f6c75e54c4146453c7e5f29d6f1218037f4d3774654e287b179a391c5cf56a4c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "BoringSSL",
       "sourceLocator": "https://boringssl.googlesource.com/boringssl",
-      "licenseTextSha256": "c88fd7db7fbf769c277d8dcd8eb08d61a8918ccb4b3b322093777c8d94a9a814",
+      "licenseTextSha256": "827c8d8fc207c2392794eef9e00fe246f9f61fdcc132556c275be3dd8c3cd97f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "BoringSSL",
       "sourceLocator": "https://boringssl.googlesource.com/boringssl/",
-      "licenseTextSha256": "c88fd7db7fbf769c277d8dcd8eb08d61a8918ccb4b3b322093777c8d94a9a814",
+      "licenseTextSha256": "827c8d8fc207c2392794eef9e00fe246f9f61fdcc132556c275be3dd8c3cd97f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Braille Translation Library",
       "sourceLocator": "https://github.com/liblouis/liblouis",
-      "licenseTextSha256": "bbca7cb577f368b48bb5de39912fedf4b11015e0243d89c13d53015a7a1472e3",
+      "licenseTextSha256": "05e1f8793ba0c7dcbcce9d0e9bf4c4bc31671d7ded894a3316268f213330681f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Brotli",
       "sourceLocator": "https://github.com/google/brotli",
-      "licenseTextSha256": "96efbd4af6d848ca51eba195336682a9ab2f68da3cf9560edf48855fb2cd4930",
+      "licenseTextSha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bytemuck",
       "sourceLocator": "https://crates.io/crates/bytemuck",
-      "licenseTextSha256": "229510e32760aeb3fa0503e04b86fd1ac52c0f1fa8b9257d375f857495820a34",
+      "licenseTextSha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bytemuck_derive",
       "sourceLocator": "https://crates.io/crates/bytemuck_derive",
-      "licenseTextSha256": "229510e32760aeb3fa0503e04b86fd1ac52c0f1fa8b9257d375f857495820a34",
+      "licenseTextSha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "byteorder",
       "sourceLocator": "https://crates.io/crates/byteorder",
-      "licenseTextSha256": "eefd7dfe2c606b7ec58630411a3f5528bfe531ee1842b638062801a31b9e7898",
+      "licenseTextSha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "byteorder-lite",
       "sourceLocator": "https://crates.io/crates/byteorder-lite",
-      "licenseTextSha256": "eefd7dfe2c606b7ec58630411a3f5528bfe531ee1842b638062801a31b9e7898",
+      "licenseTextSha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "bytes",
       "sourceLocator": "https://crates.io/crates/bytes",
-      "licenseTextSha256": "7694a8b70eba9eded028fcd2bbad3e40758ef80b361a03e4629f8e223f6992b6",
+      "licenseTextSha256": "45f522cacecb1023856e46df79ca625dfc550c94910078bd8aec6e02880b3d42",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "C++ Big Interger Library",
       "sourceLocator": "https://mattmccutchen.net/bigint/",
-      "licenseTextSha256": "933d55bc7bb051a518d532ef286589410a005a158c83388c81adefc3177b20f4",
+      "licenseTextSha256": "32759d1397d8f7b9e15ece146e4038b22b90e93b4935b5a840bcef4d2ba5ea55",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "C++ port of zxcvbn, an advanced password strength estimation library.",
       "sourceLocator": "https://thelig.ht/code/zxcvbn-cpp",
-      "licenseTextSha256": "e5c8734436b4f5919276c1db12015f0c18ff806fd3d2a61c458d56b5ccc76f37",
+      "licenseTextSha256": "1744e977d24e20e77b1e97d745fe43779430a1b84247b6c0e89d16e116e7ff92",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "calendrical_calculations",
       "sourceLocator": "https://crates.io/crates/calendrical_calculations",
-      "licenseTextSha256": "e228dbd78c45cd27a25f05cb926a48f399c1058d0606a24184a24dcd95d22b3c",
+      "licenseTextSha256": "192ea857d1bff2b87c174de36cbae5c173234726c6b8eceab9790a535d7dbc95",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Cardboard SDK",
       "sourceLocator": "https://github.com/googlevr/cardboard",
-      "licenseTextSha256": "972388bfe9c6f7a75837b0e633bd39d7534137b23485bcae8f81cbee1249b769",
+      "licenseTextSha256": "fd47b8b87f5f105a2602652e946c02205a6bd0d37afbd624e2d539dd86a6c2ab",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CastCore Publics",
       "sourceLocator": "https://chromium.googlesource.com/cast_core/public",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CF",
       "sourceLocator": "https://www.opensource.apple.com/",
-      "licenseTextSha256": "81f08e08c6262ec625fed9d8ad75ec405b181834012ff22ef11996e2aeb999d2",
+      "licenseTextSha256": "b23e682fda7310afe43505ed6041919ccff8f9e0c6799ebd7542cbcef11102e3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cfg-if",
       "sourceLocator": "https://crates.io/crates/cfg-if",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Checked in build outputs generated on Windows.",
       "sourceLocator": "https://source.chromium.org/chromium/chromium/src/+/main:third_party/win_build_output/",
-      "licenseTextSha256": "2e4f150de9fafe36d95d94bcce31b5caffa51db1906b3763e87b7a4add60eb81",
+      "licenseTextSha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ChromeOS Components",
       "sourceLocator": "https://chromium.googlesource.com/external/google3/cros_components/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ChromeVox",
       "sourceLocator": "http://code.google.com/p/google-axs-chrome/",
-      "licenseTextSha256": "4ff2a7d08e8f24e4b88f966f88688551f14144c6690cbeec069b3a3d75742200",
+      "licenseTextSha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Chromium OS system API",
       "sourceLocator": "https://www.chromium.org/chromium-os",
-      "licenseTextSha256": "370f50648369f3a545b363b1ef44cb7594e3fd28bf2ff6d023edfcbdc7c1343c",
+      "licenseTextSha256": "c87ee91f4687ddeb8a959d4cb2f5571cdc9fc4e6fc568b49be6d2b2ef09e796a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ChromiumUpdater",
       "sourceLocator": "Internal",
-      "licenseTextSha256": "b4ee93a6c7c88ec4a7f28327d9f7478671e9625b291f0ea91fa06891f4f90a65",
+      "licenseTextSha256": "9e4c15bf2ede3b99675d7ea9dd2e68e17c39aec0a1041789e688124c90698143",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "chrono",
       "sourceLocator": "https://crates.io/crates/chrono",
-      "licenseTextSha256": "23330b2f3fa10d7317be21c69743bf854d7a8bf24799327bad1704530af5c14e",
+      "licenseTextSha256": "946c9835d8034d24404f8cfec5f4654cee5dad17e944afc3d06d742cf2882831",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CityHash",
       "sourceLocator": "https://github.com/google/cityhash",
-      "licenseTextSha256": "4cc952ea9c81e632c0d57960659b9fc01c61e8113eaa7121470bf285eef5a4c7",
+      "licenseTextSha256": "3ed00dd93c75655599456c83cba2f69c6824fd53f24fc24206ba27b65057709d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Closure Library",
       "sourceLocator": "https://github.com/google/closure-library",
-      "licenseTextSha256": "ec51645ff81a802d5af6c3d7921653828a8b7976247db07bbaaf206b55c1ccdd",
+      "licenseTextSha256": "70449a78c63462b11c8a703830d71fd4c44ea47eadd1bb0507cd6bc6bb0c6a9a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CodeMirror 5",
       "sourceLocator": "https://github.com/codemirror/CodeMirror/",
-      "licenseTextSha256": "ae0f8a9ec5f78e3b6fc46a0860f14356c4e9aa5a62988d8355614a7315e6f220",
+      "licenseTextSha256": "a3f2fe2ac6b471aa80c737c5d283dd049bdc903a73835ee6d4d2cac02fdd53bf",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CodeMirror 6",
       "sourceLocator": "https://github.com/codemirror/CodeMirror.next/",
-      "licenseTextSha256": "d4f91b969a26866ec514df6d099389136cc82c047a3b1363779ea994970dffa0",
+      "licenseTextSha256": "aa8f65819a471c1a25fb3c0816c5a75e45f009b7899d292ee3cc70d9dbdd8f7e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "codespan-reporting",
       "sourceLocator": "https://crates.io/crates/codespan-reporting",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Compact Encoding Detection",
       "sourceLocator": "https://github.com/google/compact_enc_det",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Compact Language Detector v3",
       "sourceLocator": "https://github.com/google/cld3",
-      "licenseTextSha256": "25ac464583c583f6c54d5b96cf23d98d253fe69924c32c74b04544ee1a2c58d4",
+      "licenseTextSha256": "c2d13ec3b431617beb314705c0f42d17ca579eed00032ed8a13dbcd23fc9bdd5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "compiler-rt",
       "sourceLocator": "https://compiler-rt.llvm.org/",
-      "licenseTextSha256": "f32bf488a54f6d6d6fdd93cdd6d24fa8e264cc33de69ea3df709cb8ee76c1e0b",
+      "licenseTextSha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Core ML Tools",
       "sourceLocator": "https://github.com/apple/coremltools",
-      "licenseTextSha256": "da908c4b507586f85a41c68158e681afc505aad65f03108be28532dff2347784",
+      "licenseTextSha256": "86627e93ac1b8c98c848e41d52bca8d71bfe614cc65a031574f54fcd5137710d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "core-foundation-sys",
       "sourceLocator": "https://crates.io/crates/core-foundation-sys",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "core_maths",
       "sourceLocator": "https://crates.io/crates/core_maths",
-      "licenseTextSha256": "85eedc4802ca81e25d4ee080893ff3cae611b893323b07e6ae74c12f25f838c5",
+      "licenseTextSha256": "9ebf8c4cc0b735ca13a766451f7b8097db3185975ceb2ba94b5abf439156a91f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cpu_features",
       "sourceLocator": "https://github.com/google/cpu_features",
-      "licenseTextSha256": "7fad0735ce2b1dd5b366515c91fdfb8b47ab51a7e6c5ae463c9c974c08ce9df0",
+      "licenseTextSha256": "af272c1b4dd08dd61d43e001d3134119d03ca7a2b057a64f7355fdf27fbea3dd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cpuinfo",
       "sourceLocator": "https://github.com/pytorch/cpuinfo",
-      "licenseTextSha256": "7c05cc874e4aa122be36654eceaa347ce95dd0b2a2e2abb6fd93baeda917d497",
+      "licenseTextSha256": "8e7e60636c3aa0cb03571a1a841ce5697f9551ff92b3c426c2561613d15ade70",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CrabbyAvif - Library for decoding AVIF files.",
       "sourceLocator": "https://github.com/webmproject/CrabbyAvif",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Crashpad",
       "sourceLocator": "https://chromium.googlesource.com/crashpad/crashpad",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CRC32C",
       "sourceLocator": "https://github.com/google/crc32c",
-      "licenseTextSha256": "dbe8338dddfdcc45e4faf5367e0a0889aaec04f1985cff49d54d523a72172eb6",
+      "licenseTextSha256": "a1f30b77c01e0995fa32a00119e00749e8731ee8a3c4c3549bce74083c72b0b6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "crc32fast",
       "sourceLocator": "https://crates.io/crates/crc32fast",
-      "licenseTextSha256": "9b6a18f8acf4ba0a9b6249bcce1bf476af2663c5f90511d5f022492ce0d234a4",
+      "licenseTextSha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "CSP Evaluator Core Library, a tool that allows developers to check if a Content Security Policy (CSP) serves as mitigation against XSS attacks",
       "sourceLocator": "https://www.npmjs.com/package/csp_evaluator",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cxx",
       "sourceLocator": "https://crates.io/crates/cxx",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cxxbridge-flags",
       "sourceLocator": "https://crates.io/crates/cxxbridge-flags",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "cxxbridge-macro",
       "sourceLocator": "https://crates.io/crates/cxxbridge-macro",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "d3",
       "sourceLocator": "https://github.com/d3/d3",
-      "licenseTextSha256": "8554b4daef2b5f3e58d407d20dbdaa469b007ae9a271f771fed6790b302954d3",
+      "licenseTextSha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "d3",
       "sourceLocator": "https://github.com/mbostock/d3",
-      "licenseTextSha256": "9cfac14b0b45e4b612f0719d2a9354472fe7cd4d18df7387cacab0ab38ec7486",
+      "licenseTextSha256": "1920d2326ebbad34dcbd9681b4fe4926f113aa5e7dc9a92fceb456d859ee142e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Darwin",
       "sourceLocator": "https://github.com/apple-oss-distributions/libmalloc",
-      "licenseTextSha256": "81f08e08c6262ec625fed9d8ad75ec405b181834012ff22ef11996e2aeb999d2",
+      "licenseTextSha256": "b23e682fda7310afe43505ed6041919ccff8f9e0c6799ebd7542cbcef11102e3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Darwin configd",
       "sourceLocator": "https://github.com/apple-oss-distributions/configd",
-      "licenseTextSha256": "81f08e08c6262ec625fed9d8ad75ec405b181834012ff22ef11996e2aeb999d2",
+      "licenseTextSha256": "b23e682fda7310afe43505ed6041919ccff8f9e0c6799ebd7542cbcef11102e3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "dav1d is an AV1 decoder :)",
       "sourceLocator": "https://code.videolan.org/videolan/dav1d",
-      "licenseTextSha256": "43d5b0785827e44a58327f95332f015a73dd91aed416d218755e62c07d04bdfe",
+      "licenseTextSha256": "2da4494d2a8b5c742afbb905b10621e40129284c977ac138e3081ed0d9d83aed",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Dawn",
       "sourceLocator": "https://dawn.googlesource.com/dawn",
-      "licenseTextSha256": "a7a1838ceb00e8c7a27851424e83c8a28faaab68888e527ba24fdcbc8d9b9b6b",
+      "licenseTextSha256": "0493f897193af1796d5054659f45ec7d4c5af648fa67a99f01d30e55cc805abc",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Dependencies sourced from the upstream `chromium` repository",
       "sourceLocator": "Internal",
-      "licenseTextSha256": "e8515644caaf79683d6b296f4d3607c7ec2f88abb99107e39dffa39018ccdcb2",
+      "licenseTextSha256": "ff11d445fb41a1087c7630e120ab15f1a2cb67c1b707173cb494141805fca35e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "derivre",
       "sourceLocator": "https://crates.io/crates/derivre",
-      "licenseTextSha256": "a8de7c2e83f537c901ed1010e1ee961322ec7fc45b8022823d02ba56cb8933cc",
+      "licenseTextSha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Devtools-Frontend",
       "sourceLocator": "https://chromium.googlesource.com/devtools/devtools-frontend",
-      "licenseTextSha256": "e8515644caaf79683d6b296f4d3607c7ec2f88abb99107e39dffa39018ccdcb2",
+      "licenseTextSha256": "ff11d445fb41a1087c7630e120ab15f1a2cb67c1b707173cb494141805fca35e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "DFA UTF-8 Decoder",
       "sourceLocator": "http://bjoern.hoehrmann.de/utf-8/decoder/dfa/",
-      "licenseTextSha256": "06ec803afda4f307abb5fcebe654a7e694b30dff7ddcfaa51d11bdac610b872d",
+      "licenseTextSha256": "3f712e5fbdfdbd5ee7d9b8c8152580220df55de47f4eba2f26c95c4de19ad096",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "diplomat",
       "sourceLocator": "https://crates.io/crates/diplomat",
-      "licenseTextSha256": "afaed798feaec2848e10d165545579428c2cb45cb0dc8d6d782344ec15c0bb4a",
+      "licenseTextSha256": "639c20c7f14fb122750d5ad1a6cfb116d9bf8d103e709ee40949e5a12a731666",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "diplomat-runtime",
       "sourceLocator": "https://crates.io/crates/diplomat-runtime",
-      "licenseTextSha256": "afaed798feaec2848e10d165545579428c2cb45cb0dc8d6d782344ec15c0bb4a",
+      "licenseTextSha256": "639c20c7f14fb122750d5ad1a6cfb116d9bf8d103e709ee40949e5a12a731666",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "diplomat_core",
       "sourceLocator": "https://crates.io/crates/diplomat_core",
-      "licenseTextSha256": "afaed798feaec2848e10d165545579428c2cb45cb0dc8d6d782344ec15c0bb4a",
+      "licenseTextSha256": "639c20c7f14fb122750d5ad1a6cfb116d9bf8d103e709ee40949e5a12a731666",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "DirectX-Shader-Compiler",
       "sourceLocator": "https://github.com/microsoft/DirectX-Shader-Compiler",
-      "licenseTextSha256": "a86359bbfd60b658fd67cc3b26a57f431e02c3540c793b2c4ec53658a9c37e76",
+      "licenseTextSha256": "27a49e35d1da96eba18fba54bc882667ff0ff8c0254f16f2b6e165d605ba7df8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "displaydoc",
       "sourceLocator": "https://crates.io/crates/displaydoc",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "dom-distiller-js",
       "sourceLocator": "https://github.com/chromium/dom-distiller",
-      "licenseTextSha256": "3a243e9f0cf75e7d215f318eb110bb4864e35b0b716e968f04dfa7ef2395686f",
+      "licenseTextSha256": "560c13594cab53e1edc37bb1bf3fe4aa128146cd5dd990f63854d9d7d1f7cce1",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "dragonbox",
       "sourceLocator": "https://github.com/jk-jeon/dragonbox",
-      "licenseTextSha256": "764b4dc178c2b579352abfd517220a03578f3f2add08a03e6caa8c1dfd1a322c",
+      "licenseTextSha256": "678c25489a5d5cd2a5353a3b32e273c1236c881e97090bb92f39695eb826122b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "EasyList",
       "sourceLocator": "https://easylist.to/easylist/easylist.txt",
-      "licenseTextSha256": "f82af3aa8c9995afb8bfbd70990d0acb761f75f09ee43a74604c6e04fe35a7eb",
+      "licenseTextSha256": "033d0150b3bd78b36894c88fcc68da0c3f2e661d3b3485e8cc9a61b2c2bf7895",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "EGL-Registry",
       "sourceLocator": "https://github.com/KhronosGroup/EGL-Registry/",
-      "licenseTextSha256": "522b9c7f986d1e0da65a561ad48f001cea4559d04fff49495270ebaaa2e70b37",
+      "licenseTextSha256": "4782253b8777b2c679544b31b18a52616d3c2ba0515dcf695e262bd318b356f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Eigen",
       "sourceLocator": "https://gitlab.com/libeigen/eigen",
-      "licenseTextSha256": "e86ffca417e178ba0198bf07affbf8f7f9cf2b57b039654c963aacdafa7d3910",
+      "licenseTextSha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "either",
       "sourceLocator": "https://crates.io/crates/either",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Emoji Segmenter",
       "sourceLocator": "https://github.com/googlei18n/emoji-segmenter",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "emoji-metadata",
       "sourceLocator": "https://github.com/googlefonts/emoji-metadata",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "equivalent",
       "sourceLocator": "https://crates.io/crates/equivalent",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "etc1",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "61b1963568354db2dbd0dd6435e054bc4395a4b4ab0fd4d258386ab4c5709cc0",
+      "licenseTextSha256": "623d3727872cbcb7ff339b9a151f6f1a6eeb5bdf9f0afe2d7d51b2804fb6591c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Expat XML Parser",
       "sourceLocator": "https://github.com/libexpat/libexpat",
-      "licenseTextSha256": "a426138a885d0a023b4b16b48f7315810dffd7308e61aecb6f74c5690be2ade6",
+      "licenseTextSha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "extended",
       "sourceLocator": "https://crates.io/crates/extended",
-      "licenseTextSha256": "20a85b646c32e2e2c42fbacbb9034b74a39fa5062923b807d0ba5458d953276a",
+      "licenseTextSha256": "25a0874d15e7c834a47c3adc80901edb2219759254992023ef1010c3065413d5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FarmHash",
       "sourceLocator": "https://github.com/google/farmhash",
-      "licenseTextSha256": "cf92efd8b45929415fe3bc1ba90452899eeecc21bae9b9574148d61e75c60aef",
+      "licenseTextSha256": "4162dd091caae234f72d3b57e138174f733e736b2430a4c51b098b17d866fcb6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fast_float",
       "sourceLocator": "https://github.com/fastfloat/fast_float",
-      "licenseTextSha256": "37ffad5c31d84d5d7d1f46146ee5d34d842af772412305d4eb8d5b0cfef28277",
+      "licenseTextSha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fdeflate",
       "sourceLocator": "https://crates.io/crates/fdeflate",
-      "licenseTextSha256": "fac25d979d9fe9d52d8924b7c41b64e9d708020378c8f8d555367932c97f09f2",
+      "licenseTextSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "federated-compute",
       "sourceLocator": "https://github.com/google-parfait/federated-compute/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fend-core",
       "sourceLocator": "https://crates.io/crates/fend-core",
-      "licenseTextSha256": "d974dad3005c7b7be0907ea9d25446e872cb38e3a4cd728233e4eb3a59a23389",
+      "licenseTextSha256": "d39a21ed70fb553856f6d7e74fee4332261069502ae32ab9ac13b49d147696f7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ffmpeg",
       "sourceLocator": "https://git.ffmpeg.org/ffmpeg.git",
-      "licenseTextSha256": "73fdb8509e43ec18ea5930d4ef0ca46c6da7598a119c0c932e1afece447da454",
+      "licenseTextSha256": "903a6faa336b60d419bc6eb2bcffe4ca8bd9446735e5de4fcc901c80e9f22327",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fft",
       "sourceLocator": "This is the canonical repository.",
-      "licenseTextSha256": "2aee88aede6c431771392f8c7bcfdc699f809a39cc77a25d1f151dd58d385880",
+      "licenseTextSha256": "6fdbabd2c95c5efc6f1e46175278239afb9343120a3022ed0e0cb04267a6aeb3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Fiat-Crypto: Synthesizing Correct-by-Construction Code for Cryptographic Primitives",
       "sourceLocator": "https://github.com/mit-plv/fiat-crypto",
-      "licenseTextSha256": "4a49e435c70ceaa54b1b7102c0cb3484877bae892036f2aa7a44a7012d81b430",
+      "licenseTextSha256": "9eacbcb81be660840c714a560a9d65ba07913db98dd4baf969f78dd499fdd60f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FideltyFX Single Pass Downsampler",
       "sourceLocator": "https://github.com/GPUOpen-Effects/FidelityFX-SPD",
-      "licenseTextSha256": "149e0079c7bb9964e3570c468224d5813a2c87e7d155ec805fcf6a8c25baa2b2",
+      "licenseTextSha256": "09a7c3fbc0b4ae6a9ccc4ffdcbfa511c14b8647a24f24783838862cf6c226d4e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fixed_decimal",
       "sourceLocator": "https://crates.io/crates/fixed_decimal",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "flac",
       "sourceLocator": "https://github.com/xiph/flac.git",
-      "licenseTextSha256": "061c3fe4299e28e54dbfc5f062260a93382aa4f6ff4eba96afc21abec0532294",
+      "licenseTextSha256": "6e58d3036f05e2a0d58af854c12a505ddbe75011d71a598a2170987f3b15408d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FlatBuffers",
       "sourceLocator": "https://github.com/google/flatbuffers",
-      "licenseTextSha256": "bbfd2c01a5b418c8025ac9e10fa7f0b487e74a66bb8af8421ce71863a4e7fa29",
+      "licenseTextSha256": "7ec9661a8afafab1eee3523d6f1a193eff76314a5ab10b4ce96aefd87621b0c3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "flate2",
       "sourceLocator": "https://crates.io/crates/flate2",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "foldhash",
       "sourceLocator": "https://crates.io/crates/foldhash",
-      "licenseTextSha256": "0df9bef3006b98930064a930a951fff0d681d2d292a06ab71790954523ca7458",
+      "licenseTextSha256": "b1181a40b2a7b25cf66fd01481713bc1005df082c53ef73e851e55071b102744",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "font-types",
       "sourceLocator": "https://crates.io/crates/font-types",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "fontconfig",
       "sourceLocator": "http://www.freedesktop.org/wiki/Software/fontconfig/",
-      "licenseTextSha256": "579c86656e23e73197f03b6d6c4f427afc2c938304eb873a1a2d2f5ba42b2d05",
+      "licenseTextSha256": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FP16",
       "sourceLocator": "https://github.com/Maratyszcza/FP16",
-      "licenseTextSha256": "1a2b1e75130e709b73a5968324c1b2426d6f92aa9e613e5f16cba0f99533efde",
+      "licenseTextSha256": "c91377adafa2f498211a4fe017788e20c38892124673860f068f2919c289193d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FreeType",
       "sourceLocator": "http://www.freetype.org/",
-      "licenseTextSha256": "22879b9ea27189855f48283aee3a7f009d3ce0f31a98f6d08cdf044573ae9429",
+      "licenseTextSha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FreeType",
       "sourceLocator": "https://gitlab.freedesktop.org/freetype/freetype",
-      "licenseTextSha256": "24d13322466b67e150e5ff79f858b3081320aff584d2d4aa39e6e61be27985f7",
+      "licenseTextSha256": "832e75434619e56c81ca252fecd7c50711fda68b7208df37000a7c4370f70e8c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Fuchsia GN SDK",
       "sourceLocator": "This is the canonical public repository.",
-      "licenseTextSha256": "5e195a9216a4c4c2cbedfcf400393cba77f6f51db892ad077e352bde557d509c",
+      "licenseTextSha256": "47248d1ec833e0771ddacb65f2cf9978785f4a9976b5b0b69d1e33c60a50be55",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Fuse.js",
       "sourceLocator": "https://fusejs.io",
-      "licenseTextSha256": "61b16b2708751199c403d0041dd4c5ef7692197875c3a7269183e87483480e3c",
+      "licenseTextSha256": "cc807e3caa26cdee316bab2ff6fdb508a2f619b74959fe59e513ef6e61635ebe",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "FXDiv",
       "sourceLocator": "https://github.com/Maratyszcza/FXdiv",
-      "licenseTextSha256": "acfe6f0a3133173f8648436d3f61485277ab50b39868539298bb79925ab695b7",
+      "licenseTextSha256": "7cac00006125b1486a27e4801ed66357236e984c540bd323945ab7b66b078ec3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "gemmlowp",
       "sourceLocator": "https://github.com/google/gemmlowp",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "General Purpose FFT (Fast Fourier/Cosine/Sine Transform) Package",
       "sourceLocator": "http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html",
-      "licenseTextSha256": "abeef048803dbfa46e10d9912c44e26d89138b1703159b02cce39888bfe13295",
+      "licenseTextSha256": "25b7731b70c77ecd5f3bb19303fbaa99be18860f81d44f71da670fdcd04829db",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "getopt",
       "sourceLocator": "https://sourceware.org/ml/newlib/2005/msg00758.html",
-      "licenseTextSha256": "6b730d28c9fd8bceb6baf3b6eea877eecadb5e495aabf293bc711481d26ce6ca",
+      "licenseTextSha256": "f40ee07401827b6ac9cf0aee1aaffb00e42a3f2c729f9c83f96a3daafef5d944",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "getrandom",
       "sourceLocator": "https://crates.io/crates/getrandom",
-      "licenseTextSha256": "a2068d530f28f3bd49974728b1d10700f882d5699ad485dc880dc512b23a63cf",
+      "licenseTextSha256": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "GifPlayer Animated GIF Library",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "gl-matrix",
       "sourceLocator": "https://github.com/toji/gl-matrix",
-      "licenseTextSha256": "aefc3322646f25bdbdf79cd3a30885d7cd988ca4e9f07f8d27159e2335e42bd9",
+      "licenseTextSha256": "e8b80a53d0f95a3cf0f992f8cfc6b3911a7f32f47e0e4a8d4fd66582eeae9484",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "glibc",
       "sourceLocator": "https://www.gnu.org/software/libc/",
-      "licenseTextSha256": "1d962008f9d503ec50b1f89547d9458e133a6fd3898dbdb245a3cdfad35ea8c6",
+      "licenseTextSha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Google Chrome Content Analysis Connector Agent SDK",
       "sourceLocator": "https://github.com/chromium/content_analysis_sdk",
-      "licenseTextSha256": "351288017df867d953b8a8c66536525f1b6a2fc9b683d33da8b4364aa89fa880",
+      "licenseTextSha256": "7340f764102806e7e96b80a153a23debafb83dff600f08c27a84c6addefcc93f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Google Closure Library",
       "sourceLocator": "https://github.com/google/closure-library",
-      "licenseTextSha256": "4ff2a7d08e8f24e4b88f966f88688551f14144c6690cbeec069b3a3d75742200",
+      "licenseTextSha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Google Double Conversion",
       "sourceLocator": "https://github.com/google/double-conversion",
-      "licenseTextSha256": "8b2365c56a4867464ce2abdd2fe1e0abdd38f00957ecbb0c71e339d092248f2f",
+      "licenseTextSha256": "4af93c12062c58058378de2397dc1c92bbff9ddfb1d583a01c84127557ce97ca",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Google Input Tools",
       "sourceLocator": "https://github.com/googlei18n/google-input-tools.git",
-      "licenseTextSha256": "2a92a56b512aeffe1bbd7784946dea6db3b9500ad344d25d2b8ef0f2e7c09130",
+      "licenseTextSha256": "7232ccb8f246801a46ef651e8215b075f2b1c6e879c760ee30907a6cc3b06ce3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "google-glog's symbolization library",
       "sourceLocator": "https://github.com/google/glog",
-      "licenseTextSha256": "c14c3fde07042f9a0df0c42777acf8a0f933e4c953a57611a54a6ba3560e52cd",
+      "licenseTextSha256": "538edc6f52c563cf06eca1bac8dd785ff60ef5a371a950265700d5d40386db6e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "googleapis",
       "sourceLocator": "https://github.com/googleapis/googleapis",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Granite",
       "sourceLocator": "https://github.com/Themaister/Granite",
-      "licenseTextSha256": "08e1342d49a6a12b671eb814801be434b4afa5938a6d1a5c419dfecbfc14afa5",
+      "licenseTextSha256": "118be5792e5126839694ca2209c62c71d2d7cd49e7bbb43bbdee9b016fb06094",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Gregory Pietsch getopt",
       "sourceLocator": "https://sourceware.org/ml/newlib/2005/msg00758.html",
-      "licenseTextSha256": "6b730d28c9fd8bceb6baf3b6eea877eecadb5e495aabf293bc711481d26ce6ca",
+      "licenseTextSha256": "f40ee07401827b6ac9cf0aee1aaffb00e42a3f2c729f9c83f96a3daafef5d944",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "grpc",
       "sourceLocator": "https://github.com/grpc/grpc",
-      "licenseTextSha256": "ac23ad01a5a6609caf20ba2855ea1087d60ee94ad13762ef4e5114a53a569404",
+      "licenseTextSha256": "590198e3f305f2c347fde64d637c65492bbef554db6c8364e149cd375e3797ee",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "gtk",
       "sourceLocator": "https://github.com/GNOME/gtk",
-      "licenseTextSha256": "0cdd6df7e616bd74bac235874c6546a49a1393250b4b4e51ba8d2d7766cfc7e2",
+      "licenseTextSha256": "b7993225104d90ddd8024fd838faf300bea5e83d91203eab98e29512acebd69c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "harfbuzz",
       "sourceLocator": "http://harfbuzz.org",
-      "licenseTextSha256": "801a777256f9922c734f66a190677e9afc5f5b843f1d1c74ab89dd6abcf52679",
+      "licenseTextSha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "harfrust",
       "sourceLocator": "https://crates.io/crates/harfrust",
-      "licenseTextSha256": "2c30d4e18e8e16c6a688660e809c520158608c5e85c54931b384b50f89337758",
+      "licenseTextSha256": "3a7c3f0b887abb7c638faf022d29257418458614c6724b120ceeffb279f9c7d2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "hashbrown",
       "sourceLocator": "https://crates.io/crates/hashbrown",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Headers for DirectX APIs.",
       "sourceLocator": "https://github.com/microsoft/directx-headers",
-      "licenseTextSha256": "dff4161c12ef22c329dc6e01d07e65373e56489f794e602291ac306bbc0b2aca",
+      "licenseTextSha256": "fd532481d828e13a0b13ccb598e02338a3617740675a862ee6bdc1541b68e93d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Headers for WindowsAppsSDK",
       "sourceLocator": "https://github.com/microsoft/WindowsAppSDK",
-      "licenseTextSha256": "a8de7c2e83f537c901ed1010e1ee961322ec7fc45b8022823d02ba56cb8933cc",
+      "licenseTextSha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "heck",
       "sourceLocator": "https://crates.io/crates/heck",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Highway: C++ library for SIMD",
       "sourceLocator": "https://github.com/google/highway",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Highway: C++ library for SIMD",
       "sourceLocator": "https://github.com/google/highway",
-      "licenseTextSha256": "bdde96e5f6f2b944672b9a682aeba47234be4d08c9c87b185f71c09caab69f71",
+      "licenseTextSha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "hmac-sha256",
       "sourceLocator": "https://crates.io/crates/hmac-sha256",
-      "licenseTextSha256": "f83824f2f923b372404ffa007707326771efbd9485f587fc3829b8ee0bf52201",
+      "licenseTextSha256": "6f4e2de03c87fde1f0d4481b5a6358f9d2ba1f4bf8ed331d8f2d2fc4579b4747",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "hunspell",
       "sourceLocator": "http://hunspell.sourceforge.net/",
-      "licenseTextSha256": "40fa18c0688173bf6f5426b2a4130e1390a66ff76636e4e2c061f0c1aebcbf94",
+      "licenseTextSha256": "53692a2ed6c6a2c6ec9b32dd0b820dfae91e0a1fcdf625ca9ed0bdf8705fcc4f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "hunspell dictionaries",
       "sourceLocator": "http://bgoffice.sourceforge.net/",
-      "licenseTextSha256": "d1f5b9c5355736257b28b8dc1f7778aa282f6846fd628744fb185970e44ce0d6",
+      "licenseTextSha256": "d63c6240d6f6330a025aade63d317d7ff04f95fc3325fe6aea3848ca452f64ea",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "hyphenation-patterns",
       "sourceLocator": "https://android.googlesource.com/platform/external/hyphenation-patterns/",
-      "licenseTextSha256": "18d1e86052faf8365d0a1a889262e5ab5da975fe1b6b8357c8a1515a4a1e6efe",
+      "licenseTextSha256": "848b839a69abf379954f0a564a0c84f5dbb2aab4acc26c41571a20c0657a4fb7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "IAccessible2 COM interfaces for accessibility",
       "sourceLocator": "https://github.com/LinuxA11y/IAccessible2",
-      "licenseTextSha256": "9ffa8b9c3a0843168c084f92865ed7383a10fdd0688b56e791cb0277e7f0a800",
+      "licenseTextSha256": "610809f1586ee4d22468f1e97c256153cea8be7a662193db70d6ca424e0f17c8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "iamf_tools",
       "sourceLocator": "https://github.com/AOMediaCodec/iamf-tools",
-      "licenseTextSha256": "f4686571bcbc2ef2d00a6f1b28215c51071c2ed33276246f2a1b579656629a4b",
+      "licenseTextSha256": "9eccefc04ba599285100c779afa4ce3a726dfa965ad3ed341b497ff3eb458fb7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "iana-time-zone",
       "sourceLocator": "https://crates.io/crates/iana-time-zone",
-      "licenseTextSha256": "5770b987df699c23de73af0f6857f9412faa2767ea38ec0238710dcc562d960a",
+      "licenseTextSha256": "696759d65dfe558ff7d9f031c76db19ec5c0767470fb67c4e8d990820d1e99c9",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu",
       "sourceLocator": "https://github.com/unicode-org/icu",
-      "licenseTextSha256": "a7f471d8084accb3e2a0ea3489802c6ec6d653b48eab0a743242f1f356f17948",
+      "licenseTextSha256": "e55522d81edc687a341a4411e0776e54ca654e90147f354a90458aaced4116af",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_calendar",
       "sourceLocator": "https://crates.io/crates/icu_calendar",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_calendar_data",
       "sourceLocator": "https://crates.io/crates/icu_calendar_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_capi",
       "sourceLocator": "https://crates.io/crates/icu_capi",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_casemap",
       "sourceLocator": "https://crates.io/crates/icu_casemap",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_casemap_data",
       "sourceLocator": "https://crates.io/crates/icu_casemap_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_collections",
       "sourceLocator": "https://crates.io/crates/icu_collections",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_decimal",
       "sourceLocator": "https://crates.io/crates/icu_decimal",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_decimal_data",
       "sourceLocator": "https://crates.io/crates/icu_decimal_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_experimental",
       "sourceLocator": "https://crates.io/crates/icu_experimental",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_experimental_data",
       "sourceLocator": "https://crates.io/crates/icu_experimental_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_list",
       "sourceLocator": "https://crates.io/crates/icu_list",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_list_data",
       "sourceLocator": "https://crates.io/crates/icu_list_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_locale",
       "sourceLocator": "https://crates.io/crates/icu_locale",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_locale_core",
       "sourceLocator": "https://crates.io/crates/icu_locale_core",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_locale_data",
       "sourceLocator": "https://crates.io/crates/icu_locale_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_normalizer",
       "sourceLocator": "https://crates.io/crates/icu_normalizer",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_normalizer_data",
       "sourceLocator": "https://crates.io/crates/icu_normalizer_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_pattern",
       "sourceLocator": "https://crates.io/crates/icu_pattern",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_plurals",
       "sourceLocator": "https://crates.io/crates/icu_plurals",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_plurals_data",
       "sourceLocator": "https://crates.io/crates/icu_plurals_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_properties",
       "sourceLocator": "https://crates.io/crates/icu_properties",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_properties_data",
       "sourceLocator": "https://crates.io/crates/icu_properties_data",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_provider",
       "sourceLocator": "https://crates.io/crates/icu_provider",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "icu_provider_adapters",
       "sourceLocator": "https://crates.io/crates/icu_provider_adapters",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "image",
       "sourceLocator": "https://crates.io/crates/image",
-      "licenseTextSha256": "fac25d979d9fe9d52d8924b7c41b64e9d708020378c8f8d555367932c97f09f2",
+      "licenseTextSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Implementation of WebDriver BiDi standard",
       "sourceLocator": "https://github.com/GoogleChromeLabs/chromium-bidi",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "In line A-law and u-law conversion routines",
       "sourceLocator": "https://www.soft-switch.org/downloads/spandsp/",
-      "licenseTextSha256": "965e3ba8bea55c36e1b013b5f4428855809aa24f3387241975d60820477397f4",
+      "licenseTextSha256": "b29c8f13f91feb2dab7d6655444369fa9f29c0d7121a52dab90ff97e40343a85",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "incremental-font-transfer",
       "sourceLocator": "https://crates.io/crates/incremental-font-transfer",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "indexmap",
       "sourceLocator": "https://crates.io/crates/indexmap",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Ink",
       "sourceLocator": "https://github.com/google/ink.git",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "inspector protocol",
       "sourceLocator": "https://chromium.googlesource.com/deps/inspector_protocol/",
-      "licenseTextSha256": "3ea98c0f0f22a4ab74e5253d74a57d394723275db562ed77d7411ac0ff58ae40",
+      "licenseTextSha256": "450ebb9e9e50c2809d9ca581931fc8946d8d5aa0c8c35aae9ac471342fe4a88e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "inspector protocol",
       "sourceLocator": "https://chromium.googlesource.com/deps/inspector_protocol/",
-      "licenseTextSha256": "601772d7e273367da861f877dd3a413a8cdcc577d8d43707898287261c1165ae",
+      "licenseTextSha256": "b9be92f13356083392d97da13cab8ae543c7911f44eff5289b693da8b17b9e08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "International Phone Number Library",
       "sourceLocator": "https://github.com/googlei18n/libphonenumber/",
-      "licenseTextSha256": "4ff2a7d08e8f24e4b88f966f88688551f14144c6690cbeec069b3a3d75742200",
+      "licenseTextSha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "intl-messageformat",
       "sourceLocator": "https://github.com/formatjs/formatjs",
-      "licenseTextSha256": "5638df7efda1a344fe06ca3638c33e9be2b60ee1f0e2766d46a5d19274bbfd9f",
+      "licenseTextSha256": "0212e9ffd60f4c2e05426ac172b91266256b9ff4c0f0156e85b761a1d6f5e17f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ipcz",
       "sourceLocator": "https://chromium.googlesource.com/chromium/src/third_party/ipcz",
-      "licenseTextSha256": "f322c18b0536d1036723fb2f5f12420b4587cbe419611693b7a07e78e67ca545",
+      "licenseTextSha256": "8938c6deca58d85570c8887b6abf2c415e444299b7ec8752fcdb4e40935d8794",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ISimpleDOM COM interfaces for accessibility",
       "sourceLocator": "https://github.com/mozilla/gecko-dev",
-      "licenseTextSha256": "e0e1a824c244718e6e0e54282369ca78cd13a5dab2451969be7b94eb56b547ea",
+      "licenseTextSha256": "3ba9e660540da1bf9e85893464f35a44c3e92285e9f842888f2987664dba9299",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "itertools",
       "sourceLocator": "https://crates.io/crates/itertools",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "itoa",
       "sourceLocator": "https://crates.io/crates/itoa",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ixdtf",
       "sourceLocator": "https://crates.io/crates/ixdtf",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "JNI Zero",
       "sourceLocator": "This is the canonical repository",
-      "licenseTextSha256": "85dd0e61c4edef92b7232b8db44d775f8c1ac863a9f78a562c37cf61147e5694",
+      "licenseTextSha256": "57faf03e216d5628169a779df31a842347e55c8e6567e1107b6cb8fb90175b59",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jpeg-encoder",
       "sourceLocator": "https://crates.io/crates/jpeg-encoder",
-      "licenseTextSha256": "7e279559ddac6bb3aa5d500c7a7ec740e5214e888479ca93799defb3010e6306",
+      "licenseTextSha256": "16ec15949efca1a42841aa89c5a57c3aa3e70aeda7651b51e10cc7e2da90d645",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jpeg-js",
       "sourceLocator": "https://github.com/jpeg-js/jpeg-js",
-      "licenseTextSha256": "86c021bdb1d34b07f5b4d022420e685b29c4f8595020efd67b5488f3d4e7d38d",
+      "licenseTextSha256": "24604018b3d42b92eb3a0ee55a9e8d3bde92f95a0809f9ef22c06ce32f627940",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "JSON for Modern C++",
       "sourceLocator": "https://github.com/nlohmann/json",
-      "licenseTextSha256": "f38734131d9d55eb315cd55dc3c37b01f26030b4d4eb1cf82c332f52209f47d2",
+      "licenseTextSha256": "c0d068392ea65358b798b8c165103560f06e9e3b38c4ab4e2d8810a7b931af86",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "json5",
       "sourceLocator": "https://github.com/json5/json5",
-      "licenseTextSha256": "c5973d16e9d4cfd25df4dedbec03ed7a201f2bae3dd9ff7af80c1d7dd3d3295d",
+      "licenseTextSha256": "53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jsoncpp",
       "sourceLocator": "https://github.com/open-source-parsers/jsoncpp",
-      "licenseTextSha256": "6b5e0fa629282c5046447e09a0131155245d8506cf723ae93f48e75934bbaaa1",
+      "licenseTextSha256": "76c45ece83a26117f86f4e349e7df118708e061e87225328fb478ce1e8b3eb86",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "JSZip",
       "sourceLocator": "https://github.com/Stuk/jszip",
-      "licenseTextSha256": "5288a72ea4c2577a273c6e4dbd68efb373fd754358e4ba58294946415cf9aa5a",
+      "licenseTextSha256": "602ef1d5d3db1b23ada0b61d4230ef336012de7bc3b773d565f2b27a2757f51d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jxl",
       "sourceLocator": "https://crates.io/crates/jxl",
-      "licenseTextSha256": "17a873f12dcba92cbef5bf922356bc9fea4098a194bb17a58d99a01b45174b97",
+      "licenseTextSha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jxl_macros",
       "sourceLocator": "https://crates.io/crates/jxl_macros",
-      "licenseTextSha256": "17a873f12dcba92cbef5bf922356bc9fea4098a194bb17a58d99a01b45174b97",
+      "licenseTextSha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jxl_simd",
       "sourceLocator": "https://crates.io/crates/jxl_simd",
-      "licenseTextSha256": "17a873f12dcba92cbef5bf922356bc9fea4098a194bb17a58d99a01b45174b97",
+      "licenseTextSha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "jxl_transforms",
       "sourceLocator": "https://crates.io/crates/jxl_transforms",
-      "licenseTextSha256": "17a873f12dcba92cbef5bf922356bc9fea4098a194bb17a58d99a01b45174b97",
+      "licenseTextSha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Khronos header files",
       "sourceLocator": "http://www.khronos.org/registry",
-      "licenseTextSha256": "75a1664b6cc47bcdb3830e1fddfee2777ba697f5e7f2d38627d5f219d18c1cec",
+      "licenseTextSha256": "71a19392a0eb3255ab2055ed978bb0f93865cea84d31a3510eaffb74d8981e7f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Kotlin Standard Library",
       "sourceLocator": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.3.0/kotlin-stdlib-2.3.0.jar",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "lazy_static",
       "sourceLocator": "https://crates.io/crates/lazy_static",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "legacy-javascript",
       "sourceLocator": "https://github.com/GoogleChrome/lighthouse/tree/main/core/lib/legacy-javascript",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lens Protos",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "325ae28652fdef9ae5b3ca1d82caa5837735574f1935bc75c9b0c4c7404cdb77",
+      "licenseTextSha256": "a3775cb5f3e55a1a7fc417a6aed46048fe675d7377f88f143dab15694b9b2029",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "LevelDB: A Fast Persistent Key-Value Store",
       "sourceLocator": "https://github.com/google/leveldb.git",
-      "licenseTextSha256": "4d5963c2e372ed7c3415e726190def9b9b9031d1f5543256b6cac377bb1a1357",
+      "licenseTextSha256": "ccc19f1da0798ed666609b65a5b44dd8b3abe6fc08b9c0592eb76e82e174db19",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libaddressinput",
       "sourceLocator": "https://github.com/google/libaddressinput",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libbrlapi",
       "sourceLocator": "https://github.com/brltty/brltty",
-      "licenseTextSha256": "5244c7dc7764601d8104a5725043d4bba67a0038ceee0dba3d7e820946e34ade",
+      "licenseTextSha256": "d80c9d084ebfb50ea1ed91bfbc2410d6ce542097a32c43b00781b83adcb8c77f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libc",
       "sourceLocator": "https://crates.io/crates/libc",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libcxx",
       "sourceLocator": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git",
-      "licenseTextSha256": "7f3d0cc0491bac99e6b76cbb0dd90ff7e9981129820c46d9122758686639aa4e",
+      "licenseTextSha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libcxxabi",
       "sourceLocator": "http://libcxxabi.llvm.org/",
-      "licenseTextSha256": "f191f4524f77a4a841c9fe4b36c258376091c4dafbdbe4a2e26c5535d15d274a",
+      "licenseTextSha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libei",
       "sourceLocator": "https://gitlab.freedesktop.org/libinput/libei",
-      "licenseTextSha256": "65b0f295778681223d98c1e262764a37be9dcc3079ad5d123366b2decf7095be",
+      "licenseTextSha256": "99406b2e7cacd825c770d1652bbac228c8ab33ea0ae8e204c803949f11fb31cd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libgav1",
       "sourceLocator": "https://chromium.googlesource.com/codecs/libgav1/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libipp",
       "sourceLocator": "https://chromium.googlesource.com/chromiumos/platform2/libipp",
-      "licenseTextSha256": "c8de936159cad860f7600b6f04807b02a62fcaf378ab516441c4769b73b2bd4a",
+      "licenseTextSha256": "37d8bfba91b745693ea58f846f2f1276229745adf532974b73c1911cfd144241",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libjingle XMPP and xmllite libraries",
       "sourceLocator": "https://chromium.googlesource.com/external/webrtc",
-      "licenseTextSha256": "99e7240dcdcbe90d6eccc45217f7ab1b4691b077006a60a7efb3c28d742f3239",
+      "licenseTextSha256": "ab00a482b6a3902e40211b43c5d0441962ea99b6cc7c25c0f243fa270b78d482",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libjpeg-turbo",
       "sourceLocator": "https://github.com/libjpeg-turbo/libjpeg-turbo/",
-      "licenseTextSha256": "45a61887f59d5c89515f6bdeec30a13a9a98f21b17e11739ed56cc0412a72c42",
+      "licenseTextSha256": "152a0f78d9c3a3afc09470cba1e66eabb915515cb121252d6c85c4ed6352a073",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libm",
       "sourceLocator": "https://crates.io/crates/libm",
-      "licenseTextSha256": "6b08a06745379936e88fdedf489a663e62c60fbd494ba50ac960a89ae4fef8a3",
+      "licenseTextSha256": "3823dda7cf046602f4b4e77ec8e227863dc4736037cc85bb33d9f19febe16bb7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libprotobuf-mutator",
       "sourceLocator": "https://github.com/google/libprotobuf-mutator",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libsecret",
       "sourceLocator": "https://git.gnome.org/browse/libsecret/",
-      "licenseTextSha256": "9e3c9b7093ad282cf066c91f92f32e082023d3df11872aa90bd35526853dbb1a",
+      "licenseTextSha256": "a1a33180d02960ab1c5de36cf20b1a2f0fe9888d83826ad263da5db52f1b183b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libsrtp",
       "sourceLocator": "https://github.com/cisco/libsrtp",
-      "licenseTextSha256": "6f64f8daf9a4477698f295a207c886e426eefb84078f2bdb271c6f2a65146c17",
+      "licenseTextSha256": "8e19d42a1eec9561f3f347253ddf2e385c55f392f025bb0fd41b88dbf38db5ae",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Libtess2",
       "sourceLocator": "https://github.com/memononen/libtess2",
-      "licenseTextSha256": "5a80cf12f523f1a48c6a87ab1fd02e084b5700eafe11bb390c45ecf6ac5b132b",
+      "licenseTextSha256": "582c43ef2eb5aba92c6fb92913194a966989ffb044aef5dee0e37590029a86a5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "LibTIFF",
       "sourceLocator": "https://gitlab.com/libtiff/libtiff",
-      "licenseTextSha256": "9052d2bffa163b389885dd07ec213c82ac00b09a5500f3745658c9221a526113",
+      "licenseTextSha256": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libunwind",
       "sourceLocator": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git",
-      "licenseTextSha256": "51b73795806e90d3ca337f01e888fff924425fde5984c3fca5dd8e91c97ff478",
+      "licenseTextSha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libusbx",
       "sourceLocator": "https://github.com/libusb/libusb",
-      "licenseTextSha256": "0bf1ae5286ccd116f9daa41da6b0f539e97d7b51cc0e3f12cff577c04ca5f203",
+      "licenseTextSha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libutf",
       "sourceLocator": "https://github.com/cls/libutf",
-      "licenseTextSha256": "6e72d185708e9ca2ac9bd6b6bff9d6225358b47ad8c3c6fd21351fdac947bf1f",
+      "licenseTextSha256": "99a313b8c6296019863929983f56f997e285c0c18d9a3f6218fe28066cf8b5d0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libvpx",
       "sourceLocator": "https://chromium.googlesource.com/webm/libvpx",
-      "licenseTextSha256": "e0d0a09da9d7e3b92d13b570ab283414f1dd1416708a724b4b1185eb4e4aac04",
+      "licenseTextSha256": "b80a23ff7619a3b5c150cf718b43af5a5b9a2339ff019c562c9938d91303d08c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libx11",
       "sourceLocator": "https://gitlab.freedesktop.org/xorg/lib/libx11",
-      "licenseTextSha256": "a826b23e8138c9e50941de03975c7800759d0c07e0471cd39372472fd27e7cf0",
+      "licenseTextSha256": "ab95aa35fa2b3bd9930d30eda6920dfa905cd4d551e058cea2c9993e57c41b6a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libxcb-keysyms",
       "sourceLocator": "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms",
-      "licenseTextSha256": "c08a00300e09540621a22331f05b4aea36582e444798c096edaaeb232af30d5d",
+      "licenseTextSha256": "d499c1bf2c2a5f0a0498e5204d998388e308dcf2273dfbe2250a5b9a73f66537",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libxml",
       "sourceLocator": "http://xmlsoft.org",
-      "licenseTextSha256": "57f5c5b27cfe56acf98e29bf8f1c73bd20632b492e4c841ec61df732635a99d3",
+      "licenseTextSha256": "5d4873884a890122a4b9b20ad56ac6f7da1d796a5bfcf04a427970ac96217626",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libxslt",
       "sourceLocator": "http://xmlsoft.org/XSLT",
-      "licenseTextSha256": "439a0bd062cdcb5dc874bc9298dc1ef77cd9be361c8332b4d336e822a3f3a09b",
+      "licenseTextSha256": "7e48e290b6bfccc2ec1b297023a1d77f2fd87417f71fbb9f50aabef40a851819",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libyuv",
       "sourceLocator": "https://chromium.googlesource.com/libyuv/libyuv/",
-      "licenseTextSha256": "8daabcd783e6a988d4ad1ef52777921b6c0de89dafb1a07bedecc7f75b11b592",
+      "licenseTextSha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "libzip",
       "sourceLocator": "https://github.com/nih-at/libzip",
-      "licenseTextSha256": "b3bff42797fbc8f3a09898b4c6ad91a184cff81d23dc6950dcbab9def3c64532",
+      "licenseTextSha256": "0b052dcaa4b084c41fd5ba28c8ca4c54e24750d34ac9a07c758d3ea88aa0ea93",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lighthouse",
       "sourceLocator": "https://github.com/GoogleChrome/lighthouse",
-      "licenseTextSha256": "bbfd2c01a5b418c8025ac9e10fa7f0b487e74a66bb8af8421ce71863a4e7fa29",
+      "licenseTextSha256": "7ec9661a8afafab1eee3523d6f1a193eff76314a5ab10b4ce96aefd87621b0c3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lighthouse i18n.js",
       "sourceLocator": "https://github.com/GoogleChrome/lighthouse",
-      "licenseTextSha256": "bbfd2c01a5b418c8025ac9e10fa7f0b487e74a66bb8af8421ce71863a4e7fa29",
+      "licenseTextSha256": "7ec9661a8afafab1eee3523d6f1a193eff76314a5ab10b4ce96aefd87621b0c3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "linux-syscall-support",
       "sourceLocator": "https://chromium.googlesource.com/linux-syscall-support/",
-      "licenseTextSha256": "39bbfddf32d56919b32c08466a5e200ee8df15c5f32d05e7d70dd5cebdced218",
+      "licenseTextSha256": "63cc54f1d849448b225e71026acd6393390b09418cfad899b9dd453177f35c49",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lit",
       "sourceLocator": "https://github.com/lit/lit",
-      "licenseTextSha256": "afdeec02a52b62eceecdb84e7d4ba483cc7842e3d38ff4a4c331f25f54d6a301",
+      "licenseTextSha256": "45d31799d0db956cc3eb5469346abbd9b7025babc5ff29fab10d7095da992ef1",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lit",
       "sourceLocator": "https://lit.dev",
-      "licenseTextSha256": "afdeec02a52b62eceecdb84e7d4ba483cc7842e3d38ff4a4c331f25f54d6a301",
+      "licenseTextSha256": "45d31799d0db956cc3eb5469346abbd9b7025babc5ff29fab10d7095da992ef1",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lit",
       "sourceLocator": "https://lit.dev",
-      "licenseTextSha256": "afdeec02a52b62eceecdb84e7d4ba483cc7842e3d38ff4a4c331f25f54d6a301",
+      "licenseTextSha256": "45d31799d0db956cc3eb5469346abbd9b7025babc5ff29fab10d7095da992ef1",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "litemap",
       "sourceLocator": "https://crates.io/crates/litemap",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "LiteRT",
       "sourceLocator": "https://github.com/google-ai-edge/LiteRT",
-      "licenseTextSha256": "328a962ed6e8371df7010ef54a588f93b06260bedeae67f496844fb0388a5601",
+      "licenseTextSha256": "c1b9df1275e769f3dbab000d1e457a2d4b0f28eb5da6c77e48dc37eeba202ed7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Little CMS",
       "sourceLocator": "https://github.com/mm2/Little-CMS",
-      "licenseTextSha256": "675fb2c1122746bb9d2f1f3cd97ad0c61b4b43bd501ced1094ed5706a2e09df8",
+      "licenseTextSha256": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "llguidance",
       "sourceLocator": "https://crates.io/crates/llguidance",
-      "licenseTextSha256": "a8de7c2e83f537c901ed1010e1ee961322ec7fc45b8022823d02ba56cb8933cc",
+      "licenseTextSha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "llvm-libc",
       "sourceLocator": "https://libc.llvm.org/",
-      "licenseTextSha256": "89713bc715527430690f7f19d1f944e71000d90e09ed65393a4f607b7a9c4738",
+      "licenseTextSha256": "ebcd9bbf783a73d05c53ba4d586b8d5813dcdf3bbec50265860ccc885e606f47",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "lock_api",
       "sourceLocator": "https://crates.io/crates/lock_api",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "log",
       "sourceLocator": "https://crates.io/crates/log",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Lottie Web",
       "sourceLocator": "https://github.com/airbnb/lottie-web",
-      "licenseTextSha256": "3029badd4dc24bff1290f29ba7a7ea222c5c072eef41f5242d490a4b2e377e85",
+      "licenseTextSha256": "0d4077a7055ead389c4c5a9a6ac4bb8b784fc6e9e37be2caf544fcceed26cb16",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "lottie_ios",
       "sourceLocator": "https://github.com/airbnb/lottie-ios.git",
-      "licenseTextSha256": "de23179ec02b6a95f5dff46d6fc13d0d0e8ef43c2989f7f1c6055cccc1f76a27",
+      "licenseTextSha256": "032df1c0718382f670330f68760365c418d6af3cd1de77b72db4da1c2131706a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "LZMA SDK",
       "sourceLocator": "http://www.7-zip.org/sdk.html",
-      "licenseTextSha256": "012a15c5ab57d625ffa25c83ddee2b22afd6313c14b8d2e8aa19fbaf530f22f6",
+      "licenseTextSha256": "7de6196d9c03ec05e626d4fe7ab86a9c900f11d73176a816423fc14e0a1ee0de",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Mann-Whitney U Test",
       "sourceLocator": "https://gist.github.com/gungorbudak/1c3989cc26b9567c6e50",
-      "licenseTextSha256": "c2e4c447297135be1236b7939c371c9b0fe3be97632a95850641a063f3eb0465",
+      "licenseTextSha256": "6aa99913137a7f9b212e53e8768871fe178e4ee01d8da0b267dbcbee314c527a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Marked",
       "sourceLocator": "https://github.com/markedjs/marked",
-      "licenseTextSha256": "7280a453a6a0ece515e1908836e08371449e5fb6a84e69d4a2d781bdddd0ea23",
+      "licenseTextSha256": "91968bf678e8c3d94ebf8596e98ca9cb5fca1c6555b53f721a940cb50f1b3d66",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Material color utilities",
       "sourceLocator": "https://github.com/material-foundation/material-color-utilities",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Material Web Components",
       "sourceLocator": "https://github.com/material-components/material-components-web-components",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "MediaController Android sample.",
       "sourceLocator": "https://android.googlesource.com/platform/development/+/b356564/samples/Support4Demos/src/com/example/android/supportv4/media/MediaController.java",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "MediaPipe",
       "sourceLocator": "https://github.com/google/mediapipe",
-      "licenseTextSha256": "8968ed4bcd60379a8f612ddf09a9c80fa0a7af71a5f4da86c15fc13e95863d00",
+      "licenseTextSha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Mediapipe Tasks Vision",
       "sourceLocator": "https://www.npmjs.com/package/@mediapipe/tasks-vision",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "MediaStoreUtils Android sample.",
       "sourceLocator": "https://android.googlesource.com/platform/cts/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "memchr",
       "sourceLocator": "https://crates.io/crates/memchr",
-      "licenseTextSha256": "eefd7dfe2c606b7ec58630411a3f5528bfe531ee1842b638062801a31b9e7898",
+      "licenseTextSha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "memo-map",
       "sourceLocator": "https://crates.io/crates/memo-map",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "messageformat",
       "sourceLocator": "https://www.npmjs.com/package/messageformat",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Metrics Protos",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "acb176dd2d4b1dfccb9336cb271d1077972d455dbde87dc0bac8843b373049d6",
+      "licenseTextSha256": "9f9a3a4b074f0fcf4879a5b48eb268a17a65a54dc7f943ba40c755378cbe200d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications",
       "sourceLocator": "https://www.npmjs.com/package/@azure/msal-browser",
-      "licenseTextSha256": "b0eb0d316fcdc4e91d0a88fbba2cc694e2612f52b67d4392d0016bceaf72c587",
+      "licenseTextSha256": "c544adf8f0d43453d9fdf6c11da19605d12d89806a7870653169b8cc97f5bb53",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Microsoft Edge WebView2 SDK",
       "sourceLocator": "https://www.nuget.org/packages/Microsoft.Web.WebView2",
-      "licenseTextSha256": "a4bb40392b25854b876945d871c2c81d0f49a943cfa34130098fdf17a9ef7624",
+      "licenseTextSha256": "bc7e803121011bf3f7ba14ea2193e9f6d590d1fd3bae7b4430e272bbf45934b2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "minigbm",
       "sourceLocator": "https://chromium.googlesource.com/chromiumos/platform/minigbm",
-      "licenseTextSha256": "cb4520a3c18979087cf311ebda54cd6ade6f6228630149141fbc2d02c65835c7",
+      "licenseTextSha256": "83bb6bd9ccd2cf5230cb1807ed16258289768dc4d9cb80069a814e04415a1275",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "minijinja",
       "sourceLocator": "https://crates.io/crates/minijinja",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "miniz_oxide",
       "sourceLocator": "https://crates.io/crates/miniz_oxide",
-      "licenseTextSha256": "fac25d979d9fe9d52d8924b7c41b64e9d708020378c8f8d555367932c97f09f2",
+      "licenseTextSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "mitt",
       "sourceLocator": "https://github.com/developit/mitt",
-      "licenseTextSha256": "987ca44a220754f5aa1eb1a87675210d2b18fcff9919f49fc57419bcb550ad5e",
+      "licenseTextSha256": "1cab22f196264195a4caec8ca5630170fdde76ee8f43346e47021d087332d3b0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "mitt",
       "sourceLocator": "https://github.com/developit/mitt",
-      "licenseTextSha256": "2304d7dda784e883dd6608b922e823814b143dfcb90ecd22a5595c38634ca33c",
+      "licenseTextSha256": "4687b3b5b6eb3af13be50891dd67dab9e85bdca3f41c63d3e33b3364d6a717b5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ml_dtypes",
       "sourceLocator": "https://github.com/jax-ml/ml_dtypes",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "modp base64 decoder",
       "sourceLocator": "https://github.com/client9/stringencoders",
-      "licenseTextSha256": "09de8659a384f8b0d361aba815832f4532977fcd23eba0c6ae0e62a9b82d04eb",
+      "licenseTextSha256": "d47e8390fb0d7ad4a18f26aedd6283c7ab6b5b4fabab536ccb4db7f9f6d90c08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "moxcms",
       "sourceLocator": "https://crates.io/crates/moxcms",
-      "licenseTextSha256": "9dae07f59edde0a5eeb6b642dca85e9f469c6d059defbacac7c448fb4cd43084",
+      "licenseTextSha256": "90bf2d659c43045111b65c733ab2a6d4cbcb422a098368c8c58a9ba3db4ed0c5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Mozilla Personal Security Manager",
       "sourceLocator": "https://dxr.mozilla.org/mozilla1.9.2/source/security/manager/",
-      "licenseTextSha256": "034e9b7f85ce847dfed5d5058c10cdc922451bd60600bc180d79bd75b19654be",
+      "licenseTextSha256": "a718a32ad435b316ce3a9e871e05421d6ca784c435f8ef5715c1b6e289381f04",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Mozilla Windows Cert code",
       "sourceLocator": "https://searchfox.org/mozilla-central/rev/0fec57c05d3996cc00c55a66f20dd5793a9bfb5d/security/manager/ssl/EnterpriseRoots.cpp",
-      "licenseTextSha256": "e07ac7b5c06b92e15d9e1d90ff4204ce29ef00f88802a549fbcef361c45c4632",
+      "licenseTextSha256": "6d29b685206b28617dd9ac13818ccc943e57df68aeea1db0f4a5539f4507a9aa",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "murmur3",
       "sourceLocator": "https://crates.io/crates/murmur3",
-      "licenseTextSha256": "9b6a18f8acf4ba0a9b6249bcce1bf476af2663c5f90511d5f022492ce0d234a4",
+      "licenseTextSha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Nearby Connections Library",
       "sourceLocator": "https://github.com/google/nearby",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Netscape Portable Runtime (NSPR)",
       "sourceLocator": "https://hg.mozilla.org/projects/nspr",
-      "licenseTextSha256": "026000e4fe18c2b53ac11738d685c72429256483d51ec085e8e261fae2b4f0b7",
+      "licenseTextSha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Node.js",
       "sourceLocator": "https://github.com/nodejs/node",
-      "licenseTextSha256": "f13edc79c5c588260dcf1d1c6f214d7643c986ebf4e8812d27695a14c13cbb15",
+      "licenseTextSha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-bigint",
       "sourceLocator": "https://crates.io/crates/num-bigint",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-complex",
       "sourceLocator": "https://crates.io/crates/num-complex",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-derive",
       "sourceLocator": "https://crates.io/crates/num-derive",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-integer",
       "sourceLocator": "https://crates.io/crates/num-integer",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-rational",
       "sourceLocator": "https://crates.io/crates/num-rational",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "num-traits",
       "sourceLocator": "https://crates.io/crates/num-traits",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "NVidia Control X Extension Library",
       "sourceLocator": "http://cgit.freedesktop.org/~aplattner/nvidia-settings/",
-      "licenseTextSha256": "e9e145e09ca413c77368f473b5e460ec6cff4c351b528d3ef8300b7372290185",
+      "licenseTextSha256": "31346421254a3e6e12687cf17f19f6357ee73a617fa7b3d3ccefdcbabe49bdd3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "oak",
       "sourceLocator": "https://github.com/project-oak/oak/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Oboe.js",
       "sourceLocator": "https://github.com/jimhigson/oboe.js",
-      "licenseTextSha256": "c8d84fcea98c27989e81ac69ac64e6b7ea0f7619c827c5d4c9c399c15b64f3c1",
+      "licenseTextSha256": "c08b62ea7d3b80b856eb8b6eebe0996305fdf2079cc8f003388aba54481f2c01",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Omnibox Protos",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "b3ba51d11a67fdccce0e630354e508bb1037728a6a480f78a63846ed78cb400f",
+      "licenseTextSha256": "00aeab59bc8fbc9fc457feb487813a695120053ffe63dd56ba3191e9977f3880",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "once_cell",
       "sourceLocator": "https://crates.io/crates/once_cell",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "One Euro Filter",
       "sourceLocator": "https://github.com/casiez/OneEuroFilter",
-      "licenseTextSha256": "c3497d7c53b809dd3961a5a870ac32ceaae2a09f8e3d037d512a7cbd6924aedd",
+      "licenseTextSha256": "8bed129a6a15e631c93a624985e631eb62a55f7e072b78f4e1c3dde7c745283d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Open Screen Protocol Library",
       "sourceLocator": "https://chromium.googlesource.com/openscreen",
-      "licenseTextSha256": "3be781496b840db4acf6966a79292c7e21b66abb67ea894b95198b96ee9115ab",
+      "licenseTextSha256": "4df77ff8575f0b6053e0e02e1b60aa0b2e87e6aaaaa629a7111970e6c4a12e94",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "OpenGL-Registry",
       "sourceLocator": "https://github.com/khronosgroup/OpenGl-Registry",
-      "licenseTextSha256": "ddd8cda01c8e6c7cdcc306d3ae630fb52b4df2ffc16beccbaff5a442c64ca418",
+      "licenseTextSha256": "d20809e7f3c8116615249bdefdc826c29b0b8332e7ac7ac249fd3949b716e8c5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "OpenH264",
       "sourceLocator": "http://www.openh264.org/",
-      "licenseTextSha256": "b11910183cb3a92935fa1b85267870618dd7191deaeb418d01f83c10711ee2f3",
+      "licenseTextSha256": "dd5c1c9668512530fa5a96e4c29ac4033d70a7eeb0eed7a42fddb6dd794ebdbb",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "OpenJPEG",
       "sourceLocator": "https://github.com/uclouvain/openjpeg",
-      "licenseTextSha256": "08081dcb7ca910dbe8f8bbf637f98e64baf0fced2db43915989f4f60491e33a0",
+      "licenseTextSha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "opus",
       "sourceLocator": "https://gitlab.xiph.org/xiph/opus",
-      "licenseTextSha256": "8f22f944e73a5df4b5266e90afc05953fecd0bd177ec4f0153101986c113e3ca",
+      "licenseTextSha256": "01e1167d54a096d123cf6dfbbeb19587278845c6481d2d66d545669846079551",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ordered-float",
       "sourceLocator": "https://crates.io/crates/ordered-float",
-      "licenseTextSha256": "26115c993a70863f4ea6af5a11e61236d1f6c88c3ed2e4c3d81bc33b2a05eb2b",
+      "licenseTextSha256": "f7715d38a3fa1b4ac97c5729740752505a39cb92ee83ab5b102aeb5eaa7cdea4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "OTS (OpenType Sanitizer)",
       "sourceLocator": "https://github.com/khaledhosny/ots.git",
-      "licenseTextSha256": "89a2c9ddb95636eef76794ad49e127a02d75397436a08603ad209022354f68b4",
+      "licenseTextSha256": "0d74de3c3cd3196a9ed1bc612cfd5f81d7509d66c4be34a50f99d61bd1ad00d4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "pako",
       "sourceLocator": "https://github.com/nodeca/pako",
-      "licenseTextSha256": "e7740172bfe8bed28809f913abe8aee2b48d0a4313753b5445398ab14e1f16ec",
+      "licenseTextSha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "parking_lot",
       "sourceLocator": "https://crates.io/crates/parking_lot",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "parking_lot_core",
       "sourceLocator": "https://crates.io/crates/parking_lot_core",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "parsel",
       "sourceLocator": "https://github.com/LeaVerou/parsel",
-      "licenseTextSha256": "14f7ac4132c074939d5af2e9d3b93b3c23fce974c9d53d9e8a76475e3dcf5ce3",
+      "licenseTextSha256": "eb0fa16c7452341017d97ac695c737cd19a8a47e8a87edd66db9493017c0d077",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Paul Hsieh's SuperFastHash",
       "sourceLocator": "http://www.azillionmonkeys.com/qed/hash.html",
-      "licenseTextSha256": "12a2c6141d7be4d447478f551d15edab89253b5dd306f99dbc3952708845ab66",
+      "licenseTextSha256": "90b2201c340cee36b40a443f949d9eb416f0a0d204c32d350aff87fedeb67ae8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "PDFium",
       "sourceLocator": "https://pdfium.googlesource.com/pdfium/",
-      "licenseTextSha256": "84ee0c721a8b3e32adc0e82d7bf6d0275b976d52dfce8dbf3d2b9c22c057293a",
+      "licenseTextSha256": "1fe9dea718fbd75cf149adaf4d8a22a4335604d964ddb76d1b45383dec8668c9",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Perfetto",
       "sourceLocator": "https://github.com/google/perfetto/",
-      "licenseTextSha256": "27fa6e0b054c2d5193e4161fcc3c92f2f71cd0dde24b85651ec50283ee8c0271",
+      "licenseTextSha256": "9b569417be9f195f8ffa709a23836c4e0f880b2752b09653baa8a98d3b02db3a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "PFFFT: a pretty fast FFT.",
       "sourceLocator": "https://bitbucket.org/jpommier/pffft/",
-      "licenseTextSha256": "23a2ef9566fb8b826dc68ae78b992fac118c24c2b93f7510d4a3aa64707262f7",
+      "licenseTextSha256": "a46200592eb193853527250da098e6bb0c75424e7a2c7db8da526c4f301c3d88",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "plasma-wayland-protocols",
       "sourceLocator": "https://github.com/KDE/plasma-wayland-protocols",
-      "licenseTextSha256": "29a5d1428d5bf83a1e8e9a69cf6a777cdd64c175d89073e880a5368e0dd1511c",
+      "licenseTextSha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "png",
       "sourceLocator": "https://crates.io/crates/png",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Polymer",
       "sourceLocator": "https://github.com/Polymer/polymer.git",
-      "licenseTextSha256": "e1755a9d9959fe9984958da605492db26505693786e9cee38623e7f8aa0ec1b1",
+      "licenseTextSha256": "24699c6858472311aa9acc6c2b7112ff9de6e7792569158ba9e439deb0529ef6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Polymer",
       "sourceLocator": "https://github.com/polymer/polymer",
-      "licenseTextSha256": "e1755a9d9959fe9984958da605492db26505693786e9cee38623e7f8aa0ec1b1",
+      "licenseTextSha256": "24699c6858472311aa9acc6c2b7112ff9de6e7792569158ba9e439deb0529ef6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "potential_utf",
       "sourceLocator": "https://crates.io/crates/potential_utf",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "pprof",
       "sourceLocator": "https://github.com/google/pprof/tree/master/proto",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "primal-check",
       "sourceLocator": "https://crates.io/crates/primal-check",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Private Join and Compute subset",
       "sourceLocator": "https://github.com/google/private-join-and-compute",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "proc-macro2",
       "sourceLocator": "https://crates.io/crates/proc-macro2",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Protected Content Interface for libva",
       "sourceLocator": "https://github.com/intel/libva",
-      "licenseTextSha256": "ff29cbcb44cb628ca463fa78d86b010890b0639d2eca8efae707ca2bbb78e2b0",
+      "licenseTextSha256": "c86a782ee845b52472dae9b9d79fb915d333628ac0efe49cdce63644814931de",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Protocol Buffers",
       "sourceLocator": "https://github.com/google/protobuf",
-      "licenseTextSha256": "597740497388b010f142b23bd4ac4f52d16afea38c1d089088669812baf385cd",
+      "licenseTextSha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Protocol Buffers (javascript)",
       "sourceLocator": "https://github.com/protocolbuffers/protobuf-javascript",
-      "licenseTextSha256": "5a6ad658b73b36ec657cbd3385db48892f7fb2e4b694c1921a5164bb1702279c",
+      "licenseTextSha256": "103441a2584cb720426c60320bcba53807024aab3080b00e0da841c305757a34",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "protodatastore-cpp",
       "sourceLocator": "https://github.com/google/protodatastore-cpp",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "PSM (Private Set Membership) client side",
       "sourceLocator": "Google Internal",
-      "licenseTextSha256": "5a0c18bb6115971468a53c1cd771959efe7b9efd11aa8cced722b033c44ee289",
+      "licenseTextSha256": "ecf288917b3d93b8485414ae014a0bdfaea0d50a4bd22d0365eb6b5db7a55951",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "pthreadpool",
       "sourceLocator": "https://github.com/google/pthreadpool",
-      "licenseTextSha256": "556612721fcc2108d032dd0d4d943fd44578ac37d091f5a636f91dad79a6f2ae",
+      "licenseTextSha256": "57814a606b4d0fb087d9a534919084b6c11b58a4174cb5a4aef200187780dc3a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Public Khronos WebGL Conformance Tests repository",
       "sourceLocator": "https://github.com/KhronosGroup/WebGL.git",
-      "licenseTextSha256": "01250d12ec792e4025ac0d5c08b6e341f8bce917fab82ad0c8dfe6e7808463ad",
+      "licenseTextSha256": "de17422334747f3e629938e33d0cf40322f9e3c42774d085d95b9dd8aea8d88e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Puffin deterministic deflate recompressor",
       "sourceLocator": "https://android.googlesource.com/platform/external/puffin",
-      "licenseTextSha256": "2b54c26b5550b6b68b96824a2fa12898eb835e975eb3fd92b63889d597a0c452",
+      "licenseTextSha256": "a6d3ebd1c2f37d4fd83d0676621f695fc0cc2d8c6e646cdbb831b46e0650c208",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Puppeteer Core",
       "sourceLocator": "https://github.com/puppeteer/puppeteer/tree/main/packages/puppeteer-core",
-      "licenseTextSha256": "14f8a0348e9a7cb5c259be0c746c84c88bca0246bd04f55681539218c6d29586",
+      "licenseTextSha256": "a27ca07269b3518550b2e83aed13eadd7d14d924b5864e14889b40cf227530ca",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "pxfm",
       "sourceLocator": "https://crates.io/crates/pxfm",
-      "licenseTextSha256": "9dae07f59edde0a5eeb6b642dca85e9f469c6d059defbacac7c448fb4cd43084",
+      "licenseTextSha256": "90bf2d659c43045111b65c733ab2a6d4cbcb422a098368c8c58a9ba3db4ed0c5",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "pybind11",
       "sourceLocator": "https://github.com/pybind/pybind11",
-      "licenseTextSha256": "6f01ae6753a3527aaa2276d6b91df617a0217d9759b5281869f99cbc1573432c",
+      "licenseTextSha256": "1ad5bb59b0fbb2f84676bf8f2a3d492fe5a4e23445f92fe95889b8c4c2de2169",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "qr_code",
       "sourceLocator": "https://crates.io/crates/qr_code",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "QUICHE",
       "sourceLocator": "https://quiche.googlesource.com/quiche",
-      "licenseTextSha256": "17959d04e9409c380588b7baaee235e185965a1ad0c866924b786b0fb02b3c99",
+      "licenseTextSha256": "845022e0c1db1abb41a6ba4cd3c4b674ec290f3359d9d3c78ae558d4c0ed9308",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "quote",
       "sourceLocator": "https://crates.io/crates/quote",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rapidhash",
       "sourceLocator": "https://github.com/Nicoshev/rapidhash/blob/master/rapidhash.h",
-      "licenseTextSha256": "fa682a5d3ad4b7d9eee179a750313fdc7ab7e0093608774d522fdfbb7eb43f5f",
+      "licenseTextSha256": "db672df7faf793fbe28b8074fdd10822363e1525816b45c9627754885de842b0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rapidhash",
       "sourceLocator": "https://github.com/Nicoshev/rapidhash/blob/master/rapidhash.h",
-      "licenseTextSha256": "f5d81b97e538f88c3ae24caf43c7f2c2c73a2d6052ee0ae01295059c840d084e",
+      "licenseTextSha256": "b8e376aed40d481f1a001c20883918c18dae72ba307c8abe4188189deca52316",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "re2 - an efficient, principled regular expression library",
       "sourceLocator": "https://github.com/google/re2",
-      "licenseTextSha256": "d42004dfeb5b841ed8198bdd6036ccfa738051d7a40dfc4e94439fe7f5e26e5d",
+      "licenseTextSha256": "6040cda75d90b1738292a631d89934c411ef7ffd543c4d6a1b7edfc8edf29449",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "read-fonts",
       "sourceLocator": "https://crates.io/crates/read-fonts",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "readability",
       "sourceLocator": "https://github.com/mozilla/readability",
-      "licenseTextSha256": "fe63183bceff3dcfc5677ae84896e71ade21e6b3f1efc2c9d0dbfad572678910",
+      "licenseTextSha256": "a5b1e8181751ce05b85b7bfaa832b785e87086250a5148e679d17ca9bdcfa958",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Recurrent neural network for audio noise reduction",
       "sourceLocator": "https://github.com/xiph/rnnoise",
-      "licenseTextSha256": "b1606c72c137968c310351b85fc33dbb6cb4a8700877eac32af035687912f46e",
+      "licenseTextSha256": "e2f59ff41d9d03adc3dcf3deff170f8c8cf4a6eb4a9b174762a7656d23200ffa",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ref-cast",
       "sourceLocator": "https://crates.io/crates/ref-cast",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ref-cast-impl",
       "sourceLocator": "https://crates.io/crates/ref-cast-impl",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "regex-automata",
       "sourceLocator": "https://crates.io/crates/regex-automata",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "regex-lite",
       "sourceLocator": "https://crates.io/crates/regex-lite",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "regex-syntax",
       "sourceLocator": "https://crates.io/crates/regex-syntax",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "resb",
       "sourceLocator": "https://crates.io/crates/resb",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rjsmin",
       "sourceLocator": "https://github.com/ndparker/rjsmin",
-      "licenseTextSha256": "c6b64150d4711d18642ff7cdb3b3693b9ccae078dd026d4d193af33fcd2f61f4",
+      "licenseTextSha256": "59899c6091b540582ed617e8eeaac4919dc985ccfc35459ee9752b699be5205b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rustfft",
       "sourceLocator": "https://crates.io/crates/rustfft",
-      "licenseTextSha256": "9b6a18f8acf4ba0a9b6249bcce1bf476af2663c5f90511d5f022492ce0d234a4",
+      "licenseTextSha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rustversion",
       "sourceLocator": "https://crates.io/crates/rustversion",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "rxjs",
       "sourceLocator": "https://github.com/ReactiveX/rxjs",
-      "licenseTextSha256": "a1de71c3d4893655ac8294f78b1c7b9f82ec5d7178654d08966e8f85c2acf7d6",
+      "licenseTextSha256": "a8d80f63116de4ec1abd3800ec98f68e0acba524f12db62518868649a722f631",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ryu",
       "sourceLocator": "https://crates.io/crates/ryu",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "scopeguard",
       "sourceLocator": "https://crates.io/crates/scopeguard",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "ScreenAI Library",
       "sourceLocator": "https://source.corp.google.com/piper///depot/google3/chrome/accessibility/machine_intelligence/chrome_screen_ai",
-      "licenseTextSha256": "8ca7ba8d0bd3202eb85cebb3acb965d9285fea3b3ae87b0a2e440c07c515a8aa",
+      "licenseTextSha256": "a264360f8dc38b1f9e3e7f3229ce1e1e4e041e6c3a01c20073e2a3fb7681cf7e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Search Engines resources",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "2e4f150de9fafe36d95d94bcce31b5caffa51db1906b3763e87b7a4add60eb81",
+      "licenseTextSha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Secure Message",
       "sourceLocator": "https://github.com/google/securemessage",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Selenium Atoms",
       "sourceLocator": "https://github.com/SeleniumHQ/selenium/tree/trunk",
-      "licenseTextSha256": "a53d90e8a97dc0c1af75c69109ffad5c3f7518c5e82aa297dc3b06aa9d194629",
+      "licenseTextSha256": "e75c3f21fe3a436f10c005940acc2e3f1591b5e245750164126ff234c64c3f93",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Sentencepiece",
       "sourceLocator": "https://github.com/google/sentencepiece",
-      "licenseTextSha256": "86eb972be2da35fc4e5a97c8ff615b1539ada8d0437b1f76ffc29572dcdf0113",
+      "licenseTextSha256": "f97654902d8552aed44d8316054ffeb3aeb1fbc5ca6011a5ec62b63f2226acac",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "serde",
       "sourceLocator": "https://crates.io/crates/serde",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "serde_core",
       "sourceLocator": "https://crates.io/crates/serde_core",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "serde_derive",
       "sourceLocator": "https://crates.io/crates/serde_derive",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "serde_json",
       "sourceLocator": "https://crates.io/crates/serde_json",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "serde_json_lenient",
       "sourceLocator": "https://crates.io/crates/serde_json_lenient",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Sframe",
       "sourceLocator": "https://github.com/cisco/sframe",
-      "licenseTextSha256": "b83fb25f74c92ff46d3b8959cc8ff86bfa7c52d2629bc82dc0a5abfdd527fc4d",
+      "licenseTextSha256": "55942e3b6ebf4df940d32e2fc8ce7ba59cdd4b32babcf479c1a9b5bb45bbad40",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "sfv",
       "sourceLocator": "https://crates.io/crates/sfv",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "shared-brotli-patch-decoder",
       "sourceLocator": "https://crates.io/crates/shared-brotli-patch-decoder",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "simd-adler32",
       "sourceLocator": "https://crates.io/crates/simd-adler32",
-      "licenseTextSha256": "065a3a6a9215b45be9372c4c2067895a8eb3452b7003c70fe4d61fa835d2cc95",
+      "licenseTextSha256": "42a35170233e83e18856792e748de4c1ce4a63b2afce9a370c89ef3fe23f9f2d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "simdutf unicode transcoder",
       "sourceLocator": "https://github.com/simdutf/simdutf",
-      "licenseTextSha256": "906c558af577c5e8de284e70323f047ccba72fe2da9892463ff78a21801d3adf",
+      "licenseTextSha256": "fc8dbc04e03ad4efc08a647ffe7f995b811a95bc04c0e85a56d5277c6593fa5f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Simple Homomorphic Encryption Library with Lattices",
       "sourceLocator": "https://github.com/google/shell-encryption",
-      "licenseTextSha256": "9ccdfbb4f53ba47781a594536dd97ab55fe5d6008933eac93d5429740b5c6cf0",
+      "licenseTextSha256": "bcf29b4fd3ec2cb5f9d40a0866da446f6da62170d2ccedf4aeca9cf9406dd20c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "simple-dns",
       "sourceLocator": "https://github.com/balliegojr/simple-dns",
-      "licenseTextSha256": "86214c5f63b10ab080dff1dbc74f8106c286e5d8330a673f96c940eb9ae86a68",
+      "licenseTextSha256": "c6550232507f928b83ef50f4be1e64c434da5ac2f434cdf9a2d89344af33e8fd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "simplejson",
       "sourceLocator": "https://github.com/simplejson/simplejson",
-      "licenseTextSha256": "e6059dbb48746ae3c344bb069187f0d062c084c5f40edb8475e3929528558888",
+      "licenseTextSha256": "33c9a2fe619e1200937629f318895898ffcd1bf7d0ddd39adc382c030925e61e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Sizzle",
       "sourceLocator": "https://sizzlejs.com/",
-      "licenseTextSha256": "f6346cd6c8ca34ec74beb203ee3e242d69f57a8e10c9d6e57f8e8c848c19196b",
+      "licenseTextSha256": "7a1cdaeb0f54a963261d6856842249ef7fd52d49162c2996f9cef20eb7f40cfa",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "skera",
       "sourceLocator": "https://crates.io/crates/skera",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Skia",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "802f9f143df45fd3fd97b763dda33c1c7c202095f0010e2895f73c58b65310a6",
+      "licenseTextSha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "skrifa",
       "sourceLocator": "https://crates.io/crates/skrifa",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "smallvec",
       "sourceLocator": "https://crates.io/crates/smallvec",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SMHasher",
       "sourceLocator": "https://github.com/aappleby/smhasher",
-      "licenseTextSha256": "c5e9d12e0dd576cf2524c4b35ef9dfaa20f85a28c19b4a594aca45a46fc45ccd",
+      "licenseTextSha256": "3f6f1b520bc53e878ccbb698ad0bacef3752a5f4e4b50a26552bd70f60b40748",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Snappy: A fast compressor/decompressor",
       "sourceLocator": "http://google.github.io/snappy/",
-      "licenseTextSha256": "a3f0f8cfd1f34b64d523efe9807f001071d31f5dedf4c31872be15ca607c414c",
+      "licenseTextSha256": "55172044f7e241207117448a4d9d6ba1d0925c8ad66b5d4c08c70adfa9cc3de6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "source-map-scopes-codec",
       "sourceLocator": "https://github.com/ChromeDevTools/source-map-scopes-codec",
-      "licenseTextSha256": "f154fc340ccb03446a51d7893ef915f8ba6f15c0b0ad9fdddef6a8d25ec73ceb",
+      "licenseTextSha256": "53b4475d1cda8c46465bbaff85432631f0830cc2c0a4b28234b7e4d12d862e7b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Speech Dispatcher",
       "sourceLocator": "https://github.com/brailcom/speechd",
-      "licenseTextSha256": "5b034f52afd8b887c2fdb18794645c5ddc5c7d17b09b6b39b39473a660da1c57",
+      "licenseTextSha256": "592987e8510228d546540b84a22444bde98e48d03078d3b2eefcd889bec5ce8c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Speech Rule Engine",
       "sourceLocator": "https://github.com/zorkow/speech-rule-engine",
-      "licenseTextSha256": "fac25d979d9fe9d52d8924b7c41b64e9d708020378c8f8d555367932c97f09f2",
+      "licenseTextSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SPIR-V Headers",
       "sourceLocator": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SPIR-V Tools",
       "sourceLocator": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SPIRV-Headers",
       "sourceLocator": "https://github.com/KhronosGroup/SPIRV-Headers",
-      "licenseTextSha256": "4a6562d8fc298dc94b0649ab5ce67f068e821273bf0a648ecb69264ee6f1a449",
+      "licenseTextSha256": "ea43b1de38a6f90c488800d66dec1ed671e68cda530266bc96951fb5b6307613",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SPIRV-Tools",
       "sourceLocator": "https://github.com/KhronosGroup/SPIRV-Tools",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "spl sqrt floor",
       "sourceLocator": "http://www.pertinentdetail.org/sqrt",
-      "licenseTextSha256": "f296ffd138801277650b432b0096001cdc7877573f2840274bf442c61cae92db",
+      "licenseTextSha256": "41d791701e3e1c1073470403de7e342442d1e6a2af72681023b13a2f45f2125c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "sqlite",
       "sourceLocator": "https://github.com/sqlite/sqlite",
-      "licenseTextSha256": "e993711f81773d937ecb66eff438164103aafd6a117158ce294ddd9951ad81c5",
+      "licenseTextSha256": "06545a6ec25fbbff6c62f205f94a35be49e38f33bea827a8cfb07d7b82e4b083",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Squirrel",
       "sourceLocator": "https://github.com/Squirrel/Squirrel.Mac",
-      "licenseTextSha256": "102a3c7401a78015118fe551337c9c2f7e4a66aa4417e03723661718da075f9d",
+      "licenseTextSha256": "f58f48614330755c5dde8672ed8fc49b1c2261718e7c1429112b5f00923d8ae4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "stable_deref_trait",
       "sourceLocator": "https://crates.io/crates/stable_deref_trait",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "static_assertions",
       "sourceLocator": "https://crates.io/crates/static_assertions",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "strck",
       "sourceLocator": "https://crates.io/crates/strck",
-      "licenseTextSha256": "15ab352e435b608a44be47b5f9ab8b512d84b5e58ebfffccaa04e822d37f7132",
+      "licenseTextSha256": "7e24648e3d082d4f8026cdedb21d084d91ef13223bff6b76cb8bf19a744b7d28",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "strength_reduce",
       "sourceLocator": "https://crates.io/crates/strength_reduce",
-      "licenseTextSha256": "9b6a18f8acf4ba0a9b6249bcce1bf476af2663c5f90511d5f022492ce0d234a4",
+      "licenseTextSha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "strum",
       "sourceLocator": "https://crates.io/crates/strum",
-      "licenseTextSha256": "0a899cfc1c8bff6c48cdd190f124bbff7a3746a19f17ef5953aa422eada0df92",
+      "licenseTextSha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "strum_macros",
       "sourceLocator": "https://crates.io/crates/strum_macros",
-      "licenseTextSha256": "0a899cfc1c8bff6c48cdd190f124bbff7a3746a19f17ef5953aa422eada0df92",
+      "licenseTextSha256": "8bce3b45e49ecd1461f223b46de133d8f62cd39f745cfdaf81bee554b908bd42",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "subtle",
       "sourceLocator": "https://crates.io/crates/subtle",
-      "licenseTextSha256": "a022799ff66cf670d714b50be3eebbc2289164a79ca04515e0dd1853424af653",
+      "licenseTextSha256": "d1fc1bc0d155df60b2e7705b6b2ae02a05c96f948e1cec6e2fb86360b09f346b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "SwiftShader",
       "sourceLocator": "https://swiftshader.googlesource.com/SwiftShader",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia",
       "sourceLocator": "https://crates.io/crates/symphonia",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-bundle-flac",
       "sourceLocator": "https://crates.io/crates/symphonia-bundle-flac",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-bundle-mp3",
       "sourceLocator": "https://crates.io/crates/symphonia-bundle-mp3",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-codec-pcm",
       "sourceLocator": "https://crates.io/crates/symphonia-codec-pcm",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-codec-vorbis",
       "sourceLocator": "https://crates.io/crates/symphonia-codec-vorbis",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-common",
       "sourceLocator": "https://crates.io/crates/symphonia-common",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-core",
       "sourceLocator": "https://crates.io/crates/symphonia-core",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-format-isomp4",
       "sourceLocator": "https://crates.io/crates/symphonia-format-isomp4",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-format-mkv",
       "sourceLocator": "https://crates.io/crates/symphonia-format-mkv",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-format-ogg",
       "sourceLocator": "https://crates.io/crates/symphonia-format-ogg",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-format-riff",
       "sourceLocator": "https://crates.io/crates/symphonia-format-riff",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "symphonia-metadata",
       "sourceLocator": "https://crates.io/crates/symphonia-metadata",
-      "licenseTextSha256": "381b0f9e30fe02cfbea0eca19f68f7c55b5097f660a056d623953249d91b7a0b",
+      "licenseTextSha256": "c76f740d1521b9bed9ca7a04ad526c310493c62621b1341d623b431736533b30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "syn",
       "sourceLocator": "https://crates.io/crates/syn",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "synstructure",
       "sourceLocator": "https://crates.io/crates/synstructure",
-      "licenseTextSha256": "5e953ad0a473c88bc05e7f28da096a33722207425b05a0db43fe1942d6e9f2e1",
+      "licenseTextSha256": "219920e865eee70b7dcfc948a86b099e7f4fe2de01bcca2ca9a20c0a033f2b59",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Tamachiyomi",
       "sourceLocator": "Google Internal",
-      "licenseTextSha256": "a6efa6352e0e5839f684960c1e68c6dc47e1909b4de55975ee7df11fa8233586",
+      "licenseTextSha256": "93aa838f8afa2648c527baf21e7e49fd49805ed91456d9bfaaa15b0a7c1831e7",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "temporal_capi",
       "sourceLocator": "https://crates.io/crates/temporal_capi",
-      "licenseTextSha256": "84c14d1c783dd844eaf87acd97b6446743f50decba3f91c79c2fae69733e1334",
+      "licenseTextSha256": "4e6bdc19db64d455dbddc0ee2f53ecba556f0226d4558954b5f02673c7358e59",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "temporal_rs",
       "sourceLocator": "https://crates.io/crates/temporal_rs",
-      "licenseTextSha256": "84c14d1c783dd844eaf87acd97b6446743f50decba3f91c79c2fae69733e1334",
+      "licenseTextSha256": "4e6bdc19db64d455dbddc0ee2f53ecba556f0226d4558954b5f02673c7358e59",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "TensorFlow Lite",
       "sourceLocator": "https://github.com/tensorflow/tensorflow",
-      "licenseTextSha256": "09f42dafb76baae412d63866f2d04352d55d9bd2ab7817dc637b15dc8236d517",
+      "licenseTextSha256": "bccef418d4c4ca9ded5818eabce995b99c1e4e062293f6291ee81ef41e963837",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "TensorFlow Lite Support",
       "sourceLocator": "https://github.com/tensorflow/tflite-support",
-      "licenseTextSha256": "e652715012f4db56c8741c7956b4d6bc51d598fbe0373bbfe2b14faf53400e5b",
+      "licenseTextSha256": "eb890dd89ccc8e997457fd06eb4f0af409d6ce38765f2b0b51effc585e9c4690",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "TensorFlow Models",
       "sourceLocator": "https://github.com/tensorflow/models",
-      "licenseTextSha256": "0880a086dc10c4f183637fa761554d8ee5eb38d6df107b0e6c80210b4811fdff",
+      "licenseTextSha256": "5b17814bf0de8cf65069bc6d7cc38cff19fcaa864d243423ad3ef3db01b52385",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "TensorFlow Text",
       "sourceLocator": "https://github.com/tensorflow/text.git",
-      "licenseTextSha256": "b650fced0e9c1b3b173933ae9680c230ff02be9da4a456905fca505f93496288",
+      "licenseTextSha256": "9dc6ae3884ee868d517aa040c43b68cf08a9481cb8540a672b4703dccd592747",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "tensorflow-federated",
       "sourceLocator": "https://github.com/google-parfait/tensorflow-federated",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "termcolor",
       "sourceLocator": "https://crates.io/crates/termcolor",
-      "licenseTextSha256": "eefd7dfe2c606b7ec58630411a3f5528bfe531ee1842b638062801a31b9e7898",
+      "licenseTextSha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Text Fragments Polyfill",
       "sourceLocator": "https://github.com/GoogleChromeLabs/text-fragments-polyfill",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "The Chromium Project",
       "sourceLocator": "https://www.chromium.org",
-      "licenseTextSha256": "2e4f150de9fafe36d95d94bcce31b5caffa51db1906b3763e87b7a4add60eb81",
+      "licenseTextSha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.",
       "sourceLocator": "https://github.com/google/diff-match-patch/tree/master/javascript",
-      "licenseTextSha256": "6da013fd7b939722bb67b42a1ce0e781c17fcae81eec8e9d1195e5e8e3c83fb5",
+      "licenseTextSha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "The ITU G.722 codec, encode and decode part.",
       "sourceLocator": "https://www.soft-switch.org/downloads/spandsp/",
-      "licenseTextSha256": "0a8a3fbba717941f865c93c8861b861d2a31e29105bc36d8271f6edf3ab3731d",
+      "licenseTextSha256": "61862327fd00d6a4deb2c1276577782c2500f4fe103e072018fc369d8e37e876",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "The ruy matrix multiplication library",
       "sourceLocator": "https://github.com/google/ruy",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "The USB ID Repository",
       "sourceLocator": "http://www.linux-usb.org/usb-ids.html",
-      "licenseTextSha256": "97ecaf5b4e0dc32d17bc44d37b97a69640d4be309bbbc6c77087c57034570fe2",
+      "licenseTextSha256": "6629d6edceffa9c68f4245b817137d2265fdab1e98068893420edb6689ccce9e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "third-party-web",
       "sourceLocator": "https://github.com/patrickhulce/third-party-web",
-      "licenseTextSha256": "d6234353e3e13f0c181f294f901ea6bae13672e3fe2008989317fa4047927a9f",
+      "licenseTextSha256": "e1f2a92813d0a7160c8bb0e27da66ec2f6599f2832ae5b4d9f95c108e60af5e6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "thiserror",
       "sourceLocator": "https://crates.io/crates/thiserror",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "thiserror-impl",
       "sourceLocator": "https://crates.io/crates/thiserror-impl",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "timezone_provider",
       "sourceLocator": "https://crates.io/crates/timezone_provider",
-      "licenseTextSha256": "84c14d1c783dd844eaf87acd97b6446743f50decba3f91c79c2fae69733e1334",
+      "licenseTextSha256": "4e6bdc19db64d455dbddc0ee2f53ecba556f0226d4558954b5f02673c7358e59",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Tiny CBOR",
       "sourceLocator": "https://chromium.googlesource.com/external/github.com/intel/tinycbor.git",
-      "licenseTextSha256": "d4d796bbb85ea7fbe4af08a3a43b7f15ee55ee3a1d6f753023bd00b639e3b5e2",
+      "licenseTextSha256": "3c6ba0b5bfa7830505301ffb336a17b0748e0d61c4d34216e9dc98f10e40395e",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "tinystr",
       "sourceLocator": "https://crates.io/crates/tinystr",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "toktrie",
       "sourceLocator": "https://crates.io/crates/toktrie",
-      "licenseTextSha256": "a8de7c2e83f537c901ed1010e1ee961322ec7fc45b8022823d02ba56cb8933cc",
+      "licenseTextSha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "transpose",
       "sourceLocator": "https://crates.io/crates/transpose",
-      "licenseTextSha256": "08a3d4c94c2383e4bd42779590468a984ed5092c2279430262907e3c5bf05063",
+      "licenseTextSha256": "0462c81f010f32369f10b49571b1463f8ba936e52457a418abcc4ecbabdeaf79",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "typed-arena",
       "sourceLocator": "https://crates.io/crates/typed-arena",
-      "licenseTextSha256": "186d9315bec2d92c8fadecdee460bd68a331d49eec33a1d1a15a0f551354cf95",
+      "licenseTextSha256": "9ed5e982274d54d0cf94f0e9f9fd889182b6f1f50a012f0be41ce7c884347ab6",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "typed-path",
       "sourceLocator": "https://crates.io/crates/typed-path",
-      "licenseTextSha256": "9806bfa6d90de905d50c5ab27dbcf44ecbbcf2c2a7000a39d89119e12319d1b0",
+      "licenseTextSha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "UKey2",
       "sourceLocator": "https://github.com/google/ukey2",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Unicode Common Locale Data Repository",
       "sourceLocator": "https://github.com/unicode-org/cldr",
-      "licenseTextSha256": "d64fc1c8351baf6c71d336434c8dd142d4d2cf0c408aca7b203ee114a053c859",
+      "licenseTextSha256": "7467c67c2ce2f91aa30a854c415610a53a1518e1ada00470d9398372b6d02e1c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "unicode-ident",
       "sourceLocator": "https://crates.io/crates/unicode-ident",
-      "licenseTextSha256": "8ccafdd002e2accad94cadfca00271467cd29f5d80aaacc7a69f595bcd385f1d",
+      "licenseTextSha256": "7d090688ebc2a91891a7bd87aa1e8797ba8fb033287110649d8ce50efdf56d94",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "unicode-width",
       "sourceLocator": "https://crates.io/crates/unicode-width",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "UnRAR source for decompressing .RAR and other files.",
       "sourceLocator": "https://www.rarlab.com/rar/unrarsrc-7.2.5.tar.gz",
-      "licenseTextSha256": "8316e680033cc0e4205d6da3ea2988b1af846e544a590c0c0f84d3b09345afcc",
+      "licenseTextSha256": "6ecc1687808b7d66b24f874755abfed7464d9751ed0001cd4e8e5d9bf397ff8a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "URI Template Parser",
       "sourceLocator": "https://github.com/google/google-api-cpp-client/",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "URL Pattern Library",
       "sourceLocator": "This is the canonical public repository",
-      "licenseTextSha256": "5f81f16981fbe7315d60c7627649d28beffde625f028ce5b29a00ec298231c09",
+      "licenseTextSha256": "6d7cc46ab05b4712dd73ea17df4bb808cd104836706dbe10bd007a556ce66130",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "url_parse",
       "sourceLocator": "https://github.com/mozilla-firefox/firefox.git",
-      "licenseTextSha256": "e2572aabb633d74d24bfc8800de35bb21f34660fe9b0feb8c44ca5adddf045c8",
+      "licenseTextSha256": "284545e873c704952e5b1b39d457dd83a3b115a51d9f1eb5175137bd69b8fa1b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "utf16_iter",
       "sourceLocator": "https://crates.io/crates/utf16_iter",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "utf8_iter",
       "sourceLocator": "https://crates.io/crates/utf8_iter",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "uuid",
       "sourceLocator": "https://crates.io/crates/uuid",
-      "licenseTextSha256": "7b9519cbce6c09b00991e28f35c9e615f53147c2177f3ea4314ef86bfa1e4925",
+      "licenseTextSha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "v4l-utils",
       "sourceLocator": "http://git.linuxtv.org/v4l-utils.git",
-      "licenseTextSha256": "f8208fe839608a79977e8cc1709cea3381e649e086fe076b41930db5dc0e1e72",
+      "licenseTextSha256": "5a7f623a50e384aaf6d2ced068339ddf93d0a50d3a0ecbe86f125b07804ecc78",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "V8 fork of fdlibm",
       "sourceLocator": "https://source.chromium.org/chromium/chromium/src/+/master:v8/src/base/ieee754.cc",
-      "licenseTextSha256": "e144c009802a94e3070988f592f72882dd7f3d2a0db8fef0eab3961e68fb3b7d",
+      "licenseTextSha256": "e7115e18444dae09d17f361ddc365fb1d342640fe500796209c63f7c80dfae10",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "V8 JavaScript Engine",
       "sourceLocator": "https://v8.dev/",
-      "licenseTextSha256": "78999bf857d8fd602ea46de1f47faf3287993286b2e7d91602ed045eafd82606",
+      "licenseTextSha256": "6ab33af8774a0f396ee3aeeb761e3229057682d6f9fa7f572e390c2cb3a6e509",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Volk Meta loader for Vulkan API",
       "sourceLocator": "https://github.com/zeux/volk",
-      "licenseTextSha256": "629704ea076fbc9b13b4a5680ed90032669cb0ad42cac477e69e8e3fab28f0e5",
+      "licenseTextSha256": "336f505f8d5aa73ea40b4d798dde86953e9c1f6525757f1d7f18120fea09bb1d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Vulkan API headers",
       "sourceLocator": "https://github.com/KhronosGroup/Vulkan-Headers",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Vulkan Deps",
       "sourceLocator": "https://chromium.googlesource.com/vulkan-deps/",
-      "licenseTextSha256": "17959d04e9409c380588b7baaee235e185965a1ad0c866924b786b0fb02b3c99",
+      "licenseTextSha256": "845022e0c1db1abb41a6ba4cd3c4b674ec290f3359d9d3c78ae558d4c0ed9308",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Vulkan Loader Components",
       "sourceLocator": "https://github.com/KhronosGroup/Vulkan-Loader",
-      "licenseTextSha256": "e63f9180cd1327a582cf4e379aa48b75a8ab0cbce8a6efaf804357eff25b3022",
+      "licenseTextSha256": "43c0a37e6a0fa7ff3c843b3ec5a4fac84b712558ddac103fbd4c1649662a9ece",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "VulkanMemoryAllocator",
       "sourceLocator": "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
-      "licenseTextSha256": "b4f7a090f56c337602dbcfa531432871ccba32a0816b5bf548bc2f1569426a9e",
+      "licenseTextSha256": "cdb520614db3ec62e667ece01e64e6afa21948fa51e85e748b1494597a7be907",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Wasmparser",
       "sourceLocator": "https://github.com/wasdk/wasmparser",
-      "licenseTextSha256": "fac25d979d9fe9d52d8924b7c41b64e9d708020378c8f8d555367932c97f09f2",
+      "licenseTextSha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "wayland",
       "sourceLocator": "http://wayland.freedesktop.org/",
-      "licenseTextSha256": "f3fa4a28bf27005e4ef8e6a414f188b54def67375516841e716f6de37a9decc7",
+      "licenseTextSha256": "6eefcb023622a463168a5c20add95fd24a38c7482622a9254a23b99b7c153061",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "wayland-protocols",
       "sourceLocator": "http://wayland.freedesktop.org/",
-      "licenseTextSha256": "cfc26a3a8428963a8d7f24c33afc583d75bb2e2e4f6641ff5d1b5e9ab4f9d554",
+      "licenseTextSha256": "f1a2b233e8a9a71c40f4aa885be08a0842ac85bb8588703c1dd7e6e6502e3124",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Web Vitals",
       "sourceLocator": "https://github.com/GoogleChrome/web-vitals",
-      "licenseTextSha256": "c322230a59c478d57a6c83ae21c70b4ff96c943652cf3038085a27b078eeda6a",
+      "licenseTextSha256": "bfdeded4040e05da31ca9b6239dc83bd23fa26ac8db87342a7ca4363f68916ff",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "WebKit",
       "sourceLocator": "https://webkit.org/",
-      "licenseTextSha256": "ee5dad20a9becc4f1b5dba306ffc27e3030c35b650f92ffbef426aa15723c29e",
+      "licenseTextSha256": "a661d10f8f194b1963a75bb4d308f17b078cc064624313a556902d89705f6876",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "WebM container parser and writer.",
       "sourceLocator": "https://chromium.googlesource.com/webm/libwebm",
-      "licenseTextSha256": "2b4e2303c7b5e0fa0ecabf9dccb185325d04cdfa954c83ab15afe3ab5024233e",
+      "licenseTextSha256": "2da783814898126ca64fa1c30c1f62c6ff5b64b8d7a0fe3ac40d716b0e038852",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "WebP image encoder/decoder",
       "sourceLocator": "https://chromium.googlesource.com/webm/libwebp",
-      "licenseTextSha256": "2b4e2303c7b5e0fa0ecabf9dccb185325d04cdfa954c83ab15afe3ab5024233e",
+      "licenseTextSha256": "2da783814898126ca64fa1c30c1f62c6ff5b64b8d7a0fe3ac40d716b0e038852",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "WebRTC",
       "sourceLocator": "This is the canonical repository",
-      "licenseTextSha256": "99e7240dcdcbe90d6eccc45217f7ab1b4691b077006a60a7efb3c28d742f3239",
+      "licenseTextSha256": "ab00a482b6a3902e40211b43c5d0441962ea99b6cc7c25c0f243fa270b78d482",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Wicked Good XPath",
       "sourceLocator": "https://github.com/google/wicked-good-xpath",
-      "licenseTextSha256": "46679808d3e1179a2a63a92540f3f633cd53f7a8448b516dc549251200db90a2",
+      "licenseTextSha256": "580b8af1dced4e95e1d8ffbc8182d4cb4e67724f9450df2503a692b79773d00b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "winapi-util",
       "sourceLocator": "https://crates.io/crates/winapi-util",
-      "licenseTextSha256": "bcfdb47737ea65608b47e72d7224b6dcd0bfba9c69b91fce50f377534ce82554",
+      "licenseTextSha256": "cb3c929a05e6cbc9de9ab06a4c57eeb60ca8c724bef6c138c87d3a577e27aa14",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Windows Template Library (WTL)",
       "sourceLocator": "https://www.nuget.org/packages/wtl/",
-      "licenseTextSha256": "668bf09b382024fe59a0af78aed1962d7f00aa8996caf2aed045f1fe7cd0cb29",
+      "licenseTextSha256": "d7f63d38bf8e5cafe3ea7fad53444e307b585c9e2bc5240acfdfdd4c82a1e02d",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows-link",
       "sourceLocator": "https://crates.io/crates/windows-link",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows-sys",
       "sourceLocator": "https://crates.io/crates/windows-sys",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows-targets",
       "sourceLocator": "https://crates.io/crates/windows-targets",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows_aarch64_msvc",
       "sourceLocator": "https://crates.io/crates/windows_aarch64_msvc",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows_i686_msvc",
       "sourceLocator": "https://crates.io/crates/windows_i686_msvc",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "windows_x86_64_msvc",
       "sourceLocator": "https://crates.io/crates/windows_x86_64_msvc",
-      "licenseTextSha256": "050046efb5045863d173b9dd768e04947e33a620404dcf4baaf75d806ae9c81e",
+      "licenseTextSha256": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "woff2",
       "sourceLocator": "https://github.com/google/woff2",
-      "licenseTextSha256": "6502a989d632440983c018f134907d630896ffe353b469b75f0a5bf349b4c0f8",
+      "licenseTextSha256": "d42a3e363d99da22b860ab760faa37dfa9781d74c9f3ed634d05109081616513",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "write-fonts",
       "sourceLocator": "https://crates.io/crates/write-fonts",
-      "licenseTextSha256": "8e44eca1197c64f218af71cf2e55e67544995176442df098cf6299abbb0be430",
+      "licenseTextSha256": "eba684204073ed715c4abb48129acdfd2bff8ae48339e6a7da3b341d3027b7f0",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "write16",
       "sourceLocator": "https://crates.io/crates/write16",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "writeable",
       "sourceLocator": "https://crates.io/crates/writeable",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Wuffs (Wrangling Untrusted File Formats Safely)",
       "sourceLocator": "https://github.com/google/wuffs-mirror-release-c",
-      "licenseTextSha256": "41604b4ecc28839daca4929ef85d28301871780c969f1439eeafa6195e025da7",
+      "licenseTextSha256": "f8ac2c75e7f629a87565c80d61ff9fe5aa15cdea0bda997d52a4dc13fdbd19cb",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "x11proto",
       "sourceLocator": "https://gitlab.freedesktop.org/xorg/proto/xproto/",
-      "licenseTextSha256": "3c9d24e76d36df2ae7ff87c5c5bb6c7c92671b57365f3100a32330641ed7e046",
+      "licenseTextSha256": "0607a49e0913e0336613c358f629ce134f35c6cdd2339f87ad9c2b6cba96c269",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "xdg-user-dirs",
       "sourceLocator": "https://gitlab.freedesktop.org/xdg/xdg-user-dirs",
-      "licenseTextSha256": "e61bb2d6aae779b95f59e81fb63ae402729047693cc55b8f0621f77e40078522",
+      "licenseTextSha256": "18351de3d7e2dc469cc83e77d38a3e25d010251e34eb348bbd1a76275e313997",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "xml",
       "sourceLocator": "https://crates.io/crates/xml",
-      "licenseTextSha256": "1f10fa988d6a7de0dffcbf1d80105c971050e738be24d3b9004b1d83a1aabf61",
+      "licenseTextSha256": "0dc18d924dc0a5f41172a393012843a5eaaef338e795b3645da9cc3b6068220b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "XNNPACK",
       "sourceLocator": "https://github.com/google/xnnpack",
-      "licenseTextSha256": "4aa9e04b1e42635c6eb0734c175774fd853d333501f3e8f2f3729e4ac500e313",
+      "licenseTextSha256": "63f519e15726f4c4f830bd958f694c84fecb4e0a4cacc527d2696bb71ef95ada",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "xnu",
       "sourceLocator": "https://opensource.apple.com/source/xnu/",
-      "licenseTextSha256": "55d85ee0a14aed974fa22973d3383dbd7e7384bd97a6806f72117170806c4d62",
+      "licenseTextSha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "xxHash",
       "sourceLocator": "https://github.com/Cyan4973/xxHash",
-      "licenseTextSha256": "dbf2f4643342064db05eba4e51a9ec64f329f465ded6b6b2804a4f43a4a66994",
+      "licenseTextSha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "yoke",
       "sourceLocator": "https://crates.io/crates/yoke",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "yoke-derive",
       "sourceLocator": "https://crates.io/crates/yoke-derive",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zerofrom",
       "sourceLocator": "https://crates.io/crates/zerofrom",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zerofrom-derive",
       "sourceLocator": "https://crates.io/crates/zerofrom-derive",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zeroize",
       "sourceLocator": "https://crates.io/crates/zeroize",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zeroize_derive",
       "sourceLocator": "https://crates.io/crates/zeroize_derive",
-      "licenseTextSha256": "7e479979c343e8d6d95187deb57ad4ab69e0c6082b3db517d5e6090e715d2eac",
+      "licenseTextSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zerotrie",
       "sourceLocator": "https://crates.io/crates/zerotrie",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zerovec",
       "sourceLocator": "https://crates.io/crates/zerovec",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zerovec-derive",
       "sourceLocator": "https://crates.io/crates/zerovec-derive",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zip",
       "sourceLocator": "https://crates.io/crates/zip",
-      "licenseTextSha256": "3414189116b85fd2c8174b449877416a8aa1ee9c6eb03ba64aa17911eb9b69b3",
+      "licenseTextSha256": "58545fed1565e42d687aecec6897d35c6d37ccb71479a137c0deb2203e125c79",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zlib",
       "sourceLocator": "http://zlib.net/",
-      "licenseTextSha256": "aeb329ee9ab7a39ed4fa87432154abaac37ca7f2c50be7a0bbf3ff068a634e06",
+      "licenseTextSha256": "e1cfcc55c325b3f78cf55df9664abaa066e2271dffe8213347d9fccdfbac8f2c",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zlib",
       "sourceLocator": "https://github.com/madler/zlib",
-      "licenseTextSha256": "de1b375ed390eaaa5c725cb3a51370866d42eb4e29148004bcce96aeca577975",
+      "licenseTextSha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zmij",
       "sourceLocator": "https://crates.io/crates/zmij",
-      "licenseTextSha256": "67eea571db61aef5ebeb7d5ead2eaa067d2aa012f6bb62111faf92f1bd0eedeb",
+      "licenseTextSha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zod",
       "sourceLocator": "https://zod.dev",
-      "licenseTextSha256": "e0aa1f5a519eb1fa4ac9ab45aebe8209381df92826fd5f86a540dbab6ab696da",
+      "licenseTextSha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zoneinfo64",
       "sourceLocator": "https://crates.io/crates/zoneinfo64",
-      "licenseTextSha256": "3b9f89df753ac7972f7de7c2d17ae2483ffc7cbf9aeb44d8b77e22e640a385c2",
+      "licenseTextSha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "Zstandard",
       "sourceLocator": "https://github.com/facebook/zstd",
-      "licenseTextSha256": "29bb52eda295906ed9f8d24970b93d86e84b86115c8f1997d2df03730b8abc5a",
+      "licenseTextSha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zune-core",
       "sourceLocator": "https://crates.io/crates/zune-core",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     },
     {
       "name": "zune-jpeg",
       "sourceLocator": "https://crates.io/crates/zune-jpeg",
-      "licenseTextSha256": "6b368ea3c0e1171804846abe9c8a06727628269ca524afd9e54ec28785a145a4",
+      "licenseTextSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
       "sourceCoverage": "pending component-by-component source/obligation review"
     }
-  ]
+  ],
+  "platform": "linux-x64"
 }

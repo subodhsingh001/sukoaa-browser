@@ -30,7 +30,7 @@ archiver.archive=async function(format,outFile,dir,options={}) {
   return archive(format,outFile,dir,options);
 };
 const {build, Platform, Arch} = require('electron-builder');
-build({...(process.env.SUKOAA_PREPACKAGED ? {prepackaged:path.resolve(process.env.SUKOAA_PREPACKAGED)} : {}),targets:Platform.WINDOWS.createTarget(['nsis'], Arch.x64),
+build({publish:'never',...(process.env.SUKOAA_PREPACKAGED ? {prepackaged:path.resolve(process.env.SUKOAA_PREPACKAGED)} : {}),targets:Platform.WINDOWS.createTarget(['nsis'], Arch.x64),
   config:{win:{signAndEditExecutable:false}}}).catch(error=>{
     console.error(error); process.exitCode=1;
   });

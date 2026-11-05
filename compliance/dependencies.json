@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-release-audit-v1",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "licenseDecision": "GPL-3.0-or-later",
   "publicReleaseAllowed": false,
   "dependencies": [
@@ -285,15 +285,15 @@
     },
     {
       "file": "LICENSE-SCOPE.md",
-      "sha256": "344495fff6c318d3d0e81f198419433ba5c5d08fc439697f59a9c59577c7deba"
+      "sha256": "8b246d57d081cc5b4a56359d310f353455b115b6fed707794f0a1199478b6587"
     },
     {
       "file": "PRIVACY.txt",
-      "sha256": "e919d793676f130a763788062302e269b7a214bc5cf7da5a62613be0df541cf0"
+      "sha256": "76a54490ec59b48a4add495c50525d83eabd2edd526efb908a4d221e1341ce17"
     },
     {
       "file": "SOURCE-ACCESS.txt",
-      "sha256": "b801648396d552aedc6406971ae771a6b75a426621b48d07d3e72baad4b9fdf5"
+      "sha256": "267cac07e3d18b460f0c9218727b97b0835a8a3bc77fd22b4edf3fa1d5903fcf"
     },
     {
       "file": "desktop/assets/aegis.svg",
@@ -335,16 +335,16 @@
   "runtimes": [
     {
       "name": "Electron",
-      "version": "45.2.1",
+      "version": "45.2.3",
       "license": "MIT plus bundled third-party licenses",
-      "source": "https://github.com/electron/electron/tree/v45.2.1",
+      "source": "https://github.com/electron/electron/tree/v45.2.3",
       "sourceStatus": "exact-tag-locator; full Chromium/FFmpeg corresponding-source obligations remain under review"
     },
     {
       "name": "GeckoView",
-      "version": "159.0.20261022150525",
+      "version": "159.0.20261102144711",
       "license": "MPL-2.0 plus bundled third-party licenses",
-      "source": "https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d",
+      "source": "https://hg.mozilla.org/releases/mozilla-release/rev/7b34a03a910d0385299f4a9f27aa585a786862d8",
       "sourceStatus": "exact upstream revision locator; resolved runtime graph exported; per-component license/source review pending"
     },
     {

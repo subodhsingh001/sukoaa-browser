@@ -31,8 +31,9 @@ module.exports = async function afterPack(context) {
     );
   const versions = ResEdit.Resource.VersionInfo.fromEntries(resources.entries);
   for (const info of versions) {
-    info.setFileVersion(0, 9, 0, 0, 1033);
-    info.setProductVersion(0, 9, 0, 0, 1033);
+    const [major,minor,patch]=require('./package.json').version.split('.').map(Number);
+    info.setFileVersion(major, minor, patch, 0, 1033);
+    info.setProductVersion(major, minor, patch, 0, 1033);
     info.setStringValues(
       { lang: 1033, codepage: 1200 },
       {

@@ -30,7 +30,9 @@ public class AdvancedBrowserActivity extends Activity {
   private GeckoView view;
   private Tab current;
   private VisitHistory history;
-  private boolean fullScreen;
+  private boolean fullScreen, foreground;
+  private boolean policyReady;
+  private final List<Runnable> pendingTabs=new ArrayList<>();
   private AlertDialog popupDialog;
   private PopupDecision popupDecision;
   private ThemePalette palette;
@@ -39,7 +41,8 @@ public class AdvancedBrowserActivity extends Activity {
   private static class Tab {
     BrowserPermissions.Scope permissionScope;
     GeckoSession session;
-    boolean privateMode, canBack, textOnly;
+    boolean privateMode, canBack, textOnly, addressPending;
+    MediaSession media;
     VisitHistory.Scope historyScope;
     String url = "", title = "New tab", contextId;
   }
@@ -125,6 +128,8 @@ public class AdvancedBrowserActivity extends Activity {
     status.setPadding(dp(12), 0, dp(12), dp(4));
     root.addView(status);
     view = new GeckoView(this);
+    view.setOnFocusChangeListener((v,focused)->{if(focused && current!=null && current.addressPending)view.post(()->{if(current!=null && current.addressPending)restoreNewTabFocus(current);});});
+    view.setOnTouchListener((v,event)->{if(event.getActionMasked()==MotionEvent.ACTION_DOWN && current!=null)current.addressPending=false;return false;});
     view.setSaveEnabled(false);
     view.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS);
     root.addView(view, new LinearLayout.LayoutParams(-1, 0, 1));
@@ -165,6 +170,13 @@ public class AdvancedBrowserActivity extends Activity {
                   .build());
     history = new VisitHistory(new HistoryRepository(getSharedPreferences("aegis", MODE_PRIVATE)));
     configureAddons();
+    // Finish installation before opening any page, including the first private page.
+    runtime.getWebExtensionController().ensureBuiltIn("resource://android/assets/sukoaa-policy/","page-policy@sukoaa.local")
+      .accept(extension->runOnUiThread(()->{
+        if(isFinishing() || isDestroyed())return;
+        runtime.getWebExtensionController().setAllowedInPrivateBrowsing(extension,true)
+          .accept(allowed->runOnUiThread(()->finishPolicy(true)),error->runOnUiThread(()->finishPolicy(false)));
+      }),error->runOnUiThread(()->finishPolicy(false)));
     boolean priv = getIntent().getBooleanExtra("private", true);
     String initial = getIntent().getStringExtra("url");
     runtime.getStorageController().clearData(StorageController.ClearFlags.PERMISSIONS).accept(
@@ -184,20 +196,30 @@ public class AdvancedBrowserActivity extends Activity {
   }
 
   Tab newTab(boolean priv, String initial, boolean popup, String parentContext) {
+    if(!policyReady){pendingTabs.add(()->newTab(priv,initial,popup,parentContext));return null;}
     if (tabs.size() >= 20) {
       toast("Close a tab first (20 tab limit)");
       return null;
     }
     Tab t = new Tab();
     t.privateMode = priv;
+    t.addressPending=initial==null;
     t.historyScope = new VisitHistory.Scope(priv);
     GeckoSessionSettings.Builder settings =
-        new GeckoSessionSettings.Builder().usePrivateMode(priv).useTrackingProtection(true);
+        new GeckoSessionSettings.Builder().usePrivateMode(priv).useTrackingProtection(true).suspendMediaWhenInactive(true);
     if (priv) {
       t.contextId = parentContext != null ? parentContext : "aegis-private-" + UUID.randomUUID();
       settings.contextId(t.contextId);
     }
     t.session = new GeckoSession(settings.build());
+    t.session.setMediaSessionDelegate(new MediaSession.Delegate() {
+      @Override public void onActivated(GeckoSession session,MediaSession media) {t.media=media;if(t!=current || !foreground){media.muteAudio(true);media.pause();}}
+      @Override public void onPlay(GeckoSession session,MediaSession media) {
+        t.media=media;
+        if(t!=current || !foreground){media.muteAudio(true);media.pause();}
+        else for(Tab other:tabs)if(other!=t)pauseMedia(other);
+      }
+    });
     t.session.setPermissionDelegate(
         new GeckoSession.PermissionDelegate() {
           @Override public void onAndroidPermissionsRequest(GeckoSession s,String[] names,Callback cb) {
@@ -334,6 +356,7 @@ public class AdvancedBrowserActivity extends Activity {
               List<GeckoSession.PermissionDelegate.ContentPermission> p,
               Boolean gesture) {
             if (!tabs.contains(t)) return;
+            if(!"about:blank".equals(url))t.addressPending=false;
             permissions.cancel();if(t.permissionScope!=null)t.permissionScope.revision++;
             for(GeckoSession.PermissionDelegate.ContentPermission permission:p)
               if(permission.permission==GeckoSession.PermissionDelegate.PERMISSION_GEOLOCATION)
@@ -359,6 +382,7 @@ public class AdvancedBrowserActivity extends Activity {
           public void onPageStop(GeckoSession s, boolean success) {
             if (!tabs.contains(t) || isFinishing() || isDestroyed()) return;
             if (success) history.record(t.historyScope, t.url, t.title);
+            if(t==current && t.addressPending)restoreNewTabFocus(t);
             if (t == current)
               status.setText(
                   success
@@ -390,13 +414,30 @@ public class AdvancedBrowserActivity extends Activity {
       if (initial != null && initial.startsWith("https://")) load(t, initial);
       else t.session.loadUri("about:blank");
       if(initial==null) {
-        address.setText("");address.requestFocus();
-        address.postDelayed(()->{if(current==t&&address.hasFocus()&&!isFinishing())
-          ((android.view.inputmethod.InputMethodManager)getSystemService(INPUT_METHOD_SERVICE))
-            .showSoftInput(address,android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);},100);
+        address.setText("");restoreNewTabFocus(t);
       }
     }
     return t;
+  }
+
+  void finishPolicy(boolean success) {
+    if(isFinishing() || isDestroyed())return;
+    if(!success)toast("Early YouTube filtering could not initialize. Ads may appear.");
+    policyReady=true;
+    List<Runnable> waiting=new ArrayList<>(pendingTabs);pendingTabs.clear();
+    for(Runnable action:waiting)action.run();
+  }
+
+  void pauseMedia(Tab tab) {
+    if(tab.media!=null){tab.media.muteAudio(true);tab.media.pause();}
+  }
+
+  void restoreNewTabFocus(Tab tab) {
+    if(current!=tab)return;
+    address.requestFocus();
+    address.postDelayed(()->{if(current==tab&&address.hasFocus()&&!isFinishing())
+      ((android.view.inputmethod.InputMethodManager)getSystemService(INPUT_METHOD_SERVICE))
+        .showSoftInput(address,android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);},100);
   }
 
   void select(Tab t) {
@@ -404,13 +445,15 @@ public class AdvancedBrowserActivity extends Activity {
       return;
     if(current!=t)permissions.cancel();
     setFullScreen(false);
-    if (current != null) current.session.setActive(false);
+    if (current != null) {pauseMedia(current);current.session.setActive(false);}
     if (view.getSession() != null) view.releaseSession();
     current = t;
     view.setSession(t.session);
-    t.session.setActive(true);
+    t.session.setActive(foreground);
+    if(t.media!=null)t.media.muteAudio(!foreground);
     runtime.getWebExtensionController().setTabActive(t.session, true);
     update();
+    if(t.addressPending)restoreNewTabFocus(t);
   }
 
   void update() {
@@ -425,6 +468,7 @@ public class AdvancedBrowserActivity extends Activity {
   }
 
   void load(Tab t, String url) {
+    t.addressPending=false;
     t.session.load(
         new GeckoSession.Loader()
             .uri(url)
@@ -683,6 +727,7 @@ public class AdvancedBrowserActivity extends Activity {
   }
 
   void prepareAddon(WebExtension extension) {
+    if("page-policy@sukoaa.local".equals(extension.id))return;
     if (isFinishing() || isDestroyed()) return;
     ownedAddons.put(extension.id, extension);
     runtime.getWebExtensionController().setAllowedInPrivateBrowsing(extension, false);
@@ -727,7 +772,9 @@ public class AdvancedBrowserActivity extends Activity {
         .getWebExtensionController()
         .list()
         .accept(
-            list -> {
+            allExtensions -> {
+              final List<WebExtension> list=new ArrayList<>();
+              for(WebExtension e:allExtensions)if(!"page-policy@sukoaa.local".equals(e.id))list.add(e);
               if (list.isEmpty()) {
                 toast("No add-ons installed. Choose a Mozilla-signed .xpi file to add one.");
                 return;
@@ -905,17 +952,19 @@ public class AdvancedBrowserActivity extends Activity {
 
   @Override
   protected void onPause() {
-    if (current != null) current.session.setActive(false);
+    foreground=false;
+    for(Tab t:tabs){pauseMedia(t);t.session.setActive(false);}
     super.onPause();
   }
 
   @Override
   protected void onResume() {
     super.onResume();
+    foreground=true;
     if (root != null
         && !appearanceKey.equals(BrowserAppearance.key(BrowserAppearance.palette(this))))
       applyAppearance();
-    if (current != null) current.session.setActive(true);
+    if (current != null) {current.session.setActive(true);if(current.media!=null)current.media.muteAudio(false);}
   }
 
   @Override

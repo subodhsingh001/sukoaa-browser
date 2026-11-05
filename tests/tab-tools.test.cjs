@@ -1,5 +1,17 @@
 const test=require('node:test'),assert=require('node:assert/strict');
-const {pageLabel,faviconURL,ClosedTabs}=require('../desktop/tab-tools.cjs');
+const {pageLabel,faviconURL,ClosedTabs,reorderTabs}=require('../desktop/tab-tools.cjs');
+const {sessionFromTabs}=require('../shared/core.cjs');
+test('tab moves preserve views, both directions, and normal session order without private URLs',()=>{
+  const a={id:'a',url:'https://a.example',view:{}},p={id:'p',private:true,url:'https://private.example',view:{}},b={id:'b',url:'https://b.example',view:{}},c={id:'c',url:'https://c.example',view:{}};
+  const tabs=[a,p,b,c],originalViews=tabs.map(t=>t.view);
+  assert(reorderTabs(tabs,'a',3));assert.deepEqual(tabs,[p,b,c,a]);
+  assert.deepEqual(sessionFromTabs(tabs,'b'),{urls:['https://b.example/','https://c.example/','https://a.example/'],activeIndex:0});
+  assert(reorderTabs(tabs,'a',0));assert.deepEqual(tabs,[a,p,b,c]);
+  assert(reorderTabs(tabs,'p',3));assert.deepEqual(tabs,[a,b,c,p]);
+  assert.deepEqual(sessionFromTabs(tabs,'c'),{urls:['https://a.example/','https://b.example/','https://c.example/'],activeIndex:2});
+  for(const tab of [a,p,b,c])assert.equal(tab.view,originalViews[[a,p,b,c].indexOf(tab)]);
+  for(const [id,index]of [['a',0],['missing',1],['a',-1],['a',4],['a',1.5],['a','1'],[null,1]]){const before=[...tabs];assert.equal(reorderTabs(tabs,id,index),false);assert.deepEqual(tabs,before);}
+});
 test('tab labels distinguish blank/private pages and fall back to host',()=>{
   assert.equal(pageLabel('', 'https://youtube.com/watch?v=x'),'youtube.com');
   assert.equal(pageLabel('Long title','https://example.com'),'Long title');

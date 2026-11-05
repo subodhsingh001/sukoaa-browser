@@ -3,6 +3,7 @@ const fs=require('node:fs/promises'),path=require('node:path');
 const crypto=require('node:crypto');
 const {loadFilters}=require('./filter-cache.cjs');
 module.exports=async()=>{
+ require('../tools/sync-page-scripts.cjs').sync();
  const shared=path.resolve(__dirname,'../shared');
  const names=['easylist.txt','easyprivacy.txt','starter.txt','ublock/filters.txt','ublock/quick-fixes.txt','ublock/unbreak.txt'];
  const filters=(await Promise.all(names.map(name=>fs.readFile(path.join(shared,name),'utf8')))).join('\n');

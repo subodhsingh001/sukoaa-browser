@@ -1,0 +1,38 @@
+UPDATE YOUR EXISTING GITHUB PULL REQUEST TO SUKOAA 0.9.3
+
+Your working repository is:
+C:\Users\HP\Music\sukoaa-browser-update
+Your update branch is:
+fix/sukoaa-0.9.2
+Keep that branch name: it can contain the 0.9.3 maintenance update.
+
+1. Download the newly updated SukoaaBrowser-Source.zip. Extract it into a NEW folder so that you do not accidentally reuse an older download.
+2. Open its SukoaaBrowser-Source folder. Copy ALL its contents into C:\Users\HP\Music\sukoaa-browser-update and choose Replace files. Include the root .gitignore, .gitattributes, README.md, PRIVACY.txt and THIRD-PARTY-NOTICES.md. Preserve the destination .git folder. Do not create a nested source folder in your repository.
+3. In PowerShell:
+   cd C:\Users\HP\Music\sukoaa-browser-update
+   git branch --show-current
+   (Get-Content .\desktop\package.json -Raw | ConvertFrom-Json).version
+   git status --short
+   The branch should be fix/sukoaa-0.9.2, and the version should be 0.9.3. Do not manually change only the version number.
+4. Review the changes. Do not commit node_modules, build directories, APKs, EXEs, local.properties, signing keys or passwords.
+5. Commit and push:
+   git add .
+   git commit -m "Update Electron and GeckoView engines for Sukoaa 0.9.3"
+   git push origin fix/sukoaa-0.9.2
+6. Your existing pull request updates automatically. Wait for the new commit's Candidate checks; an old failed run remains in the history. If the PR was already merged, create a new branch from the current GitHub main before copying files instead.
+7. The engine check should now report installed/upstream Electron 45.2.3 and GeckoView 159.0.20261102144711. A future upstream release may trigger the maintenance check again. Keep it enabled.
+8. After your device testing and remaining release requirements, attach matching 0.9.3 APK, Windows Setup and source ZIP as GitHub Release assets. Replacing source does not replace previously uploaded installers. The APK is signed with the same original project certificate and versionCode 16. The Windows installer remains unsigned.
+
+Build checks locally when needed:
+   cd desktop
+   npm ci
+   npm test
+   cd ..
+   node tools/check-engines.cjs
+   node tools/check-compliance.cjs
+
+Windows build: npm --prefix desktop run dist:windows:internal
+Android build: JDK 17 and the project's Android SDK, then android\gradlew.bat -p android :app:assembleRelease :app:lintRelease
+Sign future Android updates with your original private key, kept outside GitHub.
+
+The Changes ZIP includes an incremental patch against the supplied 0.9.2 source and a second patch against the older GitHub main e8c0c7c63c7093c316ee6745c1609aa82fdcb253. Use git apply --check first and only apply the patch matching your base. Full-source copying is simpler for the current workflow. Do not use force push or merge unrelated histories.

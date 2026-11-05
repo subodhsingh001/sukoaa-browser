@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-compliance-check-v1",
-  "releaseVersion": "0.9.0",
+  "releaseVersion": "0.9.3",
   "applicationLicense": "GPL-3.0-or-later",
   "scope": "source-package integrity and inventory consistency; no runtime or legal certification",
   "runtimeDependencyLocations": 13,
@@ -689,6 +689,19 @@
       "legalReview": "not concluded"
     },
     {
+      "coordinate": "androidx.webkit:webkit:1.18.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "cfe9a0f8ab5d0c1b2cd8dfc052b83da4025f8065179f91535bf806960e76fdd7",
+      "bytes": 2534,
+      "legalReview": "not concluded"
+    },
+    {
       "coordinate": "com.google.android.gms:play-services-base:18.7.2",
       "declaredLicenses": [
         {
@@ -843,7 +856,7 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "org.mozilla.geckoview:geckoview:159.0.20261022150525",
+      "coordinate": "org.mozilla.geckoview:geckoview:159.0.20261102144711",
       "declaredLicenses": [
         {
           "name": "The Mozilla Public License, v. 2.0",
@@ -851,7 +864,7 @@
         }
       ],
       "status": "verified",
-      "sha256": "760b60b556283f897c7258b04bf314f9c02cc5de26845d569c6d7a42d99d8c76",
+      "sha256": "2330a1e91c49709d793753af12540535c60aafac85d4dd4065243b4924c70fbd",
       "bytes": 3917,
       "legalReview": "not concluded"
     },
