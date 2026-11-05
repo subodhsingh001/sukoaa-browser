@@ -3,6 +3,11 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'), desktop=path.join(root,'desktop');
 const pkg=JSON.parse(fs.readFileSync(path.join(desktop,'package.json')));
+const geckoVersion=fs.readFileSync(path.join(root,'android/app/build.gradle'),'utf8').match(/geckoview:([\d.]+)/)?.[1];
+if(!geckoVersion)throw Error('Missing GeckoView version pin');
+const geckoPom=fs.readFileSync(path.join(root,'compliance/android-poms/org.mozilla.geckoview-geckoview-'+geckoVersion+'.pom'),'utf8');
+const geckoRevision=geckoPom.match(/<scm>[\s\S]*?<tag>([a-f0-9]{40})<\/tag>/)?.[1];
+if(!geckoRevision)throw Error('Missing exact GeckoView source revision');
 const lock=JSON.parse(fs.readFileSync(path.join(desktop,'package-lock.json')));
 const sourceFile=path.join(root,'compliance/npm-source-records.json');
 const sources=fs.existsSync(sourceFile)?JSON.parse(fs.readFileSync(sourceFile)):[];
@@ -28,7 +33,7 @@ const inputs=files.map(file=>({file,sha256:hash(fs.readFileSync(path.join(root,f
 const inventory={format:'sukoaa-release-audit-v1',version:pkg.version,licenseDecision:'GPL-3.0-or-later',
  publicReleaseAllowed:false,dependencies,inputs,
  runtimes:[{name:'Electron',version:pkg.devDependencies.electron,license:'MIT plus bundled third-party licenses',source:'https://github.com/electron/electron/tree/v'+pkg.devDependencies.electron,sourceStatus:'exact-tag-locator; full Chromium/FFmpeg corresponding-source obligations remain under review'},
- {name:'GeckoView',version:'159.0.20261022150525',license:'MPL-2.0 plus bundled third-party licenses',source:'https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d',sourceStatus:'exact upstream revision locator; resolved runtime graph exported; per-component license/source review pending'},
+ {name:'GeckoView',version:geckoVersion,license:'MPL-2.0 plus bundled third-party licenses',source:'https://hg.mozilla.org/releases/mozilla-release/rev/'+geckoRevision,sourceStatus:'exact upstream revision locator; resolved runtime graph exported; per-component license/source review pending'},
  {name:'Android System WebView',version:'device supplied',license:'device/runtime dependent',sourceStatus:'not redistributed in APK'}],
  unresolved:['uBlock scriptlet preferred-form upstream revision/build mapping','Electron/Chromium bundled copyleft source and component obligations','Android runtime component license/source coverage (resolved graph exported)','trademark/name clearance','public publisher/contact and source URL','trusted Windows publisher signing','physical Windows/Linux/Android evidence','public security-update channel']};
 fs.mkdirSync(path.join(root,'compliance'),{recursive:true});

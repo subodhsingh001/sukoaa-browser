@@ -18,11 +18,11 @@ Ghostery adblocker, adblocker-content, extended-selectors and url-parser plus th
 
 ## Desktop runtime
 
-Electron 45.2.1 is MIT. Preserve the runtime's LICENSE and LICENSES.chromium.html. Chromium and its 498 retained notice entries have individual licenses and possible corresponding-source obligations. The component inventory does not assert legal clearance. Exact runtime/Chromium source and copyleft component review remain release blockers. No proprietary media/codec or worldwide patent clearance is claimed.
+Electron 45.2.3 is MIT. Preserve the runtime's LICENSE and LICENSES.chromium.html. Chromium and its retained notice entries have individual licenses and possible corresponding-source obligations. The component inventory does not assert legal clearance. Exact runtime/Chromium source and copyleft component review remain release blockers. No proprietary media/codec or worldwide patent clearance is claimed.
 
 ## Android
 
-Regular pages use the device's Android System WebView; Sukoaa does not redistribute that engine. Private/add-on pages redistribute unmodified GeckoView 159.0.20261022150525 under MPL-2.0 and bundled third-party terms. Mozilla revision: 5add844c26613d7e4d84c799d6e23cf987b1240d at https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d . Maven/source artifacts: https://maven.mozilla.org/maven2/org/mozilla/geckoview/geckoview/159.0.20261022150525/ . MPL text is in Android assets. Exact Android transitive/runtime source review remains pending the build graph. AndroidX/Kotlin and Gradle wrappers retain their own notices; no blanket relicensing is intended.
+Regular pages use the device's Android System WebView; Sukoaa does not redistribute that engine. Private/add-on pages redistribute unmodified GeckoView 159.0.20261102144711 under MPL-2.0 and bundled third-party terms. Mozilla revision: 7b34a03a910d0385299f4a9f27aa585a786862d8 at https://hg.mozilla.org/releases/mozilla-release/rev/7b34a03a910d0385299f4a9f27aa585a786862d8 . Maven/source artifacts: https://maven.mozilla.org/maven2/org/mozilla/geckoview/geckoview/159.0.20261102144711/ . MPL text is in Android assets. Exact Android transitive/runtime source review remains pending the build graph. AndroidX/Kotlin and Gradle wrappers retain their own notices; no blanket relicensing is intended.
 
 AndroidX WebKit 1.18.0 is distributed under Apache-2.0. The resolved Android artifact inventory and POM license declarations are in compliance/android-runtime.json and compliance/android-license-metadata.json. AndroidX source artifacts/notices are retained where available; the all-component corresponding-source review remains open. The bundled media and YouTube page policy is original Sukoaa code under GPL-3.0-or-later.
 

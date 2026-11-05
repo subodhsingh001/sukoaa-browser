@@ -420,10 +420,10 @@
         {
             "group": "org.mozilla.geckoview",
             "name": "geckoview",
-            "version": "159.0.20261022150525",
+            "version": "159.0.20261102144711",
             "type": "aar",
-            "file": "geckoview-159.0.20261022150525.aar",
-            "sha256": "11f0dd1b030370e29e47030d1269943361f751c5220aff24dca3232e36646c90"
+            "file": "geckoview-159.0.20261102144711.aar",
+            "sha256": "8b8c3b677f8aac38d77bf4ebc7c7790d98bdb975802896687a9bd34623c95aea"
         },
         {
             "group": "org.yaml",

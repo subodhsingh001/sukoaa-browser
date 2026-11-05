@@ -2,10 +2,10 @@
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "Sukoaa candidate 0.9.2",
-  "documentNamespace": "https://aegis.invalid/spdx/879196fc-2a23-48cb-aeaa-630c6517477c",
+  "name": "Sukoaa candidate 0.9.3",
+  "documentNamespace": "https://aegis.invalid/spdx/df12f1f9-42ae-48af-be34-352ac9115d4f",
   "creationInfo": {
-    "created": "2026-11-05T08:53:06.217Z",
+    "created": "2026-11-05T09:51:10.181Z",
     "creators": [
       "Tool: tools/audit-release.cjs"
     ]

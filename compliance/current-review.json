@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-compliance-check-v1",
-  "releaseVersion": "0.9.2",
+  "releaseVersion": "0.9.3",
   "applicationLicense": "GPL-3.0-or-later",
   "scope": "source-package integrity and inventory consistency; no runtime or legal certification",
   "runtimeDependencyLocations": 13,
@@ -299,19 +299,6 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.core:core-viewtree:1.0.0",
-      "declaredLicenses": [
-        {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "status": "verified",
-      "sha256": "d4f2ed1176fa8c5612b80f74c952a8799142a9ed36022a1a238fde5b140580d9",
-      "bytes": 2107,
-      "legalReview": "not concluded"
-    },
-    {
       "coordinate": "androidx.core:core:1.19.1",
       "declaredLicenses": [
         {
@@ -322,6 +309,19 @@
       "status": "verified",
       "sha256": "71341cd4c4d8d3b50c890852bacd373d9ce319b5f9c05aa2bd7a5b5610f33d6b",
       "bytes": 4775,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.core:core-viewtree:1.0.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "d4f2ed1176fa8c5612b80f74c952a8799142a9ed36022a1a238fde5b140580d9",
+      "bytes": 2107,
       "legalReview": "not concluded"
     },
     {
@@ -390,7 +390,7 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0",
+      "coordinate": "androidx.lifecycle:lifecycle-livedata:2.11.0",
       "declaredLicenses": [
         {
           "name": "The Apache Software License, Version 2.0",
@@ -398,8 +398,8 @@
         }
       ],
       "status": "verified",
-      "sha256": "cf5d8651182e43675968e4bff5b018a7b5d9ad75d777ded594ffc7c2d8c0948a",
-      "bytes": 5701,
+      "sha256": "ec47faea1d2f68625ac49ad260f5f5233d9b40da922253b57aa153d49b5f5ca8",
+      "bytes": 6650,
       "legalReview": "not concluded"
     },
     {
@@ -416,7 +416,7 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.lifecycle:lifecycle-livedata:2.11.0",
+      "coordinate": "androidx.lifecycle:lifecycle-livedata-core-ktx:2.11.0",
       "declaredLicenses": [
         {
           "name": "The Apache Software License, Version 2.0",
@@ -424,8 +424,8 @@
         }
       ],
       "status": "verified",
-      "sha256": "ec47faea1d2f68625ac49ad260f5f5233d9b40da922253b57aa153d49b5f5ca8",
-      "bytes": 6650,
+      "sha256": "cf5d8651182e43675968e4bff5b018a7b5d9ad75d777ded594ffc7c2d8c0948a",
+      "bytes": 5701,
       "legalReview": "not concluded"
     },
     {
@@ -442,19 +442,6 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.lifecycle:lifecycle-runtime-android:2.11.0",
-      "declaredLicenses": [
-        {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "status": "verified",
-      "sha256": "1dfd1f739d71957166a0511a6fb2cbfc8da766c1840d5664063898ed6dac8aa6",
-      "bytes": 7337,
-      "legalReview": "not concluded"
-    },
-    {
       "coordinate": "androidx.lifecycle:lifecycle-runtime:2.11.0",
       "declaredLicenses": [
         {
@@ -468,7 +455,7 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.lifecycle:lifecycle-viewmodel-android:2.11.0",
+      "coordinate": "androidx.lifecycle:lifecycle-runtime-android:2.11.0",
       "declaredLicenses": [
         {
           "name": "The Apache Software License, Version 2.0",
@@ -476,8 +463,8 @@
         }
       ],
       "status": "verified",
-      "sha256": "c6d78741c43ccf10d5da5f0e040dedfffda20b9748caa038dc58be25d35c90a3",
-      "bytes": 6591,
+      "sha256": "1dfd1f739d71957166a0511a6fb2cbfc8da766c1840d5664063898ed6dac8aa6",
+      "bytes": 7337,
       "legalReview": "not concluded"
     },
     {
@@ -491,6 +478,19 @@
       "status": "verified",
       "sha256": "e22ea0fca36eed3f649120fdadcf1d96f7f9a47d58472059d234b0cc62c9f570",
       "bytes": 6601,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.lifecycle:lifecycle-viewmodel-android:2.11.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c6d78741c43ccf10d5da5f0e040dedfffda20b9748caa038dc58be25d35c90a3",
+      "bytes": 6591,
       "legalReview": "not concluded"
     },
     {
@@ -572,19 +572,6 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "androidx.media3:media3-exoplayer-hls:1.11.1",
-      "declaredLicenses": [
-        {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "status": "verified",
-      "sha256": "b6f009ec8863fe6f6cbd70d80f331bb7737f13c1fa610fd4b385f9971c7d8b2b",
-      "bytes": 1926,
-      "legalReview": "not concluded"
-    },
-    {
       "coordinate": "androidx.media3:media3-exoplayer:1.11.1",
       "declaredLicenses": [
         {
@@ -595,6 +582,19 @@
       "status": "verified",
       "sha256": "f540fd426f3ed2cf58792fad094052876817d764f88b2a072e530105dfe9d797",
       "bytes": 2974,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "androidx.media3:media3-exoplayer-hls:1.11.1",
+      "declaredLicenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "b6f009ec8863fe6f6cbd70d80f331bb7737f13c1fa610fd4b385f9971c7d8b2b",
+      "bytes": 1926,
       "legalReview": "not concluded"
     },
     {
@@ -778,19 +778,6 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0",
-      "declaredLicenses": [
-        {
-          "name": "The Apache License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ],
-      "status": "verified",
-      "sha256": "c11074f0c898a98b863c614471d438d3df92a1ec3382a6e37f935d7d71954b5a",
-      "bytes": 1387,
-      "legalReview": "not concluded"
-    },
-    {
       "coordinate": "org.jetbrains.kotlin:kotlin-stdlib:2.4.20",
       "declaredLicenses": [
         {
@@ -801,6 +788,19 @@
       "status": "verified",
       "sha256": "bd69b382dba8e2b7ae3846375eb2f1389017eb908987277051ae4e3acec8c938",
       "bytes": 2301,
+      "legalReview": "not concluded"
+    },
+    {
+      "coordinate": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0",
+      "declaredLicenses": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "status": "verified",
+      "sha256": "c11074f0c898a98b863c614471d438d3df92a1ec3382a6e37f935d7d71954b5a",
+      "bytes": 1387,
       "legalReview": "not concluded"
     },
     {
@@ -856,7 +856,7 @@
       "legalReview": "not concluded"
     },
     {
-      "coordinate": "org.mozilla.geckoview:geckoview:159.0.20261022150525",
+      "coordinate": "org.mozilla.geckoview:geckoview:159.0.20261102144711",
       "declaredLicenses": [
         {
           "name": "The Mozilla Public License, v. 2.0",
@@ -864,7 +864,7 @@
         }
       ],
       "status": "verified",
-      "sha256": "760b60b556283f897c7258b04bf314f9c02cc5de26845d569c6d7a42d99d8c76",
+      "sha256": "2330a1e91c49709d793753af12540535c60aafac85d4dd4065243b4924c70fbd",
       "bytes": 3917,
       "legalReview": "not concluded"
     },

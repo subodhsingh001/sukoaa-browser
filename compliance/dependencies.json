@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-release-audit-v1",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "licenseDecision": "GPL-3.0-or-later",
   "publicReleaseAllowed": false,
   "dependencies": [
@@ -335,16 +335,16 @@
   "runtimes": [
     {
       "name": "Electron",
-      "version": "45.2.1",
+      "version": "45.2.3",
       "license": "MIT plus bundled third-party licenses",
-      "source": "https://github.com/electron/electron/tree/v45.2.1",
+      "source": "https://github.com/electron/electron/tree/v45.2.3",
       "sourceStatus": "exact-tag-locator; full Chromium/FFmpeg corresponding-source obligations remain under review"
     },
     {
       "name": "GeckoView",
-      "version": "159.0.20261022150525",
+      "version": "159.0.20261102144711",
       "license": "MPL-2.0 plus bundled third-party licenses",
-      "source": "https://hg.mozilla.org/releases/mozilla-release/rev/5add844c26613d7e4d84c799d6e23cf987b1240d",
+      "source": "https://hg.mozilla.org/releases/mozilla-release/rev/7b34a03a910d0385299f4a9f27aa585a786862d8",
       "sourceStatus": "exact upstream revision locator; resolved runtime graph exported; per-component license/source review pending"
     },
     {
