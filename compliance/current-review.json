@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-compliance-check-v1",
-  "releaseVersion": "0.9.4",
+  "releaseVersion": "0.9.6",
   "applicationLicense": "GPL-3.0-or-later",
   "scope": "source-package integrity and inventory consistency; no runtime or legal certification",
   "runtimeDependencyLocations": 13,

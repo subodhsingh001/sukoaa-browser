@@ -229,10 +229,15 @@ function attachTabDragging(wrap,open,id) {
   wrap.ondragstart=e=>{
     const button=e.target.closest('button');
     if((button&&button!==open)||!e.dataTransfer){e.preventDefault();return;}
-    draggedTabId=id;tabDragX=e.clientX;e.dataTransfer.effectAllowed='move';
+    draggedTabId=id;tabDragX=e.clientX;e.dataTransfer.effectAllowed='move';command('tabDragStart',id);
     e.dataTransfer.setData('application/x-sukoaa-tab',id);wrap.classList.add('tab-dragging');
   };
-  wrap.ondragend=finishTabDrag;
+  wrap.ondragend=e=>{
+    const id=draggedTabId;
+    const outside=e.clientX<-16 || e.clientY<-16 || e.clientX>innerWidth+16 || e.clientY>86;
+    if(id && e.isTrusted)command('tabDragEnd',{id,outside,dropEffect:e.dataTransfer?.dropEffect || 'none',point:{x:e.screenX,y:e.screenY}});
+    finishTabDrag();
+  };
 }
 $('tabs').addEventListener('dragover',e=>{
   if(!draggedTabId)return;
@@ -280,6 +285,22 @@ function renderTabs(s) {
   for(const node of known.values())node.remove();
   if(lastActiveTab!==s.active){[...box.children].find(node=>node.dataset.tabId===s.active)?.scrollIntoView({block:'nearest',inline:'nearest'});lastActiveTab=s.active;}
 }
+let suggestionSignature = '';
+function updateAddressSuggestions() {
+  if (!state) return;
+  // A new tab can focus its address field before its first state snapshot arrives.
+  // Unknown tab contexts must not briefly expose normal-history suggestions.
+  const tab = state.tabs.find(t => t.id === addressTabId);
+  const rows = window.sukoaaAddressSuggestions($('address').value, state.settings.history, state.settings.bookmarks, !tab || !!tab.private);
+  const signature = JSON.stringify(rows);
+  if (signature === suggestionSignature) return;
+  suggestionSignature = signature;
+  $('addressSuggestions').replaceChildren(...rows.map(row => {
+    const option = document.createElement('option');option.value = row.value;option.label = row.label;return option;
+  }));
+}
+$('address').addEventListener('input', updateAddressSuggestions);
+$('address').addEventListener('focus', updateAddressSuggestions);
 function render(s) {
   const activeChanged=addressTabId!==s.active;
   addressTabId=s.active;
@@ -343,6 +364,7 @@ function render(s) {
     );
   }
   renderLabBar(s);
+  updateAddressSuggestions();
   if(!opened)return;
   if(view==='updates')renderUpdates(s);
   if(view==='repair')renderRepair(s);

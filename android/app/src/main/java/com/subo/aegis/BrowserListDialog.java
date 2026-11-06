@@ -8,7 +8,8 @@ import java.util.List;
 
 /** Scrollable list with separate, accessible open and remove targets. */
 final class BrowserListDialog {
-  record Row(String title, String detail, Runnable open, Runnable remove, android.graphics.Bitmap icon, Runnable actions) {
+  record Row(String title, String detail, Runnable open, Runnable remove, android.graphics.Bitmap icon, Runnable actions, boolean selected) {
+    Row(String title,String detail,Runnable open,Runnable remove,android.graphics.Bitmap icon,Runnable actions){this(title,detail,open,remove,icon,actions,false);}
     Row(String title,String detail,Runnable open,Runnable remove){this(title,detail,open,remove,null,null);}
     Row(String title,String detail,Runnable open,Runnable remove,android.graphics.Bitmap icon){this(title,detail,open,remove,icon,null);}
   }
@@ -41,6 +42,13 @@ final class BrowserListDialog {
     for (Row row : rows) {
       LinearLayout line = new LinearLayout(activity);
       line.setGravity(android.view.Gravity.CENTER_VERTICAL);
+      if(row.selected()) {
+        ThemePalette colors=BrowserAppearance.palette(activity);
+        android.graphics.drawable.GradientDrawable outline=new android.graphics.drawable.GradientDrawable();
+        outline.setColor(colors.surface);outline.setCornerRadius(12*activity.getResources().getDisplayMetrics().density);
+        outline.setStroke((int)(2*activity.getResources().getDisplayMetrics().density),colors.accent);
+        line.setBackground(outline);line.setPadding(6,4,6,4);
+      }
       int iconSize=(int)(28*activity.getResources().getDisplayMetrics().density);
       if(row.icon()!=null) {
         ImageView icon=new ImageView(activity);icon.setImageBitmap(row.icon());
@@ -58,6 +66,9 @@ final class BrowserListDialog {
       }
       Button open = new Button(activity);
       open.setAllCaps(false);
+      open.setSelected(row.selected());
+      if(row.selected()){open.setTypeface(null,android.graphics.Typeface.BOLD);open.setTextColor(BrowserAppearance.palette(activity).accent);}
+      open.setContentDescription((row.selected()?"Current tab. ":"")+row.title()+". "+row.detail());
       open.setText(row.title() + "\n" + row.detail());
       open.setGravity(android.view.Gravity.START | android.view.Gravity.CENTER_VERTICAL);
       open.setMaxLines(3);

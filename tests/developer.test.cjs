@@ -25,7 +25,7 @@ test('fullscreen permission, native layout, element inspection, shortcuts and re
  let win;
  class Window extends EventEmitter {
   constructor(){super();win=this;this.webContents=new Contents();this.views=[];this.contentView={addChildView:v=>this.views.push(v),removeChildView:v=>this.views=this.views.filter(x=>x!==v)};}
-  loadFile(){return Promise.resolve();}getContentSize(){return [1360,900];}isDestroyed(){return false;}setMenu(){}isFullScreen(){return !!this.full;}
+  isFocused(){return true;}loadFile(){return Promise.resolve();}getContentSize(){return [1360,900];}isDestroyed(){return false;}setMenu(){}isFullScreen(){return !!this.full;}
   isMaximized(){return !!this.max;}maximize(){this.max=true;}unmaximize(){this.max=false;}minimize(){this.minimized=true;}
   setFullScreen(value){if(this.full===value)return;this.full=value;this.emit(value?'enter-full-screen':'leave-full-screen');}
  }

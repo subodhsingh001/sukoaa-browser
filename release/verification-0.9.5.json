@@ -1,0 +1,73 @@
+{
+  "version": "0.9.5",
+  "date": "2026-11-06",
+  "baseline": "Latest supplied 0.9.4 source archive, Library version 24",
+  "nodeTests": {
+    "passed": 37,
+    "failed": 0
+  },
+  "nativeFixtures": {
+    "window-editing-smoke": "passed in source and final packaged ASAR",
+    "covers": [
+      "actual native address/page edit menus and clipboard",
+      "Paste and go",
+      "live view transfer without reloading form/scroll/title",
+      "moved-page Ctrl+L and Ctrl+T route to new window",
+      "private mode/history/session isolation after moving",
+      "filtering follows moved tab",
+      "real OS pointer drag outside window and down into page",
+      "active-tab border, rail and bold text"
+    ],
+    "regressions": [
+      "tab reorder and cancel/overflow",
+      "history/private cleanup",
+      "camera/microphone/location permission fixtures",
+      "page repair/comparison",
+      "clipboard button and clipboard-read denial",
+      "new-tab focus and existing 0.9.4 playback behavior"
+    ],
+    "environment": "Linux/Xvfb Electron fixtures; test-only sandbox exception, production sandbox preserved"
+  },
+  "android": {
+    "applicationId": "com.subo.aegis.next",
+    "versionCode": 18,
+    "versionName": "0.9.5",
+    "assembleRelease": "passed",
+    "lintRelease": {
+      "errors": 0,
+      "warnings": 15
+    },
+    "urlPolicyTest": "passed",
+    "apkSignatureVerified": true,
+    "signerSha256": "c11b03429beb42a759df1306afbae979cd87b23fb6af05c244bbb7c52edb48f2",
+    "sameSigningIdentityAsPreviousAPK": true,
+    "alignmentCheck": "passed at 16 KiB pages",
+    "physicalDeviceAppHandoff": "not verified"
+  },
+  "windows": {
+    "installerBuilt": true,
+    "packagedRuntimeMatchesSource": true,
+    "publisherSignature": "unsigned",
+    "physicalWindowsDevice": "not tested",
+    "installerPayloadMatchesASAR": true
+  },
+  "engineCheck": {
+    "checkedAt": "2026-11-06T06:25:36.970Z",
+    "electron": {
+      "installed": "45.2.3",
+      "upstream": "45.2.3"
+    },
+    "geckoview": {
+      "installed": "159.0.20261102144711",
+      "upstream": "159.0.20261102144711"
+    }
+  },
+  "compliance": "inventory integrity passed; public legal/source, publisher and physical-device gates remain blocked",
+  "publicReleaseAllowed": false,
+  "remainingLimits": [
+    "No tab merging by dropping into another existing window",
+    "Session restore flattens normal window tabs into one window",
+    "YouTube application must be installed; Android/YouTube app handoff needs phone testing",
+    "No universal ad-blocking, site-copy-protection bypass or fastest-browser claim"
+  ]
+}

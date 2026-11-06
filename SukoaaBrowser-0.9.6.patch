@@ -1,0 +1,424 @@
+diff --git a/.github/workflows/candidate.yml b/.github/workflows/candidate.yml
+index be5eb866c509d8f8595254d47fd972705b7a8902..05ad5fd2765bfc8d60137cb884bef8f4bce11862 100644
+--- a/.github/workflows/candidate.yml
++++ b/.github/workflows/candidate.yml
+@@ -62,3 +62,6 @@ jobs:
+           mkdir -p /tmp/sukoaa-app-policy
+           javac -d /tmp/sukoaa-app-policy android/app/src/main/java/com/subo/aegis/ExternalAppPolicy.java tests/ExternalAppPolicyTest.java
+           java -cp /tmp/sukoaa-app-policy ExternalAppPolicyTest
++
++      - name: Native local history and bookmark address suggestions
++        run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/address-suggestions-smoke.cjs
+diff --git a/compliance/current-review.json b/compliance/current-review.json
+index b7b95dc76bdce3dbbfe72c58350a6d3d4d2d0f1f..6caf2a2d42c426bc05e72f481b5ca0dc434c3e3b 100644
+--- a/compliance/current-review.json
++++ b/compliance/current-review.json
+@@ -1,6 +1,6 @@
+ {
+   "format": "sukoaa-compliance-check-v1",
+-  "releaseVersion": "0.9.5",
++  "releaseVersion": "0.9.6",
+   "applicationLicense": "GPL-3.0-or-later",
+   "scope": "source-package integrity and inventory consistency; no runtime or legal certification",
+   "runtimeDependencyLocations": 13,
+diff --git a/compliance/dependencies.json b/compliance/dependencies.json
+index 14139ba2d91f6dfe816781d87b03e7d264f2eda4..93705ba5918c9c5667726fa184020f3366652c4d 100644
+--- a/compliance/dependencies.json
++++ b/compliance/dependencies.json
+@@ -1,6 +1,6 @@
+ {
+   "format": "sukoaa-release-audit-v1",
+-  "version": "0.9.5",
++  "version": "0.9.6",
+   "licenseDecision": "GPL-3.0-or-later",
+   "publicReleaseAllowed": false,
+   "dependencies": [
+diff --git a/compliance/sbom.spdx.json b/compliance/sbom.spdx.json
+index e6575dbcdbf09224f83d8f3693c1a67ec2eaf8ab..0c7fe43619f5fb26169098de1193658f21b9784c 100644
+--- a/compliance/sbom.spdx.json
++++ b/compliance/sbom.spdx.json
+@@ -2,10 +2,10 @@
+   "spdxVersion": "SPDX-2.3",
+   "dataLicense": "CC0-1.0",
+   "SPDXID": "SPDXRef-DOCUMENT",
+-  "name": "Sukoaa candidate 0.9.5",
+-  "documentNamespace": "https://aegis.invalid/spdx/3aa41bf2-ddf5-473f-b2f4-db6ef041c32a",
++  "name": "Sukoaa candidate 0.9.6",
++  "documentNamespace": "https://aegis.invalid/spdx/c43b6dfe-d41b-4e33-ac92-d9725319db22",
+   "creationInfo": {
+-    "created": "2026-11-06T06:36:44.932Z",
++    "created": "2026-11-06T09:54:41.449Z",
+     "creators": [
+       "Tool: tools/audit-release.cjs"
+     ]
+diff --git a/desktop/address-suggestions.js b/desktop/address-suggestions.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..a90efba25c0545fd969c20f00c6ee3db8d2070ec
+--- /dev/null
++++ b/desktop/address-suggestions.js
+@@ -0,0 +1,40 @@
++// SPDX-License-Identifier: GPL-3.0-or-later
++// Local-only address suggestions. Never queries a remote search service.
++(function(root) {
++  function addressSuggestions(query, history = [], bookmarks = [], privateMode = false) {
++    const term = String(query || '').trim().toLocaleLowerCase().slice(0, 256);
++    const candidates = [];
++    const sources = [
++      ...bookmarks.map(row => ({...row, bookmark:true})),
++      ...(privateMode ? [] : history).map(row => ({...row, bookmark:false}))
++    ];
++    for (const [index, row] of sources.entries()) {
++      let url;
++      try { url = new URL(row.url); } catch { continue; }
++      if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) continue;
++      let value = url.href;
++      if (!row.bookmark && ((['www.google.com','google.com','www.bing.com','bing.com'].includes(url.hostname) && url.pathname === '/search') ||
++          (['duckduckgo.com','www.duckduckgo.com'].includes(url.hostname) && url.pathname === '/'))) {
++        value = url.searchParams.get('q')?.trim() || value;
++      }
++      if (!value || value.length > 8192) continue;
++      const title = String(row.title || url.hostname).slice(0, 180);
++      const lower = value.toLocaleLowerCase(), label = title.toLocaleLowerCase();
++      const hostname = url.hostname.replace(/^www\./,'').toLocaleLowerCase();
++      if (term && !lower.includes(term) && !label.includes(term) && !hostname.includes(term)) continue;
++      const score = !term ? 0 : hostname.startsWith(term) ? 0 : lower.startsWith(term) ? 1 : label.startsWith(term) ? 2 : 3;
++      candidates.push({value, label:(row.bookmark ? 'Bookmark · ' : '') + title, score, index});
++    }
++    candidates.sort((a,b) => a.score-b.score || a.index-b.index);
++    const seen = new Set(), result = [];
++    for (const row of candidates) {
++      const key=row.value;
++      if (seen.has(key)) continue;
++      seen.add(key);result.push({value:row.value,label:row.label});
++      if (result.length === 8) break;
++    }
++    return result;
++  }
++  if (typeof module === 'object' && module.exports) module.exports = {addressSuggestions};
++  else root.sukoaaAddressSuggestions = addressSuggestions;
++})(globalThis);
+diff --git a/desktop/index.html b/desktop/index.html
+index 4199dd4e32bbdee625a1f89faabbc275cfd410bc..7c32ad6c522d278f82a8afa6988075cdc041ad59 100644
+--- a/desktop/index.html
++++ b/desktop/index.html
+@@ -141,11 +141,12 @@
+               /></svg></span
+           ><input
+             id="address"
++            list="addressSuggestions"
+             aria-label="Search or website address"
+             placeholder="Search or enter a website"
+             autocomplete="off"
+             spellcheck="false"
+-          /><button
++          /><datalist id="addressSuggestions"></datalist><button
+             id="bookmark"
+             aria-label="Bookmark this page"
+             title="Bookmark this page"
+@@ -720,6 +721,7 @@
+       </form>
+     </dialog>
+     <div id="toast" hidden role="status"></div>
++    <script src="address-suggestions.js"></script>
+     <script src="ui.js"></script>
+   </body>
+ </html>
+diff --git a/desktop/main.cjs b/desktop/main.cjs
+index e596f6f9b5eab3d4866be6baae8b94710c9b8d57..b228ca4b0e7d67cc85efeb8d161a435eed0f8afb 100644
+--- a/desktop/main.cjs
++++ b/desktop/main.cjs
+@@ -64,7 +64,9 @@ function save() {
+   lastSavedPreferences=serialized;
+ }
+ function rememberAll() {
+-  if(quitting || transferring || [...controllers].some(c=>c.restoring()))return;
++  // The last window already saved its tabs in its close handler. Do not
++  // overwrite that snapshot after every controller has been destroyed.
++  if(quitting || transferring || !controllers.size || [...controllers].some(c=>c.restoring()))return;
+   const list=allTabs().filter(t=>!t.closed),focused=[...controllers].find(c=>c.window()?.isFocused());
+   data.savedSession=data.restoreSession?sessionFromTabs(list,focused?.current()?.id):{urls:[],activeIndex:0};
+   save();
+@@ -140,7 +142,9 @@ function editingItems(wc,params) {
+  return params.selectionText?[{label:'Copy',accelerator:'CmdOrCtrl+C',click:()=>wc.copy()}]:[];
+ }
+ function createBrowserWindow(options={}) {
+- let win,active=null,tabs=[],panelOpen=false,restoring=false,closing=false,htmlFullscreenTab=null,browserFullscreen=false;
++ // Protect the loaded session before window focus/close events can persist an
++ // empty or partially initialized tab list. Cleared only when chrome is ready.
++ let win,active=null,tabs=[],panelOpen=false,restoring=true,closing=false,htmlFullscreenTab=null,browserFullscreen=false;
+  let finishReady;
+  const ready=new Promise(resolve=>finishReady=resolve);
+  const controller={tabs:()=>tabs,window:()=>win,current:()=>current(),restoring:()=>restoring,
+@@ -1225,9 +1229,10 @@ app.whenReady().then(async () => {
+         for (const url of saved.urls) create(url);
+         select(tabs[Math.min(saved.activeIndex, tabs.length - 1)].id);
+       } else create();
+-      restoring = false;
+-      rememberSession();
+     }
++    // Empty transfer windows must also leave startup mode when ready.
++    restoring = false;
++    rememberSession();
+     emit();finishReady(controller);
+   });
+ });
+diff --git a/desktop/package-lock.json b/desktop/package-lock.json
+index 21139afbf2b06722ef109861491017242e178c1b..df85ac894f581f54670ea8ef963f12fed97df864 100644
+--- a/desktop/package-lock.json
++++ b/desktop/package-lock.json
+@@ -1,12 +1,12 @@
+ {
+   "name": "aegis-browser",
+-  "version": "0.9.5",
++  "version": "0.9.6",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+       "name": "aegis-browser",
+-      "version": "0.9.5",
++      "version": "0.9.6",
+       "license": "GPL-3.0-or-later",
+       "dependencies": {
+         "@ghostery/adblocker": "2.20.1",
+diff --git a/desktop/package.json b/desktop/package.json
+index f66d9cc6179f8c9fec29956b16439118ceba4529..e09a51c7f6e8946e58eacbc1047c99880a048912 100644
+--- a/desktop/package.json
++++ b/desktop/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "aegis-browser",
+-  "version": "0.9.5",
++  "version": "0.9.6",
+   "description": "Sukoaa browser beta candidate; public release gated",
+   "main": "main.cjs",
+   "scripts": {
+diff --git a/desktop/ui.js b/desktop/ui.js
+index 48e22df4ab082cb79fb0d884b08c769254f34672..fac7077186e5a6af04236126ef3154df68a684d6 100644
+--- a/desktop/ui.js
++++ b/desktop/ui.js
+@@ -285,6 +285,22 @@ function renderTabs(s) {
+   for(const node of known.values())node.remove();
+   if(lastActiveTab!==s.active){[...box.children].find(node=>node.dataset.tabId===s.active)?.scrollIntoView({block:'nearest',inline:'nearest'});lastActiveTab=s.active;}
+ }
++let suggestionSignature = '';
++function updateAddressSuggestions() {
++  if (!state) return;
++  // A new tab can focus its address field before its first state snapshot arrives.
++  // Unknown tab contexts must not briefly expose normal-history suggestions.
++  const tab = state.tabs.find(t => t.id === addressTabId);
++  const rows = window.sukoaaAddressSuggestions($('address').value, state.settings.history, state.settings.bookmarks, !tab || !!tab.private);
++  const signature = JSON.stringify(rows);
++  if (signature === suggestionSignature) return;
++  suggestionSignature = signature;
++  $('addressSuggestions').replaceChildren(...rows.map(row => {
++    const option = document.createElement('option');option.value = row.value;option.label = row.label;return option;
++  }));
++}
++$('address').addEventListener('input', updateAddressSuggestions);
++$('address').addEventListener('focus', updateAddressSuggestions);
+ function render(s) {
+   const activeChanged=addressTabId!==s.active;
+   addressTabId=s.active;
+@@ -348,6 +364,7 @@ function render(s) {
+     );
+   }
+   renderLabBar(s);
++  updateAddressSuggestions();
+   if(!opened)return;
+   if(view==='updates')renderUpdates(s);
+   if(view==='repair')renderRepair(s);
+diff --git a/release/SESSION-AND-SUGGESTIONS-0.9.6.md b/release/SESSION-AND-SUGGESTIONS-0.9.6.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..f8988e8a44aeb347d884a5b048c6cb5135174b55
+--- /dev/null
++++ b/release/SESSION-AND-SUGGESTIONS-0.9.6.md
+@@ -0,0 +1,34 @@
++# Desktop 0.9.6: restore saved tabs and address suggestions
++
++This desktop update is based on the complete 0.9.5 source. Android code and the Android 0.9.5 APK are unchanged.
++
++## Fixes
++
++- The first window now remains in startup mode until its chrome and initial tabs are ready. Early native focus/close events cannot replace a saved session with an empty or partially restored tab list.
++- Closing the last window retains the snapshot captured before its tabs were destroyed. The subsequent application quit cannot replace it with an empty list of window controllers.
++- Native address-field suggestions match normal history titles/URLs, bookmarks and previous Google/Bing/DuckDuckGo search terms. Results are deduplicated and limited to eight. Typing suggestions makes no remote search-service request.
++- Private and not-yet-identified tab contexts exclude normal history from suggestions. Explicitly saved bookmarks remain available. Private visits remain excluded from persistent history and session restore.
++- Clearing history immediately removes its address suggestions. Removing a bookmark removes that suggestion. The native suggestion popup supports mouse and keyboard selection; press Enter to navigate after choosing a value.
++
++## Verification
++
++- 41 Node tests passed, including a regression that fails on the original early-focus session erasure and last-window shutdown erasure.
++- Real Electron/Xvfb drag-and-restart check passed: normal tab order, count and selected index restored; private tabs excluded.
++- Real normal-close/restart playback check passed: all three URLs restored silently and manual playback/pause behavior retained. The container uses an ALSA null sink because it has no audio hardware.
++- Existing native window/editing/tear-off fixture passed.
++- Native address-field fixture passed: title/URL matching, keyboard selection, previous searches, private isolation and removal after history clearing.
++- These container fixtures do not replace physical Windows-device tests. Public release gates remain unchanged. The Windows installer is unsigned.
++
++## Install and check
++
++Install the 0.9.6 Windows setup over your existing desktop installation. In Settings > Startup, select restoration of your previous session. This update respects an intentionally disabled restore setting. Open two normal tabs, close the browser normally, reopen it and confirm both return. Previously erased snapshots are not reconstructed from unrelated history.
++
++Type part of a visited site's address or title in the address field. Normal search terms and bookmarks can also appear. Private browsing does not save its visits for future suggestions.
++
++## Push to GitHub
++
++The small Changes ZIP contains the changed files at their original repository paths plus a patch against the supplied 0.9.5 source. Copy those folders/files into a clean checkout that already contains 0.9.5, review the changes, commit on a new branch and push. Open a pull request and let Candidate checks run on the NEW commit. A run of an older commit still uses the old source.
++
++Alternatively, copy all contents of the complete Source ZIP's SukoaaBrowser-Source folder into your repository checkout. Preserve .github and .gitattributes. Do not copy the outer folder as an extra nested folder. Review before committing and never force push over unrelated changes.
++
++The D-Bus messages in the reported Linux CI log also appear in passing runs here. The relevant failure was the saved-session timeout; this update does not disable or skip that check. After merging, run the Windows build workflow to generate the same desktop version from GitHub. Attach installers/source under release assets rather than committing binaries to the source tree.
+diff --git a/release/readiness.json b/release/readiness.json
+index 08c0dc437765ebb2720794605c945c9dfc29aa74..cbbde6ff4a11b8fa0af37010910486d5f1ead281 100644
+--- a/release/readiness.json
++++ b/release/readiness.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "0.9.5",
++  "version": "0.9.6",
+   "publicReleaseAllowed": false,
+   "workingName": "Sukoaa Browser",
+   "licenseDecision": "GPL-3.0-or-later for original application; retained third-party terms",
+diff --git a/tests/address-suggestions-smoke.cjs b/tests/address-suggestions-smoke.cjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..758a4feb00ce40797fb59e5cd37c0c8db8cab25c
+--- /dev/null
++++ b/tests/address-suggestions-smoke.cjs
+@@ -0,0 +1,39 @@
++// SPDX-License-Identifier: GPL-3.0-or-later
++// Native fixture only: production keeps the OS sandbox enabled.
++const {app,BrowserWindow}=require('electron');
++const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
++app.enableSandbox=()=>{};
++const profile=fs.mkdtempSync(path.join(os.tmpdir(),'sukoaa-suggestions-'));app.setPath('userData',profile);
++let requests=0;
++const server=http.createServer((_req,res)=>{requests++;res.setHeader('Content-Type','text/html');res.end('<title>Local suggestion fixture</title>');});
++const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
++async function until(fn,label){for(let i=0;i<500;i++){if(await fn())return;await wait(20);}throw Error('Timeout: '+label);}
++const timeout=setTimeout(()=>{console.error('Address suggestion smoke timeout');app.exit(1);},60000);
++server.listen(0,'127.0.0.1',()=>{
++ const origin=`http://127.0.0.1:${server.address().port}`;
++ fs.writeFileSync(path.join(profile,'preferences.json'),JSON.stringify({restoreSession:false,bookmarks:[{url:origin+'/bookmarked',title:'Local bookmarked guide'}],history:[{id:'visited',url:origin+'/visited',title:'Local history guide',time:Date.now()},{id:'query',url:'https://www.google.com/search?q=learn+react',title:'Learn React - Search',time:Date.now()}]}));
++ require('../desktop/main.cjs');
++ app.whenReady().then(async()=>{try{
++  let win;await until(()=>{win=BrowserWindow.getAllWindows()[0];return win;},'window');const shell=win.webContents;
++  await until(()=>!shell.isLoading(),'chrome');
++  const js=code=>shell.executeJavaScript(code),cmd=(name,arg)=>js(`window.aegis.command(${JSON.stringify(name)},${JSON.stringify(arg)})`);
++  await until(async()=>!!(await cmd('state')).active,'initial tab');win.show();win.focus();
++  async function type(text){await js("document.querySelector('#address').focus();document.querySelector('#address').select()");shell.focus();await shell.insertText(text);}
++  const rows=()=>js("[...document.querySelector('#addressSuggestions').options].map(o=>({value:o.value,label:o.label}))");
++  await type('local');await until(async()=>(await rows()).length===2,'history and bookmark matches');
++  assert.equal(requests,0,'Typing local suggestions makes no network requests');
++  assert.equal(await js("document.querySelector('#address').getAttribute('list')"),'addressSuggestions');
++  shell.sendInputEvent({type:'keyDown',keyCode:'DOWN'});shell.sendInputEvent({type:'keyUp',keyCode:'DOWN'});
++  shell.sendInputEvent({type:'keyDown',keyCode:'RETURN'});shell.sendInputEvent({type:'keyUp',keyCode:'RETURN'});
++  await until(()=>js(`document.querySelector('#address').value===${JSON.stringify(origin+'/bookmarked')}`),'native keyboard selects suggestion');
++  await cmd('new');await type('learn');await until(async()=>(await rows()).some(r=>r.value==='learn react'),'previous search query');
++  await cmd('new',true);await type('learn');assert.deepEqual(await rows(),[],'Private address field excludes normal history');
++  await type('local');assert.equal((await rows()).length,1,'Private field may suggest saved bookmarks');
++  await cmd('navigate',origin+'/private-secret');await until(async()=>{const s=await cmd('state');return !s.tabs.find(t=>t.id===s.active).loading;},'private visit');
++  await cmd('new');await type('private-secret');assert.deepEqual(await rows(),[],'Private visits never contribute normal suggestions');
++  await cmd('clear',{history:true});await type('learn');await until(async()=>(await rows()).length===0,'cleared history removes previous search queries');
++  await type('local');assert.equal((await rows()).length,1,'Clearing history keeps explicitly saved bookmarks');
++  console.log('PASS native address suggestions: title/URL matches; keyboard selection; previous search terms; no network queries; private isolation; history clearing preserves bookmarks');
++  server.close();clearTimeout(timeout);app.exit(0);
++ }catch(error){console.error(error);const w=BrowserWindow.getAllWindows()[0];if(w)console.error(await w.webContents.executeJavaScript("JSON.stringify({value:document.querySelector('#address').value,rows:[...document.querySelector('#addressSuggestions').options].map(o=>o.value),active:state?.active,addressTabId,tabs:state?.tabs.map(t=>({id:t.id,private:t.private})),history:state?.settings.history})").catch(()=>''));server.close();clearTimeout(timeout);app.exit(1);}});
++});
+diff --git a/tests/address-suggestions.test.cjs b/tests/address-suggestions.test.cjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..0b426d125d58942b0611b7b5e54250f6e1650955
+--- /dev/null
++++ b/tests/address-suggestions.test.cjs
+@@ -0,0 +1,24 @@
++// SPDX-License-Identifier: GPL-3.0-or-later
++const test=require('node:test'),assert=require('node:assert/strict');
++const {addressSuggestions}=require('../desktop/address-suggestions.js');
++test('suggestions match visited titles, URL prefixes and bookmarks, with duplicates removed',()=>{
++ const history=[{url:'https://www.youtube.com/watch?v=1',title:'Music video'},{url:'https://example.com/docs',title:'YouTube guide'},{url:'https://www.youtube.com/watch?v=1',title:'Duplicate'}];
++ const result=addressSuggestions('youtube',history,[{url:'https://example.org/',title:'YouTube tools'}]);
++ assert.equal(result.length,3);assert.equal(result[0].value,history[0].url);
++ assert(result.some(row=>row.label.startsWith('Bookmark · ')));
++});
++test('previous search terms come from known search providers; private pages have no history suggestions',()=>{
++ const history=[{url:'https://www.google.com/search?q=learn+react',title:'learn react - Google Search'}];
++ assert.equal(addressSuggestions('learn',history)[0].value,'learn react');
++ assert.deepEqual(addressSuggestions('learn',history,[],true),[]);
++ assert.equal(addressSuggestions('learn',history,[{url:'https://example.com/',title:'Learn React'}],true).length,1);
++});
++test('unsafe URLs are excluded, suggestions are bounded and clearing history removes visits',()=>{
++ const rows=[{url:'javascript:alert(1)'},{url:'file:///tmp/private'},{url:'https://user:password@example.com/'}];
++ assert.deepEqual(addressSuggestions('',rows),[]);
++ const history=Array.from({length:20},(_,i)=>({url:`https://example.com/${i}`,title:`Page ${i}`}));
++ assert.equal(addressSuggestions('',history).length,8);
++ assert.deepEqual(addressSuggestions('',[]),[]);
++ const title='<img src=x onerror=alert(1)>';
++ assert.equal(addressSuggestions('example',[{url:'https://example.com/',title}])[0].label,title);
++});
+diff --git a/tests/startup-session.test.cjs b/tests/startup-session.test.cjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..6a59b1c671cd6aa083b05dcb921d51027e4f281a
+--- /dev/null
++++ b/tests/startup-session.test.cjs
+@@ -0,0 +1,62 @@
++const test = require('node:test');
++const assert = require('node:assert/strict');
++const {EventEmitter} = require('node:events');
++const Module = require('node:module');
++const path = require('node:path');
++const fs = require('node:fs');
++const os = require('node:os');
++// Exercise production event wiring against native API fakes; no remote pages run in Node.
++test('startup focus cannot overwrite saved tabs before restoration completes', async () => {
++ const profile=fs.mkdtempSync(path.join(os.tmpdir(),'aegis-events-'));
++ const expected={urls:['https://example.com/a','https://example.org/b',...Array(14).fill(null)],activeIndex:1};
++ fs.writeFileSync(path.join(profile,'preferences.json'),JSON.stringify({restoreSession:true,savedSession:expected}));
++ const app=new EventEmitter();app.enableSandbox=()=>{};app.getPath=()=>profile;app.whenReady=()=>Promise.resolve();app.quit=()=>{};
++ const all=[];let next=1, menu;
++ class Contents extends EventEmitter {
++  constructor(session){super();this.id=next++;this.session=session;this.mainFrame={framesInSubtree:[]};this.url='';this.navigationHistory={canGoBack:()=>false,canGoForward:()=>false};this.open=false;this.ready=false;all.push(this);}
++  setZoomMode(mode){this.zoomMode=mode;} setZoomFactor(value){this.zoom=value;} getZoomFactor(){return this.zoom || 1;}
++  isCurrentlyAudible(){return false;} isAudioMuted(){return !!this.muted;} setAudioMuted(value){this.muted=value;}
++  getType(){return "window";} setWindowOpenHandler(){} getURL(){return this.url;} getTitle(){return "Fixture";} isDestroyed(){return false;} close(){this.closed=true;} focus(){} send(){}
++  loadFile(file){this.url='file://'+file;return Promise.resolve();} loadURL(url){this.url=url;return Promise.resolve();}
++  isDevToolsOpened(){return this.open;} openDevTools(options){this.open=true;this.devToolsWebContents={id:next++,getType:()=>"remote"};all.push(this.devToolsWebContents);this.mode=options.mode;this.emit('devtools-opened');}closeDevTools(){this.open=false;this.emit('devtools-closed');}
++  inspectElement(x,y){this.inspected={x,y};} enableDeviceEmulation(options){assert(this.ready, "Never enable emulation before the native page is ready");this.emulation=options;}
++  disableDeviceEmulation(){assert(this.ready, "Never reset emulation before the native page is ready");this.emulation=null;}
++  executeJavaScript(code){this.lastScript=code;return Promise.resolve();}insertCSS(){return Promise.resolve();}reload(){}
++ }
++ class View {constructor(options){this.webContents=new Contents(options.webPreferences.session);this.options=options;}setBounds(b){this.bounds=b;}setVisible(v){this.visible=v;}}
++ let win;
++ class Window extends EventEmitter {
++  constructor(){super();win=this;this.webContents=new Contents();this.views=[];this.contentView={addChildView:v=>this.views.push(v),removeChildView:v=>this.views=this.views.filter(x=>x!==v)};}
++  isFocused(){return true;}loadFile(){return Promise.resolve();}getContentSize(){return [1360,900];}isDestroyed(){return false;}setMenu(){}isFullScreen(){return !!this.full;}
++  isMaximized(){return !!this.max;}maximize(){this.max=true;}unmaximize(){this.max=false;}minimize(){this.minimized=true;}
++  setFullScreen(value){if(this.full===value)return;this.full=value;this.emit(value?'enter-full-screen':'leave-full-screen');}
++ }
++ const sessions=new Map();const session={fromPartition(name){if(!sessions.has(name)){const s=new EventEmitter();Object.assign(s,{setPermissionRequestHandler:fn=>s.request=fn,setPermissionCheckHandler:fn=>s.check=fn,webRequest:{onHeadersReceived(){},onBeforeRequest(fn){s.beforeRequest=fn;}},clearCache:()=>Promise.resolve(),clearStorageData:()=>Promise.resolve()});sessions.set(name,s);}return sessions.get(name);}};
++ let handle;const pageIPC=new Map();
++ const electron={app,webContents:{fromId:id=>all.find(w=>w.id===id)},BrowserWindow:Window,WebContentsView:View,session,nativeTheme:{},dialog:{},clipboard:{},ipcMain:{on:(name,fn)=>pageIPC.set(name,fn),handle:(_name,fn)=>handle=fn},Menu:{buildFromTemplate(items){menu=items;return {popup(){}};}}};
++ const filename=path.resolve(__dirname,'../desktop/main.cjs');
++ const loaded=new Module(filename,module);loaded.filename=filename;loaded.paths=Module._nodeModulePaths(path.dirname(filename));
++ const original=loaded.require.bind(loaded);loaded.require=name=>name==='electron'?electron:original(name);
++ loaded._compile(fs.readFileSync(filename,'utf8'),filename);
++ for(let i=0;i<500&&!win;i++)await new Promise(r=>setTimeout(r,20));assert(win,'Browser initialized');
++ try {
++  // Force the event ordering that the CI display server exposes: window focus
++  // arrives while the browser chrome has not finished and no tabs exist yet.
++  win.emit('focus');
++  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(profile,'preferences.json'),'utf8')).savedSession,expected,'Early window focus must not erase saved tabs');
++  win.webContents.emit('did-finish-load');
++  await new Promise(r=>setImmediate(r));
++  const command=(name,arg)=>handle({sender:win.webContents,senderFrame:win.webContents.mainFrame},name,arg);
++  const state=await command('state');
++  assert.deepEqual(state.tabs.map(t=>/^https?:/.test(t.url)?t.url:null),expected.urls);
++  assert.equal(state.active,state.tabs[expected.activeIndex].id);
++  assert(state.tabs.every(t=>!t.private));
++  win.emit('focus');
++  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(profile,'preferences.json'),'utf8')).savedSession,expected,'Focus after restore persists the restored session');
++  await command('new');
++  assert.equal(JSON.parse(fs.readFileSync(path.join(profile,'preferences.json'),'utf8')).savedSession.urls.length,expected.urls.length+1,'Session saving resumes after startup');
++  const beforeClose=JSON.parse(fs.readFileSync(path.join(profile,'preferences.json'),'utf8')).savedSession;
++  win.emit('close');win.emit('closed');app.emit('before-quit');
++  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(profile,'preferences.json'),'utf8')).savedSession,beforeClose,'Last-window shutdown retains the snapshot captured before its tabs were destroyed');
++ } finally { fs.rmSync(profile,{recursive:true,force:true}); }
++});

@@ -1,6 +1,6 @@
 {
   "format": "sukoaa-release-audit-v1",
-  "version": "0.9.4",
+  "version": "0.9.6",
   "licenseDecision": "GPL-3.0-or-later",
   "publicReleaseAllowed": false,
   "dependencies": [
@@ -289,7 +289,7 @@
     },
     {
       "file": "PRIVACY.txt",
-      "sha256": "76a54490ec59b48a4add495c50525d83eabd2edd526efb908a4d221e1341ce17"
+      "sha256": "fdd9d13ff535a112d1f10c3c5930cd38d17666cb0a0528c8411dafd1aaa64d90"
     },
     {
       "file": "SOURCE-ACCESS.txt",

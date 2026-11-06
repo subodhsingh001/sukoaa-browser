@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
   static class Tab {
     BrowserPermissions.Scope permissionScope;
     WebView web;
+    final ExternalApps.Gesture appGesture=new ExternalApps.Gesture();
     boolean addressPending, mediaActivated;
     ScriptHandler youtubeScript;
     final VisitHistory.Scope historyScope = new VisitHistory.Scope(false);
@@ -413,6 +414,7 @@ public class MainActivity extends Activity {
       refreshPagePolicy(t);
     }
     w.setOnTouchListener((v,event)->{
+      t.appGesture.touch(event,dp(12));
       if(event.getActionMasked()==MotionEvent.ACTION_DOWN){t.addressPending=false;if(t==current){t.mediaActivated=true;muteTab(t,false);}}
       return false;
     });
@@ -438,7 +440,10 @@ public class MainActivity extends Activity {
           @Override
           public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             String u = request.getUrl().toString();
-            if(request.isForMainFrame()){t.addressPending=false;refreshPagePolicy(t);}
+            if(request.isForMainFrame()){
+              t.addressPending=false;refreshPagePolicy(t);
+              if(t==current && ExternalApps.intercept(MainActivity.this,u,request.hasGesture() || t.appGesture.recent(),false,fallback->{if(current==t && tabs.contains(t))go(fallback);}))return true;
+            }
             if (popup && "about:blank".equals(u)) return false;
             if (!"https".equalsIgnoreCase(request.getUrl().getScheme())
                 || !BrowserPolicy.allowed(u, false)) {
@@ -1044,7 +1049,8 @@ public class MainActivity extends Activity {
       "Privacy & open-source licenses",
       "Site permissions · camera, microphone, location",
       "Fix this page",
-      "Compare this page"
+      "Compare this page",
+      "Open in app · YouTube & supported apps"
     };
     new AlertDialog.Builder(this)
         .setTitle("Browser tools")
@@ -1054,6 +1060,7 @@ public class MainActivity extends Activity {
             items,
             (d, i) -> {
               switch (i) {
+                case 24: ExternalApps.openPage(this,current.url,false);break;
                 case 23:
                   comparePage();break;
                 case 22:
@@ -1341,10 +1348,10 @@ public class MainActivity extends Activity {
     for (Tab tab : new ArrayList<>(tabs))
       rows.add(
           new BrowserListDialog.Row(
-              (tab == current ? "● " : "") + tab.title,
+              (tab == current ? "Current tab · " : "") + tab.title,
               "Regular · " + (tab.url.isEmpty()?"New tab":tab.url),
               () -> switchTab(tab),
-              () -> closeTab(tab),tab.icon,() -> tabActions(tab)));
+              () -> closeTab(tab),tab.icon,() -> tabActions(tab),tab==current));
     BrowserListDialog.show(
         this,
         "Tabs · " + tabs.size(),

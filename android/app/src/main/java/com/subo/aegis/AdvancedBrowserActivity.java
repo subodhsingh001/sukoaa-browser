@@ -41,6 +41,7 @@ public class AdvancedBrowserActivity extends Activity {
   private static class Tab {
     BrowserPermissions.Scope permissionScope;
     GeckoSession session;
+    final ExternalApps.Gesture appGesture=new ExternalApps.Gesture();
     boolean privateMode, canBack, textOnly, addressPending;
     MediaSession media;
     VisitHistory.Scope historyScope;
@@ -129,7 +130,7 @@ public class AdvancedBrowserActivity extends Activity {
     root.addView(status);
     view = new GeckoView(this);
     view.setOnFocusChangeListener((v,focused)->{if(focused && current!=null && current.addressPending)view.post(()->{if(current!=null && current.addressPending)restoreNewTabFocus(current);});});
-    view.setOnTouchListener((v,event)->{if(event.getActionMasked()==MotionEvent.ACTION_DOWN && current!=null)current.addressPending=false;return false;});
+    view.setOnTouchListener((v,event)->{if(current!=null)current.appGesture.touch(event,dp(12));if(event.getActionMasked()==MotionEvent.ACTION_DOWN && current!=null)current.addressPending=false;return false;});
     view.setSaveEnabled(false);
     view.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS);
     root.addView(view, new LinearLayout.LayoutParams(-1, 0, 1));
@@ -316,6 +317,7 @@ public class AdvancedBrowserActivity extends Activity {
                 r.target == TARGET_WINDOW_NEW && (r.uri == null || r.uri.isEmpty())
                     ? "about:blank"
                     : r.uri;
+            if(t==current && ExternalApps.intercept(AdvancedBrowserActivity.this,uri,r.hasUserGesture || t.appGesture.recent(),t.privateMode,fallback->{if(current==t && tabs.contains(t))load(t,fallback);}))return GeckoResult.fromValue(AllowOrDeny.DENY);
             boolean safe = BrowserPolicy.allowed(uri, !t.privateMode);
             if (!safe && t == current) status.setText("Only HTTPS pages are supported.");
             // Gecko's popup blocker invokes onPopupPrompt for script-created
@@ -550,10 +552,10 @@ public class AdvancedBrowserActivity extends Activity {
     for (Tab tab : new ArrayList<>(tabs))
       rows.add(
           new BrowserListDialog.Row(
-              (tab == current ? "● " : "") + tab.title,
+              (tab == current ? "Current tab · " : "") + tab.title,
               (tab.privateMode ? "Private · " : "Regular · ") + tab.url,
               () -> select(tab),
-              () -> closeTab(tab),null,() -> tabActions(tab)));
+              () -> closeTab(tab),null,() -> tabActions(tab),tab==current));
     BrowserListDialog.show(
         this,
         "Tabs · " + tabs.size(),
@@ -575,6 +577,7 @@ public class AdvancedBrowserActivity extends Activity {
     super.onRequestPermissionsResult(code,names,results);permissions.onResult(code);
   }
   void menu() {
+    if(current==null)return;
     String[] choices = {
       "New private tab",
       "New regular add-on tab",
@@ -588,7 +591,8 @@ public class AdvancedBrowserActivity extends Activity {
       "Appearance · theme, style & colours",
       "Privacy & open-source licenses",
       "Site permissions · camera, microphone, location",
-      "Fix this page"
+      "Fix this page",
+      "Open in app · YouTube & supported apps"
     };
     new AlertDialog.Builder(this)
         .setTitle("Advanced browser")
@@ -597,6 +601,7 @@ public class AdvancedBrowserActivity extends Activity {
         .setItems(
             choices,
             (d, i) -> {
+              if(i==13)ExternalApps.openPage(this,current.url,current.privateMode);
               if(i==12) {Tab owner=current;new AlertDialog.Builder(this).setTitle("Fix this private page")
                 .setMessage("Try reloading without cache for a loading problem, or review camera, microphone and location permissions. Tap inside the page before using Copy. For a popup prompt, choose Open only for a link you intended. This view keeps tracking protection enabled.")
                 .setPositiveButton("Reload without cache",(x,w)->owner.session.reload(GeckoSession.LOAD_FLAGS_BYPASS_CACHE))

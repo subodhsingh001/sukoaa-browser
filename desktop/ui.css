@@ -857,3 +857,12 @@ dialog h2 {
 .lab-bar{position:fixed;top:86px;left:0;right:0;height:48px;display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border-bottom:1px solid var(--line);z-index:5}
 .lab-bar[hidden]{display:none}.lab-bar>div{display:flex;min-width:0;align-items:center;border-right:1px solid var(--line);padding:4px;gap:4px}.lab-bar button{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px;font-size:11px}.lab-bar [data-lab-index]{flex:1;min-width:0}.lab-bar [aria-pressed=true]{color:var(--accent);border-color:var(--accent)}
 .repair-guidance,.repair-summary{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.repair-summary p{margin:0 0 9px}.repair-chip{display:inline-block;padding:4px 9px;border-radius:15px;background:var(--surface2);margin:4px;font-size:12px}.repair-actions{margin:18px 0;flex-wrap:wrap}.lab-report{overflow:auto;margin:18px 0}.lab-report table{width:100%;border-collapse:collapse;font-size:12px}.lab-report td,.lab-report th{border:1px solid var(--line);padding:10px;text-align:left;overflow-wrap:anywhere}.lab-report th{color:var(--accent)}
+
+/* Active tab remains distinct by shape, weight and an accent rail in every theme. */
+.tab {position:relative;opacity:.76;}
+.tab:hover {opacity:1;}
+.tab.active {opacity:1;background:color-mix(in srgb,var(--accent) 18%,var(--surface2));border-color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent),0 1px 6px #0003;}
+.tab.active > button:first-child {font-weight:750;color:var(--text);}
+.tab.active .tab-monogram {background:var(--accent);color:var(--bg);}
+.tab[aria-selected="false"] {border-bottom-color:transparent;}
+@media (forced-colors:active) {.tab.active {outline:2px solid Highlight;border-bottom:3px solid Highlight;}}
