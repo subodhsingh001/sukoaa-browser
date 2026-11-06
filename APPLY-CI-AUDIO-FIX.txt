@@ -1,0 +1,13 @@
+SUKOAA 0.9.6 - GITHUB CI AUDIO FIX
+
+The Linux GitHub runner has no physical sound card. Xvfb provides a display only. The test now gives its two Electron children a dedicated ALSA null PCM output; it does not change machine-wide settings or production browser audio.
+
+Replace these TWO files in your repository, keeping the paths:
+  tests/restore-playback-smoke.cjs
+  tests/restore-playback-runtime.cjs
+
+Commit and push on a new branch, then open a pull request. Candidate checks must run on the NEW commit; retrying an older commit still runs the older files. No Windows installer or Android APK rebuild is needed for this test-only fix.
+
+The runtime fixture also waits for foreground/native/DOM focus before its Play click, records playback rejection details and prints state on a playback timeout. Every autoplay, manual playback, mute, pause and restart assertion remains enabled. Production sandbox and certificate checks are unchanged; the existing container-only test exceptions remain test-only.
+
+Validation: the actual save/restart smoke test passed three consecutive times with no externally supplied ALSA_CONFIG_PATH. All 41 Node tests passed. This validates fixture behavior, not physical audio-device quality or every GitHub job.

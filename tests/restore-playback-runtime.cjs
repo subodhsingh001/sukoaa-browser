@@ -6,7 +6,9 @@ app.commandLine.appendSwitch('no-proxy-server');app.commandLine.appendSwitch('ho
 app.on('certificate-error',(event,_wc,url,_error,_cert,cb)=>{if(new URL(url).hostname==='www.youtube.com'){event.preventDefault();cb(true);}else cb(false);});
 require('../desktop/main.cjs');
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function until(fn,label){for(let i=0;i<500;i++){if(await fn())return;await wait(20);}throw Error('Timeout '+label);}
+async function until(fn,label){for(let i=0;i<500;i++){if(await fn())return;await wait(20);}if(label.includes('play')) {
+ for(const page of webContents.getAllWebContents().filter(w=>w.getURL().startsWith(process.env.SUKOAA_RESTORE_ORIGIN)))console.error('Playback diagnostics',await page.executeJavaScript('JSON.stringify({url:location.href,hidden:document.hidden,focused:document.hasFocus(),started:window.started,playError:window.playError,paused:document.querySelector("audio")?.paused,ready:document.querySelector("audio")?.readyState,error:document.querySelector("audio")?.error?.message})').catch(String));
+ }throw Error('Timeout '+label);}
 const timeout=setTimeout(()=>app.exit(1),45000);
 app.whenReady().then(async()=>{try{
  let win;await until(()=>{win=BrowserWindow.getAllWindows()[0];return win;},'window');const shell=win.webContents;await until(()=>!shell.isLoading(),'chrome');
@@ -18,6 +20,7 @@ app.whenReady().then(async()=>{try{
   await until(async()=>{state=await cmd('state');return state.tabs.length===3&&state.tabs.every(t=>!t.loading&&t.url.startsWith(origin));},'three loaded tabs');
   await cmd('select',state.tabs[0].id);const page=webContents.getAllWebContents().find(w=>w.getURL()===origin+'/0');
   await until(()=>page.executeJavaScript('!document.hidden'),'foreground page visibility');page.focus();
+  await until(async()=>win.isFocused()&&page.isFocused()&&await page.executeJavaScript('document.hasFocus()&&!document.hidden'),'manual-play focus');
   assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),true);
   page.sendInputEvent({type:'mouseDown',x:25,y:18,button:'left',clickCount:1});page.sendInputEvent({type:'mouseUp',x:25,y:18,button:'left',clickCount:1});await until(()=>page.executeJavaScript('window.started===true'),'manual play');
   await cmd('select',state.tabs[1].id);await wait(300);assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),false);assert.equal(page.isAudioMuted(),false);
@@ -27,6 +30,7 @@ app.whenReady().then(async()=>{try{
   assert.deepEqual(state.tabs.map(t=>t.url),[0,1,2].map(i=>origin+'/'+i));
   for(const tab of state.tabs){const page=webContents.getAllWebContents().find(w=>w.getURL()===tab.url);assert(page);assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),true);assert.equal(page.isAudioMuted(),true);assert.equal(await page.executeJavaScript('document.querySelector("audio").play().then(()=>"played",e=>e.name)'),'NotAllowedError');}
   const first=state.tabs[0],page=webContents.getAllWebContents().find(w=>w.getURL()===first.url);await cmd('select',first.id);await until(()=>page.executeJavaScript('!document.hidden'),'restored page visibility');page.focus();
+  await until(async()=>win.isFocused()&&page.isFocused()&&await page.executeJavaScript('document.hasFocus()&&!document.hidden'),'restored manual-play focus');
   page.sendInputEvent({type:'mouseDown',x:25,y:18,button:'left',clickCount:1});page.sendInputEvent({type:'mouseUp',x:25,y:18,button:'left',clickCount:1});await until(()=>page.executeJavaScript('window.started===true'),'restore manual play');
   await cmd('select',state.tabs[1].id);await wait(300);assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),false);
   await page.executeJavaScript('document.querySelector("audio").pause()');await cmd('select',first.id);await cmd('select',state.tabs[2].id);await wait(100);assert.equal(await page.executeJavaScript('document.querySelector("audio").paused'),true);
