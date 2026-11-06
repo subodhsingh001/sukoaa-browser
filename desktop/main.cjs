@@ -64,7 +64,9 @@ function save() {
   lastSavedPreferences=serialized;
 }
 function rememberAll() {
-  if(quitting || transferring || [...controllers].some(c=>c.restoring()))return;
+  // The last window already saved its tabs in its close handler. Do not
+  // overwrite that snapshot after every controller has been destroyed.
+  if(quitting || transferring || !controllers.size || [...controllers].some(c=>c.restoring()))return;
   const list=allTabs().filter(t=>!t.closed),focused=[...controllers].find(c=>c.window()?.isFocused());
   data.savedSession=data.restoreSession?sessionFromTabs(list,focused?.current()?.id):{urls:[],activeIndex:0};
   save();
@@ -140,7 +142,9 @@ function editingItems(wc,params) {
  return params.selectionText?[{label:'Copy',accelerator:'CmdOrCtrl+C',click:()=>wc.copy()}]:[];
 }
 function createBrowserWindow(options={}) {
- let win,active=null,tabs=[],panelOpen=false,restoring=false,closing=false,htmlFullscreenTab=null,browserFullscreen=false;
+ // Protect the loaded session before window focus/close events can persist an
+ // empty or partially initialized tab list. Cleared only when chrome is ready.
+ let win,active=null,tabs=[],panelOpen=false,restoring=true,closing=false,htmlFullscreenTab=null,browserFullscreen=false;
  let finishReady;
  const ready=new Promise(resolve=>finishReady=resolve);
  const controller={tabs:()=>tabs,window:()=>win,current:()=>current(),restoring:()=>restoring,
@@ -1225,9 +1229,10 @@ app.whenReady().then(async () => {
         for (const url of saved.urls) create(url);
         select(tabs[Math.min(saved.activeIndex, tabs.length - 1)].id);
       } else create();
-      restoring = false;
-      rememberSession();
     }
+    // Empty transfer windows must also leave startup mode when ready.
+    restoring = false;
+    rememberSession();
     emit();finishReady(controller);
   });
 });

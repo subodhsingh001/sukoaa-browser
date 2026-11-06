@@ -141,11 +141,12 @@
               /></svg></span
           ><input
             id="address"
+            list="addressSuggestions"
             aria-label="Search or website address"
             placeholder="Search or enter a website"
             autocomplete="off"
             spellcheck="false"
-          /><button
+          /><datalist id="addressSuggestions"></datalist><button
             id="bookmark"
             aria-label="Bookmark this page"
             title="Bookmark this page"
@@ -720,6 +721,7 @@
       </form>
     </dialog>
     <div id="toast" hidden role="status"></div>
+    <script src="address-suggestions.js"></script>
     <script src="ui.js"></script>
   </body>
 </html>

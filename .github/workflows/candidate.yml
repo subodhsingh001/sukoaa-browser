@@ -62,3 +62,6 @@ jobs:
           mkdir -p /tmp/sukoaa-app-policy
           javac -d /tmp/sukoaa-app-policy android/app/src/main/java/com/subo/aegis/ExternalAppPolicy.java tests/ExternalAppPolicyTest.java
           java -cp /tmp/sukoaa-app-policy ExternalAppPolicyTest
+
+      - name: Native local history and bookmark address suggestions
+        run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/address-suggestions-smoke.cjs

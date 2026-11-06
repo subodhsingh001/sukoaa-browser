@@ -1,6 +1,6 @@
 {
   "name": "aegis-browser",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Sukoaa browser beta candidate; public release gated",
   "main": "main.cjs",
   "scripts": {

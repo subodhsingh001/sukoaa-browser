@@ -285,6 +285,22 @@ function renderTabs(s) {
   for(const node of known.values())node.remove();
   if(lastActiveTab!==s.active){[...box.children].find(node=>node.dataset.tabId===s.active)?.scrollIntoView({block:'nearest',inline:'nearest'});lastActiveTab=s.active;}
 }
+let suggestionSignature = '';
+function updateAddressSuggestions() {
+  if (!state) return;
+  // A new tab can focus its address field before its first state snapshot arrives.
+  // Unknown tab contexts must not briefly expose normal-history suggestions.
+  const tab = state.tabs.find(t => t.id === addressTabId);
+  const rows = window.sukoaaAddressSuggestions($('address').value, state.settings.history, state.settings.bookmarks, !tab || !!tab.private);
+  const signature = JSON.stringify(rows);
+  if (signature === suggestionSignature) return;
+  suggestionSignature = signature;
+  $('addressSuggestions').replaceChildren(...rows.map(row => {
+    const option = document.createElement('option');option.value = row.value;option.label = row.label;return option;
+  }));
+}
+$('address').addEventListener('input', updateAddressSuggestions);
+$('address').addEventListener('focus', updateAddressSuggestions);
 function render(s) {
   const activeChanged=addressTabId!==s.active;
   addressTabId=s.active;
@@ -348,6 +364,7 @@ function render(s) {
     );
   }
   renderLabBar(s);
+  updateAddressSuggestions();
   if(!opened)return;
   if(view==='updates')renderUpdates(s);
   if(view==='repair')renderRepair(s);
