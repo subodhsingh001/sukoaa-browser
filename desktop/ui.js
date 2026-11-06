@@ -229,10 +229,15 @@ function attachTabDragging(wrap,open,id) {
   wrap.ondragstart=e=>{
     const button=e.target.closest('button');
     if((button&&button!==open)||!e.dataTransfer){e.preventDefault();return;}
-    draggedTabId=id;tabDragX=e.clientX;e.dataTransfer.effectAllowed='move';
+    draggedTabId=id;tabDragX=e.clientX;e.dataTransfer.effectAllowed='move';command('tabDragStart',id);
     e.dataTransfer.setData('application/x-sukoaa-tab',id);wrap.classList.add('tab-dragging');
   };
-  wrap.ondragend=finishTabDrag;
+  wrap.ondragend=e=>{
+    const id=draggedTabId;
+    const outside=e.clientX<-16 || e.clientY<-16 || e.clientX>innerWidth+16 || e.clientY>86;
+    if(id && e.isTrusted)command('tabDragEnd',{id,outside,dropEffect:e.dataTransfer?.dropEffect || 'none',point:{x:e.screenX,y:e.screenY}});
+    finishTabDrag();
+  };
 }
 $('tabs').addEventListener('dragover',e=>{
   if(!draggedTabId)return;

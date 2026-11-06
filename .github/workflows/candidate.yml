@@ -54,3 +54,11 @@ jobs:
 
       - name: Restored video tabs wait for Play after a real restart
         run: xvfb-run -a node tests/restore-playback-smoke.cjs
+
+      - name: Native editing menus and live tab detachment
+        run: xvfb-run -a desktop/node_modules/electron/dist/electron --no-sandbox tests/window-editing-smoke.cjs
+      - name: Android external-app URL policy
+        run: |
+          mkdir -p /tmp/sukoaa-app-policy
+          javac -d /tmp/sukoaa-app-policy android/app/src/main/java/com/subo/aegis/ExternalAppPolicy.java tests/ExternalAppPolicyTest.java
+          java -cp /tmp/sukoaa-app-policy ExternalAppPolicyTest

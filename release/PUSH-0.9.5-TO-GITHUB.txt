@@ -1,0 +1,21 @@
+SUKOAA 0.9.5 — UPLOAD IN ONE COMMIT
+
+1. Open GitHub Desktop and clone your repository if needed:
+   https://github.com/subodhsingh001/sukoaa-browser.git
+2. Fetch/Pull main. Create a branch named fix/editing-app-links-tab-windows.
+3. Unzip SukoaaBrowser-Source.zip. Copy the CONTENTS of its SukoaaBrowser-Source folder into the cloned repository, replacing matching files. Include .github, .gitattributes and .gitignore. Do not create an extra nested SukoaaBrowser-Source folder.
+4. Review Changes. The source includes desktop, Android, shared code, tests, workflows, tools, compliance and release documents. Never commit signing keys, passwords, node_modules, local.properties, build output, APKs or EXEs.
+5. Commit with summary: Fix editing menus, app handoff, tab windows and active-tab visibility.
+6. Publish/Push the branch and open a pull request into main. Let the required checks finish; review and merge according to your branch rules. Do not force push.
+7. After testing your devices, use a draft v0.9.5 GitHub Release and attach the APK, Windows Setup, source ZIP and checksums as RELEASE ASSETS. They do not belong in source commits. Source code and release downloads are separate updates.
+
+The separate Changes ZIP contains a patch against the supplied 0.9.4 source snapshot, not a guarantee about the current contents of GitHub main. Use git apply --check before applying it; if it fails, stop and review differences. The full source/GitHub Desktop method is simpler.
+
+Desktop: cd desktop; npm ci; npm test; npm start
+Windows candidate: npm run dist:windows:internal
+Android: install JDK 17 and the Android SDK declared in android/app/build.gradle, set android/local.properties locally, then run ./gradlew :app:assembleRelease :app:lintRelease from android.
+
+The supplied APK is already signed with the same project identity as previous updates. Keep your original Android signing key private for future releases. Windows Setup is still unsigned; it has no trusted Windows publisher certificate.
+
+Test on your computer: right-click address bar and page input; Copy/Paste/Paste and go; drag a tab down from the strip; right-click tab > Move tab to new window; Ctrl+L and Ctrl+T in the moved page; normal/private history and session restore.
+Test on phone: browser menu > Open in app on a YouTube video; website Open in app button; installed-app and missing-app behavior; private handoff confirmation; selected-tab visibility and text selection/clipboard.

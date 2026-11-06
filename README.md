@@ -251,3 +251,7 @@ Electron 45.2.3 and GeckoView 159.0.20261102144711 resolve the engine-version ch
 ## 0.9.4 playback and tab actions
 
 Started media now continues when switching tabs; newly opened and restored pages still wait for Play. Hold/right-click a desktop tab or use the Android tab-list three-dot menu for tab actions. See [behavior and validation](release/PLAYBACK-TAB-ACTIONS-0.9.4.md) and [GitHub upload instructions](release/PUSH-0.9.4-TO-GITHUB.txt).
+
+## Sukoaa 0.9.5
+
+[Editing menus, Android app links, live tab windows and selected-tab visibility](release/CHANGES-0.9.5.md). [GitHub upload instructions](release/PUSH-0.9.5-TO-GITHUB.txt). This includes the preceding 0.9.4 engine, focus, media and tab-action changes. Physical-device handoff/installation tests remain required.
